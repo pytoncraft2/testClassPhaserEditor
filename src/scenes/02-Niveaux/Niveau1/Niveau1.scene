@@ -38,6 +38,64 @@
             ]
         },
         {
+            "type": "Container",
+            "id": "e1dcddaf-e967-413a-9b0c-8f47269e902b",
+            "label": "groupe_adversaires",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "09812ea7-55e4-4f32-be4a-95e77e295658",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne",
+                    "components": [],
+                    "x": 366,
+                    "y": 596,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "ace32157-9a3d-4377-bee8-2eed691a6f84",
+            "label": "platformes",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "436efcb4-f2ea-4e8d-bd7d-9ef9ef30c4f9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 404,
+                    "y": 732,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "8222ef68-46bd-46ee-8561-449400600879",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformePrefab_1",
+                    "components": [],
+                    "x": 1027,
+                    "y": 426,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",

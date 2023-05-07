@@ -1,0 +1,76 @@
+{
+    "id": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseEntites",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "7390af90-1bef-464d-bee3-73db60ccd653",
+            "label": "container_1",
+            "components": [],
+            "x": 142,
+            "y": 72,
+            "ArcadeComponent.active": true,
+            "body.width": 64,
+            "body.height": 64,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8c923199-b3c9-46b7-b470-d06b31cbd3fc",
+                    "label": "araigne_png",
+                    "components": [],
+                    "texture": {
+                        "key": "araigne",
+                        "frame": "araigne.png"
+                    },
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "91107b21-0124-46f8-98c1-15aefdf40b10",
+                    "label": "rectangle_1",
+                    "components": [],
+                    "x": 77,
+                    "y": -84,
+                    "scaleX": 1.0086123917826166,
+                    "scaleY": 0.150827636251598,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "b46a5582-cb28-42b4-b93c-050add9641ae",
+                    "label": "rectangle",
+                    "components": [],
+                    "x": 219,
+                    "y": -3,
+                    "scaleX": 1.0086123917826166,
+                    "scaleY": 0.150827636251598,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

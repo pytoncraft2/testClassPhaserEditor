@@ -5,6 +5,8 @@
 
 import BaseNiveaux from "../BaseNiveaux";
 import Huipat from "../../03-Entites/Huipat/Huipat";
+import Araigne from "../../03-Entites/Araigne/Araigne";
+import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -28,6 +30,24 @@ export default class Niveau1 extends BaseNiveaux {
 		const huipat = new Huipat(this, 496, 285);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
+
+		// groupe_adversaires
+		const groupe_adversaires = this.add.container(0, 0);
+
+		// araigne
+		const araigne = new Araigne(this, 366, 596);
+		groupe_adversaires.add(araigne);
+
+		// platformes
+		const platformes = this.add.container(0, 0);
+
+		// platformePrefab
+		const platformePrefab = new PlatformePrefab(this, 404, 732);
+		platformes.add(platformePrefab);
+
+		// platformePrefab_1
+		const platformePrefab_1 = new PlatformePrefab(this, 1027, 426);
+		platformes.add(platformePrefab_1);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
