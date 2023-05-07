@@ -4,6 +4,8 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
+import Huipat from "../../03-Entites/Huipat/Huipat";
+import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -19,11 +21,23 @@ export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
 
-		// guapen
-		this.add.image(536, 192, "guapen");
+		// groupe_allies
+		const groupe_allies = this.add.container(0, 0);
+
+		// huipat
+		const huipat = new Huipat(this, 496, 285);
+		huipat.name = "huipat";
+		groupe_allies.add(huipat);
+
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
+
+		this.groupe_allies = groupe_allies;
 
 		this.events.emit("scene-awake");
 	}
+
+	public groupe_allies!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 

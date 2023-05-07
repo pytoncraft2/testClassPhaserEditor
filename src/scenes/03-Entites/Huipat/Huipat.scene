@@ -14,16 +14,42 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "38083c7c-2000-4740-bd02-2a82294d4344",
-            "label": "fufuSuperDino",
+            "type": "Container",
+            "id": "52692af4-e603-4549-8016-16fefc991658",
+            "label": "container_1",
             "components": [],
-            "texture": {
-                "key": "FufuSuperDino"
-            },
-            "x": 536,
-            "y": 297,
-            "list": []
+            "x": 120,
+            "y": 124,
+            "ArcadeComponent.active": true,
+            "body.width": 64,
+            "body.height": 64,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
+                    "label": "huipat_png",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "huipat.png"
+                    },
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "38e932df-841d-44e1-b40e-c99e701fc5ff",
+                    "label": "detection_proche",
+                    "components": [],
+                    "x": 69,
+                    "y": 3,
+                    "scaleX": 0.6252600982434391,
+                    "scaleY": 1.1514195485615129,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],

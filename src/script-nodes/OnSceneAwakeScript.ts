@@ -6,6 +6,8 @@
 import ScriptNode from "./ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import Niveau1 from "~/scenes/02-Niveaux/Niveau1/Niveau1";
+import BaseEntites from "~/scenes/03-Entites/BaseEntites";
 /* END-USER-IMPORTS */
 
 export default class OnSceneAwakeScript extends ScriptNode {
@@ -20,9 +22,12 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	protected override awake(): void {
+	protected awake(): void {
+		this.scene.entiteControllable = this.scene.groupe_allies.getByName('huipat') as BaseEntites;
+	}
 
-		this.executeChildren();
+	get scene(): Niveau1 {
+        return super.scene as Niveau1;
 	}
 
 	/* END-USER-CODE */

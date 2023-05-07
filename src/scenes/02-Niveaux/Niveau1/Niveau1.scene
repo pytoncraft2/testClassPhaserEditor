@@ -14,15 +14,35 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "1b7884ff-323a-419f-a750-6cf047b588d8",
-            "label": "guapen",
+            "type": "Container",
+            "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
+            "label": "groupe_allies",
+            "scope": "PUBLIC",
             "components": [],
-            "texture": {
-                "key": "guapen"
-            },
-            "x": 536,
-            "y": 192,
+            "list": [
+                {
+                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
+                    "id": "48d581f0-8f00-48fb-8e79-a41c4317481c",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "components": [],
+                    "x": 496,
+                    "y": 285,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "db74e562-8d19-487e-9af3-6550982c7f23",
+            "label": "onSceneAwakeScript",
+            "components": [],
+            "nestedPrefabs": [],
             "list": []
         }
     ],
