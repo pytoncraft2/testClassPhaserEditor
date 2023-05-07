@@ -31,6 +31,9 @@ export default class ChangeTextureScript extends ScriptNode {
 
 	override execute(args?: any): void {
 		console.log("EXEC");
+		//@ts-ignore
+		this.scene.entiteControllable = this.gameObject.parentContainer
+		
 		
 		// this.gameObject.parentContainer.physiqueEtParametreSpecifique(false)
 		// this.scene.tweens.add({

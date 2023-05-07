@@ -32,7 +32,25 @@
                         "key": "moustique",
                         "frame": "moustique.png"
                     },
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "535b63c6-62fc-45f5-b617-e2da8a8f7e68",
+                            "label": "onPointerDownScript",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": [
+                                {
+                                    "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                                    "id": "078ed0a4-6ad3-4fe2-a8fa-685910205d38",
+                                    "label": "changeTextureScript",
+                                    "components": [],
+                                    "nestedPrefabs": [],
+                                    "list": []
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "type": "Rectangle",
