@@ -45,7 +45,8 @@ export default class Level extends Phaser.Scene {
 
 	create() {
 
-		this.editorCreate();
+		this.scene.start('Niveau1')
+		// this.editorCreate();
 	}
 
 	/* END-USER-CODE */

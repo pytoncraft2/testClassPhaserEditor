@@ -12,7 +12,20 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [],
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1b7884ff-323a-419f-a750-6cf047b588d8",
+            "label": "guapen",
+            "components": [],
+            "texture": {
+                "key": "guapen"
+            },
+            "x": 536,
+            "y": 192,
+            "list": []
+        }
+    ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",

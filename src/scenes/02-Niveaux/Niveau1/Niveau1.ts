@@ -19,6 +19,9 @@ export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
 
+		// guapen
+		this.add.image(536, 192, "guapen");
+
 		this.events.emit("scene-awake");
 	}
 
