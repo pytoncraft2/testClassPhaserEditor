@@ -39,6 +39,9 @@ export default class Huipat extends BaseEntites {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	actionToucheEspace(): void {
+		console.log("ESPACE HHHHHHHHUIPAT");
+	}
 
 	/* END-USER-CODE */
 }
