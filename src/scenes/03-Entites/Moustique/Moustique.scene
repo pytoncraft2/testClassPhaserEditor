@@ -25,7 +25,8 @@
                 {
                     "type": "Image",
                     "id": "ba7303da-d47e-42b6-9b27-1418773ff7b0",
-                    "label": "moustique_png",
+                    "label": "image_entite",
+                    "scope": "NESTED_PREFAB",
                     "components": [],
                     "texture": {
                         "key": "moustique",
@@ -46,6 +47,23 @@
                     "width": 128,
                     "height": 128,
                     "list": []
+                },
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "389555ec-1800-4019-886d-4be4d7709246",
+                    "label": "onPointerDownScript",
+                    "components": [],
+                    "nestedPrefabs": [],
+                    "list": [
+                        {
+                            "prefabId": "aff9ad37-9a13-477a-8cd0-c6287e2933d8",
+                            "id": "ddee3cc1-ae48-4bed-8aa3-2122fe7fbde4",
+                            "label": "changeTextureScript",
+                            "components": [],
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ]
                 }
             ]
         }

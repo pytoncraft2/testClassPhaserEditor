@@ -4,6 +4,8 @@
 /* START OF COMPILED CODE */
 
 import BaseEntites from "../BaseEntites";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -20,9 +22,9 @@ export default class Moustique extends BaseEntites {
 		scene.physics.add.existing(this, false);
 		this.body.setSize(64, 64, false);
 
-		// moustique_png
-		const moustique_png = scene.add.image(0, 0, "moustique", "moustique.png");
-		this.add(moustique_png);
+		// image_entite
+		const image_entite = scene.add.image(0, 0, "moustique", "moustique.png");
+		this.add(image_entite);
 
 		// rectangle_1
 		const rectangle_1 = scene.add.rectangle(123, 10, 128, 128);
@@ -31,10 +33,21 @@ export default class Moustique extends BaseEntites {
 		rectangle_1.isFilled = true;
 		this.add(rectangle_1);
 
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(this);
+
+		// changeTextureScript
+		new ChangeTextureScript(onPointerDownScript);
+
+		this.image_entite = image_entite;
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
 		/* END-USER-CTR-CODE */
 	}
+
+	public image_entite: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 
