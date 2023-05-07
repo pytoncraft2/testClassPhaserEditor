@@ -20,6 +20,17 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	actionToucheEspace() {
+		console.log("touche espace")
+	}
+	actionToucheGauche() {
+		console.log("touche gauche")
+	}
+	actionToucheDroite() { }
+	actionToucheHaut() { }
+	actionToucheBas() { }
+	aucuneTouche() { }
+
 
 	/* END-USER-CODE */
 }
