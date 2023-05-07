@@ -1,0 +1,52 @@
+{
+    "id": "b685c081-ee5f-4b67-b583-415922c9e2c4",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreateBase",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [],
+    "plainObjects": [
+        {
+            "id": "8c38a74a-d5e6-45dd-9752-2ba3018a369f",
+            "type": "Keyboard.Key",
+            "label": "toucheEspace"
+        },
+        {
+            "id": "47f9f3ec-8593-4f12-81bb-9492fd6f6a58",
+            "type": "Keyboard.Key",
+            "label": "toucheGauche",
+            "keyCode": "LEFT"
+        },
+        {
+            "id": "9fdedad9-e3c3-4b53-bcc7-0210543f3482",
+            "type": "Keyboard.Key",
+            "label": "toucheDroite",
+            "keyCode": "RIGHT"
+        },
+        {
+            "id": "df2b75b5-9b48-44fa-a7de-8758c571230b",
+            "type": "Keyboard.Key",
+            "label": "toucheHaut",
+            "keyCode": "UP"
+        },
+        {
+            "id": "821a6ac8-7888-47dd-a708-5309280a228f",
+            "type": "Keyboard.Key",
+            "label": "toucheBas",
+            "keyCode": "DOWN"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
