@@ -56,6 +56,20 @@
                     "y": 596,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "4d7a0e3d-d2ab-4981-8f82-6f1f71ef4620",
+                    "id": "3864e186-498e-4a5d-ba83-781b713a4d46",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "moustique_png",
+                    "components": [],
+                    "x": 1283,
+                    "y": 195,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         },
@@ -104,7 +118,16 @@
             "list": []
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "65d398c4-3cb7-441a-920a-44ebb60f3756",
+            "type": "Collider",
+            "label": "platformes_vs_entites",
+            "scope": "METHOD",
+            "object1": "groupe_allies.list",
+            "object2": "platformes.list"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

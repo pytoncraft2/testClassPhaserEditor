@@ -1,0 +1,60 @@
+{
+    "id": "4d7a0e3d-d2ab-4981-8f82-6f1f71ef4620",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseEntites",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "06bb8daa-4bc9-4a5f-8b5d-6a3ddff49092",
+            "label": "container_1",
+            "components": [],
+            "ArcadeComponent.active": true,
+            "body.width": 64,
+            "body.height": 64,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "ba7303da-d47e-42b6-9b27-1418773ff7b0",
+                    "label": "moustique_png",
+                    "components": [],
+                    "texture": {
+                        "key": "moustique",
+                        "frame": "moustique.png"
+                    },
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f0ad7c45-4139-47ca-a85a-926d90cbe2d2",
+                    "label": "rectangle_1",
+                    "components": [],
+                    "x": 123,
+                    "y": 10,
+                    "scaleX": 1.0304625156199587,
+                    "scaleY": 0.08548087789438341,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
