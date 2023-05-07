@@ -39,13 +39,17 @@ export default class Araigne extends BaseEntites {
 		this.add(rectangle);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		this.scene.time.delayedCall(4000, () => this.actionToucheEspace(), undefined, this)
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 
 	// Write your code here.
+	actionToucheEspace(): void {
+		console.log("ACTION ARAIGNE !");
+		this.body.setVelocityY(-80)
+	}
 
 	/* END-USER-CODE */
 }

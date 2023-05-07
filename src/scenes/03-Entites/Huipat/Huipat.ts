@@ -40,6 +40,7 @@ export default class Huipat extends BaseEntites {
 
 	// Write your code here.
 	actionToucheEspace(): void {
+		this.body.setVelocityY(-400)
 		console.log("ESPACE HHHHHHHHUIPAT");
 	}
 
