@@ -40,7 +40,7 @@ export default class Niveau1 extends BaseNiveaux {
 		groupe_adversaires.add(araigne);
 
 		// moustique_png
-		const moustique_png = new Moustique(this, 1283, 195);
+		const moustique_png = new Moustique(this, 871, 299);
 		groupe_adversaires.add(moustique_png);
 
 		// platformes
@@ -58,7 +58,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// platformes_vs_entites
-		this.physics.add.collider(groupe_allies.list, platformes.list);
+		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
 
 		this.groupe_allies = groupe_allies;
 

@@ -4,8 +4,6 @@
 /* START OF COMPILED CODE */
 
 import BaseEntites from "../BaseEntites";
-import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
-import ChangeTextureScript from "../../../script-nodes/ChangeTextureScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -25,12 +23,6 @@ export default class Moustique extends BaseEntites {
 		// image_entite
 		const image_entite = scene.add.image(0, 0, "moustique", "moustique.png");
 		this.add(image_entite);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(image_entite);
-
-		// changeTextureScript
-		new ChangeTextureScript(onPointerDownScript);
 
 		// rectangle_1
 		const rectangle_1 = scene.add.rectangle(123, 10, 128, 128);

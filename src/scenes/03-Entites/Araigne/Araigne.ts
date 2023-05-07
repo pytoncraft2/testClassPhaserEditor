@@ -20,9 +20,9 @@ export default class Araigne extends BaseEntites {
 		scene.physics.add.existing(this, false);
 		this.body.setSize(64, 64, false);
 
-		// araigne_png
-		const araigne_png = scene.add.image(0, 0, "araigne", "araigne.png");
-		this.add(araigne_png);
+		// image_entite
+		const image_entite = scene.add.image(0, 0, "araigne", "araigne.png");
+		this.add(image_entite);
 
 		// rectangle_1
 		const rectangle_1 = scene.add.rectangle(77, -84, 128, 128);

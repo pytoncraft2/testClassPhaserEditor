@@ -66,8 +66,8 @@
                     ],
                     "label": "moustique_png",
                     "components": [],
-                    "x": 1283,
-                    "y": 195,
+                    "x": 871,
+                    "y": 299,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -124,7 +124,7 @@
             "type": "Collider",
             "label": "platformes_vs_entites",
             "scope": "METHOD",
-            "object1": "groupe_allies.list",
+            "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
             "object2": "platformes.list"
         }
     ],
