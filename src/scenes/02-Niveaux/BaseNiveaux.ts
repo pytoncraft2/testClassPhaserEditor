@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Bouton from "../Boutons/Bouton";
 /* START-USER-IMPORTS */
 import BaseEntites from "../03-Entites/BaseEntites";
 /* END-USER-IMPORTS */
@@ -26,6 +27,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// toucheBas
 		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
+
+		// bouton
+		const bouton = new Bouton(this, 320, 880);
+		this.add.existing(bouton);
 
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
