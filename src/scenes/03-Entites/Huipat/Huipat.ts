@@ -18,23 +18,31 @@ export default class Huipat extends BaseEntites {
 		super(scene, x ?? 120, y ?? 124);
 
 		scene.physics.add.existing(this, false);
-		this.body.setSize(64, 64, false);
+		this.body.setOffset(-74, -81);
+		this.body.setSize(148, 162, false);
 
-		// huipat_png
-		const huipat_png = scene.add.image(0, 0, "huipat", "huipat.png");
-		this.add(huipat_png);
+		// image
+		const image = scene.add.image(0, 0, "huipat", "huipat.png");
+		this.add(image);
 
-		// detection_proche
-		const detection_proche = scene.add.rectangle(69, 3, 128, 128);
-		detection_proche.scaleX = 0.6252600982434391;
-		detection_proche.scaleY = 1.1514195485615129;
-		detection_proche.isFilled = true;
-		this.add(detection_proche);
+		// detecteur_proche
+		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128);
+		detecteur_proche.scaleX = 0.6879210867196743;
+		detecteur_proche.scaleY = 1.1424662876249119;
+		detecteur_proche.alpha = 0.5;
+		detecteur_proche.isFilled = true;
+		this.add(detecteur_proche);
+
+		this.image = image;
+		this.detecteur_proche = detecteur_proche;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
+
+	public image: Phaser.GameObjects.Image;
+	public detecteur_proche: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 

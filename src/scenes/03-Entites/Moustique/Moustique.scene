@@ -19,13 +19,15 @@
             "label": "container_1",
             "components": [],
             "ArcadeComponent.active": true,
-            "body.width": 64,
-            "body.height": 64,
+            "body.width": 235.94960099967736,
+            "body.height": 81,
+            "body.offset.x": -47,
+            "body.offset.y": -40.5,
             "list": [
                 {
                     "type": "Image",
                     "id": "ba7303da-d47e-42b6-9b27-1418773ff7b0",
-                    "label": "image_entite",
+                    "label": "image",
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "texture": {

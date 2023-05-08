@@ -18,25 +18,12 @@ export default class Araigne extends BaseEntites {
 		super(scene, x ?? 142, y ?? 72);
 
 		scene.physics.add.existing(this, false);
-		this.body.setSize(64, 64, false);
+		this.body.setOffset(-114, -39.5);
+		this.body.setSize(228, 79, false);
 
-		// image_entite
-		const image_entite = scene.add.image(0, 0, "araigne", "araigne.png");
-		this.add(image_entite);
-
-		// rectangle_1
-		const rectangle_1 = scene.add.rectangle(77, -84, 128, 128);
-		rectangle_1.scaleX = 1.0086123917826166;
-		rectangle_1.scaleY = 0.150827636251598;
-		rectangle_1.isFilled = true;
-		this.add(rectangle_1);
-
-		// rectangle
-		const rectangle = scene.add.rectangle(219, -3, 128, 128);
-		rectangle.scaleX = 1.0086123917826166;
-		rectangle.scaleY = 0.150827636251598;
-		rectangle.isFilled = true;
-		this.add(rectangle);
+		// image
+		const image = scene.add.image(0, 0, "araigne", "araigne.png");
+		this.add(image);
 
 		/* START-USER-CTR-CODE */
 		this.scene.time.delayedCall(4000, () => this.actionToucheEspace(), undefined, this)

@@ -18,11 +18,12 @@ export default class Moustique extends BaseEntites {
 		super(scene, x ?? 0, y ?? 0);
 
 		scene.physics.add.existing(this, false);
-		this.body.setSize(64, 64, false);
+		this.body.setOffset(-47, -40.5);
+		this.body.setSize(235.94960099967736, 81, false);
 
-		// image_entite
-		const image_entite = scene.add.image(0, 0, "moustique", "moustique.png");
-		this.add(image_entite);
+		// image
+		const image = scene.add.image(0, 0, "moustique", "moustique.png");
+		this.add(image);
 
 		// rectangle_1
 		const rectangle_1 = scene.add.rectangle(123, 10, 128, 128);
@@ -31,15 +32,15 @@ export default class Moustique extends BaseEntites {
 		rectangle_1.isFilled = true;
 		this.add(rectangle_1);
 
-		this.image_entite = image_entite;
+		this.image = image;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.body.setSize(this.image_entite.frame.width, this.image_entite.height)
+		this.body.setSize(this.image.frame.width, this.image.height)
 		/* END-USER-CTR-CODE */
 	}
 
-	public image_entite: Phaser.GameObjects.Image;
+	public image: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 
