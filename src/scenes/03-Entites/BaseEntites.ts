@@ -31,8 +31,12 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	actionToucheDroite() {
 		(this.body as any).setVelocityX(300);
 	}
-	actionToucheHaut() { }
-	actionToucheBas() { }
+	actionToucheHaut() {
+		(this.body as any).setVelocityY(-900);
+	}
+	actionToucheBas() {
+		(this.body as any).setVelocityY(900);
+	}
 	aucuneTouche() {
 		(this.body as any).setVelocityX(0);
 	}

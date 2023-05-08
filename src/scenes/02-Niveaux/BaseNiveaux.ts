@@ -88,10 +88,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private basAppuie = false;
 	private espaceAppuie = false;
 	private espaceAppuieTouch = false;
-	private isMobile = true;
+	private isMobile = false;
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false)
+		this.input.addPointer(3);
 	}
 
 	update(time: number, delta: number): void {
@@ -107,7 +108,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			this.espaceAppuie = this.espaceAppuie || this.isKeyDown(this.toucheEspace) || this.espaceAppuieTouch;
 		}
 
-		if (this.toucheJustePresse(this.toucheEspace)) {
+		if (this.toucheJustePresse(this.toucheEspace) || this.espaceAppuie) {
 			// touche espace ou touche d'attaque
 			this.entiteControllable.actionToucheEspace()
 		}
@@ -131,7 +132,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			else if (this.toucheJustePresse(this.toucheBas)) { this.entiteControllable.actionToucheBas(); }
 			else { this.entiteControllable.aucuneTouche() }
 
-			if (this.toucheJustePresse(this.toucheHaut)) {
+			if (this.toucheJustePresse(this.toucheHaut) || this.hautAppuie) {
 				this.entiteControllable.actionToucheHaut();
 			}
 		}
