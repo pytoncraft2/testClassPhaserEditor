@@ -51,12 +51,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	// Write your code here
 	public entiteControllable!: BaseEntites
-	private leftDown = false;
-	private rightDown = false;
-	private upDown = false;
-	private downDown = false;
-	private spaceDown = false;
-	private spaceDownTouch = false;
+	private gaucheAppuie = false;
+	private droiteAppuie = false;
+	private hautAppuie = false;
+	private basAppuie = false;
+	private espaceAppuie = false;
+	private espaceAppuieTouch = false;
 	private isMobile = false;
 	init() {
 		this.editorCreateBase();
@@ -68,12 +68,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	observeToucheDeplacement() {
-		this.leftDown = this.leftDown || this.isKeyDown(this.toucheGauche);
-		this.rightDown = this.rightDown || this.isKeyDown(this.toucheDroite);
-		this.upDown = this.upDown || this.isKeyDown(this.toucheHaut);
-		this.downDown = this.downDown || this.isKeyDown(this.toucheBas);
+		this.gaucheAppuie = this.gaucheAppuie || this.isKeyDown(this.toucheGauche);
+		this.droiteAppuie = this.droiteAppuie || this.isKeyDown(this.toucheDroite);
+		this.hautAppuie = this.hautAppuie || this.isKeyDown(this.toucheHaut);
+		this.basAppuie = this.basAppuie || this.isKeyDown(this.toucheBas);
 		if (this.isMobile) {
-			this.spaceDown = this.spaceDown || this.isKeyDown(this.toucheEspace) || this.spaceDownTouch;
+			this.espaceAppuie = this.espaceAppuie || this.isKeyDown(this.toucheEspace) || this.espaceAppuieTouch;
 		}
 
 		if (this.toucheJustePresse(this.toucheEspace)) {
@@ -87,16 +87,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (this.isMobile) {
-			if (this.spaceDown) {
+			if (this.espaceAppuie) {
 				// this.entiteControllable.envoieProjectileToile()
-				this.spaceDown = false;
+				this.espaceAppuie = false;
 			}
 		}
 
 
 		if (this.entiteControllable) {
-			if (this.leftDown) { this.entiteControllable.actionToucheGauche() }
-			else if (this.rightDown) { this.entiteControllable.actionToucheDroite() }
+			if (this.gaucheAppuie) { this.entiteControllable.actionToucheGauche() }
+			else if (this.droiteAppuie) { this.entiteControllable.actionToucheDroite() }
 			else if (this.toucheJustePresse(this.toucheBas)) { this.entiteControllable.actionToucheBas(); }
 			else { this.entiteControllable.aucuneTouche() }
 
@@ -106,7 +106,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (!this.isMobile) {
-			this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = this.spaceDownTouch = false;
+			this.gaucheAppuie = this.droiteAppuie = this.hautAppuie = this.basAppuie = this.espaceAppuie = this.espaceAppuieTouch = false;
 		}
 	}
 

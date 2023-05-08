@@ -14,6 +14,17 @@ export default class Bouton extends Phaser.GameObjects.Image {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.setInteractive();
+		this.on('pointerdown', function(this: any){
+			this.scene[this.direction + 'Appuie'] = true;
+		}, this);
+
+		if (this.direction === "gauche" || "droite" || "haut" || "bas" || "espace") {
+			this.on('pointerup', function (this: any) {
+				this.scene[this.direction + 'Appuie'] = false;
+			}, this);
+
+		}
 		/* END-USER-CTR-CODE */
 	}
 
