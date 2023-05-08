@@ -47,7 +47,9 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformes = this.add.container(0, 0);
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 404, 732);
+		const platformePrefab = new PlatformePrefab(this, 972, 732);
+		platformePrefab.scaleX = 15.181035249767532;
+		platformePrefab.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab);
 
 		// platformePrefab_1

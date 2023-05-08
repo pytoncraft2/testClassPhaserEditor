@@ -84,12 +84,16 @@
                     "id": "436efcb4-f2ea-4e8d-bd7d-9ef9ef30c4f9",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "scaleX",
+                        "scaleY"
                     ],
                     "label": "platformePrefab",
                     "components": [],
-                    "x": 404,
+                    "x": 972,
                     "y": 732,
+                    "scaleX": 15.181035249767532,
+                    "scaleY": 0.20034715589478025,
                     "nestedPrefabs": [],
                     "list": []
                 },

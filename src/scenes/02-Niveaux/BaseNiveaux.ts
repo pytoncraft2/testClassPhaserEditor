@@ -88,7 +88,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private basAppuie = false;
 	private espaceAppuie = false;
 	private espaceAppuieTouch = false;
-	private isMobile = false;
+	private isMobile = true;
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false)
