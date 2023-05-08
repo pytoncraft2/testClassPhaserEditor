@@ -26,9 +26,12 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		console.log("touche espace base entite")
 	}
 	actionToucheGauche() {
+		
+		(this as any).image.setFlipX(true);
 		(this.body as any).setVelocityX(-300);
 	}
 	actionToucheDroite() {
+		(this as any).image.setFlipX(false);
 		(this.body as any).setVelocityX(300);
 	}
 	actionToucheHaut() {
