@@ -17,12 +17,92 @@
             "id": "b31a517d-971d-47ea-a808-24f3dd8435c7",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "direction"
             ],
             "label": "bouton",
+            "direction": "espace",
             "components": [],
             "x": 320,
             "y": 880,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a9972bfc-8fbd-4f05-860e-13fcb48577ed",
+            "id": "78ba2dbe-73ef-4db9-9be5-237ed8cd4dd4",
+            "unlock": [
+                "x",
+                "y",
+                "texture",
+                "direction"
+            ],
+            "label": "bouton_1",
+            "direction": "droite",
+            "components": [],
+            "texture": {
+                "key": "bouton",
+                "frame": "btn-right"
+            },
+            "x": 1824,
+            "y": 880,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a9972bfc-8fbd-4f05-860e-13fcb48577ed",
+            "id": "5934248e-f0f6-4fce-b08d-b6fb06189d62",
+            "unlock": [
+                "x",
+                "y",
+                "texture",
+                "direction"
+            ],
+            "label": "bouton_2",
+            "direction": "haut",
+            "components": [],
+            "texture": {
+                "key": "bouton",
+                "frame": "btn-up"
+            },
+            "x": 1680,
+            "y": 736,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a9972bfc-8fbd-4f05-860e-13fcb48577ed",
+            "id": "464723f3-005a-43be-8d08-84693239ba63",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "bouton_3",
+            "components": [],
+            "x": 1536,
+            "y": 880,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a9972bfc-8fbd-4f05-860e-13fcb48577ed",
+            "id": "b755c893-19c7-4265-8142-fbf5083041df",
+            "unlock": [
+                "x",
+                "y",
+                "scaleX",
+                "scaleY",
+                "angle",
+                "direction"
+            ],
+            "label": "bouton_4",
+            "direction": "bas",
+            "components": [],
+            "x": 1680,
+            "y": 880,
+            "scaleX": 1,
+            "scaleY": 1,
+            "angle": -90,
             "nestedPrefabs": [],
             "list": []
         }

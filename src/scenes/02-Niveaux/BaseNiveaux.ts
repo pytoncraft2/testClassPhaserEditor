@@ -32,6 +32,37 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const bouton = new Bouton(this, 320, 880);
 		this.add.existing(bouton);
 
+		// bouton_1
+		const bouton_1 = new Bouton(this, 1824, 880, "bouton", "btn-right");
+		this.add.existing(bouton_1);
+
+		// bouton_2
+		const bouton_2 = new Bouton(this, 1680, 736, "bouton", "btn-up");
+		this.add.existing(bouton_2);
+
+		// bouton_3
+		const bouton_3 = new Bouton(this, 1536, 880);
+		this.add.existing(bouton_3);
+
+		// bouton_4
+		const bouton_4 = new Bouton(this, 1680, 880);
+		this.add.existing(bouton_4);
+		bouton_4.scaleX = 1;
+		bouton_4.scaleY = 1;
+		bouton_4.angle = -90;
+
+		// bouton (prefab fields)
+		bouton.direction = "espace";
+
+		// bouton_1 (prefab fields)
+		bouton_1.direction = "droite";
+
+		// bouton_2 (prefab fields)
+		bouton_2.direction = "haut";
+
+		// bouton_4 (prefab fields)
+		bouton_4.direction = "bas";
+
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
