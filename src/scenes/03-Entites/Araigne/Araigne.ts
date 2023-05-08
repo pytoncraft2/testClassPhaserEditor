@@ -25,10 +25,30 @@ export default class Araigne extends BaseEntites {
 		const image = scene.add.image(0, 0, "araigne", "araigne.png");
 		this.add(image);
 
+		// detecteur_haut
+		const detecteur_haut = scene.add.rectangle(128, -133, 128, 128);
+		detecteur_haut.scaleX = 0.19751986297412794;
+		detecteur_haut.scaleY = 0.1622402073862163;
+		detecteur_haut.isFilled = true;
+		this.add(detecteur_haut);
+
+		// detecteur_bas
+		const detecteur_bas = scene.add.rectangle(128, 52, 128, 128);
+		detecteur_bas.scaleX = 0.19751986297412794;
+		detecteur_bas.scaleY = 0.1622402073862163;
+		detecteur_bas.isFilled = true;
+		this.add(detecteur_bas);
+
+		this.detecteur_haut = detecteur_haut;
+		this.detecteur_bas = detecteur_bas;
+
 		/* START-USER-CTR-CODE */
 		this.scene.time.delayedCall(4000, () => this.actionToucheEspace(), undefined, this)
 		/* END-USER-CTR-CODE */
 	}
+
+	public detecteur_haut: Phaser.GameObjects.Rectangle;
+	public detecteur_bas: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 

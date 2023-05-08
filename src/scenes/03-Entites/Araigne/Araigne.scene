@@ -36,6 +36,36 @@
                         "frame": "araigne.png"
                     },
                     "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a664f404-e990-4a15-a158-c85eb482abdf",
+                    "label": "detecteur_haut",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 128,
+                    "y": -133,
+                    "scaleX": 0.19751986297412794,
+                    "scaleY": 0.1622402073862163,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f852966b-ac04-40c6-9148-11ef9044000e",
+                    "label": "detecteur_bas",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 128,
+                    "y": 52,
+                    "scaleX": 0.19751986297412794,
+                    "scaleY": 0.1622402073862163,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
                 }
             ]
         }
