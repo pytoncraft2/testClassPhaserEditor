@@ -36,7 +36,7 @@ export default class Huipat extends BaseEntites {
 		this.add(zone_interaction_proche);
 
 		// groupe_projectile_toiles
-		const groupe_projectile_toiles = scene.add.container(-19, -1);
+		const groupe_projectile_toiles = scene.add.container(0, 0);
 		groupe_projectile_toiles.name = "groupe_projectile_toiles";
 		this.add(groupe_projectile_toiles);
 
@@ -48,6 +48,7 @@ export default class Huipat extends BaseEntites {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		// this.scene.add.group();
 		/* END-USER-CTR-CODE */
 	}
 
@@ -96,12 +97,15 @@ export default class Huipat extends BaseEntites {
 		// if (!this.body.moves) return;
 
 		const { centerX, centerY } = this.image.getBounds();
+		// this.groupe_projectile_toiles.;
+
+		// this.groupe_projectile_toiles.setPosition(centerX, centerY)
 		// var matrix = this.image.getWorldTransformMatrix();
 		// var x = matrix.tx;
 		// var y = matrix.ty;
-		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
+		const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, centerX, centerY));
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
-		// this.groupe_projectile_toiles.add(toile)
+		this.groupe_projectile_toiles.add(toile)
 		// this.scene.add.existing(toile)
 
 		//@ts-ignore
@@ -111,6 +115,13 @@ export default class Huipat extends BaseEntites {
 		// this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
 			// groupe_toiles.remove(toile, true);
 		// }, [toile, this.groupe_projectile_toiles], this.scene);		
+    // const { centerX, centerY } = entite.image_entite.getBounds();
+    // const toile = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
+    // toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
+    // toile.refEntite = entite;
+
+    // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
+    // (entite as any).scene.groupe_projectile_toiles.add(toile);
 	}
 
 	/**

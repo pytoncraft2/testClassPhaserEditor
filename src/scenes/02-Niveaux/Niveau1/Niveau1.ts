@@ -28,9 +28,10 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_allies = this.add.layer();
 
 		// huipat
-		const huipat = new Huipat(this, -573, 235);
+		const huipat = new Huipat(this, 1344, 600);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
+		huipat.image.setOrigin(0.5, 0.5);
 
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(0, 0);

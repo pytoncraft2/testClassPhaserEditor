@@ -34,9 +34,24 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "components": [],
-                    "x": -573,
-                    "y": 235,
-                    "nestedPrefabs": [],
+                    "x": 1344,
+                    "y": 600,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
+                            "id": "da12ba5f-f41f-4c68-b65c-a360f101fbc4",
+                            "unlock": [
+                                "originX",
+                                "originY"
+                            ],
+                            "label": "image",
+                            "components": [],
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
                     "list": []
                 }
             ]
