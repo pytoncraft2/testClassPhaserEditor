@@ -2,6 +2,9 @@
     "id": "0904f7e3-377d-4b1e-887c-6e8316a2d5d2",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
+        "snapWidth": 192,
+        "snapHeight": 200,
         "exportClass": true,
         "autoImport": true,
         "superClassName": "BaseNiveaux",
@@ -30,8 +33,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "components": [],
-                    "x": 496,
-                    "y": 285,
+                    "x": 576,
+                    "y": 600,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -90,8 +93,8 @@
                     ],
                     "label": "platformePrefab",
                     "components": [],
-                    "x": 972,
-                    "y": 732,
+                    "x": 960,
+                    "y": 800,
                     "scaleX": 15.181035249767532,
                     "scaleY": 0.20034715589478025,
                     "nestedPrefabs": [],
@@ -106,8 +109,8 @@
                     ],
                     "label": "platformePrefab_1",
                     "components": [],
-                    "x": 1027,
-                    "y": 426,
+                    "x": 960,
+                    "y": 600,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -138,6 +141,14 @@
             "scope": "METHOD",
             "object1": "groupe_allies.list",
             "object2": "groupe_adversaires.list"
+        },
+        {
+            "id": "ae2e958c-41c1-4749-956c-ca3ed720a4ce",
+            "type": "Collider",
+            "label": "toiles_vs_adversaires",
+            "scope": "METHOD",
+            "object1": "groupe_allies.getByName('huipat')",
+            "object2": "groupe_adversaires.list"
         }
     ],
     "meta": {
@@ -145,5 +156,11 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "lists": [
+        {
+            "id": "d43c7dd6-2af9-46fd-9694-31876776dc37",
+            "label": "qui_colision_avec_toile"
+        }
+    ]
 }

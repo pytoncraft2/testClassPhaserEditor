@@ -28,7 +28,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_allies = this.add.container(0, 0);
 
 		// huipat
-		const huipat = new Huipat(this, 496, 285);
+		const huipat = new Huipat(this, 576, 600);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
 
@@ -47,17 +47,20 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformes = this.add.container(0, 0);
 
 		// platformePrefab
-		const platformePrefab = new PlatformePrefab(this, 972, 732);
+		const platformePrefab = new PlatformePrefab(this, 960, 800);
 		platformePrefab.scaleX = 15.181035249767532;
 		platformePrefab.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab);
 
 		// platformePrefab_1
-		const platformePrefab_1 = new PlatformePrefab(this, 1027, 426);
+		const platformePrefab_1 = new PlatformePrefab(this, 960, 600);
 		platformes.add(platformePrefab_1);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
+
+		// lists
+		const qui_colision_avec_toile: Array<any> = [];
 
 		// platformes_vs_entites
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
@@ -65,12 +68,17 @@ export default class Niveau1 extends BaseNiveaux {
 		// adversaires_vs_allies
 		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
 
+		// toiles_vs_adversaires
+		this.physics.add.collider(groupe_allies.getByName('huipat'), groupe_adversaires.list);
+
 		this.groupe_allies = groupe_allies;
+		this.qui_colision_avec_toile = qui_colision_avec_toile;
 
 		this.events.emit("scene-awake");
 	}
 
 	public groupe_allies!: Phaser.GameObjects.Container;
+	private qui_colision_avec_toile!: Array<any>;
 
 	/* START-USER-CODE */
 
