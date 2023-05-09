@@ -114,6 +114,14 @@
             ]
         },
         {
+            "type": "Container",
+            "id": "204904fa-f768-4b22-a0aa-8066fc382788",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",
