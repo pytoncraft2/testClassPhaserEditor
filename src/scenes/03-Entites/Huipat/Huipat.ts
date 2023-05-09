@@ -35,8 +35,14 @@ export default class Huipat extends BaseEntites {
 		zone_interaction_proche.isFilled = true;
 		this.add(zone_interaction_proche);
 
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = scene.add.container(-19, -1);
+		groupe_projectile_toiles.name = "groupe_projectile_toiles";
+		this.add(groupe_projectile_toiles);
+
 		this.image = image;
 		this.zone_interaction_proche = zone_interaction_proche;
+		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -47,6 +53,7 @@ export default class Huipat extends BaseEntites {
 
 	public image: Phaser.GameObjects.Image;
 	public zone_interaction_proche: Phaser.GameObjects.Rectangle;
+	public groupe_projectile_toiles: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 

@@ -10,8 +10,8 @@
         "preloadPackFiles": [],
         "createMethodName": "",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 148,
-        "borderHeight": 162
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -54,6 +54,17 @@
                     "isFilled": true,
                     "width": 128,
                     "height": 128,
+                    "list": []
+                },
+                {
+                    "type": "Container",
+                    "id": "433b47b5-e3c1-4abd-85db-301e140945df",
+                    "label": "groupe_projectile_toiles",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": -19,
+                    "y": -1,
                     "list": []
                 }
             ]

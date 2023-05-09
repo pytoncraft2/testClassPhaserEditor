@@ -27,19 +27,10 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_allies
 		const groupe_allies = this.add.layer();
 
-		// allies
-		const allies = this.add.container(0, 0);
-		groupe_allies.add(allies);
-
 		// huipat
 		const huipat = new Huipat(this, -573, 235);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
-
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 0);
-		groupe_projectile_toiles.name = "groupe_projectile_toiles";
-		groupe_allies.add(groupe_projectile_toiles);
 
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(0, 0);
@@ -78,10 +69,9 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
 
 		// toiles_vs_adversaires
-		this.physics.add.collider(groupe_projectile_toiles.list, groupe_adversaires.list);
+		this.physics.add.collider(groupe_adversaires.list , huipat.groupe_projectile_toiles.list, undefined, undefined, huipat);
 
 		this.huipat = huipat;
-		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
 		this.qui_colision_avec_toile = qui_colision_avec_toile;
@@ -90,7 +80,6 @@ export default class Niveau1 extends BaseNiveaux {
 	}
 
 	public huipat!: Huipat;
-	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	public groupe_allies!: Phaser.GameObjects.Layer;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	private qui_colision_avec_toile!: Array<any>;

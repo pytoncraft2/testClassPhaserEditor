@@ -29,10 +29,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		// Write your code here.
 		//@ts-ignore
 		//@ts-ignore
-		// console.log(this.scene.groupe_allies.getByName('huipat').groupe_projectile_toiles.add(this))
+		this.scene.groupe_allies.getByName('huipat').groupe_projectile_toiles.add(this, true);
 		// this.scene.add.existing(this)
 		//@ts-ignore
-		this.scene.groupe_allies.getByName('groupe_projectile_toiles').add(this, true);
+		// this.scene.groupe_allies.getByName('huipat').add(this, true);
 		/* END-USER-CTR-CODE */
 	}
 
