@@ -4,6 +4,7 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "generateAwakeHandler": true,
         "superClassName": "BaseEntites",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -21,6 +22,7 @@
             "x": 120,
             "y": 124,
             "ArcadeComponent.active": true,
+            "collideWorldBounds": true,
             "body.width": 148,
             "body.height": 162,
             "body.offset.x": -74,
@@ -41,7 +43,7 @@
                 {
                     "type": "Rectangle",
                     "id": "dfecd66b-b58e-45f0-a0bf-68324c17fb3a",
-                    "label": "detecteur_proche",
+                    "label": "zone_interaction_proche",
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 66,

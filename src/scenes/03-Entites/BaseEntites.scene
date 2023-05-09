@@ -26,5 +26,37 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "velociteY",
+            "label": "velociteY",
+            "tooltip": "puissance du saut en Y",
+            "defValue": 890,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "graviteY",
+            "label": "graviteY",
+            "tooltip": "gravite par défaut du joueur",
+            "defValue": 1000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "velociteX",
+            "label": "velociteX",
+            "tooltip": "vitesse de déplacement en X",
+            "defValue": 350,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

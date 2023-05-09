@@ -18,6 +18,7 @@ export default class Huipat extends BaseEntites {
 		super(scene, x ?? 120, y ?? 124);
 
 		scene.physics.add.existing(this, false);
+		this.body.collideWorldBounds = true;
 		this.body.setOffset(-74, -81);
 		this.body.setSize(148, 162, false);
 
@@ -25,16 +26,18 @@ export default class Huipat extends BaseEntites {
 		const image = scene.add.image(0, 0, "huipat", "huipat.png");
 		this.add(image);
 
-		// detecteur_proche
-		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128);
-		detecteur_proche.scaleX = 0.6879210867196743;
-		detecteur_proche.scaleY = 1.1424662876249119;
-		detecteur_proche.alpha = 0.5;
-		detecteur_proche.isFilled = true;
-		this.add(detecteur_proche);
+		// zone_interaction_proche
+		const zone_interaction_proche = scene.add.rectangle(66, -4, 128, 128);
+		zone_interaction_proche.scaleX = 0.6879210867196743;
+		zone_interaction_proche.scaleY = 1.1424662876249119;
+		zone_interaction_proche.alpha = 0.5;
+		zone_interaction_proche.isFilled = true;
+		this.add(zone_interaction_proche);
 
 		this.image = image;
-		this.detecteur_proche = detecteur_proche;
+		this.zone_interaction_proche = zone_interaction_proche;
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -42,16 +45,56 @@ export default class Huipat extends BaseEntites {
 	}
 
 	public image: Phaser.GameObjects.Image;
-	public detecteur_proche: Phaser.GameObjects.Rectangle;
+	public zone_interaction_proche: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
 	// Write your code here.
-	actionToucheEspace(): void {
-		this.body.setVelocityY(-400)
-		console.log("ESPACE HHHHHHHHUIPAT");
+	actionToucheHaut(): void {
+		if (!this.body.touching.down) return;
+		this.body.checkCollision.none = true;
+		this.body.setVelocityY(-this.velociteY);
+		this.scene.time.delayedCall(500, () => (this.body.checkCollision.none = false), undefined, this);
 	}
 
+	actionToucheDroite() {
+		this.body.setVelocityX(this.velociteX);
+		this.FlipX(false)
+		this.zoneInteractionADroite()
+	}
+	actionToucheGauche() {
+		this.body.setVelocityX(-this.velociteX)
+		this.FlipX(true)
+		this.ZoneInteractionAGauche()
+	}
+	actionToucheBas(): any {
+		this.body.checkCollision.none = true;
+		this.body.setVelocityY(this.velociteY)
+		this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), undefined, this);  // delay in ms
+	}
+
+	/**
+	 * @description déplace à droite de l'image, le rectangle qui permet de détecter une autre entité 
+	 */
+	zoneInteractionADroite() {
+		if (this.zone_interaction_proche.x != this.image.getRightCenter().x)
+			this.zone_interaction_proche.setPosition(this.image.getRightCenter().x, this.image.getRightCenter().y);
+	}
+
+	/**
+	 * @description déplace à gauche de l'image, le rectangle qui permet de détecter une autre entité 
+	 */
+	ZoneInteractionAGauche() {
+		if (this.zone_interaction_proche.x != this.image.getLeftCenter().x)
+			this.zone_interaction_proche.setPosition(this.image.getLeftCenter().x, this.image.getLeftCenter().y);
+	}
+
+	/**
+	 * @param ouiNon retourne l'image de l'entité vers la droite(false) ou vers la gauche(true)
+	 */
+	FlipX(ouiNon: boolean) {
+		this.image.setFlipX(ouiNon);
+	}
 	/* END-USER-CODE */
 }
 

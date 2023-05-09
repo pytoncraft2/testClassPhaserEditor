@@ -1,5 +1,9 @@
 
 // You can write more code here
+export default interface BaseEntites {
+
+	body: Phaser.Physics.Arcade.Body;
+}
 
 /* START OF COMPILED CODE */
 
@@ -17,16 +21,21 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	public velociteY: number = 890;
+	public graviteY: number = 1000;
+	public velociteX: number = 350;
+
 	/* START-USER-CODE */
 
-	init() {
-	}
 	// Write your code here.
+	awake() {
+		this.body.gravity.y = this.graviteY;
+	}
+
 	actionToucheEspace() {
 		console.log("touche espace base entite")
 	}
 	actionToucheGauche() {
-		
 		(this as any).image.setFlipX(true);
 		(this.body as any).setVelocityX(-300);
 	}

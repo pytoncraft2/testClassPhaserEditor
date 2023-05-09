@@ -117,10 +117,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 			this.entiteControllable.actionToucheEspace()
 		}
 
-		if (this.toucheJusteReleve(this.toucheEspace)) {
-			// touche espace ou touche d'attaque
-			this.entiteControllable.actionToucheEspace()
-		}
+		// if (this.toucheJusteReleve(this.toucheEspace)) {
+		// 	// touche espace ou touche d'attaque
+		// 	this.entiteControllable.actionToucheEspace()
+		// }
 
 		if (this.estUnMobile) {
 			if (this.espaceAppuie) {
