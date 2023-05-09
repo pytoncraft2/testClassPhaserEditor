@@ -143,11 +143,11 @@
             "object2": "groupe_adversaires.list"
         },
         {
-            "id": "ae2e958c-41c1-4749-956c-ca3ed720a4ce",
+            "id": "9c5c950c-c312-4dc7-ace0-83bcfb7dade5",
             "type": "Collider",
             "label": "toiles_vs_adversaires",
             "scope": "METHOD",
-            "object1": "groupe_allies.getByName('huipat')",
+            "object1": "(groupe_allies.getByName('huipat') as any).groupe_projectile_toiles.list",
             "object2": "groupe_adversaires.list"
         }
     ],

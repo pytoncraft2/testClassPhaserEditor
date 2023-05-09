@@ -55,6 +55,16 @@
                     "width": 128,
                     "height": 128,
                     "list": []
+                },
+                {
+                    "type": "Container",
+                    "id": "4fe6a60d-ea63-4f7d-ba16-2d2f027b3c90",
+                    "label": "groupe_projectile_toiles",
+                    "scope": "PUBLIC",
+                    "components": [],
+                    "x": -120,
+                    "y": -124,
+                    "list": []
                 }
             ]
         }

@@ -69,7 +69,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
 
 		// toiles_vs_adversaires
-		this.physics.add.collider(groupe_allies.getByName('huipat'), groupe_adversaires.list);
+		this.physics.add.collider((groupe_allies.getByName('huipat') as any).groupe_projectile_toiles.list, groupe_adversaires.list);
 
 		this.groupe_allies = groupe_allies;
 		this.qui_colision_avec_toile = qui_colision_avec_toile;

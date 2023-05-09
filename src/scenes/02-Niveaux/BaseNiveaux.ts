@@ -56,9 +56,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		bouton_4.scaleY = 1;
 		bouton_4.angle = -90;
 
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 0);
-
 		// bouton (prefab fields)
 		bouton.direction = "espace";
 
@@ -71,7 +68,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// bouton_4 (prefab fields)
 		bouton_4.direction = "bas";
 
-		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -81,7 +77,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
