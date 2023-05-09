@@ -105,6 +105,14 @@
             "angle": -90,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "type": "Container",
+            "id": "56e60b55-4514-4286-b429-3d65795cdb83",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
         }
     ],
     "plainObjects": [

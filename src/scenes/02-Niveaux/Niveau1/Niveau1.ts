@@ -56,9 +56,6 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformePrefab_1 = new PlatformePrefab(this, 1027, 426);
 		platformes.add(platformePrefab_1);
 
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 0);
-
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
@@ -66,13 +63,11 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
 
 		this.groupe_allies = groupe_allies;
-		this.groupe_projectile_toiles = groupe_projectile_toiles;
 
 		this.events.emit("scene-awake");
 	}
 
 	public groupe_allies!: Phaser.GameObjects.Container;
-	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 
