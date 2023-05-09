@@ -3,9 +3,9 @@
 
 /* START OF COMPILED CODE */
 
-import ToileHuipatPrefab from "~/scenes/04-Projectiles/ToileHuipatPrefab";
 import BaseEntites from "../BaseEntites";
 /* START-USER-IMPORTS */
+import ToileHuipatPrefab from "../../04-Projectiles/ToileHuipatPrefab";
 /* END-USER-IMPORTS */
 
 export default interface Huipat {
