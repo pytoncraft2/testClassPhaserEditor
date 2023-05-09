@@ -10,8 +10,8 @@
         "preloadPackFiles": [],
         "createMethodName": "",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1920,
-        "borderHeight": 1080
+        "borderWidth": 148,
+        "borderHeight": 162
     },
     "displayList": [
         {
@@ -19,8 +19,8 @@
             "id": "52692af4-e603-4549-8016-16fefc991658",
             "label": "container_1",
             "components": [],
-            "x": 120,
-            "y": 124,
+            "x": 77,
+            "y": 82,
             "ArcadeComponent.active": true,
             "collideWorldBounds": true,
             "body.width": 148,
@@ -54,16 +54,6 @@
                     "isFilled": true,
                     "width": 128,
                     "height": 128,
-                    "list": []
-                },
-                {
-                    "type": "Container",
-                    "id": "4fe6a60d-ea63-4f7d-ba16-2d2f027b3c90",
-                    "label": "groupe_projectile_toiles",
-                    "scope": "PUBLIC",
-                    "components": [],
-                    "x": -120,
-                    "y": -124,
                     "list": []
                 }
             ]

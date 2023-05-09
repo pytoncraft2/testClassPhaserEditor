@@ -17,25 +17,42 @@
     },
     "displayList": [
         {
-            "type": "Container",
+            "type": "Layer",
             "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
             "label": "groupe_allies",
             "scope": "PUBLIC",
             "components": [],
             "list": [
                 {
+                    "type": "Container",
+                    "id": "d5079d20-68ef-4c3e-b8fb-302714827504",
+                    "label": "allies",
+                    "components": [],
+                    "list": []
+                },
+                {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
-                    "id": "48d581f0-8f00-48fb-8e79-a41c4317481c",
+                    "id": "3648cfb5-491d-43a4-96bd-104aba60d9b5",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "huipat",
                     "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "components": [],
-                    "x": 576,
-                    "y": 600,
+                    "x": -573,
+                    "y": 235,
                     "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "type": "Container",
+                    "id": "92676fb4-3ab1-4350-af70-bd997292c026",
+                    "label": "groupe_projectile_toiles",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "components": [],
                     "list": []
                 }
             ]
@@ -44,6 +61,7 @@
             "type": "Container",
             "id": "e1dcddaf-e967-413a-9b0c-8f47269e902b",
             "label": "groupe_adversaires",
+            "scope": "PUBLIC",
             "components": [],
             "list": [
                 {
@@ -147,7 +165,7 @@
             "type": "Collider",
             "label": "toiles_vs_adversaires",
             "scope": "METHOD",
-            "object1": "(groupe_allies.getByName('huipat') as any).groupe_projectile_toiles.list",
+            "object1": "groupe_projectile_toiles.list",
             "object2": "groupe_adversaires.list"
         }
     ],

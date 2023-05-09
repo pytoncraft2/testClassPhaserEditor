@@ -16,7 +16,7 @@ export default interface Huipat {
 export default class Huipat extends BaseEntites {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 120, y ?? 124);
+		super(scene, x ?? 77, y ?? 82);
 
 		scene.physics.add.existing(this, false);
 		this.body.collideWorldBounds = true;
@@ -35,13 +35,8 @@ export default class Huipat extends BaseEntites {
 		zone_interaction_proche.isFilled = true;
 		this.add(zone_interaction_proche);
 
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = scene.add.container(-120, -124);
-		this.add(groupe_projectile_toiles);
-
 		this.image = image;
 		this.zone_interaction_proche = zone_interaction_proche;
-		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -52,7 +47,6 @@ export default class Huipat extends BaseEntites {
 
 	public image: Phaser.GameObjects.Image;
 	public zone_interaction_proche: Phaser.GameObjects.Rectangle;
-	public groupe_projectile_toiles: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 
@@ -92,16 +86,24 @@ export default class Huipat extends BaseEntites {
 		// 		(this as any).scene.groupe_projectile_toiles.remove(toile, true)
 		// 	}
 		// }, undefined, this.scene);
-		if (!this.body.moves) return;
+		// if (!this.body.moves) return;
 
 		const { centerX, centerY } = this.image.getBounds();
+		// var matrix = this.image.getWorldTransformMatrix();
+		// var x = matrix.tx;
+		// var y = matrix.ty;
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
-		this.groupe_projectile_toiles.add(toile);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
+		// this.groupe_projectile_toiles.add(toile)
+		// this.scene.add.existing(toile)
 
-		this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			groupe_toiles.remove(toile, true);
-		}, [toile, this.groupe_projectile_toiles], this.scene);		
+		//@ts-ignore
+		// this.scene.groupe_allies.getByName('groupe_projectile_toiles');
+
+
+		// this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
+			// groupe_toiles.remove(toile, true);
+		// }, [toile, this.groupe_projectile_toiles], this.scene);		
 	}
 
 	/**

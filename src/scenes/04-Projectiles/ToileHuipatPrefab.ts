@@ -15,7 +15,7 @@ export default interface ToileHuipatPrefab {
 export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "huipat", frame ?? "toile.png");
+		super(scene, x ?? 1, y ?? 1, texture || "huipat", frame ?? "toile.png");
 
 		this.name = "toile";
 		this.scaleX = 0.5511987696365707;
@@ -27,6 +27,12 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		//@ts-ignore
+		//@ts-ignore
+		// console.log(this.scene.groupe_allies.getByName('huipat').groupe_projectile_toiles.add(this))
+		// this.scene.add.existing(this)
+		//@ts-ignore
+		this.scene.groupe_allies.getByName('groupe_projectile_toiles').add(this, true);
 		/* END-USER-CTR-CODE */
 	}
 
