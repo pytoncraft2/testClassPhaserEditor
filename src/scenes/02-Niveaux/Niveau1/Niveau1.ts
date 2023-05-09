@@ -62,6 +62,9 @@ export default class Niveau1 extends BaseNiveaux {
 		// platformes_vs_entites
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
 
+		// adversaires_vs_allies
+		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
+
 		this.groupe_allies = groupe_allies;
 
 		this.events.emit("scene-awake");

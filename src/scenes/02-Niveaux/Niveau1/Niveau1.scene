@@ -130,6 +130,14 @@
             "scope": "METHOD",
             "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
             "object2": "platformes.list"
+        },
+        {
+            "id": "9da5d074-9381-4263-906d-93660479b5f3",
+            "type": "Collider",
+            "label": "adversaires_vs_allies",
+            "scope": "METHOD",
+            "object1": "groupe_allies.list",
+            "object2": "groupe_adversaires.list"
         }
     ],
     "meta": {
