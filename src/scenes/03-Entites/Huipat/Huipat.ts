@@ -3,6 +3,7 @@
 
 /* START OF COMPILED CODE */
 
+import ToileHuipatPrefab from "~/scenes/04-Projectiles/ToileHuipatPrefab";
 import BaseEntites from "../BaseEntites";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -71,6 +72,30 @@ export default class Huipat extends BaseEntites {
 		this.body.checkCollision.none = true;
 		this.body.setVelocityY(this.velociteY)
 		this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), undefined, this);  // delay in ms
+	}
+
+	actionToucheEspace(): void {
+		// const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, centerX, centerY));
+		// toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
+		// toile.refEntite = this;
+
+		// // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
+		// (this as any).scene.groupe_projectile_toiles.add(toile);
+		// this.scene.time.delayedCall(500, () => {
+		// 	if (!toile.aUneRef) {
+		// 		(this as any).scene.groupe_projectile_toiles.remove(toile, true)
+		// 	}
+		// }, undefined, this.scene);
+		if (!this.body.moves) return;
+
+		const { centerX, centerY } = this.image.getBounds();
+		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
+		(this.scene as any).groupe_projectile_toiles.add(toile);
+		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
+
+		this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
+			groupe_toiles.remove(toile, true);
+		}, [toile, (this.scene as any).groupe_projectile_toiles], this.scene);		
 	}
 
 	/**
