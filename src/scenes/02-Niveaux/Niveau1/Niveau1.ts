@@ -91,7 +91,6 @@ export default class Niveau1 extends BaseNiveaux {
 
 	create() {
 
-		this.cameras.main.setZoom(0.4)
 		this.editorCreate();
 	}
 

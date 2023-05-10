@@ -13,40 +13,24 @@
     },
     "displayList": [
         {
-            "type": "Container",
-            "id": "b0f0489e-4374-421c-9c13-f6eed3cf6262",
-            "label": "container_2",
+            "type": "Sprite",
+            "id": "f4e792a0-849d-4c14-b1f1-f079c9717fd8",
+            "label": "toile",
+            "useGameObjectName": true,
+            "scope": "NESTED_PREFAB",
             "components": [],
+            "texture": {
+                "key": "huipat",
+                "frame": "toile.png"
+            },
+            "scaleX": 0.5511987696365707,
+            "scaleY": 0.14119420138560307,
             "ArcadeComponent.active": true,
-            "body.width": 64,
-            "body.height": 64,
-            "list": [
-                {
-                    "type": "Container",
-                    "id": "e00f00a3-2a70-45ec-8501-1a0c7e77013f",
-                    "label": "toile",
-                    "useGameObjectName": true,
-                    "scope": "NESTED_PREFAB",
-                    "components": [],
-                    "list": [
-                        {
-                            "type": "Sprite",
-                            "id": "6bbabd42-978e-46ce-9807-fdf01d4af1f0",
-                            "label": "toile_sprite",
-                            "useGameObjectName": true,
-                            "scope": "NESTED_PREFAB",
-                            "components": [],
-                            "texture": {
-                                "key": "huipat",
-                                "frame": "toile.png"
-                            },
-                            "scaleX": 0.5511987696365707,
-                            "scaleY": 0.14119420138560307,
-                            "list": []
-                        }
-                    ]
-                }
-            ]
+            "body.gravity.y": 400,
+            "pushable": false,
+            "body.width": 150,
+            "body.height": 150,
+            "list": []
         }
     ],
     "plainObjects": [],
