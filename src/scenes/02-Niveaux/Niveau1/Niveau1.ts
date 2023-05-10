@@ -25,10 +25,10 @@ export default class Niveau1 extends BaseNiveaux {
 	editorCreate(): void {
 
 		// groupe_allies
-		const groupe_allies = this.add.layer();
+		const groupe_allies = this.add.container(1152, 400);
 
 		// huipat
-		const huipat = new Huipat(this, 1344, 600);
+		const huipat = new Huipat(this, 0, 0);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
 		huipat.image.setOrigin(0.5, 0.5);
@@ -81,7 +81,7 @@ export default class Niveau1 extends BaseNiveaux {
 	}
 
 	public huipat!: Huipat;
-	public groupe_allies!: Phaser.GameObjects.Layer;
+	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	private qui_colision_avec_toile!: Array<any>;
 

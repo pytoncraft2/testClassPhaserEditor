@@ -16,7 +16,7 @@ export default interface Huipat {
 export default class Huipat extends BaseEntites {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 77, y ?? 82);
+		super(scene, x ?? 0, y ?? 1);
 
 		scene.physics.add.existing(this, false);
 		this.body.collideWorldBounds = true;
@@ -103,7 +103,7 @@ export default class Huipat extends BaseEntites {
 		// var matrix = this.image.getWorldTransformMatrix();
 		// var x = matrix.tx;
 		// var y = matrix.ty;
-		const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, centerX, centerY));
+		const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, 0, 0));
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
 		this.groupe_projectile_toiles.add(toile)
 		// this.scene.add.existing(toile)

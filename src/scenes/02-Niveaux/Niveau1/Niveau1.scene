@@ -17,11 +17,13 @@
     },
     "displayList": [
         {
-            "type": "Layer",
+            "type": "Container",
             "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
             "label": "groupe_allies",
             "scope": "PUBLIC",
             "components": [],
+            "x": 1152,
+            "y": 400,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
@@ -34,8 +36,8 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "components": [],
-                    "x": 1344,
-                    "y": 600,
+                    "x": 0,
+                    "y": 0,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
