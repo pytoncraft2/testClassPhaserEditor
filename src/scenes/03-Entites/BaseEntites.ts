@@ -24,6 +24,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;
+	public blocages: number = 0;
 
 	/* START-USER-CODE */
 
@@ -52,7 +53,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	aucuneTouche() {
 		(this.body as any).setVelocityX(0);
 	}
-
 
 	/* END-USER-CODE */
 }

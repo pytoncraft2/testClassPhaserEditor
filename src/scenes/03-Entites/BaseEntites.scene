@@ -57,6 +57,16 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "blocages",
+            "label": "blocages",
+            "tooltip": "nombre de fois que l'entité est bloqué",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

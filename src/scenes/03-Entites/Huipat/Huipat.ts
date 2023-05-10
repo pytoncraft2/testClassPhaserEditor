@@ -74,7 +74,7 @@ export default class Huipat extends BaseEntites {
 	actionToucheGauche() {
 		this.body.setVelocityX(-this.velociteX)
 		this.FlipX(true)
-		this.ZoneInteractionAGauche()
+		this.zoneInteractionAGauche()
 	}
 	actionToucheBas(): any {
 		this.body.checkCollision.none = true;
@@ -83,45 +83,12 @@ export default class Huipat extends BaseEntites {
 	}
 
 	actionToucheEspace(): void {
-		// const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, centerX, centerY));
-		// toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
-		// toile.refEntite = this;
-
-		// // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
-		// (this as any).scene.groupe_projectile_toiles.add(toile);
-		// this.scene.time.delayedCall(500, () => {
-		// 	if (!toile.aUneRef) {
-		// 		(this as any).scene.groupe_projectile_toiles.remove(toile, true)
-		// 	}
-		// }, undefined, this.scene);
-		// if (!this.body.moves) return;
-
-		const { centerX, centerY } = this.image.getBounds();
-		// this.groupe_projectile_toiles.;
-
-		// this.groupe_projectile_toiles.setPosition(centerX, centerY)
-		// var matrix = this.image.getWorldTransformMatrix();
-		// var x = matrix.tx;
-		// var y = matrix.ty;
 		const toile = this.scene.physics.add.existing(new ToileHuipatPrefab(this.scene, 0, 0));
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
 		this.groupe_projectile_toiles.add(toile)
-		// this.scene.add.existing(toile)
-
-		//@ts-ignore
-		// this.scene.groupe_allies.getByName('groupe_projectile_toiles');
-
-
-		// this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			// groupe_toiles.remove(toile, true);
-		// }, [toile, this.groupe_projectile_toiles], this.scene);		
-    // const { centerX, centerY } = entite.image_entite.getBounds();
-    // const toile = entite.scene.physics.add.existing(new ToileMouvante(entite.scene, centerX, centerY));
-    // toile.body.setVelocity(entite.image_entite.flipX ? -1300 : 1300, -200);
-    // toile.refEntite = entite;
-
-    // (entite as any).scene.groupe_projectile_boule_toile.add(obj_entite);
-    // (entite as any).scene.groupe_projectile_toiles.add(toile);
+		this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
+			groupe_toiles.remove(toile, true);
+		}, [toile, this.groupe_projectile_toiles], this.scene);
 	}
 
 	/**
@@ -135,7 +102,7 @@ export default class Huipat extends BaseEntites {
 	/**
 	 * @description déplace à gauche de l'image, le rectangle qui permet de détecter une autre entité 
 	 */
-	ZoneInteractionAGauche() {
+	zoneInteractionAGauche() {
 		if (this.zone_interaction_proche.x != this.image.getLeftCenter().x)
 			this.zone_interaction_proche.setPosition(this.image.getLeftCenter().x, this.image.getLeftCenter().y);
 	}
@@ -146,6 +113,7 @@ export default class Huipat extends BaseEntites {
 	FlipX(ouiNon: boolean) {
 		this.image.setFlipX(ouiNon);
 	}
+
 	/* END-USER-CODE */
 }
 
