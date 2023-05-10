@@ -26,7 +26,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Container {
 		this.add(toile);
 
 		// toile_sprite
-		const toile_sprite = scene.add.sprite(-136, -692, "huipat", "toile.png");
+		const toile_sprite = scene.add.sprite(0, 0, "huipat", "toile.png");
 		toile_sprite.name = "toile_sprite";
 		toile_sprite.scaleX = 0.5511987696365707;
 		toile_sprite.scaleY = 0.14119420138560307;
