@@ -8,6 +8,7 @@ export default interface BaseEntites {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import ToileMouvante from "../04-Projectiles/ToileMouvante";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -20,12 +21,13 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		const image_toile_blocage = scene.add.image(0, 0, "huipat", "toile.png");
 		image_toile_blocage.scaleX = 1.0122770503946004;
 		image_toile_blocage.scaleY = 1.0122770503946004;
-		image_toile_blocage.alpha = 0;
-		image_toile_blocage.alphaTopLeft = 0;
-		image_toile_blocage.alphaTopRight = 0;
-		image_toile_blocage.alphaBottomLeft = 0;
-		image_toile_blocage.alphaBottomRight = 0;
 		this.add(image_toile_blocage);
+
+		// toileMouvante
+		const toileMouvante = new ToileMouvante(scene, 0, 0);
+		toileMouvante.scaleX = 1.6798584841308002;
+		toileMouvante.scaleY = 1.6798584841308002;
+		this.add(toileMouvante);
 
 		this.image_toile_blocage = image_toile_blocage;
 

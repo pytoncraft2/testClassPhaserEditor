@@ -168,10 +168,23 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	public toileToucheEntite(adversaire: BaseEntites, toile: ToileHuipatPrefab) {
 		//@ts-ignore
-		toile.parentContainer.parentContainer.blocages += 1;
+		
 		//@ts-ignore
-		adversaire.image_toile_blocage.setAlpha(1)
-		adversaire.image_toile_blocage.setDepth(1000)
+		if (toile.parentContainer.parentContainer.blocages == 0) {
+		//@ts-ignore
+			adversaire.image_toile_blocage.setAlpha(1)
+			console.log("11");
+		//@ts-ignore
+			toile.parentContainer.parentContainer.blocages += 1;
+			
+		} else {
+			// adversaire.body.checkCollision.none = true;			
+			adversaire.body.setVelocityY(-400)
+
+			console.log("ELSE");
+			
+		}
+		//@ts-ignore
 		toile.destroy()
 		//@ts-ignore
 		// console.log(toile.parentContainer.parentContainer.blocages);

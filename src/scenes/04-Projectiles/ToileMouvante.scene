@@ -1,0 +1,78 @@
+{
+    "id": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Ellipse",
+            "id": "27cb77dd-f7a4-4c8b-b8b0-463470c1b63d",
+            "label": "toileMouvante",
+            "scope": "PUBLIC",
+            "components": [],
+            "scaleX": 0.7636895105143653,
+            "scaleY": 0.7636895105143653,
+            "alpha": 0.5,
+            "ArcadeComponent.active": true,
+            "enable": false,
+            "body.bounce.x": 1,
+            "collideWorldBounds": true,
+            "bodyGeometry": 0,
+            "body.width": 128,
+            "body.height": 128,
+            "isFilled": true,
+            "fillColor": "#ffffff",
+            "width": 128,
+            "height": 128,
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "aUneRef",
+            "label": "aUneRef",
+            "tooltip": "verfie si c'est pas une boule qui grossit , qui ne doit pas être détruit",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "refEntite",
+            "label": "refEntite",
+            "tooltip": "référence à l'entité qui à envoyé la toile",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "BaseEntites"
+            }
+        },
+        {
+            "name": "ejectable",
+            "label": "ejectable",
+            "tooltip": "indique si l'entité peut être ejecter quand il est prisonnier dans une toile",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
+}

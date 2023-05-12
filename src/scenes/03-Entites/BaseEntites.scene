@@ -30,11 +30,24 @@
                     },
                     "scaleX": 1.0122770503946004,
                     "scaleY": 1.0122770503946004,
-                    "alpha": 0,
-                    "alphaTopLeft": 0,
-                    "alphaTopRight": 0,
-                    "alphaBottomLeft": 0,
-                    "alphaBottomRight": 0,
+                    "list": []
+                },
+                {
+                    "prefabId": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
+                    "id": "9c2bdd64-ac19-480a-8b3e-2ac5eb61e136",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "toileMouvante",
+                    "components": [],
+                    "x": 0,
+                    "y": 0,
+                    "scaleX": 1.6798584841308002,
+                    "scaleY": 1.6798584841308002,
+                    "nestedPrefabs": [],
                     "list": []
                 }
             ]
