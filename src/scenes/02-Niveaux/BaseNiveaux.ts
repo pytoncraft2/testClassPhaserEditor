@@ -12,6 +12,7 @@ import Phaser from "phaser";
 import Bouton from "../Boutons/Bouton";
 /* START-USER-IMPORTS */
 import BaseEntites from "../03-Entites/BaseEntites";
+import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
 /* END-USER-IMPORTS */
 
 export default class BaseNiveaux extends Phaser.Scene {
@@ -34,11 +35,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
 		// bouton
-		const bouton = new Bouton(this, 320, 880);
+		const bouton = new Bouton(this, 1504, 832);
 		this.add.existing(bouton);
 
 		// bouton_1
-		const bouton_1 = new Bouton(this, 1824, 880, "bouton", "btn-right");
+		const bouton_1 = new Bouton(this, 352, 880, "bouton", "btn-right");
 		this.add.existing(bouton_1);
 
 		// bouton_2
@@ -46,11 +47,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.add.existing(bouton_2);
 
 		// bouton_3
-		const bouton_3 = new Bouton(this, 1536, 880);
+		const bouton_3 = new Bouton(this, 160, 880);
 		this.add.existing(bouton_3);
 
 		// bouton_4
-		const bouton_4 = new Bouton(this, 1680, 880);
+		const bouton_4 = new Bouton(this, 1680, 928);
 		this.add.existing(bouton_4);
 		bouton_4.scaleX = 1;
 		bouton_4.scaleY = 1;
@@ -163,6 +164,19 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	private toucheJusteReleve(touche: Phaser.Input.Keyboard.Key) {
 		return Phaser.Input.Keyboard.JustUp(touche)
+	}
+
+	public toileToucheEntite(adversaire: BaseEntites, toile: ToileHuipatPrefab) {
+		console.log(toile);
+// obj.scene.sys.updateList.remove(pawn);
+// obj.scene.sys.displayList.remove(pawn);
+// obj.scene = scene;
+// scene.sys.updateList.add(obj);
+// scene.sys.displayList.add(obj);
+		// this.time.delayedCall(1000, () => console.log(toile));
+		
+		// toile.destroy()
+		// adversaire.destroy()
 	}
 
 	/* END-USER-CODE */

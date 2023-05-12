@@ -55,7 +55,7 @@ export default class Araigne extends BaseEntites {
 	// Write your code here.
 	actionToucheEspace(): void {
 		console.log("ACTION ARAIGNE !");
-		this.body.setVelocityY(-80)
+		this.body?.setVelocityY(-80)
 	}
 
 	/* END-USER-CODE */

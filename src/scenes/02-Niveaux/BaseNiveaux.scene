@@ -23,8 +23,8 @@
             "label": "bouton",
             "direction": "espace",
             "components": [],
-            "x": 320,
-            "y": 880,
+            "x": 1504,
+            "y": 832,
             "nestedPrefabs": [],
             "list": []
         },
@@ -44,7 +44,7 @@
                 "key": "bouton",
                 "frame": "btn-right"
             },
-            "x": 1824,
+            "x": 352,
             "y": 880,
             "nestedPrefabs": [],
             "list": []
@@ -79,7 +79,7 @@
             ],
             "label": "bouton_3",
             "components": [],
-            "x": 1536,
+            "x": 160,
             "y": 880,
             "nestedPrefabs": [],
             "list": []
@@ -99,7 +99,7 @@
             "direction": "bas",
             "components": [],
             "x": 1680,
-            "y": 880,
+            "y": 928,
             "scaleX": 1,
             "scaleY": 1,
             "angle": -90,

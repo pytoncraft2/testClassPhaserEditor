@@ -168,7 +168,9 @@
             "scope": "METHOD",
             "object1": "groupe_adversaires.list ",
             "object2": "huipat.groupe_projectile_toiles.list",
-            "callbackContext": "huipat"
+            "overlapOnly": true,
+            "collideCallback": "this.toileToucheEntite as any",
+            "callbackContext": "this"
         }
     ],
     "meta": {

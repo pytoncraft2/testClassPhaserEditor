@@ -70,7 +70,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
 
 		// toiles_vs_adversaires
-		this.physics.add.collider(groupe_adversaires.list , huipat.groupe_projectile_toiles.list, undefined, undefined, huipat);
+		this.physics.add.overlap(groupe_adversaires.list , huipat.groupe_projectile_toiles.list, this.toileToucheEntite as any, undefined, this);
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
