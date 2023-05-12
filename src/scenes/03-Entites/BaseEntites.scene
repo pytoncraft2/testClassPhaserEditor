@@ -19,36 +19,57 @@
             "components": [],
             "list": [
                 {
-                    "type": "Image",
-                    "id": "9300c1f5-5f26-4da6-9648-f4c1e4833432",
-                    "label": "image_toile_blocage",
+                    "type": "Container",
+                    "id": "8cf95fe7-070f-4042-932a-a395d0307c42",
+                    "label": "bloc_toile",
                     "scope": "NESTED_PREFAB",
                     "components": [],
-                    "texture": {
-                        "key": "huipat",
-                        "frame": "toile.png"
-                    },
-                    "scaleX": 1.0122770503946004,
-                    "scaleY": 1.0122770503946004,
-                    "list": []
-                },
-                {
-                    "prefabId": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
-                    "id": "9c2bdd64-ac19-480a-8b3e-2ac5eb61e136",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "toileMouvante",
-                    "components": [],
-                    "x": 0,
-                    "y": 0,
-                    "scaleX": 1.6798584841308002,
-                    "scaleY": 1.6798584841308002,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "ArcadeComponent.active": true,
+                    "enable": false,
+                    "body.width": 64,
+                    "body.height": 64,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "9300c1f5-5f26-4da6-9648-f4c1e4833432",
+                            "label": "image",
+                            "useGameObjectName": true,
+                            "scope": "NESTED_PREFAB",
+                            "components": [],
+                            "texture": {
+                                "key": "huipat",
+                                "frame": "toile.png"
+                            },
+                            "scaleX": 1.0122770503946004,
+                            "scaleY": 1.0122770503946004,
+                            "alpha": 0,
+                            "alphaTopLeft": 0,
+                            "alphaTopRight": 0,
+                            "alphaBottomLeft": 0,
+                            "alphaBottomRight": 0,
+                            "list": []
+                        },
+                        {
+                            "prefabId": "24c4089b-ffe0-4d2e-8e2d-4994566398e5",
+                            "id": "9c2bdd64-ac19-480a-8b3e-2ac5eb61e136",
+                            "unlock": [
+                                "x",
+                                "y",
+                                "scaleX",
+                                "scaleY"
+                            ],
+                            "label": "cercle",
+                            "useGameObjectName": true,
+                            "scope": "NESTED_PREFAB",
+                            "components": [],
+                            "x": 0,
+                            "y": 0,
+                            "scaleX": 1.6798584841308002,
+                            "scaleY": 1.6798584841308002,
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ]
                 }
             ]
         }
