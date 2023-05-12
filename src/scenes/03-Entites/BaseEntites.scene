@@ -17,7 +17,27 @@
             "id": "35ce0b59-bb1b-4653-80a5-ae325facd00c",
             "label": "container_1",
             "components": [],
-            "list": []
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "9300c1f5-5f26-4da6-9648-f4c1e4833432",
+                    "label": "image_toile_blocage",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "toile.png"
+                    },
+                    "scaleX": 1.0122770503946004,
+                    "scaleY": 1.0122770503946004,
+                    "alpha": 0,
+                    "alphaTopLeft": 0,
+                    "alphaTopRight": 0,
+                    "alphaBottomLeft": 0,
+                    "alphaBottomRight": 0,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],

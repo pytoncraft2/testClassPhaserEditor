@@ -16,11 +16,25 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// image_toile_blocage
+		const image_toile_blocage = scene.add.image(0, 0, "huipat", "toile.png");
+		image_toile_blocage.scaleX = 1.0122770503946004;
+		image_toile_blocage.scaleY = 1.0122770503946004;
+		image_toile_blocage.alpha = 0;
+		image_toile_blocage.alphaTopLeft = 0;
+		image_toile_blocage.alphaTopRight = 0;
+		image_toile_blocage.alphaBottomLeft = 0;
+		image_toile_blocage.alphaBottomRight = 0;
+		this.add(image_toile_blocage);
+
+		this.image_toile_blocage = image_toile_blocage;
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
+	public image_toile_blocage: Phaser.GameObjects.Image;
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;
