@@ -136,6 +136,14 @@
             ]
         },
         {
+            "type": "Container",
+            "id": "584fb704-ce76-4223-8f4a-a72f44035041",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",
@@ -164,10 +172,10 @@
         {
             "id": "9c5c950c-c312-4dc7-ace0-83bcfb7dade5",
             "type": "Collider",
-            "label": "toiles_vs_adversaires",
+            "label": "toiles_vs_entite",
             "scope": "METHOD",
-            "object1": "groupe_adversaires.list ",
-            "object2": "huipat.groupe_projectile_toiles.list",
+            "object1": "groupe_projectile_toiles.list",
+            "object2": "liste_toile_vs_adversaire",
             "overlapOnly": true,
             "collideCallback": "this.toileToucheEntite as any",
             "callbackContext": "this"
@@ -182,7 +190,10 @@
     "lists": [
         {
             "id": "d43c7dd6-2af9-46fd-9694-31876776dc37",
-            "label": "qui_colision_avec_toile"
+            "label": "liste_toile_vs_adversaire",
+            "objectIds": [
+                "09812ea7-55e4-4f32-be4a-95e77e295658"
+            ]
         }
     ]
 }

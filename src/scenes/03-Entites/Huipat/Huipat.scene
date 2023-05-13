@@ -54,15 +54,6 @@
                     "width": 128,
                     "height": 128,
                     "list": []
-                },
-                {
-                    "type": "Container",
-                    "id": "433b47b5-e3c1-4abd-85db-301e140945df",
-                    "label": "groupe_projectile_toiles",
-                    "useGameObjectName": true,
-                    "scope": "NESTED_PREFAB",
-                    "components": [],
-                    "list": []
                 }
             ]
         }

@@ -57,11 +57,14 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformePrefab_1 = new PlatformePrefab(this, 960, 600);
 		platformes.add(platformePrefab_1);
 
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = this.add.container(0, 0);
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const qui_colision_avec_toile: Array<any> = [];
+		const liste_toile_vs_adversaire = [araigne];
 
 		// platformes_vs_entites
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
@@ -69,13 +72,14 @@ export default class Niveau1 extends BaseNiveaux {
 		// adversaires_vs_allies
 		this.physics.add.collider(groupe_allies.list, groupe_adversaires.list);
 
-		// toiles_vs_adversaires
-		this.physics.add.overlap(groupe_adversaires.list , huipat.groupe_projectile_toiles.list, this.toileToucheEntite as any, undefined, this);
+		// toiles_vs_entite
+		this.physics.add.overlap(groupe_projectile_toiles.list, liste_toile_vs_adversaire, this.toileToucheEntite as any, undefined, this);
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
-		this.qui_colision_avec_toile = qui_colision_avec_toile;
+		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
 		this.events.emit("scene-awake");
 	}
@@ -83,7 +87,8 @@ export default class Niveau1 extends BaseNiveaux {
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
-	private qui_colision_avec_toile!: Array<any>;
+	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
+	private liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */
 
