@@ -162,51 +162,9 @@ export default class BaseNiveaux extends Phaser.Scene {
 		return Phaser.Input.Keyboard.JustDown(touche)
 	}
 
-	private toucheJusteReleve(touche: Phaser.Input.Keyboard.Key) {
-		return Phaser.Input.Keyboard.JustUp(touche)
-	}
-
 	public toileToucheEntite(adversaire: BaseEntites, toile: ToileHuipatPrefab) {
-		
-		//@ts-ignore
-		if (toile.parentContainer.parentContainer.blocages == 0) {
-			console.log("11");
-			// console.log((adversaire.bloc_toile as any).parentContainer.image.set);
-			
-		//@ts-ignore
-			adversaire.bloc_toile.getByName('image').setAlpha(1);
-			adversaire.image.parentContainer = adversaire.bloc_toile;
-			
-			// (adversaire.bloc_toile as any).setAlpha(1)
-
-		//@ts-ignore
-			toile.parentContainer.parentContainer.blocages += 1;
-			
-		} else {
-			// adversaire.body.setVelocityY(-400)
-			// adversaire.body.enable = false;
-			// adversaire.bloc_toile.add(adversaire.image)
-		//@ts-ignore
-			adversaire.bloc_toile.getByName('cercle').body.enable = true;
-		}
-		//@ts-ignore
 		toile.destroy()
-		//@ts-ignore
-		// console.log(toile.parentContainer.parentContainer.blocages);
-		
-// obj.scene.sys.updateList.remove(pawn);
-// obj.scene.sys.displayList.remove(pawn);
-// obj.scene = scene;
-// scene.sys.updateList.add(obj);
-// scene.sys.displaytoile.parentContainer.parentContainerList.add(obj);
-		// this.time.delayedCall(1000, () => console.log(toile));
-		
-		// toile.destroy()
-		// adversaire.destroy()
-	}
-
-	bloque(lal: any) {
-
+		adversaire.destroy()
 	}
 
 	/* END-USER-CODE */
