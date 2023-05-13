@@ -89,36 +89,58 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		// 	this.tempsCumule = 0;
 		// }
 
-		// console.log(this.blocages);
+		// console.log(this.tempsCumule, this.tempsEntreActions);
 		
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
-			if (this.blocages > -1 && this.blocages !== this.maxBlocages) {
-				// if (!entite.refToile?.ejectable) {
-				// 	entite.diminueNombreEnchainementBlocage()
-				// }
-				this.blocages -= 1;
-				const diminutionScale = this.toile_image.scaleX - 0.20;
-				this.toile_image.setScale(diminutionScale);
-			}
-			else if (this.blocages === this.maxBlocages)
-			{
-				console.log("MAX");
-				this.tempsCumuleMaxBlocage += dt
-				if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
-				else {
-					this.blocages -= 1;
-					this.tempsCumule = 0;
-				}
-				// this.body.enable = false;
+			console.log("GO");
+			
+				if ((this.blocages - 1) == 0) {
+					this.toile_image.clearTint();
+					this.body.moves = true;
+					this.blocages = 0;
+					this.diminutionTailleToile();
+				} else {
 
-				// this.toile_image.setTintFill(111111)
-			} else if (this.blocages === -1) {
-				if (!this.body.moves) this.body.moves = true;
-			}
+					if (this.blocages > 0) {
+						this.blocages -= 1;
+						this.toile_image.clearTint();
+						this.diminutionTailleToile()
+					} else {
+						console.log("PAS DE DIMINUTION");
+					}
+				}
+			// if (this.blocages > -1 && this.blocages !== this.maxBlocages) {
+			// 	// if (!entite.refToile?.ejectable) {
+			// 	// 	entite.diminueNombreEnchainementBlocage()
+			// 	// }
+			// 	this.blocages -= 1;
+			// 	const diminutionScale = this.toile_image.scaleX - 0.20;
+			// 	this.toile_image.setScale(diminutionScale);
+			// }
+			// else if (this.blocages === this.maxBlocages)
+			// {
+			// 	console.log("MAX");
+			// 	this.tempsCumuleMaxBlocage += dt
+			// 	if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
+			// 	else {
+			// 		this.blocages -= 1;
+			// 		this.tempsCumule = 0;
+			// 	}
+			// 	// this.body.enable = false;
+
+			// 	// this.toile_image.setTintFill(111111)
+			// } else if (this.blocages === -1) {
+			// 	if (!this.body.moves) this.body.moves = true;
+			// }
 			this.tempsCumule = 0
 		}
+	}
+
+	diminutionTailleToile() {
+		const diminutionScale = this.toile_image.scaleX - 0.20;
+		this.toile_image.setScale(diminutionScale);
 	}
 
 	ejection(obj1: any, obj2: any) {
