@@ -26,17 +26,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-// var timer = scene.time.addEvent({
-//     delay: 1000,                // ms
-//     callback: () => this.diminutionTailleToile(),
-//     args: [],
-//     callbackScope: this,
-//     loop: false,
-//     repeat: 0,
-//     startAt: 0,
-//     timeScale: 1,
-//     paused: false
-// });
+		this.scene.time.delayedCall(100, () => this.bringToTop(this.toile_image));
 		/* END-USER-CTR-CODE */
 	}
 

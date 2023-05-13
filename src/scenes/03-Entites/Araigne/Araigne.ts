@@ -44,6 +44,7 @@ export default class Araigne extends BaseEntites {
 
 		/* START-USER-CTR-CODE */
 		this.scene.time.delayedCall(4000, () => this.actionToucheEspace(), undefined, this)
+		// this.scene.time.delayedCall(3000, () => this.bringToTop(this.toile_image));
 		/* END-USER-CTR-CODE */
 	}
 
