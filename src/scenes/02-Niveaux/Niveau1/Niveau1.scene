@@ -70,12 +70,16 @@
                     "id": "09812ea7-55e4-4f32-be4a-95e77e295658",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "body.velocity.x",
+                        "body.velocity.y"
                     ],
                     "label": "araigne",
                     "components": [],
                     "x": 366,
                     "y": 596,
+                    "body.velocity.x": 300,
+                    "body.velocity.y": 0,
                     "nestedPrefabs": [],
                     "list": []
                 },

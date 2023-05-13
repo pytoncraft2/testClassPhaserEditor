@@ -38,6 +38,8 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// araigne
 		const araigne = new Araigne(this, 366, 596);
+		araigne.body.velocity.x = 300;
+		araigne.body.velocity.y = 0;
 		groupe_adversaires.add(araigne);
 
 		// moustique_png

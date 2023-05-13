@@ -162,10 +162,30 @@ export default class BaseNiveaux extends Phaser.Scene {
 		return Phaser.Input.Keyboard.JustDown(touche)
 	}
 
-	public toileToucheEntite(adversaire: BaseEntites, toile: ToileHuipatPrefab) {
+	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
+		if (adversaire.blocages === 0) {
+			adversaire.body.moves = false;
+			adversaire.blocages += 1;
+		} else if (adversaire.blocages < adversaire.maxBlocages) {
+			adversaire.blocages += 1;
+		} else if (adversaire.blocages == adversaire.maxBlocages) {
+			// adversaire.destroy()
+			// this.araigne.setTintFill(0x008000);
+		}
 		toile.destroy()
-		adversaire.destroy()
 	}
+	// touche(_degat: number, toile: ToileHuipatPrefab) {
+		// if (this.hitStack === 0) {
+		// 	this.body.moves = false;
+		// 	this.hitStack += 1;
+		// } else if (this.hitStack < this.maxStackBlocked) {
+		// 	this.hitStack += 1;
+		// } else if (this.hitStack == this.maxStackBlocked) {
+		// 	// this.araigne.setTintFill(0x008000);
+		// }
+		// this.diminutionTailleToile()
+		// toile.destroy();
+	// }
 
 	/* END-USER-CODE */
 }

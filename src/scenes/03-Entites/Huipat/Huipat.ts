@@ -86,12 +86,6 @@ export default class Huipat extends BaseEntites {
 		this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
 			groupe_toiles.remove(toile, true);
 		}, [toile, (this.scene as any).groupe_projectile_toiles], this.scene);	
-		// const toile = new ToileHuipatPrefab(this.scene, 0, 0);
-		// toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
-		// this.groupe_projectile_toiles.add(toile)
-		// this.scene.time.delayedCall(500, function (this: Phaser.Scene, toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			// if (toile.active) groupe_toiles.remove(toile, true);
-		// }, [toile, this.groupe_projectile_toiles], this.scene);
 	}
 
 	/**
