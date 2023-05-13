@@ -98,12 +98,15 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 				const diminutionScale = this.toile_image.scaleX - 0.20;
 				this.toile_image.setScale(diminutionScale);
 			}
-			/*else if (this.blocages === this.maxBlocages)
+			else if (this.blocages === this.maxBlocages)
 			{
-				// if (!this.body.moves) this.body.moves = true;
-				this.toile_image.setTintFill(111111)
+				console.log("MAX");
+				// this.tempsCumule = -500;
+				
+				// this.toile_image.setTintFill(111111)
+			} else if (this.blocages === 0) {
+				if (!this.body.moves) this.body.moves = true;
 			}
-			*/
 			this.tempsCumule = 0
 		}
 	}
