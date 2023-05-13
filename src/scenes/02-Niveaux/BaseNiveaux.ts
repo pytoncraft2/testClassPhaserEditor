@@ -179,17 +179,29 @@ export default class BaseNiveaux extends Phaser.Scene {
 		
 		toile.destroy()
 	}
-	// touche(_degat: number, toile: ToileHuipatPrefab) {
-		// if (this.hitStack === 0) {
-		// 	this.body.moves = false;
-		// 	this.hitStack += 1;
-		// } else if (this.hitStack < this.maxStackBlocked) {
-		// 	this.hitStack += 1;
-		// } else if (this.hitStack == this.maxStackBlocked) {
-		// 	// this.araigne.setTintFill(0x008000);
-		// }
-		// this.diminutionTailleToile()
-		// toile.destroy();
+
+	// deblocageToile() {
+	// 	console.log("zzz");
+		
+	// 	// const dt = this.scene.game.loop.delta
+
+	// 	// entite.tempsCumule += dt
+	// 	// const { left, right } = entite.body.blocked;
+
+	// 	// if (left) entite.actionToucheDroite()
+	// 	// else if (right) entite.actionToucheGauche()
+
+
+	// 	// if (entite.tempsCumule < entite.tempsEntreActions) { return }
+	// 	// else {
+	// 	// 	if (entite.nombreEnchainementBlocage > 0) {
+	// 	// 		if (!entite.refToile?.ejectable) {
+	// 	// 			entite.diminueNombreEnchainementBlocage()
+	// 	// 		}
+
+	// 	// 	}
+	// 	// 	entite.tempsCumule = 0
+	// 	// }
 	// }
 
 	/* END-USER-CODE */

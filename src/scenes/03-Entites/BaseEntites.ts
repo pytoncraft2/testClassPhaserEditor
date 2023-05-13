@@ -27,6 +27,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.scene.time.delayedCall(100, () => this.bringToTop(this.toile_image));
+		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -36,6 +37,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public velociteX: number = 350;
 	public blocages: number = 0;
 	public maxBlocages: number = 7;
+	public tempsCumule: number = 0;
+	public tempsEntreActions: number = 500;
 
 	/* START-USER-CODE */
 
@@ -65,6 +68,38 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		(this.body as any).setVelocityX(0);
 	}
 
+
+	preUpdate(time: number, delta: number) {
+		this.deblocageToile()
+	}
+
+
+	deblocageToile() {
+		const dt = this.scene.game.loop.delta
+
+		this.tempsCumule += dt
+		const { left, right } = this.body.blocked;
+
+		if (left) this.actionToucheDroite()
+		else if (right) this.actionToucheGauche()
+
+
+		if (this.tempsCumule < this.tempsEntreActions) { return }
+		else {
+			if (this.blocages > 0) {
+				// if (!entite.refToile?.ejectable) {
+				// 	entite.diminueNombreEnchainementBlocage()
+				// }
+				this.blocages -= 1;
+				const diminutionScale = this.toile_image.scaleX - 0.20;
+				this.toile_image.setScale(diminutionScale);
+			} else 
+			{
+				if (!this.body.moves) this.body.moves = true;
+			}
+			this.tempsCumule = 0
+		}
+	}
 	/* END-USER-CODE */
 }
 

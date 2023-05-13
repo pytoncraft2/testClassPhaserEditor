@@ -92,6 +92,26 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "tempsCumule",
+            "label": "tempsCumule",
+            "tooltip": "temp que l'entité cumule avant la prochaine action",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "tempsEntreActions",
+            "label": "tempsEntreActions",
+            "tooltip": "temp avant d'effectuer une action",
+            "defValue": 500,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }
