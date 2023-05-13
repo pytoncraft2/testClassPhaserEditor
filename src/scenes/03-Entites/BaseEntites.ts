@@ -82,7 +82,11 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 		if (left) this.actionToucheDroite()
 		else if (right) this.actionToucheGauche()
-
+		if (!this.body.wasTouching.none && !this.body.touching.down)
+		{
+			this.tempsCumule = 0;
+		}
+		
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
