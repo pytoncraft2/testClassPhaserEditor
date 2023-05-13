@@ -89,32 +89,48 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			this.tempsCumule = 0;
 		}
 
+		if (this.blocages === this.maxBlocages)
+		{
+			this.tempsCumuleMaxBlocage += dt;
+
+			console.log("READY", this.tempsAvantDeblocage, this.tempsCumuleMaxBlocage);
+
+			if (this.tempsAvantDeblocage < this.tempsCumuleMaxBlocage)
+			{
+				return;
+			} else
+			{
+				console.log("DIMINUTION MAINTENANT!");
+				this.blocages -= 1;
+				this.tempsCumuleMaxBlocage = 0;
+			}
+			
+		}
+		
+		// if (this.blocages > 0 && this.blocages !== this.maxBlocages) {
+		// 	this.blocages -= 1;
+		// 	const diminutionScale = this.toile_image.scaleX - 0.20;
+		// 	this.toile_image.setScale(diminutionScale);
+		// }
+		// else if (this.blocages === this.maxBlocages) {
+		// 	console.log("MAX");
+		// 	this.tempsCumuleMaxBlocage += dt
+		// 	if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
+		// 	else {
+		// 		// return;
+		// 		// this.blocages = ;
+		// 		this.tempsCumule = 0;
+		// 		return;
+		// 	}
+		// 	// this.body.enable = false;
+
+		// 	// this.toile_image.setTintFill(111111)
+		// } else if (this.blocages === 0) {
+		// 	if (!this.body.moves) this.body.moves = true;
+		// }
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
-			if (this.blocages > 0 && this.blocages !== this.maxBlocages) {
-				// if (!entite.refToile?.ejectable) {
-				// 	entite.diminueNombreEnchainementBlocage()
-				// }
-				this.blocages -= 1;
-				const diminutionScale = this.toile_image.scaleX - 0.20;
-				this.toile_image.setScale(diminutionScale);
-			}
-			else if (this.blocages === this.maxBlocages)
-			{
-				console.log("MAX");
-				this.tempsCumuleMaxBlocage += dt
-				if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
-				else {
-					this.blocages -= 1;
-					this.tempsCumule = 0;
-				}
-				// this.body.enable = false;
-
-				// this.toile_image.setTintFill(111111)
-			} else if (this.blocages === 0) {
-				if (!this.body.moves) this.body.moves = true;
-			}
 			this.tempsCumule = 0
 		}
 	}
