@@ -112,6 +112,26 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "tempsCumuleMaxBlocage",
+            "label": "tempsCumuleMaxBlocage",
+            "tooltip": "temps cumulé avant d'être progréssivement débloqué",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "tempsAvantDeblocage",
+            "label": "tempsAvantDeblocage",
+            "tooltip": "temps avant la diminution du blocage",
+            "defValue": 3000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

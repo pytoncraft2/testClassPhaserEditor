@@ -39,6 +39,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public maxBlocages: number = 7;
 	public tempsCumule: number = 0;
 	public tempsEntreActions: number = 500;
+	public tempsCumuleMaxBlocage: number = 0;
+	public tempsAvantDeblocage: number = 3000;
 
 	/* START-USER-CODE */
 
@@ -86,7 +88,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		{
 			this.tempsCumule = 0;
 		}
-		
+
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
@@ -101,14 +103,48 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			else if (this.blocages === this.maxBlocages)
 			{
 				console.log("MAX");
-				// this.tempsCumule = -500;
-				
+				this.tempsCumuleMaxBlocage += dt
+				if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
+				else {
+					this.blocages -= 1;
+					this.tempsCumule = 0;
+				}
+				// this.body.enable = false;
+
 				// this.toile_image.setTintFill(111111)
 			} else if (this.blocages === 0) {
 				if (!this.body.moves) this.body.moves = true;
 			}
 			this.tempsCumule = 0
 		}
+	}
+
+	ejection(obj1: any, obj2: any) {
+
+		obj2.body.moves = true;
+		obj2.body.checkCollision.none = true;
+
+			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
+		this.scene.tweens.add({
+			targets: [obj2.toile_image],
+			angle: obj1.body.velocity.x < 0 ? -960 : 960,
+			alpha: 0,
+			ease: 'Linear',
+			duration: 1000
+		});
+		obj2.body.setVelocity(obj1.body.velocity.x < 0 ? -500 : 500, -1800);
+		// this.scene.time.delayedCall(800, () => {
+			// console.log(obj2);
+
+			// console.log(this);
+
+			// obj2.destroy();
+			// obj1.parentContainer.killedEnnemy += 1;
+			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
+			// score.niveauSuivant();
+			// obj1.parentContainer.killedEnnemy = 0;
+			// }
+		// })
 	}
 	/* END-USER-CODE */
 }
