@@ -90,17 +90,20 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
-			if (this.blocages > 0) {
+			if (this.blocages > 0 && this.blocages !== this.maxBlocages) {
 				// if (!entite.refToile?.ejectable) {
 				// 	entite.diminueNombreEnchainementBlocage()
 				// }
 				this.blocages -= 1;
 				const diminutionScale = this.toile_image.scaleX - 0.20;
 				this.toile_image.setScale(diminutionScale);
-			} else 
-			{
-				if (!this.body.moves) this.body.moves = true;
 			}
+			/*else if (this.blocages === this.maxBlocages)
+			{
+				// if (!this.body.moves) this.body.moves = true;
+				this.toile_image.setTintFill(111111)
+			}
+			*/
 			this.tempsCumule = 0
 		}
 	}

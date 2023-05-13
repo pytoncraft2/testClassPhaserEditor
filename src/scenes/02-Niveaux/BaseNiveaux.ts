@@ -172,7 +172,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			adversaire.blocages += 1;
 			adversaire.toile_image.setScale(agrandissementScale);
 		} else if (adversaire.blocages == adversaire.maxBlocages) {
-			adversaire.destroy()
+			// adversaire.destroy()
 			// this.araigne.setTintFill(0x008000);
 		}
 		console.log(adversaire.blocages);
