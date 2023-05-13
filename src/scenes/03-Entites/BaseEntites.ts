@@ -90,26 +90,30 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		// }
 
 		// console.log(this.tempsCumule, this.tempsEntreActions);
-		
+
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
 			console.log("GO");
 			
+				//débloquage totale
 				if ((this.blocages - 1) == 0) {
 					this.toile_image.clearTint();
 					this.body.moves = true;
 					this.blocages = 0;
 					this.diminutionTailleToile();
+					this.tempsCumule = 0;
+				//débloquage progressive
 				} else {
 
-					if (this.blocages > 0) {
+					if (this.blocages > 0 && this.blocages !== this.maxBlocages) {
 						this.blocages -= 1;
 						this.toile_image.clearTint();
 						this.diminutionTailleToile()
+						this.tempsCumule = 0;
 					} else {
-						console.log("PAS DE DIMINUTION");
-					}
+						// console.log("ELSEIF");
+					} 
 				}
 			// if (this.blocages > -1 && this.blocages !== this.maxBlocages) {
 			// 	// if (!entite.refToile?.ejectable) {
@@ -134,8 +138,13 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			// } else if (this.blocages === -1) {
 			// 	if (!this.body.moves) this.body.moves = true;
 			// }
-			this.tempsCumule = 0
+			// this.tempsCumule = 0
 		}
+		// if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
+		// else {
+		// 	// this.blocages -= 1;
+		// 	this.tempsCumule = 0;
+		// }
 	}
 
 	diminutionTailleToile() {
