@@ -16,11 +16,31 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// toile_image
+		const toile_image = scene.add.image(0, 0, "huipat", "toile.png");
+		toile_image.scaleX = 0;
+		toile_image.scaleY = 0;
+		this.add(toile_image);
+
+		this.toile_image = toile_image;
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+// var timer = scene.time.addEvent({
+//     delay: 1000,                // ms
+//     callback: () => this.diminutionTailleToile(),
+//     args: [],
+//     callbackScope: this,
+//     loop: false,
+//     repeat: 0,
+//     startAt: 0,
+//     timeScale: 1,
+//     paused: false
+// });
 		/* END-USER-CTR-CODE */
 	}
 
+	public toile_image: Phaser.GameObjects.Image;
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;

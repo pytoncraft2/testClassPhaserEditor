@@ -17,7 +17,22 @@
             "id": "35ce0b59-bb1b-4653-80a5-ae325facd00c",
             "label": "container_1",
             "components": [],
-            "list": []
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "471479d1-a85d-43be-921d-f7783db85387",
+                    "label": "toile_image",
+                    "scope": "PUBLIC",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "toile.png"
+                    },
+                    "scaleX": 0,
+                    "scaleY": 0,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],

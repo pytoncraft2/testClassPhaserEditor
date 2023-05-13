@@ -166,12 +166,18 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (adversaire.blocages === 0) {
 			adversaire.body.moves = false;
 			adversaire.blocages += 1;
+			const agrandissementScale = adversaire.toile_image.scaleX + 0.20;
+			adversaire.toile_image.setScale(agrandissementScale);
 		} else if (adversaire.blocages < adversaire.maxBlocages) {
 			adversaire.blocages += 1;
+			const agrandissementScale = adversaire.toile_image.scaleX + 0.20;
+			adversaire.toile_image.setScale(agrandissementScale);
 		} else if (adversaire.blocages == adversaire.maxBlocages) {
-			// adversaire.destroy()
+			adversaire.destroy()
 			// this.araigne.setTintFill(0x008000);
 		}
+		console.log(adversaire.blocages);
+		
 		toile.destroy()
 	}
 	// touche(_degat: number, toile: ToileHuipatPrefab) {
