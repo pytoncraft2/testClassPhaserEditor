@@ -3,6 +3,7 @@
 export default interface BaseEntites {
 
 	body: Phaser.Physics.Arcade.Body;
+	image: Phaser.GameObjects.Image;
 }
 
 /* START OF COMPILED CODE */
@@ -26,11 +27,13 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.scene.time.delayedCall(100, () => this.bringToTop(this.toile_image));
-		this.scene.add.existing(this)
-		this.setInteractive(new Phaser.Geom.Rectangle(0, 0, 500, 500), Phaser.Geom.Rectangle.Contains);
-		//@ts-ignore
-		this.on('pointerdown', () => (this.scene.entiteControllable = this));
+		this.scene.time.delayedCall(100, () => {
+			this.bringToTop(this.toile_image);
+			this.image
+				.setInteractive({ cursor: 'pointer' })
+				.on('pointerdown', () => ((this.scene as any).entiteControllable = this))
+		});
+		this.scene.add.existing(this);
 		/* END-USER-CTR-CODE */
 	}
 
@@ -56,21 +59,21 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		console.log("touche espace base entite")
 	}
 	actionToucheGauche() {
-		(this as any).image.setFlipX(true);
-		(this.body as any).setVelocityX(-300);
+		this.image.setFlipX(true);
+		this.body.setVelocityX(-300);
 	}
 	actionToucheDroite() {
-		(this as any).image.setFlipX(false);
-		(this.body as any).setVelocityX(300);
+		this.image.setFlipX(false);
+		this.body.setVelocityX(300);
 	}
 	actionToucheHaut() {
-		(this.body as any).setVelocityY(-900);
+		this.body.setVelocityY(-900);
 	}
 	actionToucheBas() {
-		(this.body as any).setVelocityY(900);
+		this.body.setVelocityY(900);
 	}
 	aucuneTouche() {
-		(this.body as any).setVelocityX(0);
+		this.body.setVelocityX(0);
 	}
 
 
