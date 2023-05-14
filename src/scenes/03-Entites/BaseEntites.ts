@@ -12,7 +12,6 @@ export default interface BaseEntites {
 import Phaser from "phaser";
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
-import BaseNiveaux from "../02-Niveaux/BaseNiveaux";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -35,7 +34,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			this.bringToTop(this.toile_image);
 			this.image
 				.setInteractive({ cursor: 'pointer' })
-				.on('pointerdown', () => ((this.scene as any).entiteControllable = this))
+				.on('pointerdown', () => (this.scene.entiteControllable = this))
 		});
 		this.scene.add.existing(this);
 		/* END-USER-CTR-CODE */
@@ -89,22 +88,9 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		const dt = this.scene.game.loop.delta
 
 		this.tempsCumule += dt
-		const { left, right } = this.body.blocked;
-
-		// if (left) this.actionToucheDroite()
-		// else if (right) this.actionToucheGauche()
-		// if (!this.body.wasTouching.none && !this.body.touching.down)
-		// {
-		// 	this.tempsCumule = 0;
-		// }
-
-		// console.log(this.tempsCumule, this.tempsEntreActions);
-
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
-			// console.log("GO");
-			
 				//débloquage totale
 				if ((this.blocages - 1) == 0) {
 					this.toile_image.clearTint();
@@ -124,36 +110,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 						// console.log("ELSEIF");
 					} 
 				}
-			// if (this.blocages > -1 && this.blocages !== this.maxBlocages) {
-			// 	// if (!entite.refToile?.ejectable) {
-			// 	// 	entite.diminueNombreEnchainementBlocage()
-			// 	// }
-			// 	this.blocages -= 1;
-			// 	const diminutionScale = this.toile_image.scaleX - 0.20;
-			// 	this.toile_image.setScale(diminutionScale);
-			// }
-			// else if (this.blocages === this.maxBlocages)
-			// {
-			// 	console.log("MAX");
-			// 	this.tempsCumuleMaxBlocage += dt
-			// 	if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
-			// 	else {
-			// 		this.blocages -= 1;
-			// 		this.tempsCumule = 0;
-			// 	}
-			// 	// this.body.enable = false;
-
-			// 	// this.toile_image.setTintFill(111111)
-			// } else if (this.blocages === -1) {
-			// 	if (!this.body.moves) this.body.moves = true;
-			// }
-			// this.tempsCumule = 0
 		}
-		// if (this.tempsCumuleMaxBlocage < this.tempsAvantDeblocage) { return }
-		// else {
-		// 	// this.blocages -= 1;
-		// 	this.tempsCumule = 0;
-		// }
 	}
 
 	diminutionTailleToile() {

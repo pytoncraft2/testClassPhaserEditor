@@ -67,7 +67,6 @@ export default class Araigne extends BaseEntites {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
-		this.scene.time.delayedCall(4000, () => this.actionToucheEspace(), undefined, this)
 		/* END-USER-CTR-CODE */
 	}
 
