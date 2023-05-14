@@ -4,6 +4,7 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "generateAwakeHandler": true,
         "superClassName": "BaseEntites",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -40,21 +41,6 @@
                 },
                 {
                     "type": "Rectangle",
-                    "id": "a664f404-e990-4a15-a158-c85eb482abdf",
-                    "label": "detecteur_haut",
-                    "scope": "NESTED_PREFAB",
-                    "components": [],
-                    "x": 128,
-                    "y": -133,
-                    "scaleX": 0.19751986297412794,
-                    "scaleY": 0.1622402073862163,
-                    "isFilled": true,
-                    "width": 128,
-                    "height": 128,
-                    "list": []
-                },
-                {
-                    "type": "Rectangle",
                     "id": "f852966b-ac04-40c6-9148-11ef9044000e",
                     "label": "detecteur_bas",
                     "scope": "NESTED_PREFAB",
@@ -63,6 +49,34 @@
                     "y": 52,
                     "scaleX": 0.19751986297412794,
                     "scaleY": 0.1622402073862163,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "body.width": 128,
+                    "body.height": 128,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128,
+                    "list": []
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a664f404-e990-4a15-a158-c85eb482abdf",
+                    "label": "detecteur_haut",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 55,
+                    "y": -145,
+                    "scaleX": 0.19751986297412794,
+                    "scaleY": 0.1622402073862163,
+                    "alpha": 0.5,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "allowGravity": false,
+                    "allowDrag": false,
+                    "allowRotation": false,
+                    "pushable": false,
+                    "body.width": 128,
+                    "body.height": 128,
                     "isFilled": true,
                     "width": 128,
                     "height": 128,
@@ -71,11 +85,56 @@
             ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "405f6532-b548-4880-8b3a-677a5ce0d3c6",
+            "type": "Collider",
+            "label": "colision_detecteur_haut",
+            "scope": "PUBLIC",
+            "object1": "detecteur_haut",
+            "object2": "[]",
+            "overlapOnly": true,
+            "collideCallback": "this.platformeEnHautAccessible as any",
+            "callbackContext": "this"
+        },
+        {
+            "id": "77ef517c-f547-43de-aee8-a42f90c9e255",
+            "type": "Collider",
+            "label": "colision_detecteur_bas",
+            "scope": "PUBLIC",
+            "object1": "detecteur_bas",
+            "object2": "[]",
+            "overlapOnly": true,
+            "collideCallback": "this.entiteEstSurUnePlatforme as any",
+            "callbackContext": "this"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "estSurUnePlatforme",
+            "label": "estSurUnePlatforme",
+            "tooltip": "verifie si il y a du vide ou non dans la zone de détéction",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "platformeEnHaut",
+            "label": "platformeEnHaut",
+            "tooltip": "verfie la présence d'une platforme en haut de l'entité",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
 }

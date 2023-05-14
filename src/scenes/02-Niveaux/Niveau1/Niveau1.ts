@@ -37,9 +37,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.container(0, 0);
 
 		// araigne
-		const araigne = new Araigne(this, 384, 400);
-		araigne.body.velocity.x = 300;
-		araigne.body.velocity.y = 0;
+		const araigne = new Araigne(this, 571, 350);
 		groupe_adversaires.add(araigne);
 
 		// moustique_png
@@ -118,6 +116,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
+		this.platformes = platformes;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
@@ -127,6 +126,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
+	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	private liste_toile_vs_adversaire!: Araigne[];
 

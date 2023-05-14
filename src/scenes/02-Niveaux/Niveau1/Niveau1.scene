@@ -2,7 +2,6 @@
     "id": "0904f7e3-377d-4b1e-887c-6e8316a2d5d2",
     "sceneType": "SCENE",
     "settings": {
-        "snapEnabled": true,
         "snapWidth": 192,
         "snapHeight": 200,
         "exportClass": true,
@@ -70,16 +69,12 @@
                     "id": "09812ea7-55e4-4f32-be4a-95e77e295658",
                     "unlock": [
                         "x",
-                        "y",
-                        "body.velocity.x",
-                        "body.velocity.y"
+                        "y"
                     ],
                     "label": "araigne",
                     "components": [],
-                    "x": 384,
-                    "y": 400,
-                    "body.velocity.x": 300,
-                    "body.velocity.y": 0,
+                    "x": 571,
+                    "y": 350,
                     "nestedPrefabs": [],
                     "list": []
                 },
@@ -103,6 +98,7 @@
             "type": "Container",
             "id": "ace32157-9a3d-4377-bee8-2eed691a6f84",
             "label": "platformes",
+            "scope": "PUBLIC",
             "components": [],
             "list": [
                 {

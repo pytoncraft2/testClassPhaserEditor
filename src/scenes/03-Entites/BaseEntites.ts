@@ -4,11 +4,15 @@ export default interface BaseEntites {
 
 	body: Phaser.Physics.Arcade.Body;
 	image: Phaser.GameObjects.Image;
+	scene: Niveau1 | Niveau2
 }
 
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
+import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
+import BaseNiveaux from "../02-Niveaux/BaseNiveaux";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 

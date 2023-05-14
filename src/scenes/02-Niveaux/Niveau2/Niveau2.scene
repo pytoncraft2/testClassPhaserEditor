@@ -2,6 +2,9 @@
     "id": "1b264cbd-aeaa-4aa5-a434-a0f6ffe71ad3",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
+        "snapWidth": 100,
+        "snapHeight": 200,
         "exportClass": true,
         "autoImport": true,
         "superClassName": "BaseNiveaux",
@@ -12,7 +15,179 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [],
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "467dc089-620f-45e8-8c9b-24e15b50c71b",
+            "label": "platformes",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "5528cdcb-97a0-4781-a6c3-cf1a72570c79",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "components": [],
+                    "x": 390,
+                    "y": 1000,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "6b885b5e-d7c5-4321-8628-bef7af0b88ba",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_1",
+                    "components": [],
+                    "x": 1536,
+                    "y": 1000,
+                    "scaleX": 6,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "fb21819a-2ffc-4e2a-b344-33f527e2243e",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_2",
+                    "components": [],
+                    "x": 1560,
+                    "y": 800,
+                    "scaleX": 3,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "e7ba60bc-0939-43a7-b9e7-d2525717727d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_3",
+                    "components": [],
+                    "x": 260,
+                    "y": 600,
+                    "scaleX": 3,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "0f6fd8fe-dc3f-46c1-897b-593f52f9ac37",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_4",
+                    "components": [],
+                    "x": 1560,
+                    "y": 600,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "1320bca2-0b55-4258-9ba7-502d6e8d22c0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_5",
+                    "components": [],
+                    "x": 910,
+                    "y": 400,
+                    "scaleX": 8,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "1c5cf503-c39b-4ada-bea1-ad24e0d23d13",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_6",
+                    "components": [],
+                    "x": 1600,
+                    "y": 200,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "9b2242a5-d0cf-4a5f-ba0f-54c41c0078d4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_7",
+                    "components": [],
+                    "x": 576,
+                    "y": 800,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "36a72f8c-ee3c-4e23-b1c9-6dbda8bc81c8",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_8",
+                    "components": [],
+                    "x": 260,
+                    "y": 200,
+                    "scaleX": 4,
+                    "scaleY": 0.20034715589478025,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        }
+    ],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
