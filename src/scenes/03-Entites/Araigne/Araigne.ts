@@ -94,7 +94,7 @@ export default class Araigne extends BaseEntites {
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;
-					this.detecteur_haut.setPosition(this.detecteur_haut.x, 300);
+					this.detecteur_haut.setPosition(this.detecteur_haut.x, 270);
 				} else {
 					this.sautEnHautActivable = true;
 					this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
