@@ -135,6 +135,26 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "peutChangerDePlatforme",
+            "label": "peutChangerDePlatforme",
+            "tooltip": "indique si l'entité peut sauter sur une autre platforme",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "sautEnHautActivable",
+            "label": "sautEnHautActivable",
+            "tooltip": "indique si le saut vers le est activé",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

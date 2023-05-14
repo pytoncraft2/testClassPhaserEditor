@@ -77,11 +77,29 @@ export default class Araigne extends BaseEntites {
 	public colision_detecteur_bas: Phaser.Physics.Arcade.Collider;
 	public estSurUnePlatforme: boolean = false;
 	public platformeEnHaut: boolean = false;
+	public peutChangerDePlatforme: boolean = false;
+	public sautEnHautActivable: boolean = false;
 
 	/* START-USER-CODE */
 	awake(): void {
 		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
 		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
+
+		this.scene.time.addEvent({
+			delay: this.nombreEntierAuHasard(700, 800),                // ms
+			callback: () => {
+				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
+				if (Math.random() < 0.5) {
+					this.sautEnHautActivable = false;
+					this.detecteur_haut.setPosition(this.detecteur_haut.x, 300);
+				} else {
+					this.sautEnHautActivable = true;
+					this.detecteur_haut.setPosition(this.detecteur_haut.x, -102);
+				}
+			},
+			callbackScope: this,
+			loop: true
+		});
 	}
 
 	// Write your code here.
@@ -162,6 +180,10 @@ export default class Araigne extends BaseEntites {
 	platformeEnHautAccessible() {
 		console.log("PLATFORME haut accessible");
 		this.platformeEnHaut = true;
+	}
+
+	nombreEntierAuHasard(min: number, max: number) {
+		return Math.floor(Math.random() * (max - min + 1) + min)
 	}
 	/* END-USER-CODE */
 }
