@@ -91,6 +91,48 @@
                     "y": 299,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "0d59c34c-284c-47f1-8c79-b473b007f8b1",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_1",
+                    "components": [],
+                    "x": 1646.089111328125,
+                    "y": 335.6421813964844,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_2",
+                    "components": [],
+                    "x": 837.0648193359375,
+                    "y": 137.7357177734375,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_3",
+                    "components": [],
+                    "x": 1343.7923583984375,
+                    "y": 92.06498718261719,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         },
