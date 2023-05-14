@@ -81,8 +81,8 @@ export default class Araigne extends BaseEntites {
 
 	/* START-USER-CODE */
 	awake(): void {
-		// this.colision_detecteur_haut.object2 = this.scene.platformes.list;
-		// this.colision_detecteur_bas.object2 = this.scene.platformes.list;
+		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
+		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
 	}
 
 	// Write your code here.

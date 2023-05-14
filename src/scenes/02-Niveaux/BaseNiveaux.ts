@@ -178,34 +178,9 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (adversaire.blocages === adversaire.maxBlocages) {
 			console.log("EGALLLL");
 		}
-		// console.log(adversaire.blocages);
 		
 		toile.destroy()
 	}
-
-	// deblocageToile() {
-	// 	console.log("zzz");
-		
-	// 	// const dt = this.scene.game.loop.delta
-
-	// 	// entite.tempsCumule += dt
-	// 	// const { left, right } = entite.body.blocked;
-
-	// 	// if (left) entite.actionToucheDroite()
-	// 	// else if (right) entite.actionToucheGauche()
-
-
-	// 	// if (entite.tempsCumule < entite.tempsEntreActions) { return }
-	// 	// else {
-	// 	// 	if (entite.nombreEnchainementBlocage > 0) {
-	// 	// 		if (!entite.refToile?.ejectable) {
-	// 	// 			entite.diminueNombreEnchainementBlocage()
-	// 	// 		}
-
-	// 	// 	}
-	// 	// 	entite.tempsCumule = 0
-	// 	// }
-	// }
 
 	/* END-USER-CODE */
 }

@@ -4,7 +4,7 @@ export default interface BaseEntites {
 
 	body: Phaser.Physics.Arcade.Body;
 	image: Phaser.GameObjects.Image;
-	scene: Niveau1 | Niveau2
+	scene: (Niveau1 & Niveau2)
 }
 
 /* START OF COMPILED CODE */
