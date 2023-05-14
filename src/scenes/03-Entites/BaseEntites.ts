@@ -28,6 +28,9 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		// Write your code here.
 		this.scene.time.delayedCall(100, () => this.bringToTop(this.toile_image));
 		this.scene.add.existing(this)
+		this.setInteractive(new Phaser.Geom.Rectangle(0, 0, 500, 500), Phaser.Geom.Rectangle.Contains);
+		//@ts-ignore
+		this.on('pointerdown', () => (this.scene.entiteControllable = this));
 		/* END-USER-CTR-CODE */
 	}
 
@@ -75,7 +78,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.deblocageToile()
 	}
 
-
 	deblocageToile() {
 		const dt = this.scene.game.loop.delta
 
@@ -94,7 +96,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 		if (this.tempsCumule < this.tempsEntreActions) { return }
 		else {
-			console.log("GO");
+			// console.log("GO");
 			
 				//débloquage totale
 				if ((this.blocages - 1) == 0) {
