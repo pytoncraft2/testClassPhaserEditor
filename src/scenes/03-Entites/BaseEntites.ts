@@ -80,39 +80,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 
-	preUpdate(time: number, delta: number) {
-		this.deblocageToile()
-	}
-
-	deblocageToile() {
-		const dt = this.scene.game.loop.delta
-
-		this.tempsCumule += dt
-
-		if (this.tempsCumule < this.tempsEntreActions) { return }
-		else {
-				//débloquage totale
-				if ((this.blocages - 1) == 0) {
-					this.toile_image.clearTint();
-					this.body.moves = true;
-					this.blocages = 0;
-					this.diminutionTailleToile();
-					this.tempsCumule = 0;
-				//débloquage progressive
-				} else {
-
-					if (this.blocages > 0 && this.blocages !== this.maxBlocages) {
-						this.blocages -= 1;
-						this.toile_image.clearTint();
-						this.diminutionTailleToile()
-						this.tempsCumule = 0;
-					} else {
-						// console.log("ELSEIF");
-					} 
-				}
-		}
-	}
-
 	diminutionTailleToile() {
 		const diminutionScale = this.toile_image.scaleX - 0.20;
 		this.toile_image.setScale(diminutionScale);

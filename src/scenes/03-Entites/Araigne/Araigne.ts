@@ -20,11 +20,13 @@ export default class Araigne extends BaseEntites {
 		super(scene, x ?? 142, y ?? 72);
 
 		scene.physics.add.existing(this, false);
+		this.body.collideWorldBounds = true;
 		this.body.setOffset(-114, -39.5);
 		this.body.setSize(228, 79, false);
 
 		// image
 		const image = scene.add.image(0, 0, "araigne", "araigne.png");
+		image.name = "image";
 		this.add(image);
 
 		// detecteur_bas
@@ -38,7 +40,7 @@ export default class Araigne extends BaseEntites {
 		this.add(detecteur_bas);
 
 		// detecteur_haut
-		const detecteur_haut = scene.add.rectangle(55, -145, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
+		const detecteur_haut = scene.add.rectangle(55, -194, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_haut.scaleX = 0.19751986297412794;
 		detecteur_haut.scaleY = 0.1622402073862163;
 		detecteur_haut.alpha = 0.5;
@@ -94,7 +96,7 @@ export default class Araigne extends BaseEntites {
 					this.detecteur_haut.setPosition(this.detecteur_haut.x, 300);
 				} else {
 					this.sautEnHautActivable = true;
-					this.detecteur_haut.setPosition(this.detecteur_haut.x, -102);
+					this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
 				}
 			},
 			callbackScope: this,
@@ -184,6 +186,46 @@ export default class Araigne extends BaseEntites {
 
 	nombreEntierAuHasard(min: number, max: number) {
 		return Math.floor(Math.random() * (max - min + 1) + min)
+	}
+
+	preUpdate(...args: any[]): void {
+		console.log("ARAIGNE UPDATE");
+
+		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
+			if (!this.image.flipX) {
+				this.image.setFlipX(true)
+				this.detecteur_bas.setPosition(this.image.getLeftCenter().x, this.detecteur_bas.y)
+				this.detecteur_haut.setX(this.image.getLeftCenter().x);
+
+				this.body.setVelocityX(-this.velociteX)
+			} else if (this.image.flipX) {
+				this.image.setFlipX(false)
+				this.detecteur_bas.setPosition(this.image.getRightCenter().x, this.detecteur_bas.y)
+				this.detecteur_haut.setX(this.image.getRightCenter().x);
+				this.body.setVelocityX(this.velociteX)
+			}
+		}
+
+		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
+			if (this.platformeEnHaut && this.sautEnHautActivable) {
+				this.body.checkCollision.none = true;
+				this.scene.time.delayedCall(300, () => this.body.checkCollision.none = false)
+
+				this.body.setVelocityY(-1000)
+
+			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
+				this.body.checkCollision.none = true;
+				this.scene.time.delayedCall(600, () => {
+					this.body.checkCollision.none = false;
+				});
+
+				this.body.setVelocityY(-300)
+			}
+
+		}
+		this.estSurUnePlatforme = false;
+		this.platformeEnHaut = false;
+
 	}
 	/* END-USER-CODE */
 }
