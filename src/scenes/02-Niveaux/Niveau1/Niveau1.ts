@@ -8,6 +8,8 @@ import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import Moustique from "../../03-Entites/Moustique/Moustique";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -98,6 +100,17 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_projectile_toiles
 		const groupe_projectile_toiles = this.add.container(0, 0);
 
+		// text_1
+		const text_1 = this.add.text(1631, 70, "", {});
+		text_1.text = "New text";
+		text_1.setStyle({ "fontSize": "36px" });
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(text_1);
+
+		// startSceneActionScript
+		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
@@ -112,6 +125,9 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// toiles_vs_entite
 		this.physics.add.overlap(groupe_projectile_toiles.list, liste_toile_vs_adversaire, this.toileToucheEntite as any, undefined, this);
+
+		// startSceneActionScript (prefab fields)
+		startSceneActionScript.sceneKey = "Niveau2";
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;

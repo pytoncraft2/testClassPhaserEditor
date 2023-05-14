@@ -186,9 +186,113 @@
                     "list": []
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "63f32121-43cc-47a6-a8ea-44332abff289",
+            "label": "groupe_allies",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 700,
+            "y": 600,
+            "list": [
+                {
+                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
+                    "id": "bf07ab1c-60a9-4405-9704-92ff92c29275",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "components": [],
+                    "x": 0,
+                    "y": 0,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
+                            "id": "c673b582-095b-4fcc-a99f-3d620b776948",
+                            "unlock": [
+                                "originX",
+                                "originY"
+                            ],
+                            "label": "image",
+                            "components": [],
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "nestedPrefabs": [],
+                            "list": []
+                        }
+                    ],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "faa969ae-91f9-4d3c-83e1-6cbe90b1bb95",
+            "label": "groupe_adversaires",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 500,
+            "y": 200,
+            "list": [
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "7156f0f6-4e8d-4dd4-b795-07bad114041e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne",
+                    "components": [],
+                    "x": 580,
+                    "y": 647,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "c430b4c7-8e3f-49e2-b55b-4d41ae23f46d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_1",
+                    "components": [],
+                    "x": 1100,
+                    "y": 200,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "c574ae33-5e90-43f2-ac28-ed594161e0d7",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_2",
+                    "components": [],
+                    "x": 500,
+                    "y": 0,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "5c01423e-7484-443c-a5e8-434068c75146",
+            "type": "Collider",
+            "label": "platformes_vs_entites",
+            "scope": "METHOD",
+            "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
+            "object2": "platformes.list"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

@@ -5,6 +5,8 @@
 
 import BaseNiveaux from "../BaseNiveaux";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
+import Huipat from "../../03-Entites/Huipat/Huipat";
+import Araigne from "../../03-Entites/Araigne/Araigne";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -77,12 +79,45 @@ export default class Niveau2 extends BaseNiveaux {
 		platformePrefab_8.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_8);
 
+		// groupe_allies
+		const groupe_allies = this.add.container(700, 600);
+
+		// huipat
+		const huipat = new Huipat(this, 0, 0);
+		huipat.name = "huipat";
+		groupe_allies.add(huipat);
+		huipat.image.setOrigin(0.5, 0.5);
+
+		// groupe_adversaires
+		const groupe_adversaires = this.add.container(500, 200);
+
+		// araigne
+		const araigne = new Araigne(this, 580, 647);
+		groupe_adversaires.add(araigne);
+
+		// araigne_1
+		const araigne_1 = new Araigne(this, 1100, 200);
+		groupe_adversaires.add(araigne_1);
+
+		// araigne_2
+		const araigne_2 = new Araigne(this, 500, 0);
+		groupe_adversaires.add(araigne_2);
+
+		// platformes_vs_entites
+		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
+
 		this.platformes = platformes;
+		this.huipat = huipat;
+		this.groupe_allies = groupe_allies;
+		this.groupe_adversaires = groupe_adversaires;
 
 		this.events.emit("scene-awake");
 	}
 
 	public platformes!: Phaser.GameObjects.Container;
+	public huipat!: Huipat;
+	public groupe_allies!: Phaser.GameObjects.Container;
+	public groupe_adversaires!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
 

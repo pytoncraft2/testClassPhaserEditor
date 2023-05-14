@@ -20,6 +20,7 @@ export default class Araigne extends BaseEntites {
 		super(scene, x ?? 142, y ?? 72);
 
 		scene.physics.add.existing(this, false);
+		this.body.gravity.y = 800;
 		this.body.collideWorldBounds = true;
 		this.body.setOffset(-114, -39.5);
 		this.body.setSize(228, 79, false);
@@ -191,29 +192,34 @@ export default class Araigne extends BaseEntites {
 	preUpdate(...args: any[]): void {
 		console.log("ARAIGNE UPDATE");
 
+		this.scene.physics.world.wrap(this, 400);
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
 			if (!this.image.flipX) {
-				this.image.setFlipX(true)
+				// this.image.setFlipX(true)
+				this.actionToucheGauche()
 				this.detecteur_bas.setPosition(this.image.getLeftCenter().x, this.detecteur_bas.y)
 				this.detecteur_haut.setX(this.image.getLeftCenter().x);
 
-				this.body.setVelocityX(-this.velociteX)
+				// this.body.setVelocityX(-this.velociteX)
 			} else if (this.image.flipX) {
-				this.image.setFlipX(false)
+				this.actionToucheDroite()
+				// this.image.setFlipX(false)
 				this.detecteur_bas.setPosition(this.image.getRightCenter().x, this.detecteur_bas.y)
 				this.detecteur_haut.setX(this.image.getRightCenter().x);
-				this.body.setVelocityX(this.velociteX)
+				// this.body.setVelocityX(this.velociteX)
 			}
 		}
 
 		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
 			if (this.platformeEnHaut && this.sautEnHautActivable) {
+				// this.actionToucheHaut()
 				this.body.checkCollision.none = true;
 				this.scene.time.delayedCall(300, () => this.body.checkCollision.none = false)
 
 				this.body.setVelocityY(-1000)
 
 			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
+				// this.actionToucheBas()
 				this.body.checkCollision.none = true;
 				this.scene.time.delayedCall(600, () => {
 					this.body.checkCollision.none = false;
