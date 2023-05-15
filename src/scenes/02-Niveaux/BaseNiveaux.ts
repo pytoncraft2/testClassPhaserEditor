@@ -182,6 +182,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 		toile.destroy()
 	}
 
+	toucheEntiteParDessus(allie: any, adversaire: any) {
+		if (allie.body.velocity.y > 0 || adversaire.body.touching.up) {
+			adversaire.destroy()
+		}
+	}
+
 	/* END-USER-CODE */
 }
 

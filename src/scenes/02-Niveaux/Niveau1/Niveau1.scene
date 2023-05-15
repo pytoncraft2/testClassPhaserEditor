@@ -354,7 +354,9 @@
             "label": "adversaires_vs_allies",
             "scope": "METHOD",
             "object1": "groupe_allies.list",
-            "object2": "groupe_adversaires.list"
+            "object2": "groupe_adversaires.list",
+            "collideCallback": "this.toucheEntiteParDessus as any",
+            "callbackContext": "this"
         },
         {
             "id": "9c5c950c-c312-4dc7-ace0-83bcfb7dade5",
