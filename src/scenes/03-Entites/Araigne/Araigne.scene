@@ -168,6 +168,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "velociteX",
+            "label": "velociteX",
+            "tooltip": "velocite en x",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

@@ -83,6 +83,7 @@ export default class Araigne extends BaseEntites {
 	public peutChangerDePlatforme: boolean = false;
 	public sautEnHautActivable: boolean = false;
 	public velociteXPause: boolean = false;
+	public velociteX: number = 100;
 
 	/* START-USER-CODE */
 	awake(): void {
