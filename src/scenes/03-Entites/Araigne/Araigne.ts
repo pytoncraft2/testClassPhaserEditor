@@ -20,7 +20,7 @@ export default class Araigne extends BaseEntites {
 		super(scene, x ?? 142, y ?? 72);
 
 		scene.physics.add.existing(this, false);
-		this.body.gravity.y = 800;
+		this.body.gravity.y = 1200;
 		this.body.collideWorldBounds = true;
 		this.body.setOffset(-114, -39.5);
 		this.body.setSize(228, 79, false);
@@ -189,6 +189,12 @@ export default class Araigne extends BaseEntites {
 	preUpdate(...args: any[]): void {
 
 		this.scene.physics.world.wrap(this, 400);
+		const { left, right } = this.body.blocked;
+
+		if (left && !this.velociteXPause) this.actionToucheGauche()
+		else if (right && !this.velociteXPause) this.actionToucheDroite()
+
+
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
 			if (!this.image.flipX) {
 				// this.image.setFlipX(true)
@@ -217,7 +223,7 @@ export default class Araigne extends BaseEntites {
 				// this.actionToucheHaut()
 				this.body.checkCollision.none = true;
 				this.velociteXPause = true;
-				this.scene.time.delayedCall(300, () => {
+				this.scene.time.delayedCall(600, () => {
 					this.body.checkCollision.none = false
 					this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
@@ -229,7 +235,7 @@ export default class Araigne extends BaseEntites {
 				// this.actionToucheBas()
 				this.body.checkCollision.none = true;
 				this.velociteXPause = true;
-				this.scene.time.delayedCall(600, () => {
+				this.scene.time.delayedCall(400, () => {
 					this.body.checkCollision.none = false;
 					this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
