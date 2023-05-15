@@ -82,6 +82,7 @@ export default class Araigne extends BaseEntites {
 	public platformeEnHaut: boolean = false;
 	public peutChangerDePlatforme: boolean = false;
 	public sautEnHautActivable: boolean = false;
+	public velociteXPause: boolean = false;
 
 	/* START-USER-CODE */
 	awake(): void {
@@ -107,7 +108,6 @@ export default class Araigne extends BaseEntites {
 
 	// Write your code here.
 	actionToucheEspace(): void {
-		console.log("ACTION ARAIGNE !");
 		this.body.setVelocityY(-80)
 	}
 
@@ -176,12 +176,9 @@ export default class Araigne extends BaseEntites {
 	}
 
 	entiteEstSurUnePlatforme(_recRemplie: any, _platforme: any) {
-		console.log("SUR PLATFORME");
-
 		this.estSurUnePlatforme = true;
 	}
 	platformeEnHautAccessible() {
-		console.log("PLATFORME haut accessible");
 		this.platformeEnHaut = true;
 	}
 
@@ -190,19 +187,24 @@ export default class Araigne extends BaseEntites {
 	}
 
 	preUpdate(...args: any[]): void {
-		console.log("ARAIGNE UPDATE");
 
 		this.scene.physics.world.wrap(this, 400);
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
 			if (!this.image.flipX) {
 				// this.image.setFlipX(true)
-				this.actionToucheGauche()
+				console.log("oui");
+
+				if (!this.velociteXPause) {
+					this.actionToucheGauche()
+				}
 				this.detecteur_bas.setPosition(this.image.getLeftCenter().x, this.detecteur_bas.y)
 				this.detecteur_haut.setX(this.image.getLeftCenter().x);
 
 				// this.body.setVelocityX(-this.velociteX)
 			} else if (this.image.flipX) {
-				this.actionToucheDroite()
+				if (!this.velociteXPause) {
+					this.actionToucheDroite()
+				}
 				// this.image.setFlipX(false)
 				this.detecteur_bas.setPosition(this.image.getRightCenter().x, this.detecteur_bas.y)
 				this.detecteur_haut.setX(this.image.getRightCenter().x);
@@ -214,18 +216,26 @@ export default class Araigne extends BaseEntites {
 			if (this.platformeEnHaut && this.sautEnHautActivable) {
 				// this.actionToucheHaut()
 				this.body.checkCollision.none = true;
-				this.scene.time.delayedCall(300, () => this.body.checkCollision.none = false)
+				this.velociteXPause = true;
+				this.scene.time.delayedCall(300, () => {
+					this.body.checkCollision.none = false
+					this.velociteXPause = false;
+					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
+				})
 
-				this.body.setVelocityY(-1000)
+				this.body.setVelocity(0, -1000)
 
 			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
 				// this.actionToucheBas()
 				this.body.checkCollision.none = true;
+				this.velociteXPause = true;
 				this.scene.time.delayedCall(600, () => {
 					this.body.checkCollision.none = false;
+					this.velociteXPause = false;
+					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
 				});
 
-				this.body.setVelocityY(-300)
+				this.body.setVelocity(0, -300)
 			}
 
 		}
