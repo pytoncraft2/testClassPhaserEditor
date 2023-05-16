@@ -196,32 +196,18 @@ export default class Araigne extends BaseEntites {
 	preUpdate(...args: any[]): void {
 
 		this.scene.physics.world.wrap(this, 400);
-		// const { left, right } = this.body.blocked;
-
-		// if (left && !this.velociteXPause) this.actionToucheGauche()
-		// else if (right && !this.velociteXPause) this.actionToucheDroite()
-
 
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
-			if (!this.image.flipX) {
-				// if (!this.velociteXPause) {
-					this.actionToucheGauche()
-				// }
-			} else if (this.image.flipX) {
-				// if (!this.velociteXPause) {
-					this.actionToucheDroite()
-				// }
-			}
+			if (!this.image.flipX) this.actionToucheGauche()
+			else if (this.image.flipX) this.actionToucheDroite()
 		}
 
 		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
 			if (this.platformeEnHaut && this.sautEnHautActivable) {
 				// this.actionToucheHaut()
 				this.body.checkCollision.none = true;
-				// this.velociteXPause = true;
 				this.scene.time.delayedCall(600, () => {
 					this.body.checkCollision.none = false
-					// this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
 				})
 
@@ -230,10 +216,8 @@ export default class Araigne extends BaseEntites {
 			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
 				// this.actionToucheBas()
 				this.body.checkCollision.none = true;
-				// this.velociteXPause = true;
 				this.scene.time.delayedCall(400, () => {
 					this.body.checkCollision.none = false;
-					// this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
 				});
 
