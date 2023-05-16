@@ -26,7 +26,7 @@ export default class Niveau1 extends BaseNiveaux {
 	editorCreate(): void {
 
 		// groupe_allies
-		const groupe_allies = this.add.container(1152, 400);
+		const groupe_allies = this.add.container(1647, 416);
 
 		// huipat
 		const huipat = new Huipat(this, 0, 0);

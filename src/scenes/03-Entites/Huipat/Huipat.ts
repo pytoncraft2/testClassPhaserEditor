@@ -33,6 +33,7 @@ export default class Huipat extends BaseEntites {
 		detecteur_proche.scaleY = 1.1424662876249119;
 		detecteur_proche.alpha = 0.5;
 		scene.physics.add.existing(detecteur_proche, false);
+		detecteur_proche.body.enable = false;
 		detecteur_proche.body.moves = false;
 		detecteur_proche.body.pushable = false;
 		detecteur_proche.body.setSize(128, 128, false);

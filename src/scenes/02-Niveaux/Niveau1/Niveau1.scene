@@ -21,8 +21,8 @@
             "label": "groupe_allies",
             "scope": "PUBLIC",
             "components": [],
-            "x": 1152,
-            "y": 400,
+            "x": 1647,
+            "y": 416,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
