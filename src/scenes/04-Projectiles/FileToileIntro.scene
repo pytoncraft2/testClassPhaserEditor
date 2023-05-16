@@ -46,6 +46,16 @@
                 "id": "object-var",
                 "expressionType": "BaseEntites"
             }
+        },
+        {
+            "name": "duree",
+            "label": "duree",
+            "tooltip": "durée de l'animation",
+            "defValue": 1900,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

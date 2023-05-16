@@ -87,8 +87,8 @@
                     ],
                     "label": "araigne_3",
                     "components": [],
-                    "x": 1343.7923583984375,
-                    "y": 92.06498718261719,
+                    "x": 186,
+                    "y": 275,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -294,10 +294,12 @@
             "unlock": [
                 "x",
                 "y",
-                "ref"
+                "ref",
+                "duree"
             ],
             "label": "rectangle_1",
             "ref": "araigne_2",
+            "duree": 1900,
             "components": [],
             "x": 841,
             "y": -422,
@@ -309,6 +311,25 @@
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",
             "components": [],
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+            "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
+            "unlock": [
+                "x",
+                "y",
+                "ref",
+                "durée",
+                "duree"
+            ],
+            "label": "fileToileIntro",
+            "ref": "araigne_3",
+            "duree": 1300,
+            "components": [],
+            "x": 188,
+            "y": -32,
             "nestedPrefabs": [],
             "list": []
         }

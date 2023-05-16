@@ -94,49 +94,19 @@
             }
         },
         {
-            "name": "tempsCumule",
-            "label": "tempsCumule",
-            "tooltip": "temp que l'entité cumule avant la prochaine action",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tempsEntreActions",
-            "label": "tempsEntreActions",
-            "tooltip": "temp avant d'effectuer une action",
-            "defValue": 500,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tempsCumuleMaxBlocage",
-            "label": "tempsCumuleMaxBlocage",
-            "tooltip": "temps cumulé avant d'être progréssivement débloqué",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tempsAvantDeblocage",
-            "label": "tempsAvantDeblocage",
-            "tooltip": "temps avant la diminution du blocage",
-            "defValue": 3000,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
             "name": "invincible",
             "label": "invincible",
             "tooltip": "imunise l'entité contre les dégats",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "activeIA",
+            "label": "activeIA",
+            "tooltip": "etat de l'activation du mode automatique de l'entite",
             "defValue": false,
             "customDefinition": false,
             "type": {

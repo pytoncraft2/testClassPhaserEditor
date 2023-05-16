@@ -43,7 +43,7 @@ export default class Niveau1 extends BaseNiveaux {
 		groupe_adversaires.add(araigne_2);
 
 		// araigne_3
-		const araigne_3 = new Araigne(this, 1343.7923583984375, 92.06498718261719);
+		const araigne_3 = new Araigne(this, 186, 275);
 		groupe_adversaires.add(araigne_3);
 
 		// platformes
@@ -118,6 +118,10 @@ export default class Niveau1 extends BaseNiveaux {
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// fileToileIntro
+		const fileToileIntro = new FileToileIntro(this, 188, -32);
+		this.add.existing(fileToileIntro);
+
 		// lists
 		const liste_toile_vs_adversaire: Array<any> = [];
 
@@ -135,6 +139,11 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// rectangle_1 (prefab fields)
 		rectangle_1.ref = araigne_2;
+		rectangle_1.duree = 1900;
+
+		// fileToileIntro (prefab fields)
+		fileToileIntro.ref = araigne_3;
+		fileToileIntro.duree = 1300;
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;

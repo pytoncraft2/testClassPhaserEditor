@@ -1,4 +1,3 @@
-
 // You can write more code here
 export default interface BaseEntites {
 
@@ -10,9 +9,9 @@ export default interface BaseEntites {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+/* START-USER-IMPORTS */
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
-/* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 export default class BaseEntites extends Phaser.GameObjects.Container {
@@ -46,11 +45,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public velociteX: number = 350;
 	public blocages: number = 0;
 	public maxBlocages: number = 7;
-	public tempsCumule: number = 0;
-	public tempsEntreActions: number = 500;
-	public tempsCumuleMaxBlocage: number = 0;
-	public tempsAvantDeblocage: number = 3000;
 	public invincible: boolean = false;
+	public activeIA: boolean = false;
 
 	/* START-USER-CODE */
 

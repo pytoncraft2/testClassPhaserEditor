@@ -174,7 +174,7 @@ export default class Araigne extends BaseEntites {
 
 	preUpdate(...args: any[]): void {
 		this.scene.physics.world.wrap(this, 400);
-		this.deplacementIA()
+		if (this.activeIA) this.deplacementIA()
 	}
 
 	deplacementIA() {

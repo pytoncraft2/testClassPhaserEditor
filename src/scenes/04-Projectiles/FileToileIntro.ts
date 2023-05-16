@@ -27,6 +27,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 	}
 
 	public ref!: BaseEntites;
+	public duree: number = 1900;
 
 	/* START-USER-CODE */
 	awake() {
@@ -36,16 +37,15 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 			scaleY: 6,
 			alpha: 0,
 			onUpdate: () => this.ref.setPosition(this.getBottomCenter().x, this.getBottomCenter().y),
-			duration: 1900,
+			duration: this.duree,
 			ease: 'Exponential',
 			onComplete: () => {
 				this.ref.body.allowGravity = true;
+				this.ref.activeIA = true;
 				this.destroy(true);
 			}
 		})
 	}
-
-
 	/* END-USER-CODE */
 }
 
