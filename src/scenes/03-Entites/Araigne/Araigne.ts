@@ -151,11 +151,7 @@ export default class Araigne extends BaseEntites {
 		this.deplaceDetecteurs('Left')
 	}
 
-	/** AJUSTEMENT ROTATION IMAGE ET POSITION DETECTEURS AU CHANGEMENT DE DIRECTION */
-
-	FlipX(ouiNon: boolean) {
-		this.image.setFlipX(ouiNon);
-	}
+	/** AJUSTEMENT POSITION DETECTEURS AU CHANGEMENT DE DIRECTION */
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')
 	{

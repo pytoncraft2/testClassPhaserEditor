@@ -41,8 +41,6 @@ export default class Huipat extends BaseEntites {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
-		// this.scene.add.group();
 		/* END-USER-CTR-CODE */
 	}
 
@@ -62,12 +60,12 @@ export default class Huipat extends BaseEntites {
 	actionToucheDroite() {
 		this.body.setVelocityX(this.velociteX);
 		this.FlipX(false)
-		this.zoneInteractionADroite()
+		this.deplaceDetecteurs('Right')
 	}
 	actionToucheGauche() {
 		this.body.setVelocityX(-this.velociteX)
 		this.FlipX(true)
-		this.zoneInteractionAGauche()
+		this.deplaceDetecteurs('Left')
 	}
 	actionToucheBas(): any {
 		this.body.checkCollision.none = true;
@@ -88,27 +86,10 @@ export default class Huipat extends BaseEntites {
 		}, [toile, (this.scene as any).groupe_projectile_toiles], this.scene);	
 	}
 
-	/**
-	 * @description déplace à droite de l'image, le rectangle qui permet de détecter une autre entité 
-	 */
-	zoneInteractionADroite() {
-		if (this.zone_interaction_proche.x != this.image.getRightCenter().x)
-			this.zone_interaction_proche.setPosition(this.image.getRightCenter().x, this.image.getRightCenter().y);
-	}
-
-	/**
-	 * @description déplace à gauche de l'image, le rectangle qui permet de détecter une autre entité 
-	 */
-	zoneInteractionAGauche() {
-		if (this.zone_interaction_proche.x != this.image.getLeftCenter().x)
-			this.zone_interaction_proche.setPosition(this.image.getLeftCenter().x, this.image.getLeftCenter().y);
-	}
-
-	/**
-	 * @param ouiNon retourne l'image de l'entité vers la droite(false) ou vers la gauche(true)
-	 */
-	FlipX(ouiNon: boolean) {
-		this.image.setFlipX(ouiNon);
+	deplaceDetecteurs(emplacement: 'Left' | 'Right')
+	{
+		if (this.zone_interaction_proche.x != this.image[`get${emplacement}Center`]().x)
+			this.zone_interaction_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
 	}
 
 	/* END-USER-CODE */

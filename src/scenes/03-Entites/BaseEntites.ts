@@ -79,39 +79,17 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.body.setVelocityX(0);
 	}
 
-
 	diminutionTailleToile() {
 		const diminutionScale = this.toile_image.scaleX - 0.20;
 		this.toile_image.setScale(diminutionScale);
 	}
 
-	ejection(obj1: any, obj2: any) {
-
-		obj2.body.moves = true;
-		obj2.body.checkCollision.none = true;
-
-			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
-		this.scene.tweens.add({
-			targets: [obj2.toile_image],
-			angle: obj1.body.velocity.x < 0 ? -960 : 960,
-			alpha: 0,
-			ease: 'Linear',
-			duration: 1000
-		});
-		obj2.body.setVelocity(obj1.body.velocity.x < 0 ? -500 : 500, -1800);
-		// this.scene.time.delayedCall(800, () => {
-			// console.log(obj2);
-
-			// console.log(this);
-
-			// obj2.destroy();
-			// obj1.parentContainer.killedEnnemy += 1;
-			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
-			// score.niveauSuivant();
-			// obj1.parentContainer.killedEnnemy = 0;
-			// }
-		// })
+	/** RETOURNE L'IMAGE VERS LA DROITE(FALSE) OU VERS LA GAUCHE(TRUE) */
+	
+	FlipX(ouiNon: boolean) {
+		this.image.setFlipX(ouiNon);
 	}
+
 	/* END-USER-CODE */
 }
 
