@@ -28,15 +28,19 @@ export default class Huipat extends BaseEntites {
 		this.add(image);
 
 		// detecteur_proche
-		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128);
+		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_proche.scaleX = 0.6879210867196743;
 		detecteur_proche.scaleY = 1.1424662876249119;
 		detecteur_proche.alpha = 0.5;
+		scene.physics.add.existing(detecteur_proche, false);
+		detecteur_proche.body.moves = false;
+		detecteur_proche.body.pushable = false;
+		detecteur_proche.body.setSize(128, 128, false);
 		detecteur_proche.isFilled = true;
 		this.add(detecteur_proche);
 
 		// colision_detecteur_proche
-		const colision_detecteur_proche = scene.physics.add.collider(detecteur_proche, [], this.toucheAdversaireProche as any);
+		const colision_detecteur_proche = scene.physics.add.overlap(detecteur_proche, [], () => console.log('proche'));
 
 		this.image = image;
 		this.detecteur_proche = detecteur_proche;
@@ -49,7 +53,7 @@ export default class Huipat extends BaseEntites {
 	}
 
 	public image: Phaser.GameObjects.Sprite;
-	public detecteur_proche: Phaser.GameObjects.Rectangle;
+	public detecteur_proche: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
 
 	/* START-USER-CODE */
@@ -100,33 +104,6 @@ export default class Huipat extends BaseEntites {
 	{
 		if (this.detecteur_proche.x != this.image[`get${emplacement}Center`]().x)
 			this.detecteur_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
-	}
-
-	/** FONCTIONS DE CALLBACK AU MOMENT DU CHEVAUCHEMENT ENTRE LE RECTANGLE ET UN ADVERSAIRE */
-
-	toucheAdversaireProche(allie: BaseEntites, _obj2: BaseEntites) {
-		console.log("TOUCHE");
-		
-		// obj1.removeLife();
-		allie.invincible = true;
-		allie.body.moves = false;
-		this.scene.tweens.add({
-			targets: allie,
-			alpha: {
-				from: 0.8,
-				to: 0
-			},
-			duration: 100,
-			yoyo: true,
-			repeat: 3,
-			onComplete: () => {
-				allie.body.moves = true;
-			}
-		});
-		this.scene.time.delayedCall(3000, () => {
-			allie.setAlpha(1);
-			allie.invincible = false;
-		});
 	}
 
 	/* END-USER-CODE */

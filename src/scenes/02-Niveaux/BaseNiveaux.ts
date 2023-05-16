@@ -182,6 +182,41 @@ export default class BaseNiveaux extends Phaser.Scene {
 		toile.destroy()
 	}
 
+	/** FONCTIONS DE VERIFICATION AVANT D'EXECUTER LE CALLBACK ENTRE UN ALLIE ET UN ADVERSAIRE */
+
+	ProcessVerifAllieToucheAdversaireProche(allie: BaseEntites, adversaire: BaseEntites) {
+		if (!allie.invincible && adversaire.body.moves) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/** FONCTIONS DE CALLBACK AU MOMENT DE LA COLISION ENTRE UN ALLIE ET UN ADVERSAIRE */
+
+	allieToucheAdversaireProche(allie: BaseEntites, _obj2: BaseEntites) {
+		// obj1.removeLife();
+		allie.invincible = true;
+		allie.body.moves = false;
+		allie.scene.tweens.add({
+			targets: allie,
+			alpha: {
+				from: 0.6,
+				to: 0
+			},
+			duration: 100,
+			yoyo: true,
+			repeat: 3,
+			onComplete: () => {
+				allie.body.moves = true;
+			}
+		});
+		allie.scene.time.delayedCall(3000, () => {
+			allie.setAlpha(1);
+			allie.invincible = false;
+		});
+	}
+
 	/* END-USER-CODE */
 }
 

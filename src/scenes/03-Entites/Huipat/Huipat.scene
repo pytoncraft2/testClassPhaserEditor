@@ -50,6 +50,11 @@
                     "scaleX": 0.6879210867196743,
                     "scaleY": 1.1424662876249119,
                     "alpha": 0.5,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "pushable": false,
+                    "body.width": 128,
+                    "body.height": 128,
                     "isFilled": true,
                     "width": 128,
                     "height": 128,
@@ -66,7 +71,8 @@
             "scope": "PUBLIC",
             "object1": "detecteur_proche",
             "object2": "[]",
-            "collideCallback": "this.toucheAdversaireProche as any"
+            "overlapOnly": true,
+            "collideCallback": "() => console.log('proche')"
         }
     ],
     "meta": {
