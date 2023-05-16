@@ -16,6 +16,73 @@
     },
     "displayList": [
         {
+            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+            "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
+            "unlock": [
+                "ref",
+                "durée",
+                "duree",
+                "scaleX",
+                "scaleY",
+                "longueurFile",
+                "x",
+                "y"
+            ],
+            "label": "fileToileIntro",
+            "ref": "araigne_3",
+            "duree": 5200,
+            "longueurFile": 7.2,
+            "components": [],
+            "x": 172,
+            "y": -7,
+            "scaleX": 0.029609107493260928,
+            "scaleY": -1,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+            "id": "506a225a-2773-4580-9650-a1d67b091dce",
+            "unlock": [
+                "x",
+                "y",
+                "ref",
+                "duree",
+                "longueurFile",
+                "delaiAvantActivation"
+            ],
+            "label": "fileToileIntro_1",
+            "ref": "araigne",
+            "duree": 4000,
+            "longueurFile": 5.6,
+            "delaiAvantActivation": 3000,
+            "components": [],
+            "x": 1767,
+            "y": -7,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+            "id": "2b125bac-b18e-4fff-b740-f20c0c1bc8d3",
+            "unlock": [
+                "x",
+                "y",
+                "ref",
+                "longueurFile",
+                "delaiAvantActivation"
+            ],
+            "label": "fileToileIntro_2",
+            "ref": "araigne_2",
+            "longueurFile": 2.5,
+            "delaiAvantActivation": 2000,
+            "components": [],
+            "x": 954,
+            "y": -11,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
             "type": "Container",
             "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
             "label": "groupe_allies",
@@ -73,8 +140,8 @@
                     ],
                     "label": "araigne_2",
                     "components": [],
-                    "x": 837,
-                    "y": -121,
+                    "x": 955,
+                    "y": -149,
                     "nestedPrefabs": [],
                     "list": []
                 },
@@ -87,8 +154,22 @@
                     ],
                     "label": "araigne_3",
                     "components": [],
-                    "x": 186,
-                    "y": 275,
+                    "x": 172,
+                    "y": -146,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "fe01cedb-44d2-4f10-81ff-2a39fc3a187a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne",
+                    "components": [],
+                    "x": 1765,
+                    "y": -144,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -289,47 +370,10 @@
             ]
         },
         {
-            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
-            "id": "fcebaf31-895b-47be-aaf4-1b695d526ae4",
-            "unlock": [
-                "x",
-                "y",
-                "ref",
-                "duree"
-            ],
-            "label": "rectangle_1",
-            "ref": "araigne_2",
-            "duree": 1900,
-            "components": [],
-            "x": 841,
-            "y": -422,
-            "nestedPrefabs": [],
-            "list": []
-        },
-        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",
             "components": [],
-            "nestedPrefabs": [],
-            "list": []
-        },
-        {
-            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
-            "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
-            "unlock": [
-                "x",
-                "y",
-                "ref",
-                "durée",
-                "duree"
-            ],
-            "label": "fileToileIntro",
-            "ref": "araigne_3",
-            "duree": 1300,
-            "components": [],
-            "x": 188,
-            "y": -32,
             "nestedPrefabs": [],
             "list": []
         }

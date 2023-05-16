@@ -19,7 +19,7 @@
             "label": "rectangle_1",
             "components": [],
             "scaleX": 0.029609107493260928,
-            "scaleY": 2.29069951401355,
+            "scaleY": -1,
             "originY": 0,
             "alpha": 0.8,
             "isFilled": true,
@@ -52,6 +52,26 @@
             "label": "duree",
             "tooltip": "durée de l'animation",
             "defValue": 1900,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "longueurFile",
+            "label": "longueurFile",
+            "tooltip": "longueur final du file",
+            "defValue": 6,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "delaiAvantActivation",
+            "label": "delaiAvantActivation",
+            "tooltip": "specifie le temps qu'il faut avant de démarrer l'animation",
+            "defValue": 0,
             "customDefinition": false,
             "type": {
                 "id": "number"

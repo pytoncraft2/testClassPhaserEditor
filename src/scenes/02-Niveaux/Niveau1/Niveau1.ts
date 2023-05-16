@@ -4,12 +4,12 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
+import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
-import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -26,6 +26,20 @@ export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
 
+		// fileToileIntro
+		const fileToileIntro = new FileToileIntro(this, 172, -7);
+		this.add.existing(fileToileIntro);
+		fileToileIntro.scaleX = 0.029609107493260928;
+		fileToileIntro.scaleY = -1;
+
+		// fileToileIntro_1
+		const fileToileIntro_1 = new FileToileIntro(this, 1767, -7);
+		this.add.existing(fileToileIntro_1);
+
+		// fileToileIntro_2
+		const fileToileIntro_2 = new FileToileIntro(this, 954, -11);
+		this.add.existing(fileToileIntro_2);
+
 		// groupe_allies
 		const groupe_allies = this.add.container(1647, 416);
 
@@ -39,12 +53,16 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.container(0, 0);
 
 		// araigne_2
-		const araigne_2 = new Araigne(this, 837, -121);
+		const araigne_2 = new Araigne(this, 955, -149);
 		groupe_adversaires.add(araigne_2);
 
 		// araigne_3
-		const araigne_3 = new Araigne(this, 186, 275);
+		const araigne_3 = new Araigne(this, 172, -146);
 		groupe_adversaires.add(araigne_3);
+
+		// araigne
+		const araigne = new Araigne(this, 1765, -144);
+		groupe_adversaires.add(araigne);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
@@ -111,16 +129,8 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript
 		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
 
-		// rectangle_1
-		const rectangle_1 = new FileToileIntro(this, 841, -422);
-		this.add.existing(rectangle_1);
-
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
-
-		// fileToileIntro
-		const fileToileIntro = new FileToileIntro(this, 188, -32);
-		this.add.existing(fileToileIntro);
 
 		// lists
 		const liste_toile_vs_adversaire: Array<any> = [];
@@ -134,16 +144,24 @@ export default class Niveau1 extends BaseNiveaux {
 		// toiles_vs_entite
 		this.physics.add.overlap(groupe_projectile_toiles.list, liste_toile_vs_adversaire, this.toileToucheEntite as any, undefined, this);
 
-		// startSceneActionScript (prefab fields)
-		startSceneActionScript.sceneKey = "Niveau2";
-
-		// rectangle_1 (prefab fields)
-		rectangle_1.ref = araigne_2;
-		rectangle_1.duree = 1900;
-
 		// fileToileIntro (prefab fields)
 		fileToileIntro.ref = araigne_3;
-		fileToileIntro.duree = 1300;
+		fileToileIntro.duree = 5200;
+		fileToileIntro.longueurFile = 7.2;
+
+		// fileToileIntro_1 (prefab fields)
+		fileToileIntro_1.ref = araigne;
+		fileToileIntro_1.duree = 4000;
+		fileToileIntro_1.longueurFile = 5.6;
+		fileToileIntro_1.delaiAvantActivation = 3000;
+
+		// fileToileIntro_2 (prefab fields)
+		fileToileIntro_2.ref = araigne_2;
+		fileToileIntro_2.longueurFile = 2.5;
+		fileToileIntro_2.delaiAvantActivation = 2000;
+
+		// startSceneActionScript (prefab fields)
+		startSceneActionScript.sceneKey = "Niveau2";
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;

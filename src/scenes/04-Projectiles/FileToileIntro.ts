@@ -14,7 +14,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 		super(scene, x ?? 0, y ?? 0, width ?? 128, height ?? 128);
 
 		this.scaleX = 0.029609107493260928;
-		this.scaleY = 2.29069951401355;
+		this.scaleY = -1;
 		this.setOrigin(0.5, 0);
 		this.alpha = 0.8;
 		this.isFilled = true;
@@ -28,16 +28,19 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 
 	public ref!: BaseEntites;
 	public duree: number = 1900;
+	public longueurFile: number = 6;
+	public delaiAvantActivation: number = 0;
 
 	/* START-USER-CODE */
 	awake() {
 		this.ref.body.allowGravity = false;
 		this.scene.tweens.add({
 			targets: this,
-			scaleY: 6,
+			scaleY: this.longueurFile,
 			alpha: 0,
 			onUpdate: () => this.ref.setPosition(this.getBottomCenter().x, this.getBottomCenter().y),
 			duration: this.duree,
+			delay: this.delaiAvantActivation,
 			ease: 'Exponential',
 			onComplete: () => {
 				this.ref.body.allowGravity = true;
