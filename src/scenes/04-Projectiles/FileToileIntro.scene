@@ -1,0 +1,51 @@
+{
+    "id": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "generateAwakeHandler": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "103735de-9f11-4c78-853f-15abb4dd61fe",
+            "label": "rectangle_1",
+            "components": [],
+            "scaleX": 0.029609107493260928,
+            "scaleY": 2.29069951401355,
+            "originY": 0,
+            "alpha": 0.8,
+            "isFilled": true,
+            "width": 128,
+            "height": 128,
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "ref",
+            "label": "ref",
+            "tooltip": "ref",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "BaseEntites"
+            }
+        }
+    ]
+}

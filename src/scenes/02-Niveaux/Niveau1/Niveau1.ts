@@ -9,6 +9,7 @@ import Araigne from "../../03-Entites/Araigne/Araigne";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
+import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -38,7 +39,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_adversaires = this.add.container(0, 0);
 
 		// araigne_2
-		const araigne_2 = new Araigne(this, 837.0648193359375, 137.7357177734375);
+		const araigne_2 = new Araigne(this, 837, -121);
 		groupe_adversaires.add(araigne_2);
 
 		// araigne_3
@@ -110,6 +111,10 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript
 		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
 
+		// rectangle_1
+		const rectangle_1 = new FileToileIntro(this, 841, -422);
+		this.add.existing(rectangle_1);
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
@@ -127,6 +132,9 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
+
+		// rectangle_1 (prefab fields)
+		rectangle_1.ref = araigne_2;
 
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;

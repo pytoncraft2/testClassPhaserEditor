@@ -73,8 +73,8 @@
                     ],
                     "label": "araigne_2",
                     "components": [],
-                    "x": 837.0648193359375,
-                    "y": 137.7357177734375,
+                    "x": 837,
+                    "y": -121,
                     "nestedPrefabs": [],
                     "list": []
                 },
@@ -287,6 +287,22 @@
                     ]
                 }
             ]
+        },
+        {
+            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+            "id": "fcebaf31-895b-47be-aaf4-1b695d526ae4",
+            "unlock": [
+                "x",
+                "y",
+                "ref"
+            ],
+            "label": "rectangle_1",
+            "ref": "araigne_2",
+            "components": [],
+            "x": 841,
+            "y": -422,
+            "nestedPrefabs": [],
+            "list": []
         },
         {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
