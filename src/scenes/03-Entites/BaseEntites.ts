@@ -99,7 +99,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.scene.tweens.add({
 			targets: vies.getAt(length -1),
 			alpha: 0,
-			angle: 720,
+			angle: 30,
+			y: "+=50",
 			scale: "+=0.04",
 			duration: 500,
 			onComplete: () => vies.removeAt(length -1)
