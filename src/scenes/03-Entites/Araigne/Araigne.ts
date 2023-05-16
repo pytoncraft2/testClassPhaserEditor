@@ -1,7 +1,4 @@
 // You can write more code here
-const bonusVitesseAraigne = 200;
-const graviteVersLeHaut = -2500;
-const graviteVersLeBas = 2500;
 
 /* START OF COMPILED CODE */
 
@@ -83,9 +80,13 @@ export default class Araigne extends BaseEntites {
 	public peutChangerDePlatforme: boolean = false;
 	public sautEnHautActivable: boolean = false;
 	public velociteXPause: boolean = false;
-	public velociteX: number = 100;
+	public velociteX: number = 300;
 
 	/* START-USER-CODE */
+	// Write your code here.
+
+	/** MISE EN PLACE LA LOGIQUE DE DESCISION DU SAUT */
+
 	awake(): void {
 		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
 		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
@@ -107,7 +108,8 @@ export default class Araigne extends BaseEntites {
 		});
 	}
 
-	// Write your code here.
+	/** FONCTIONS D'ACTION QUAND ON APPUIE SUR UNE TOUCHE */
+
 	actionToucheEspace(): void {
 		this.body.setVelocityY(-80)
 	}
@@ -136,36 +138,21 @@ export default class Araigne extends BaseEntites {
 		this.body.setVelocity(0, -300)
 	}
 
-	/**
-	 * @description effectue un saut vers le haut ou vers le bas en changeant la gravité et optionnelement traverser la platforme
-	 * @param flipY
-	 * @param gravityY
-	 * @param checkCollision 
-	 */
-	saut(flipY: boolean, gravityY: number, checkCollision?: 'up' | 'down') {
-		this.image.setFlipY(flipY);
-		this.body.gravity.y = gravityY;
-		if (checkCollision) {
-			this.body.checkCollision[checkCollision] = false;
-			this.scene.time.delayedCall(100, () => {
-				this.body.checkCollision[checkCollision] = true;
-			}, undefined, this);
-		}
-	}
-
-	actionToucheDroite(this: any, input?: any) {
-		this.body.setVelocityX(this.velociteX + bonusVitesseAraigne)
+	actionToucheDroite() {
+		this.body.setVelocityX(this.velociteX)
 
 		this.FlipX(false)
 		this.deplaceDetecteurs('Right')
 	}
 
-	actionToucheGauche(this: any, input?: any) {
-		this.body.setVelocityX(-(this.velociteX + bonusVitesseAraigne))
+	actionToucheGauche() {
+		this.body.setVelocityX(-this.velociteX)
 
 		this.FlipX(true)
 		this.deplaceDetecteurs('Left')
 	}
+
+	/** AJUSTEMENT ROTATION IMAGE ET POSITION DETECTEURS AU CHANGEMENT DE DIRECTION */
 
 	FlipX(ouiNon: boolean) {
 		this.image.setFlipX(ouiNon);
@@ -177,6 +164,8 @@ export default class Araigne extends BaseEntites {
 		this.detecteur_haut.setX(this.image[`get${emplacement}Center`]().x);
 	}
 
+	/** FONCTIONS DE CALLBACK AU MOMENT DE LA COLISION OU CHEVAUCHEMENT */
+
 	entiteEstSurUnePlatforme(_recRemplie: any, _platforme: any) {
 		this.estSurUnePlatforme = true;
 	}
@@ -184,12 +173,9 @@ export default class Araigne extends BaseEntites {
 		this.platformeEnHaut = true;
 	}
 
-	nombreEntierAuHasard(min: number, max: number) {
-		return Math.floor(Math.random() * (max - min + 1) + min)
-	}
+	/** FONCTIONS MIS À JOUR EN PERMANENCE */
 
 	preUpdate(...args: any[]): void {
-
 		this.scene.physics.world.wrap(this, 400);
 		this.deplacementIA()
 	}
@@ -211,6 +197,12 @@ export default class Araigne extends BaseEntites {
 		}
 		this.estSurUnePlatforme = false;
 		this.platformeEnHaut = false;
+	}
+
+	/** UTILITAIRE */
+
+	nombreEntierAuHasard(min: number, max: number) {
+		return Math.floor(Math.random() * (max - min + 1) + min)
 	}
 	/* END-USER-CODE */
 }

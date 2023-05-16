@@ -173,7 +173,7 @@
             "name": "velociteX",
             "label": "velociteX",
             "tooltip": "velocite en x",
-            "defValue": 100,
+            "defValue": 300,
             "customDefinition": false,
             "type": {
                 "id": "number"
