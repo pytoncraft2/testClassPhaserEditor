@@ -31,7 +31,6 @@ export default class Huipat extends BaseEntites {
 		const zone_interaction_proche = scene.add.rectangle(66, -4, 128, 128);
 		zone_interaction_proche.scaleX = 0.6879210867196743;
 		zone_interaction_proche.scaleY = 1.1424662876249119;
-		zone_interaction_proche.visible = false;
 		zone_interaction_proche.alpha = 0.5;
 		zone_interaction_proche.isFilled = true;
 		this.add(zone_interaction_proche);

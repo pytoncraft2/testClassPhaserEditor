@@ -160,16 +160,6 @@
             }
         },
         {
-            "name": "velociteXPause",
-            "label": "velociteXPause",
-            "tooltip": "arrete le déplacement en x avant de sauter",
-            "defValue": false,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
-        },
-        {
             "name": "velociteX",
             "label": "velociteX",
             "tooltip": "velocite en x",
