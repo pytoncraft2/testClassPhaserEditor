@@ -132,6 +132,16 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "invincible",
+            "label": "invincible",
+            "tooltip": "imunise l'entité contre les dégats",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

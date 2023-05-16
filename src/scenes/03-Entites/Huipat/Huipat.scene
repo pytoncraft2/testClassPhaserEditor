@@ -42,7 +42,7 @@
                 {
                     "type": "Rectangle",
                     "id": "dfecd66b-b58e-45f0-a0bf-68324c17fb3a",
-                    "label": "zone_interaction_proche",
+                    "label": "detecteur_proche",
                     "scope": "NESTED_PREFAB",
                     "components": [],
                     "x": 66,
@@ -58,7 +58,17 @@
             ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "8b287a39-4d73-4711-838f-fde26ccb213b",
+            "type": "Collider",
+            "label": "colision_detecteur_proche",
+            "scope": "PUBLIC",
+            "object1": "detecteur_proche",
+            "object2": "[]",
+            "collideCallback": "this.toucheAdversaireProche as any"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

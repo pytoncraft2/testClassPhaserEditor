@@ -50,6 +50,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public tempsEntreActions: number = 500;
 	public tempsCumuleMaxBlocage: number = 0;
 	public tempsAvantDeblocage: number = 3000;
+	public invincible: boolean = false;
 
 	/* START-USER-CODE */
 
@@ -85,7 +86,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	/** RETOURNE L'IMAGE VERS LA DROITE(FALSE) OU VERS LA GAUCHE(TRUE) */
-	
+
 	FlipX(ouiNon: boolean) {
 		this.image.setFlipX(ouiNon);
 	}

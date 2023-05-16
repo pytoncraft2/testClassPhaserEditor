@@ -27,16 +27,20 @@ export default class Huipat extends BaseEntites {
 		const image = scene.add.sprite(0, 0, "huipat", "huipat.png");
 		this.add(image);
 
-		// zone_interaction_proche
-		const zone_interaction_proche = scene.add.rectangle(66, -4, 128, 128);
-		zone_interaction_proche.scaleX = 0.6879210867196743;
-		zone_interaction_proche.scaleY = 1.1424662876249119;
-		zone_interaction_proche.alpha = 0.5;
-		zone_interaction_proche.isFilled = true;
-		this.add(zone_interaction_proche);
+		// detecteur_proche
+		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128);
+		detecteur_proche.scaleX = 0.6879210867196743;
+		detecteur_proche.scaleY = 1.1424662876249119;
+		detecteur_proche.alpha = 0.5;
+		detecteur_proche.isFilled = true;
+		this.add(detecteur_proche);
+
+		// colision_detecteur_proche
+		const colision_detecteur_proche = scene.physics.add.collider(detecteur_proche, [], this.toucheAdversaireProche as any);
 
 		this.image = image;
-		this.zone_interaction_proche = zone_interaction_proche;
+		this.detecteur_proche = detecteur_proche;
+		this.colision_detecteur_proche = colision_detecteur_proche;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -45,11 +49,17 @@ export default class Huipat extends BaseEntites {
 	}
 
 	public image: Phaser.GameObjects.Sprite;
-	public zone_interaction_proche: Phaser.GameObjects.Rectangle;
+	public detecteur_proche: Phaser.GameObjects.Rectangle;
+	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
 
 	/* START-USER-CODE */
 
 	// Write your code here.
+	awake(): void {
+		super.awake()
+		this.colision_detecteur_proche.object2 = this.scene.groupe_adversaires.list;
+	}
+
 	actionToucheHaut(): void {
 		if (!this.body.touching.down) return;
 		this.body.checkCollision.none = true;
@@ -88,8 +98,35 @@ export default class Huipat extends BaseEntites {
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')
 	{
-		if (this.zone_interaction_proche.x != this.image[`get${emplacement}Center`]().x)
-			this.zone_interaction_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
+		if (this.detecteur_proche.x != this.image[`get${emplacement}Center`]().x)
+			this.detecteur_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
+	}
+
+	/** FONCTIONS DE CALLBACK AU MOMENT DU CHEVAUCHEMENT ENTRE LE RECTANGLE ET UN ADVERSAIRE */
+
+	toucheAdversaireProche(allie: BaseEntites, _obj2: BaseEntites) {
+		console.log("TOUCHE");
+		
+		// obj1.removeLife();
+		allie.invincible = true;
+		allie.body.moves = false;
+		this.scene.tweens.add({
+			targets: allie,
+			alpha: {
+				from: 0.8,
+				to: 0
+			},
+			duration: 100,
+			yoyo: true,
+			repeat: 3,
+			onComplete: () => {
+				allie.body.moves = true;
+			}
+		});
+		this.scene.time.delayedCall(3000, () => {
+			allie.setAlpha(1);
+			allie.invincible = false;
+		});
 	}
 
 	/* END-USER-CODE */
