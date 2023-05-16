@@ -45,6 +45,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 			onComplete: () => {
 				this.ref.body.allowGravity = true;
 				this.ref.activeIA = true;
+				this.ref.image.flipX ? this.ref.actionToucheDroite() : this.ref.actionToucheGauche()
 				this.destroy(true);
 			}
 		})
