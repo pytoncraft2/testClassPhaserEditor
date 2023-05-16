@@ -31,6 +31,7 @@ export default class Araigne extends BaseEntites {
 		const detecteur_bas = scene.add.rectangle(128, 52, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_bas.scaleX = 0.19751986297412794;
 		detecteur_bas.scaleY = 0.1622402073862163;
+		detecteur_bas.visible = false;
 		scene.physics.add.existing(detecteur_bas, false);
 		detecteur_bas.body.moves = false;
 		detecteur_bas.body.setSize(128, 128, false);
@@ -41,6 +42,7 @@ export default class Araigne extends BaseEntites {
 		const detecteur_haut = scene.add.rectangle(55, -194, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_haut.scaleX = 0.19751986297412794;
 		detecteur_haut.scaleY = 0.1622402073862163;
+		detecteur_haut.visible = false;
 		detecteur_haut.alpha = 0.5;
 		scene.physics.add.existing(detecteur_haut, false);
 		detecteur_haut.body.moves = false;
@@ -84,7 +86,7 @@ export default class Araigne extends BaseEntites {
 	/* START-USER-CODE */
 	// Write your code here.
 
-	/** MISE EN PLACE LA LOGIQUE DE DESCISION DU SAUT */
+	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
 
 	awake(): void {
 		this.colision_detecteur_haut.object2 = this.scene.platformes.list;

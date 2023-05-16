@@ -34,29 +34,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// toucheBas
 		const toucheBas = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
-		// bouton
-		const bouton = new Bouton(this, 1504, 832);
-		this.add.existing(bouton);
-
-		// bouton_1
-		const bouton_1 = new Bouton(this, 352, 880, "bouton_1", "btn-right");
-		this.add.existing(bouton_1);
-
-		// bouton_2
-		const bouton_2 = new Bouton(this, 1680, 736, "bouton_1", "btn-up");
-		this.add.existing(bouton_2);
-
-		// bouton_3
-		const bouton_3 = new Bouton(this, 160, 880);
-		this.add.existing(bouton_3);
-
-		// bouton_4
-		const bouton_4 = new Bouton(this, 1680, 928);
-		this.add.existing(bouton_4);
-		bouton_4.scaleX = 1;
-		bouton_4.scaleY = 1;
-		bouton_4.angle = -90;
-
 		// groupe_vie
 		const groupe_vie = this.add.layer();
 
@@ -119,6 +96,33 @@ export default class BaseNiveaux extends Phaser.Scene {
 		coeur_9.scaleX = 0.0299137473893349;
 		coeur_9.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_9);
+
+		// controles_portable
+		const controles_portable = this.add.layer();
+		controles_portable.alpha = 0;
+
+		// bouton
+		const bouton = new Bouton(this, 1504, 832);
+		controles_portable.add(bouton);
+
+		// bouton_1
+		const bouton_1 = new Bouton(this, 352, 880, "bouton_1", "btn-right");
+		controles_portable.add(bouton_1);
+
+		// bouton_2
+		const bouton_2 = new Bouton(this, 1680, 736, "bouton_1", "btn-up");
+		controles_portable.add(bouton_2);
+
+		// bouton_3
+		const bouton_3 = new Bouton(this, 160, 880);
+		controles_portable.add(bouton_3);
+
+		// bouton_4
+		const bouton_4 = new Bouton(this, 1680, 928);
+		bouton_4.scaleX = 1;
+		bouton_4.scaleY = 1;
+		bouton_4.angle = -90;
+		controles_portable.add(bouton_4);
 
 		// bouton (prefab fields)
 		bouton.direction = "espace";

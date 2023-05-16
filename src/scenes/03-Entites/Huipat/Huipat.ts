@@ -31,6 +31,7 @@ export default class Huipat extends BaseEntites {
 		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_proche.scaleX = 0.6879210867196743;
 		detecteur_proche.scaleY = 1.1424662876249119;
+		detecteur_proche.visible = false;
 		detecteur_proche.alpha = 0.5;
 		scene.physics.add.existing(detecteur_proche, false);
 		detecteur_proche.body.enable = false;
