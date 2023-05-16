@@ -6,7 +6,7 @@
 import BaseNiveaux from "../BaseNiveaux";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
-import Moustique from "../../03-Entites/Moustique/Moustique";
+import AraigneMurale from "../../03-Entites/Araigne/murale/AraigneMurale";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
@@ -38,18 +38,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(0, 0);
 
-		// araigne
-		const araigne = new Araigne(this, 580, 647);
-		groupe_adversaires.add(araigne);
-
-		// moustique_png
-		const moustique_png = new Moustique(this, 871, 299);
-		groupe_adversaires.add(moustique_png);
-
-		// araigne_1
-		const araigne_1 = new Araigne(this, 1646.089111328125, 335.6421813964844);
-		groupe_adversaires.add(araigne_1);
-
 		// araigne_2
 		const araigne_2 = new Araigne(this, 837.0648193359375, 137.7357177734375);
 		groupe_adversaires.add(araigne_2);
@@ -57,6 +45,14 @@ export default class Niveau1 extends BaseNiveaux {
 		// araigne_3
 		const araigne_3 = new Araigne(this, 1343.7923583984375, 92.06498718261719);
 		groupe_adversaires.add(araigne_3);
+
+		// araigneMurale
+		const araigneMurale = new AraigneMurale(this, 1002, 732);
+		groupe_adversaires.add(araigneMurale);
+
+		// araigneMurale_1
+		const araigneMurale_1 = new AraigneMurale(this, 161, 449);
+		groupe_adversaires.add(araigneMurale_1);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
@@ -127,7 +123,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [araigne];
+		const liste_toile_vs_adversaire: Array<any> = [];
 
 		// platformes_vs_entites
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
@@ -156,7 +152,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
-	private liste_toile_vs_adversaire!: Araigne[];
+	private liste_toile_vs_adversaire!: Array<any>;
 
 	/* START-USER-CODE */
 

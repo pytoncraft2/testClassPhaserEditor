@@ -24,7 +24,7 @@ export default class Huipat extends BaseEntites {
 		this.body.setSize(148, 162, false);
 
 		// image
-		const image = scene.add.image(0, 0, "huipat", "huipat.png");
+		const image = scene.add.sprite(0, 0, "huipat", "huipat.png");
 		this.add(image);
 
 		// zone_interaction_proche
@@ -47,7 +47,7 @@ export default class Huipat extends BaseEntites {
 		/* END-USER-CTR-CODE */
 	}
 
-	public image: Phaser.GameObjects.Image;
+	public image: Phaser.GameObjects.Sprite;
 	public zone_interaction_proche: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */

@@ -12,6 +12,12 @@ import BaseEntites from "../BaseEntites";
 export default interface Araigne {
 
 	 body: Phaser.Physics.Arcade.Body;
+	 tintBottomRight: any;
+	 tintBottomLeft: any;
+	 tintBottomBottom: any;
+	 tintTopLeft: any;
+	 tintTopRight: any;
+	 tintRightLeft: any;
 }
 
 export default class Araigne extends BaseEntites {
@@ -26,7 +32,7 @@ export default class Araigne extends BaseEntites {
 		this.body.setSize(228, 79, false);
 
 		// image
-		const image = scene.add.image(0, 0, "araigne", "araigne.png");
+		const image = scene.add.sprite(0, 0, "araigne", "araigne.png");
 		image.name = "image";
 		this.add(image);
 
@@ -75,7 +81,7 @@ export default class Araigne extends BaseEntites {
 		/* END-USER-CTR-CODE */
 	}
 
-	public image: Phaser.GameObjects.Image;
+	public image: Phaser.GameObjects.Sprite;
 	public detecteur_bas: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public detecteur_haut: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public colision_detecteur_haut: Phaser.Physics.Arcade.Collider;

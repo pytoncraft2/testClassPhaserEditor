@@ -66,48 +66,6 @@
             "list": [
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "09812ea7-55e4-4f32-be4a-95e77e295658",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigne",
-                    "components": [],
-                    "x": 580,
-                    "y": 647,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "4d7a0e3d-d2ab-4981-8f82-6f1f71ef4620",
-                    "id": "3864e186-498e-4a5d-ba83-781b713a4d46",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "moustique_png",
-                    "components": [],
-                    "x": 871,
-                    "y": 299,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "0d59c34c-284c-47f1-8c79-b473b007f8b1",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigne_1",
-                    "components": [],
-                    "x": 1646.089111328125,
-                    "y": 335.6421813964844,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
                     "id": "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                     "unlock": [
                         "x",
@@ -131,6 +89,34 @@
                     "components": [],
                     "x": 1343.7923583984375,
                     "y": 92.06498718261719,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "8c452ef4-67bf-48ed-b84f-e7bb54c1999c",
+                    "id": "515ecdbf-e04d-4ade-9bf1-200363a807f4",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigneMurale",
+                    "components": [],
+                    "x": 1002,
+                    "y": 732,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "8c452ef4-67bf-48ed-b84f-e7bb54c1999c",
+                    "id": "bcf0beda-f7e9-48d2-9b37-7e335d7c3b3d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigneMurale_1",
+                    "components": [],
+                    "x": 161,
+                    "y": 449,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -377,10 +363,7 @@
     "lists": [
         {
             "id": "d43c7dd6-2af9-46fd-9694-31876776dc37",
-            "label": "liste_toile_vs_adversaire",
-            "objectIds": [
-                "09812ea7-55e4-4f32-be4a-95e77e295658"
-            ]
+            "label": "liste_toile_vs_adversaire"
         }
     ]
 }

@@ -22,7 +22,7 @@ export default class Moustique extends BaseEntites {
 		this.body.setSize(235.94960099967736, 81, false);
 
 		// image
-		const image = scene.add.image(0, 0, "moustique", "moustique.png");
+		const image = scene.add.sprite(0, 0, "moustique", "moustique.png");
 		this.add(image);
 
 		// rectangle_1
@@ -40,7 +40,7 @@ export default class Moustique extends BaseEntites {
 		/* END-USER-CTR-CODE */
 	}
 
-	public image: Phaser.GameObjects.Image;
+	public image: Phaser.GameObjects.Sprite;
 
 	/* START-USER-CODE */
 

@@ -28,7 +28,7 @@
             "body.offset.y": -81,
             "list": [
                 {
-                    "type": "Image",
+                    "type": "Sprite",
                     "id": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
                     "label": "image",
                     "scope": "NESTED_PREFAB",

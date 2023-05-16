@@ -1,0 +1,57 @@
+{
+    "id": "8c452ef4-67bf-48ed-b84f-e7bb54c1999c",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "Araigne",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "59361761-dfff-41fd-9ef1-84e5865c387b",
+            "label": "container_2",
+            "components": [],
+            "ArcadeComponent.active": true,
+            "body.width": 64,
+            "body.height": 64,
+            "list": [
+                {
+                    "prefabId": "8c923199-b3c9-46b7-b470-d06b31cbd3fc",
+                    "id": "9cabfac1-4af3-465f-ac74-1eafd421a876",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "tintTopLeft",
+                        "tintTopRight",
+                        "tintBottomLeft",
+                        "tintBottomRight"
+                    ],
+                    "label": "image",
+                    "components": [],
+                    "x": 0,
+                    "y": 0,
+                    "tintTopLeft": "#ffffff",
+                    "tintTopRight": "#62fb7c",
+                    "tintBottomLeft": "#62fb7c",
+                    "tintBottomRight": "#62fb7c",
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
