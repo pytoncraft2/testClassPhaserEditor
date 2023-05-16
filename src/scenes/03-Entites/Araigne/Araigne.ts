@@ -113,6 +113,16 @@ export default class Araigne extends BaseEntites {
 	}
 
 	actionToucheHaut() {
+		if (!this.body.touching.down) return;
+		this.body.checkCollision.none = true;
+		this.scene.time.delayedCall(600, () => {
+			this.body.checkCollision.none = false
+			this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite()
+		})
+
+		this.body.setVelocity(0, -1000)
+
+		/*
 		if (this.body.touching.down && !this.body.touching.up) {
 			const alendroit = this.image.flipY === false;
 			if (alendroit) this.saut(true, graviteVersLeHaut);
@@ -124,9 +134,19 @@ export default class Araigne extends BaseEntites {
 				this.body.setVelocityY(-900);
 			}
 		}
+		*/
 	}
 
 	actionToucheBas() {
+		if (!this.body.touching.down) return;
+		this.body.checkCollision.none = true;
+		this.scene.time.delayedCall(400, () => {
+			this.body.checkCollision.none = false;
+			this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite()
+		});
+
+		this.body.setVelocity(0, -300)
+		/*
 		if (this.body.touching.down && !this.body.touching.up) {
 			const alendroit = this.image.flipY === false;
 			if (alendroit) {
@@ -138,11 +158,11 @@ export default class Araigne extends BaseEntites {
 			const alenvers = this.image.flipY === true;
 			if (alenvers) this.saut(false, graviteVersLeBas);
 		}
+		*/
 	}
 
 	/**
 	 * @description effectue un saut vers le haut ou vers le bas en changeant la gravité et optionnelement traverser la platforme
-	 * @param this
 	 * @param flipY
 	 * @param gravityY
 	 * @param checkCollision 
@@ -196,7 +216,7 @@ export default class Araigne extends BaseEntites {
 	preUpdate(...args: any[]): void {
 
 		this.scene.physics.world.wrap(this, 400);
-
+/*
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
 			if (!this.image.flipX) this.actionToucheGauche()
 			else if (this.image.flipX) this.actionToucheDroite()
@@ -204,30 +224,17 @@ export default class Araigne extends BaseEntites {
 
 		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
 			if (this.platformeEnHaut && this.sautEnHautActivable) {
-				// this.actionToucheHaut()
-				this.body.checkCollision.none = true;
-				this.scene.time.delayedCall(600, () => {
-					this.body.checkCollision.none = false
-					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
-				})
-
-				this.body.setVelocity(0, -1000)
+				this.actionToucheHaut()
 
 			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
-				// this.actionToucheBas()
-				this.body.checkCollision.none = true;
-				this.scene.time.delayedCall(400, () => {
-					this.body.checkCollision.none = false;
-					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
-				});
-
-				this.body.setVelocity(0, -300)
+				this.actionToucheBas()
 			}
 
 		}
 		this.estSurUnePlatforme = false;
 		this.platformeEnHaut = false;
 
+		*/
 	}
 	/* END-USER-CODE */
 }
