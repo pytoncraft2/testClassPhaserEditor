@@ -92,7 +92,18 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	enleveVie() {
-		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)
+		const vies = this.scene.groupe_vie;
+		const { length } = vies;
+		if (length === 0) return;
+
+		this.scene.tweens.add({
+			targets: vies.getAt(length -1),
+			alpha: 0,
+			angle: 720,
+			scale: "+=0.04",
+			duration: 500,
+			onComplete: () => vies.removeAt(length -1)
+		})
 	}
 
 	/* END-USER-CODE */
