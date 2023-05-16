@@ -34,7 +34,6 @@ export default class Araigne extends BaseEntites {
 		const detecteur_bas = scene.add.rectangle(128, 52, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_bas.scaleX = 0.19751986297412794;
 		detecteur_bas.scaleY = 0.1622402073862163;
-		detecteur_bas.visible = false;
 		scene.physics.add.existing(detecteur_bas, false);
 		detecteur_bas.body.moves = false;
 		detecteur_bas.body.setSize(128, 128, false);
@@ -45,7 +44,6 @@ export default class Araigne extends BaseEntites {
 		const detecteur_haut = scene.add.rectangle(55, -194, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_haut.scaleX = 0.19751986297412794;
 		detecteur_haut.scaleY = 0.1622402073862163;
-		detecteur_haut.visible = false;
 		detecteur_haut.alpha = 0.5;
 		scene.physics.add.existing(detecteur_haut, false);
 		detecteur_haut.body.moves = false;
@@ -114,33 +112,33 @@ export default class Araigne extends BaseEntites {
 		this.body.setVelocityY(-80)
 	}
 
-	// actionToucheHaut() {
-	// 	if (this.body.touching.down && !this.body.touching.up) {
-	// 		const alendroit = this.image.flipY === false;
-	// 		if (alendroit) this.saut(true, graviteVersLeHaut);
-	// 	}
-	// 	else if (!this.body.touching.down && this.body.touching.up) {
-	// 		const alenvers = this.image.flipY === true;
-	// 		if (alenvers) {
-	// 			this.saut(false, graviteVersLeBas, 'up')
-	// 			this.body.setVelocityY(-900);
-	// 		}
-	// 	}
-	// }
+	actionToucheHaut() {
+		if (this.body.touching.down && !this.body.touching.up) {
+			const alendroit = this.image.flipY === false;
+			if (alendroit) this.saut(true, graviteVersLeHaut);
+		}
+		else if (!this.body.touching.down && this.body.touching.up) {
+			const alenvers = this.image.flipY === true;
+			if (alenvers) {
+				this.saut(false, graviteVersLeBas, 'up')
+				this.body.setVelocityY(-900);
+			}
+		}
+	}
 
-	// actionToucheBas() {
-	// 	if (this.body.touching.down && !this.body.touching.up) {
-	// 		const alendroit = this.image.flipY === false;
-	// 		if (alendroit) {
-	// 			this.saut(true, graviteVersLeHaut, 'down')
-	// 			this.body.setVelocityY(600);
-	// 		}
-	// 	}
-	// 	else if (!this.body.touching.down && this.body.touching.up) {
-	// 		const alenvers = this.image.flipY === true;
-	// 		if (alenvers) this.saut(false, graviteVersLeBas);
-	// 	}
-	// }
+	actionToucheBas() {
+		if (this.body.touching.down && !this.body.touching.up) {
+			const alendroit = this.image.flipY === false;
+			if (alendroit) {
+				this.saut(true, graviteVersLeHaut, 'down')
+				this.body.setVelocityY(600);
+			}
+		}
+		else if (!this.body.touching.down && this.body.touching.up) {
+			const alenvers = this.image.flipY === true;
+			if (alenvers) this.saut(false, graviteVersLeBas);
+		}
+	}
 
 	/**
 	 * @description effectue un saut vers le haut ou vers le bas en changeant la gravité et optionnelement traverser la platforme
@@ -164,18 +162,24 @@ export default class Araigne extends BaseEntites {
 		this.body.setVelocityX(this.velociteX + bonusVitesseAraigne)
 
 		this.FlipX(false)
-		// ZoneInteractionADroite(this)
+		this.deplaceDetecteurs('Right')
 	}
 
 	actionToucheGauche(this: any, input?: any) {
 		this.body.setVelocityX(-(this.velociteX + bonusVitesseAraigne))
 
 		this.FlipX(true)
-		// ZoneInteractionAGauche(this)
+		this.deplaceDetecteurs('Left')
 	}
 
 	FlipX(ouiNon: boolean) {
 		this.image.setFlipX(ouiNon);
+	}
+
+	deplaceDetecteurs(emplacement: 'Left' | 'Right')
+	{
+		this.detecteur_bas.setPosition(this.image[`get${emplacement}Center`]().x, this.detecteur_bas.y)
+		this.detecteur_haut.setX(this.image[`get${emplacement}Center`]().x);
 	}
 
 	entiteEstSurUnePlatforme(_recRemplie: any, _platforme: any) {
@@ -189,137 +193,65 @@ export default class Araigne extends BaseEntites {
 		return Math.floor(Math.random() * (max - min + 1) + min)
 	}
 
-	// preUpdate(...args: any[]): void {
+	preUpdate(...args: any[]): void {
 
-	// 	this.scene.physics.world.wrap(this, 400);
-	// 	const { left, right } = this.body.blocked;
+		this.scene.physics.world.wrap(this, 400);
+		// const { left, right } = this.body.blocked;
 
-	// 	if (left && !this.velociteXPause) this.actionToucheGauche()
-	// 	else if (right && !this.velociteXPause) this.actionToucheDroite()
+		// if (left && !this.velociteXPause) this.actionToucheGauche()
+		// else if (right && !this.velociteXPause) this.actionToucheDroite()
 
 
-	// 	if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
-	// 		if (!this.image.flipX) {
-	// 			// this.image.setFlipX(true)
-	// 			console.log("oui");
+		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
+			if (!this.image.flipX) {
+				// this.image.setFlipX(true)
+				console.log("oui");
 
-	// 			if (!this.velociteXPause) {
-	// 				this.actionToucheGauche()
-	// 			}
-	// 			this.detecteur_bas.setPosition(this.image.getLeftCenter().x, this.detecteur_bas.y)
-	// 			this.detecteur_haut.setX(this.image.getLeftCenter().x);
+				if (!this.velociteXPause) {
+					this.actionToucheGauche()
+				}
 
-	// 			// this.body.setVelocityX(-this.velociteX)
-	// 		} else if (this.image.flipX) {
-	// 			if (!this.velociteXPause) {
-	// 				this.actionToucheDroite()
-	// 			}
-	// 			// this.image.setFlipX(false)
-	// 			this.detecteur_bas.setPosition(this.image.getRightCenter().x, this.detecteur_bas.y)
-	// 			this.detecteur_haut.setX(this.image.getRightCenter().x);
-	// 			// this.body.setVelocityX(this.velociteX)
-	// 		}
-	// 	}
+				// this.body.setVelocityX(-this.velociteX)
+			} else if (this.image.flipX) {
+				if (!this.velociteXPause) {
+					this.actionToucheDroite()
+				}
+				// this.image.setFlipX(false)
+				// this.body.setVelocityX(this.velociteX)
+			}
+		}
 
-	// 	if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
-	// 		if (this.platformeEnHaut && this.sautEnHautActivable) {
-	// 			// this.actionToucheHaut()
-	// 			this.body.checkCollision.none = true;
-	// 			this.velociteXPause = true;
-	// 			this.scene.time.delayedCall(600, () => {
-	// 				this.body.checkCollision.none = false
-	// 				this.velociteXPause = false;
-	// 				this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
-	// 			})
+		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
+			if (this.platformeEnHaut && this.sautEnHautActivable) {
+				// this.actionToucheHaut()
+				this.body.checkCollision.none = true;
+				this.velociteXPause = true;
+				this.scene.time.delayedCall(600, () => {
+					this.body.checkCollision.none = false
+					this.velociteXPause = false;
+					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
+				})
 
-	// 			this.body.setVelocity(0, -1000)
+				this.body.setVelocity(0, -1000)
 
-	// 		} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
-	// 			// this.actionToucheBas()
-	// 			this.body.checkCollision.none = true;
-	// 			this.velociteXPause = true;
-	// 			this.scene.time.delayedCall(400, () => {
-	// 				this.body.checkCollision.none = false;
-	// 				this.velociteXPause = false;
-	// 				this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
-	// 			});
+			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
+				// this.actionToucheBas()
+				this.body.checkCollision.none = true;
+				this.velociteXPause = true;
+				this.scene.time.delayedCall(400, () => {
+					this.body.checkCollision.none = false;
+					this.velociteXPause = false;
+					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
+				});
 
-	// 			this.body.setVelocity(0, -300)
-	// 		}
+				this.body.setVelocity(0, -300)
+			}
 
-	// 	}
-	// 	this.estSurUnePlatforme = false;
-	// 	this.platformeEnHaut = false;
+		}
+		this.estSurUnePlatforme = false;
+		this.platformeEnHaut = false;
 
-	// }
-
-  preUpdate(...args: any[]): void {
-    this.scene.physics.world.wrap(this, 400);
-    const { left, right } = this.body.blocked;
-
-    if (left && !this.velociteXPause) {
-      this.actionToucheGauche();
-    } else if (right && !this.velociteXPause) {
-      this.actionToucheDroite();
-    }
-
-    const isTouchingDown = this.body.touching.down;
-    const isBlockedLeft = this.body.blocked.left;
-    const isBlockedRight = this.body.blocked.right;
-
-    if (
-      !this.estSurUnePlatforme &&
-      isTouchingDown &&
-      (!this.platformeEnHaut || isBlockedLeft || isBlockedRight)
-    ) {
-      if (!this.image.flipX) {
-        if (!this.velociteXPause) {
-          this.actionToucheGauche();
-        }
-        this.detecteur_bas.setPosition(
-          this.image.getLeftCenter().x,
-          this.detecteur_bas.y
-        );
-        this.detecteur_haut.setX(this.image.getLeftCenter().x);
-      } else {
-        if (!this.velociteXPause) {
-          this.actionToucheDroite();
-        }
-        this.detecteur_bas.setPosition(
-          this.image.getRightCenter().x,
-          this.detecteur_bas.y
-        );
-        this.detecteur_haut.setX(this.image.getRightCenter().x);
-      }
-    }
-
-    if (this.estSurUnePlatforme && isTouchingDown && this.peutChangerDePlatforme) {
-      if (this.platformeEnHaut && this.sautEnHautActivable) {
-        this.body.checkCollision.none = true;
-        this.velociteXPause = true;
-        this.scene.time.delayedCall(600, () => {
-          this.body.checkCollision.none = false;
-          this.velociteXPause = false;
-          this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite();
-        });
-
-        this.body.setVelocity(0, -1000);
-      } else if (this.platformeEnHaut && !this.sautEnHautActivable) {
-        this.body.checkCollision.none = true;
-        this.velociteXPause = true;
-        this.scene.time.delayedCall(400, () => {
-          this.body.checkCollision.none = false;
-          this.velociteXPause = false;
-          this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite();
-        });
-
-        this.body.setVelocity(0, -300);
-      }
-    }
-
-    this.estSurUnePlatforme = false;
-    this.platformeEnHaut = false;
-  }
+	}
 	/* END-USER-CODE */
 }
 
