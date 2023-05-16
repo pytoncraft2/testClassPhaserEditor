@@ -18,7 +18,7 @@
             "label": "btn_left",
             "components": [],
             "texture": {
-                "key": "bouton",
+                "key": "bouton_1",
                 "frame": "btn-left"
             },
             "list": []

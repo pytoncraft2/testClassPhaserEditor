@@ -39,11 +39,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.add.existing(bouton);
 
 		// bouton_1
-		const bouton_1 = new Bouton(this, 352, 880, "bouton", "btn-right");
+		const bouton_1 = new Bouton(this, 352, 880, "bouton_1", "btn-right");
 		this.add.existing(bouton_1);
 
 		// bouton_2
-		const bouton_2 = new Bouton(this, 1680, 736, "bouton", "btn-up");
+		const bouton_2 = new Bouton(this, 1680, 736, "bouton_1", "btn-up");
 		this.add.existing(bouton_2);
 
 		// bouton_3
@@ -57,6 +57,69 @@ export default class BaseNiveaux extends Phaser.Scene {
 		bouton_4.scaleY = 1;
 		bouton_4.angle = -90;
 
+		// groupe_vie
+		const groupe_vie = this.add.layer();
+
+		// coeur
+		const coeur = this.add.image(32, 32, "coeur");
+		coeur.scaleX = 0.0299137473893349;
+		coeur.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur);
+
+		// coeur_1
+		const coeur_1 = this.add.image(93.06276679359468, 32, "coeur");
+		coeur_1.scaleX = 0.0299137473893349;
+		coeur_1.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_1);
+
+		// coeur_2
+		const coeur_2 = this.add.image(154.12553358718935, 32, "coeur");
+		coeur_2.scaleX = 0.0299137473893349;
+		coeur_2.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_2);
+
+		// coeur_3
+		const coeur_3 = this.add.image(215.18830038078403, 32, "coeur");
+		coeur_3.scaleX = 0.0299137473893349;
+		coeur_3.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_3);
+
+		// coeur_4
+		const coeur_4 = this.add.image(276.2510671743787, 32, "coeur");
+		coeur_4.scaleX = 0.0299137473893349;
+		coeur_4.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_4);
+
+		// coeur_5
+		const coeur_5 = this.add.image(337.3138339679733, 32, "coeur");
+		coeur_5.scaleX = 0.0299137473893349;
+		coeur_5.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_5);
+
+		// coeur_6
+		const coeur_6 = this.add.image(398.376600761568, 32, "coeur");
+		coeur_6.scaleX = 0.0299137473893349;
+		coeur_6.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_6);
+
+		// coeur_7
+		const coeur_7 = this.add.image(459.4393675551627, 32, "coeur");
+		coeur_7.scaleX = 0.0299137473893349;
+		coeur_7.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_7);
+
+		// coeur_8
+		const coeur_8 = this.add.image(520.5021343487574, 32, "coeur");
+		coeur_8.scaleX = 0.0299137473893349;
+		coeur_8.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_8);
+
+		// coeur_9
+		const coeur_9 = this.add.image(581.564901142352, 32, "coeur");
+		coeur_9.scaleX = 0.0299137473893349;
+		coeur_9.scaleY = 0.0299137473893349;
+		groupe_vie.add(coeur_9);
+
 		// bouton (prefab fields)
 		bouton.direction = "espace";
 
@@ -69,6 +132,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// bouton_4 (prefab fields)
 		bouton_4.direction = "bas";
 
+		this.groupe_vie = groupe_vie;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -78,6 +142,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
+	public groupe_vie!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
@@ -169,7 +234,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			adversaire.blocages += 1;
 			adversaire.toile_image.setScale(agrandissementScale);
 		} else if (adversaire.blocages < adversaire.maxBlocages) {
-			
+
 			adversaire.blocages += 1;
 			console.log("PAS EGAL", adversaire.blocages, adversaire.maxBlocages);
 			adversaire.toile_image.setScale(agrandissementScale);
@@ -178,7 +243,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (adversaire.blocages === adversaire.maxBlocages) {
 			console.log("EGALLLL");
 		}
-		
+
 		toile.destroy()
 	}
 
@@ -195,7 +260,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	/** FONCTIONS DE CALLBACK AU MOMENT DE LA COLISION ENTRE UN ALLIE ET UN ADVERSAIRE */
 
 	allieToucheAdversaireProche(allie: BaseEntites, _obj2: BaseEntites) {
-		// obj1.removeLife();
+		allie.enleveVie();
 		allie.invincible = true;
 		allie.body.moves = false;
 		allie.scene.tweens.add({
@@ -216,7 +281,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 			allie.invincible = false;
 		});
 	}
-
 	/* END-USER-CODE */
 }
 

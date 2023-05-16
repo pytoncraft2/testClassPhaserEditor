@@ -313,6 +313,7 @@
             "scope": "METHOD",
             "object1": "groupe_allies.list",
             "object2": "groupe_adversaires.list",
+            "overlapOnly": true,
             "collideCallback": "this.allieToucheAdversaireProche as any",
             "processCallback": "this.ProcessVerifAllieToucheAdversaireProche as any"
         },

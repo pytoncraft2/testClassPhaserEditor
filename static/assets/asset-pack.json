@@ -14,10 +14,26 @@
                 "key": "bouton"
             },
             {
+                "atlasURL": "assets/interface/bouton.json",
+                "textureURL": "assets/interface/bouton.png",
+                "type": "atlas",
+                "key": "bouton_1"
+            },
+            {
                 "atlasURL": "assets/entites/chauve_souris.json",
                 "textureURL": "assets/entites/chauve_souris.png",
                 "type": "atlas",
                 "key": "chauve_souris"
+            },
+            {
+                "url": "assets/interface/coeur.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "coeur"
             },
             {
                 "url": "assets/FufuSuperDino.png",

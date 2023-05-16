@@ -91,6 +91,10 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.image.setFlipX(ouiNon);
 	}
 
+	enleveVie() {
+		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)
+	}
+
 	/* END-USER-CODE */
 }
 

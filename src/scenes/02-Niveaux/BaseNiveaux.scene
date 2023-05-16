@@ -41,7 +41,7 @@
             "direction": "droite",
             "components": [],
             "texture": {
-                "key": "bouton",
+                "key": "bouton_1",
                 "frame": "btn-right"
             },
             "x": 352,
@@ -62,7 +62,7 @@
             "direction": "haut",
             "components": [],
             "texture": {
-                "key": "bouton",
+                "key": "bouton_1",
                 "frame": "btn-up"
             },
             "x": 1680,
@@ -105,6 +105,155 @@
             "angle": -90,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "type": "Layer",
+            "id": "a84193f8-b140-425a-8138-8e667c4f7582",
+            "label": "groupe_vie",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f63c2c87-3a0e-4fba-90f8-3ad8c27888df",
+                    "label": "coeur",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 32,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "7affb0e0-3f11-4970-821f-fbf278e857dc",
+                    "label": "coeur_1",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 93.06276679359468,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "8269f704-a4c1-4768-8595-aa8e5d90c6bb",
+                    "label": "coeur_2",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 154.12553358718935,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "e7a2c783-571a-4d87-af6e-5d8a6eee82c4",
+                    "label": "coeur_3",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 215.18830038078403,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "84eb5c03-47df-433b-9f12-ca4429be9b80",
+                    "label": "coeur_4",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 276.2510671743787,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "c6fb285e-e179-47f1-ac11-b848f105c26a",
+                    "label": "coeur_5",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 337.3138339679733,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "53fae482-8b64-4e2e-b033-09652ee9e701",
+                    "label": "coeur_6",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 398.376600761568,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "76a0240f-ea90-4a20-bbf5-a3a6c8a5e1bc",
+                    "label": "coeur_7",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 459.4393675551627,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "58f1b728-c8d2-4cc6-8914-9562bdb50eea",
+                    "label": "coeur_8",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 520.5021343487574,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                },
+                {
+                    "type": "Image",
+                    "id": "4f5aa718-a2b2-43bc-bda1-67ca905b3b68",
+                    "label": "coeur_9",
+                    "components": [],
+                    "texture": {
+                        "key": "coeur"
+                    },
+                    "x": 581.564901142352,
+                    "y": 32,
+                    "scaleX": 0.0299137473893349,
+                    "scaleY": 0.0299137473893349,
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [
