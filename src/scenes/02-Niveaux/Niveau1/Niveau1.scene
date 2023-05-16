@@ -91,34 +91,6 @@
                     "y": 92.06498718261719,
                     "nestedPrefabs": [],
                     "list": []
-                },
-                {
-                    "prefabId": "8c452ef4-67bf-48ed-b84f-e7bb54c1999c",
-                    "id": "515ecdbf-e04d-4ade-9bf1-200363a807f4",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigneMurale",
-                    "components": [],
-                    "x": 1002,
-                    "y": 732,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "8c452ef4-67bf-48ed-b84f-e7bb54c1999c",
-                    "id": "bcf0beda-f7e9-48d2-9b37-7e335d7c3b3d",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigneMurale_1",
-                    "components": [],
-                    "x": 161,
-                    "y": 449,
-                    "nestedPrefabs": [],
-                    "list": []
                 }
             ]
         },

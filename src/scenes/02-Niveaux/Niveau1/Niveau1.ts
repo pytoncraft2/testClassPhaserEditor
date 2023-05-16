@@ -6,7 +6,6 @@
 import BaseNiveaux from "../BaseNiveaux";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
-import AraigneMurale from "../../03-Entites/Araigne/murale/AraigneMurale";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
@@ -45,14 +44,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// araigne_3
 		const araigne_3 = new Araigne(this, 1343.7923583984375, 92.06498718261719);
 		groupe_adversaires.add(araigne_3);
-
-		// araigneMurale
-		const araigneMurale = new AraigneMurale(this, 1002, 732);
-		groupe_adversaires.add(araigneMurale);
-
-		// araigneMurale_1
-		const araigneMurale_1 = new AraigneMurale(this, 161, 449);
-		groupe_adversaires.add(araigneMurale_1);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
