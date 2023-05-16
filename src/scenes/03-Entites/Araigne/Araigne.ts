@@ -204,20 +204,13 @@ export default class Araigne extends BaseEntites {
 
 		if (!this.estSurUnePlatforme && this.body.touching.down && !this.platformeEnHaut || this.body.blocked.left || this.body.blocked.right) {
 			if (!this.image.flipX) {
-				// this.image.setFlipX(true)
-				console.log("oui");
-
-				if (!this.velociteXPause) {
+				// if (!this.velociteXPause) {
 					this.actionToucheGauche()
-				}
-
-				// this.body.setVelocityX(-this.velociteX)
+				// }
 			} else if (this.image.flipX) {
-				if (!this.velociteXPause) {
+				// if (!this.velociteXPause) {
 					this.actionToucheDroite()
-				}
-				// this.image.setFlipX(false)
-				// this.body.setVelocityX(this.velociteX)
+				// }
 			}
 		}
 
@@ -225,10 +218,10 @@ export default class Araigne extends BaseEntites {
 			if (this.platformeEnHaut && this.sautEnHautActivable) {
 				// this.actionToucheHaut()
 				this.body.checkCollision.none = true;
-				this.velociteXPause = true;
+				// this.velociteXPause = true;
 				this.scene.time.delayedCall(600, () => {
 					this.body.checkCollision.none = false
-					this.velociteXPause = false;
+					// this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
 				})
 
@@ -237,10 +230,10 @@ export default class Araigne extends BaseEntites {
 			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
 				// this.actionToucheBas()
 				this.body.checkCollision.none = true;
-				this.velociteXPause = true;
+				// this.velociteXPause = true;
 				this.scene.time.delayedCall(400, () => {
 					this.body.checkCollision.none = false;
-					this.velociteXPause = false;
+					// this.velociteXPause = false;
 					this.image.flipX ?  this.actionToucheGauche() : this.actionToucheDroite()
 				});
 
