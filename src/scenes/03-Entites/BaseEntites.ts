@@ -44,7 +44,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public graviteY: number = 1000;
 	public velociteX: number = 350;
 	public blocages: number = 0;
-	public maxBlocages: number = 7;
+	public maxBlocages: number = 5;
 	public invincible: boolean = false;
 	public activeIA: boolean = false;
 

@@ -133,7 +133,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire: Array<any> = [];
+		const liste_toile_vs_adversaire = [araigne_2];
 
 		// platformes_vs_entites
 		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
@@ -178,7 +178,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
-	private liste_toile_vs_adversaire!: Array<any>;
+	private liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */
 

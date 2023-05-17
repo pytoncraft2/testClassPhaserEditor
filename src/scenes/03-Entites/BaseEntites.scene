@@ -86,8 +86,8 @@
         {
             "name": "maxBlocages",
             "label": "maxBlocages",
-            "tooltip": "nombre maximal de fois que le joueur peut être bloquer",
-            "defValue": 7,
+            "tooltip": "nombre maximal de fois que le joueur peut appliquer son imobilisation sur une entité adverse",
+            "defValue": 5,
             "customDefinition": false,
             "type": {
                 "id": "number"
