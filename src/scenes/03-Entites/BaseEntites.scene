@@ -30,6 +30,10 @@
                     },
                     "scaleX": 0,
                     "scaleY": 0,
+                    "ArcadeComponent.active": true,
+                    "enable": false,
+                    "body.width": 150,
+                    "body.height": 150,
                     "list": []
                 }
             ]
@@ -86,7 +90,7 @@
         {
             "name": "maxBlocages",
             "label": "maxBlocages",
-            "tooltip": "nombre maximal de fois que le joueur peut appliquer son imobilisation sur une entité adverse",
+            "tooltip": "nombre maximal de fois que le joueur peut être bloquer",
             "defValue": 5,
             "customDefinition": false,
             "type": {

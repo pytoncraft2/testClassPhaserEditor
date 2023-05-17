@@ -20,9 +20,12 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		// toile_image
-		const toile_image = scene.add.image(0, 0, "huipat", "toile.png");
+		const toile_image = scene.add.image(0, 0, "huipat", "toile.png") as Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
 		toile_image.scaleX = 0;
 		toile_image.scaleY = 0;
+		scene.physics.add.existing(toile_image, false);
+		toile_image.body.enable = false;
+		toile_image.body.setSize(150, 150, false);
 		this.add(toile_image);
 
 		this.toile_image = toile_image;
@@ -39,7 +42,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public toile_image: Phaser.GameObjects.Image;
+	public toile_image: Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;

@@ -129,6 +129,9 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript
 		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
 
+		// groupe_vs_platformes
+		const groupe_vs_platformes = this.add.layer();
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
@@ -143,6 +146,12 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// toiles_vs_entite
 		this.physics.add.overlap(groupe_projectile_toiles.list, liste_toile_vs_adversaire, this.toileToucheEntite as any, undefined, this);
+
+		// platformes_vs_toilemouvante
+		this.physics.add.collider(platformes.list, groupe_vs_platformes.list);
+
+		// allies_vs_toilemouvante
+		this.physics.add.collider(groupe_vs_platformes.list, groupe_allies.list);
 
 		// fileToileIntro (prefab fields)
 		fileToileIntro.ref = araigne_3;
@@ -168,6 +177,7 @@ export default class Niveau1 extends BaseNiveaux {
 		this.groupe_adversaires = groupe_adversaires;
 		this.platformes = platformes;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.groupe_vs_platformes = groupe_vs_platformes;
 		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
 		this.events.emit("scene-awake");
@@ -178,6 +188,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
+	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
 	private liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */

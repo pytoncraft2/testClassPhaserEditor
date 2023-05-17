@@ -245,7 +245,15 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (adversaire.blocages === adversaire.maxBlocages) {
-			console.log("EGALLLL");
+			console.log("SAME");
+			if (!adversaire.scene.groupe_vs_platformes.exists(adversaire.toile_image))
+			{
+				adversaire.scene.groupe_vs_platformes.add(adversaire.toile_image, true)
+			}
+			// adversaire.scene.groupe_vs_platformes.add(adversaire.toile_image, true)
+			// adversaire.scene.add.existing(adversaire.toile_image);
+			
+			// adversaire.body.moves = true;
 		}
 
 		toile.destroy()

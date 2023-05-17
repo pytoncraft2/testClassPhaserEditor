@@ -370,6 +370,14 @@
             ]
         },
         {
+            "type": "Layer",
+            "id": "8f8a6f65-fcb2-4bc1-96e7-bd1ed48a6db5",
+            "label": "groupe_vs_platformes",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript",
@@ -408,6 +416,22 @@
             "overlapOnly": true,
             "collideCallback": "this.toileToucheEntite as any",
             "callbackContext": "this"
+        },
+        {
+            "id": "6a5945d8-17bc-41c2-a752-c2a629370aea",
+            "type": "Collider",
+            "label": "platformes_vs_toilemouvante",
+            "scope": "METHOD",
+            "object1": "platformes.list",
+            "object2": "groupe_vs_platformes.list"
+        },
+        {
+            "id": "527c72ee-5f2f-43c8-8308-bcf8e5150b4f",
+            "type": "Collider",
+            "label": "allies_vs_toilemouvante",
+            "scope": "METHOD",
+            "object1": "groupe_vs_platformes.list",
+            "object2": "groupe_allies.list"
         }
     ],
     "meta": {
