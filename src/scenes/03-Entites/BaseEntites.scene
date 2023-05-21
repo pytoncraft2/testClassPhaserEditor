@@ -29,22 +29,14 @@
                     "scaleX": 0,
                     "scaleY": 0,
                     "ArcadeComponent.active": true,
+                    "enable": false,
                     "body.width": 150,
                     "body.height": 150
                 }
             ]
         }
     ],
-    "plainObjects": [
-        {
-            "id": "ef16a8a8-de6c-4283-896e-f27e98c232f0",
-            "type": "Collider",
-            "label": "toile_image_vs_platformes",
-            "scope": "PUBLIC",
-            "object1": "toile_image",
-            "object2": "[]"
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
