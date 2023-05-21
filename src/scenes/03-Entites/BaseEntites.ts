@@ -24,11 +24,14 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		toile_image.scaleX = 0;
 		toile_image.scaleY = 0;
 		scene.physics.add.existing(toile_image, false);
-		toile_image.body.enable = false;
 		toile_image.body.setSize(150, 150, false);
 		this.add(toile_image);
 
+		// toile_image_vs_platformes
+		const toile_image_vs_platformes = scene.physics.add.collider(toile_image, []);
+
 		this.toile_image = toile_image;
+		this.toile_image_vs_platformes = toile_image_vs_platformes;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -43,6 +46,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	public toile_image: Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
+	public toile_image_vs_platformes: Phaser.Physics.Arcade.Collider;
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;
@@ -56,6 +60,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	// Write your code here.
 	awake() {
 		this.body.gravity.y = this.graviteY;
+		this.toile_image_vs_platformes.object2 = this.scene.platformes.list
 	}
 
 	actionToucheEspace() {

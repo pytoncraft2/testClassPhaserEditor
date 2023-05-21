@@ -246,10 +246,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		if (adversaire.blocages === adversaire.maxBlocages) {
 			console.log("SAME");
-			if (!adversaire.scene.groupe_vs_platformes.exists(adversaire.toile_image))
-			{
-				adversaire.scene.groupe_vs_platformes.add(adversaire.toile_image, true)
-			}
+			console.log(adversaire);
+			adversaire.body.enable = false;
+			adversaire.parentContainer.remove(adversaire);
+			console.log(adversaire.toile_image);
+			adversaire.toile_image.body.enable = true;
+			
+			// if (!adversaire.scene.groupe_vs_platformes.exists(adversaire.toile_image))
+			// {
+				// adversaire.scene.groupe_vs_platformes.add(adversaire.toile_image)
+			// }
 			// adversaire.scene.groupe_vs_platformes.add(adversaire.toile_image, true)
 			// adversaire.scene.add.existing(adversaire.toile_image);
 			
