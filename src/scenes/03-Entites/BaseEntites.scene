@@ -30,6 +30,11 @@
                     "scaleY": 0,
                     "ArcadeComponent.active": true,
                     "enable": false,
+                    "body.bounce.x": 1,
+                    "body.bounce.y": 0.2,
+                    "collideWorldBounds": true,
+                    "angularVelocity": 220,
+                    "mass": 0.5,
                     "body.width": 150,
                     "body.height": 150
                 }

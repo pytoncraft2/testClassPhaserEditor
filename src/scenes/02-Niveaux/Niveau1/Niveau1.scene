@@ -31,7 +31,7 @@
             "label": "fileToileIntro",
             "ref": "araigne_3",
             "duree": 5200,
-            "longueurFile": 7.2,
+            "longueurFile": 7.45,
             "x": 172,
             "y": -7,
             "scaleX": 0.029609107493260928,
@@ -51,7 +51,7 @@
             "label": "fileToileIntro_1",
             "ref": "araigne",
             "duree": 4000,
-            "longueurFile": 5.6,
+            "longueurFile": 5.9,
             "delaiAvantActivation": 3000,
             "x": 1767,
             "y": -7
@@ -68,7 +68,7 @@
             ],
             "label": "fileToileIntro_2",
             "ref": "araigne_2",
-            "longueurFile": 2.5,
+            "longueurFile": 2.8,
             "delaiAvantActivation": 2000,
             "x": 954,
             "y": -11

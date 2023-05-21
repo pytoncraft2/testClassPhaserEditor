@@ -156,17 +156,17 @@ export default class Niveau1 extends BaseNiveaux {
 		// fileToileIntro (prefab fields)
 		fileToileIntro.ref = araigne_3;
 		fileToileIntro.duree = 5200;
-		fileToileIntro.longueurFile = 7.2;
+		fileToileIntro.longueurFile = 7.45;
 
 		// fileToileIntro_1 (prefab fields)
 		fileToileIntro_1.ref = araigne;
 		fileToileIntro_1.duree = 4000;
-		fileToileIntro_1.longueurFile = 5.6;
+		fileToileIntro_1.longueurFile = 5.9;
 		fileToileIntro_1.delaiAvantActivation = 3000;
 
 		// fileToileIntro_2 (prefab fields)
 		fileToileIntro_2.ref = araigne_2;
-		fileToileIntro_2.longueurFile = 2.5;
+		fileToileIntro_2.longueurFile = 2.8;
 		fileToileIntro_2.delaiAvantActivation = 2000;
 
 		// startSceneActionScript (prefab fields)

@@ -24,7 +24,12 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		toile_image.scaleX = 0;
 		toile_image.scaleY = 0;
 		scene.physics.add.existing(toile_image, false);
+		toile_image.body.bounce.x = 1;
+		toile_image.body.bounce.y = 0.2;
+		toile_image.body.mass = 0.5;
+		toile_image.body.angularVelocity = 220;
 		toile_image.body.enable = false;
+		toile_image.body.collideWorldBounds = true;
 		toile_image.body.setSize(150, 150, false);
 		this.add(toile_image);
 
