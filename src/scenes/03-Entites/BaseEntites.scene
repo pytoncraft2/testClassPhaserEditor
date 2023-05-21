@@ -18,25 +18,16 @@
             "label": "container_1",
             "list": [
                 {
-                    "type": "Image",
+                    "prefabId": "c5a74e91-74ce-4ed1-be5e-d22cbedf9673",
                     "id": "471479d1-a85d-43be-921d-f7783db85387",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
                     "label": "toile_image",
                     "scope": "PUBLIC",
-                    "texture": {
-                        "key": "huipat",
-                        "frame": "toile.png"
-                    },
-                    "scaleX": 0,
-                    "scaleY": 0,
-                    "ArcadeComponent.active": true,
-                    "enable": false,
-                    "body.bounce.x": 1,
-                    "body.bounce.y": 0.2,
-                    "collideWorldBounds": true,
-                    "angularVelocity": 220,
-                    "mass": 0.5,
-                    "body.width": 150,
-                    "body.height": 150
+                    "x": 0,
+                    "y": 0
                 }
             ]
         }

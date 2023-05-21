@@ -1,5 +1,5 @@
 {
-    "id": "06a54d9b-0d0a-4632-ad7a-de8b6bafc9db",
+    "id": "c5a74e91-74ce-4ed1-be5e-d22cbedf9673",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -13,20 +13,23 @@
     },
     "displayList": [
         {
-            "type": "Sprite",
-            "id": "f4e792a0-849d-4c14-b1f1-f079c9717fd8",
-            "label": "toile",
-            "useGameObjectName": true,
-            "scope": "NESTED_PREFAB",
+            "type": "Image",
+            "id": "a302623c-a8ff-4ac6-83ac-352a50508677",
+            "label": "toile_image",
+            "scope": "PUBLIC",
             "texture": {
                 "key": "huipat",
                 "frame": "toile.png"
             },
-            "scaleX": 0.5511987696365707,
-            "scaleY": 0.14119420138560307,
+            "scaleX": 0,
+            "scaleY": 0,
             "ArcadeComponent.active": true,
-            "body.gravity.y": 400,
-            "pushable": false,
+            "enable": false,
+            "body.bounce.x": 1,
+            "body.bounce.y": 0.2,
+            "collideWorldBounds": true,
+            "angularVelocity": 220,
+            "mass": 0.5,
             "body.width": 150,
             "body.height": 150
         }
@@ -42,7 +45,7 @@
         {
             "name": "refImmobilise",
             "label": "refImmobilise",
-            "tooltip": "Property 1",
+            "tooltip": "Référence à la personne immobilisée",
             "defValue": "",
             "customDefinition": false,
             "type": {

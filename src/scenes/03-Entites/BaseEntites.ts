@@ -9,6 +9,7 @@ export default interface BaseEntites {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import ToileImmobilisante from "../04-Projectiles/ToileImmobilisante";
 /* START-USER-IMPORTS */
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
@@ -20,17 +21,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		// toile_image
-		const toile_image = scene.add.image(0, 0, "huipat", "toile.png") as Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
-		toile_image.scaleX = 0;
-		toile_image.scaleY = 0;
-		scene.physics.add.existing(toile_image, false);
-		toile_image.body.bounce.x = 1;
-		toile_image.body.bounce.y = 0.2;
-		toile_image.body.mass = 0.5;
-		toile_image.body.angularVelocity = 220;
-		toile_image.body.enable = false;
-		toile_image.body.collideWorldBounds = true;
-		toile_image.body.setSize(150, 150, false);
+		const toile_image = new ToileImmobilisante(scene, 0, 0);
 		this.add(toile_image);
 
 		this.toile_image = toile_image;
@@ -47,7 +38,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public toile_image: Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
+	public toile_image: ToileImmobilisante;
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;

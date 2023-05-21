@@ -5,6 +5,7 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import BaseEntites from "../03-Entites/BaseEntites";
 /* END-USER-IMPORTS */
 
 export default interface ToileHuipatPrefab {
@@ -29,9 +30,31 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		/* END-USER-CTR-CODE */
 	}
 
+	public refImmobilise!: BaseEntites;
+
 	/* START-USER-CODE */
 
-	// Write your code here.
+	protected preUpdate(time: number, delta: number): void {
+		console.log("PRE UPDATE");
+		if (this.refImmobilise) {
+			if (time > 10000) {
+				this.refImmobilise.body.moves = true;
+				this.destroy()
+				return;
+			}
+
+			if (this.refImmobilise.body.moves) {
+				this.refImmobilise.body.moves = false;				
+				this.body.allowGravity = false;
+				console.log("ONCE");
+			}
+			this.x = this.refImmobilise.x;		
+			this.y = this.refImmobilise.y;
+		}
+		console.log(time);
+		
+	}
+
 
 	/* END-USER-CODE */
 }

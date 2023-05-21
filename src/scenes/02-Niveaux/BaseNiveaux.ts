@@ -233,26 +233,28 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 
+		toile.refImmobilise = adversaire;
+		toile.setScale(1)
 
-		if (adversaire.blocages === 0) {
-			adversaire.toile_image.scale = 1;
-			adversaire.body.moves = false;
-			adversaire.blocages = 1;
-		}
+		// if (adversaire.blocages === 0) {
+		// 	adversaire.toile_image.scale = 1;
+		// 	adversaire.body.moves = false;
+		// 	adversaire.blocages = 1;
+		// }
 
-		if (adversaire.blocages === 1) {
-			console.log("ENVOIE");
-			adversaire.toile_image.body.enable = true;
-			// adversaire.body.enable = true;
-			// adversaire.body.checkCollision.none = true;
-			// this.time.delayedCall(499, () => adversaire.body.moves = false, undefined, this)
-			this.physics.add.collider(adversaire.toile_image, [...(this as any).platformes.list, ...(this as any).groupe_adversaires.list, ...(this as any).groupe_allies.list]);
-			adversaire.blocages = -1;
-		}
+		// if (adversaire.blocages === 1) {
+		// 	console.log("ENVOIE");
+		// 	adversaire.toile_image.body.enable = true;
+		// 	// adversaire.body.enable = true;
+		// 	// adversaire.body.checkCollision.none = true;
+		// 	// this.time.delayedCall(499, () => adversaire.body.moves = false, undefined, this)
+		// 	this.physics.add.collider(adversaire.toile_image, [...(this as any).platformes.list, ...(this as any).groupe_adversaires.list, ...(this as any).groupe_allies.list]);
+		// 	adversaire.blocages = -1;
+		// }
 
-		if (adversaire.blocages == -1) {
-			adversaire.body.moves = true;			
-		}
+		// if (adversaire.blocages == -1) {
+		// 	adversaire.body.moves = true;			
+		// }
 		// const agrandissementScale = adversaire.toile_image.scaleX + 0.20;
 		// toile.destroy()
 	}

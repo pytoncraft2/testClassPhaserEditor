@@ -98,7 +98,7 @@ export default class Huipat extends BaseEntites {
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
 
 		this.scene.time.delayedCall(500, function (toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			groupe_toiles.remove(toile, true);
+			// groupe_toiles.remove(toile, true);
 		}, [toile, this.scene.groupe_projectile_toiles], this.scene);	
 	}
 
