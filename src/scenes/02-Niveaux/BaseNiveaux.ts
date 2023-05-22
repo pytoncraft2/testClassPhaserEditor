@@ -236,7 +236,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// const dt = this.scene.loop.delta
 
 		// this.tempsCumule += dt
-		toile.refImmobilise = adversaire;
+		if (!toile.refImmobilise) {
+			toile.refImmobilise = adversaire;
+		} else {
+			console.log("QQCH");
+		}
+		
 		// toile.setScale(1)
 
 		// if (adversaire.blocages === 0) {

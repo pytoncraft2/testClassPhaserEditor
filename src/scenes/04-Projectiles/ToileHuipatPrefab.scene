@@ -59,6 +59,16 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "tempsCumuleImmobilisation",
+            "label": "tempsCumuleImmobilisation",
+            "tooltip": "temp entre les immobilisation",
+            "defValue": 1000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

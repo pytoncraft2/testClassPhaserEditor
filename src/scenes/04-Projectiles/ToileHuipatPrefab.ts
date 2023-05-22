@@ -32,6 +32,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	public refImmobilise!: BaseEntites;
 	public tempsCumule: number = 0;
+	public tempsCumuleImmobilisation: number = 1000;
 
 	/* START-USER-CODE */
 
@@ -44,6 +45,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		// }
 		if (this.refImmobilise) {
 			if (this.tempsCumule >= 2000) {
+				this.refImmobilise.blocages = 0;
 				this.refImmobilise.body.moves = true;
 				this.destroy()
 				return;
@@ -55,7 +57,15 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 				this.body.moves = false;
 				this.x = this.refImmobilise.x;
 				this.y = this.refImmobilise.y;
-				console.log("ONCE");
+				console.log("STOP MOUVEMENT");
+			} else if (!this.refImmobilise.body.moves) {
+				this.tempsCumuleImmobilisation += delta;
+
+				if (this.tempsCumuleImmobilisation >= 1000) {
+					this.scale -= 0.05;
+					this.tempsCumuleImmobilisation = 0;
+				}
+				console.log("BOUGE PAS", this.refImmobilise.blocages);
 			}
 		}
 		// console.log(time);
