@@ -350,7 +350,6 @@
             "scope": "METHOD",
             "object1": "groupe_projectile_toiles.list",
             "object2": "liste_toile_vs_adversaire",
-            "overlapOnly": true,
             "collideCallback": "this.toileToucheEntite as any",
             "callbackContext": "this"
         },

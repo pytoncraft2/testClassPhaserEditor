@@ -239,8 +239,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (!toile.refImmobilise) {
 			toile.refImmobilise = adversaire;
 		} else {
-			toile.augmenteDureeImmobilisation()
-			console.log("QQCH");
+			toile.setData('degat', 0)
 		}
 		
 		// toile.setScale(1)
