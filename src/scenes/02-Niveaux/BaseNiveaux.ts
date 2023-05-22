@@ -237,7 +237,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// this.tempsCumule += dt
 		toile.refImmobilise = adversaire;
-		toile.setScale(1)
+		// toile.setScale(1)
 
 		// if (adversaire.blocages === 0) {
 		// 	adversaire.toile_image.scale = 1;

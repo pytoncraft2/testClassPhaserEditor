@@ -52,10 +52,11 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			if (this.refImmobilise.body.moves) {
 				this.refImmobilise.body.moves = false;				
 				this.body.allowGravity = false;
+				this.body.moves = false;
+				this.x = this.refImmobilise.x;
+				this.y = this.refImmobilise.y;
 				console.log("ONCE");
 			}
-			this.x = this.refImmobilise.x;		
-			this.y = this.refImmobilise.y;
 		}
 		// console.log(time);
 
