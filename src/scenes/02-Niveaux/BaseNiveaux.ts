@@ -233,6 +233,9 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 
+		// const dt = this.scene.loop.delta
+
+		// this.tempsCumule += dt
 		toile.refImmobilise = adversaire;
 		toile.setScale(1)
 
