@@ -39,10 +39,6 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	protected preUpdate(time: number, delta: number): void {
 		this.tempsCumule += delta;
 
-		// if (this.tempsCumule >= 3000) {
-		// 	console.log("GOOOO");
-		// 	this.tempsCumule = 0;
-		// }
 		if (this.refImmobilise) {
 			if (this.tempsCumule >= 2000) {
 				this.refImmobilise.blocages = 0;
@@ -70,6 +66,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		}
 		// console.log(time);
 
+	}
+
+	augmenteDureeImmobilisation() {
+		this.scale += 0.1;
 	}
 
 
