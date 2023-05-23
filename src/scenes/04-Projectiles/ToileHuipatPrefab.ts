@@ -25,6 +25,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.gravity.y = 400;
 		this.body.bounce.x = 1;
 		this.body.bounce.y = 0.7;
+		this.body.angularVelocity = 220;
 		this.body.collideWorldBounds = true;
 		this.body.pushable = false;
 		this.body.setCircle(64);
