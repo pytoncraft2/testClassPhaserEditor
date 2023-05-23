@@ -69,7 +69,8 @@
             "object1": "detecteur_proche",
             "object2": "[]",
             "overlapOnly": true,
-            "collideCallback": "this.observeSiEntiteProche as any",
+            "collideCallback": "this.actionSiEntiteProche as any",
+            "processCallback": "this.verifSiEntiteProcheEtPoussable as any",
             "callbackContext": "this"
         }
     ],

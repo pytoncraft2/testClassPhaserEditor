@@ -42,7 +42,7 @@ export default class Huipat extends BaseEntites {
 		this.add(detecteur_proche);
 
 		// colision_detecteur_proche
-		const colision_detecteur_proche = scene.physics.add.overlap(detecteur_proche, [], this.observeSiEntiteProche as any, undefined, this);
+		const colision_detecteur_proche = scene.physics.add.overlap(detecteur_proche, [], this.actionSiEntiteProche as any, this.verifSiEntiteProcheEtPoussable as any, this);
 
 		this.image = image;
 		this.detecteur_proche = detecteur_proche;
@@ -115,9 +115,30 @@ export default class Huipat extends BaseEntites {
 			this.detecteur_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
 	}
 
-	observeSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
-		if (adversaire.poussable) this.entiteProcheEtPoussable = true
-		else this.entiteProcheEtPoussable = false
+	verifSiEntiteProcheEtPoussable(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
+		if (adversaire.poussable) {
+			return true;			
+		} else {
+			return false;
+		}
+	}
+
+	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
+		console.log("ACTION SUR L'ENTITE PROCHE");
+
+		// if (adversaire.poussable) {
+		// 	console.log("POUSSABLE");
+
+		// 	this.entiteProcheEtPoussable = true
+		adversaire.scene.tweens.add({
+			targets: adversaire,
+			y: "+=300",
+			duration: 1000
+		})
+		// }
+		// else {
+		// 	this.entiteProcheEtPoussable = false
+		// }
 	}
 
 	/* END-USER-CODE */
