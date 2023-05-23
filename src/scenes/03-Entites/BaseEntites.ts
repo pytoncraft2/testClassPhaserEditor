@@ -78,11 +78,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.body.setVelocityX(0);
 	}
 
-	diminutionTailleToile() {
-		const diminutionScale = this.toile_image.scaleX - 0.20;
-		this.toile_image.setScale(diminutionScale);
-	}
-
 	/** RETOURNE L'IMAGE VERS LA DROITE(FALSE) OU VERS LA GAUCHE(TRUE) */
 
 	FlipX(ouiNon: boolean) {

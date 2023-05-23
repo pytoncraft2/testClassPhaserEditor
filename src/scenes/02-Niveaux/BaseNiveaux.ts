@@ -246,6 +246,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			adversaire.blocages += 1;
 			adversaire.body.moves = false;
 			adversaire.refToileImmobilisante.setScale(adversaire.blocages / 4)
+			nouvelleToileImmobilisation.refEntiteImmobilise = adversaire;
 			console.log("BLOCAGES");
 		}
 		// actions une fois bloqué

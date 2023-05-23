@@ -40,9 +40,9 @@
     },
     "prefabProperties": [
         {
-            "name": "refImmobilise",
-            "label": "refImmobilise",
-            "tooltip": "Property 1",
+            "name": "refEntiteImmobilise",
+            "label": "refEntiteImmobilise",
+            "tooltip": "référence à l'entité qui est vient d'être immobilisé",
             "defValue": "",
             "customDefinition": false,
             "type": {
