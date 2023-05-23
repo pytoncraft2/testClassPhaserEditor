@@ -29,7 +29,7 @@
             "body.bounce.x": 1,
             "body.bounce.y": 0.7,
             "collideWorldBounds": true,
-            "angularVelocity": 220,
+            "angularVelocity": 290,
             "pushable": false,
             "bodyGeometry": 0,
             "body.width": 128,
