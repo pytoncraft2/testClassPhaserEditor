@@ -22,8 +22,8 @@
                 "key": "huipat",
                 "frame": "toile.png"
             },
-            "scaleX": 0.5511987696365707,
-            "scaleY": 0.14119420138560307,
+            "scaleX": 0.28618752828821,
+            "scaleY": 0.28618752828821,
             "ArcadeComponent.active": true,
             "body.gravity.y": 400,
             "body.bounce.x": 1,

@@ -19,8 +19,8 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		super(scene, x ?? 0, y ?? 0, texture || "huipat", frame ?? "toile.png");
 
 		this.name = "toile";
-		this.scaleX = 0.5511987696365707;
-		this.scaleY = 0.14119420138560307;
+		this.scaleX = 0.28618752828821;
+		this.scaleY = 0.28618752828821;
 		scene.physics.add.existing(this, false);
 		this.body.gravity.y = 400;
 		this.body.bounce.x = 1;
@@ -63,8 +63,16 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			// 	this.body.allowGravity = false;
 			// 	this.body.moves = false;
 			// 	this.body.enable = false;
-			// 	this.x = this.refImmobilise.x;
-			// 	this.y = this.refImmobilise.y;
+			// if (this.refEntiteImmobilise) {
+
+			// }
+
+		if (this.refEntiteImmobilise) {
+			if (this.refEntiteImmobilise.body.moves) {
+				this.refEntiteImmobilise.x = this.x;
+				this.refEntiteImmobilise.y = this.y;
+			}
+		}
 			// 	console.log("STOP MOUVEMENT");
 			// } else if (!this.refImmobilise.body.moves) {
 			// 	this.tempsCumuleImmobilisation += delta;
