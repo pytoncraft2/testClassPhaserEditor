@@ -42,7 +42,7 @@ export default class Huipat extends BaseEntites {
 		this.add(detecteur_proche);
 
 		// colision_detecteur_proche
-		const colision_detecteur_proche = scene.physics.add.overlap(detecteur_proche, [], () => console.log('proche'));
+		const colision_detecteur_proche = scene.physics.add.overlap(detecteur_proche, [], this.observeSiEntiteProche as any, undefined, this);
 
 		this.image = image;
 		this.detecteur_proche = detecteur_proche;
@@ -57,6 +57,7 @@ export default class Huipat extends BaseEntites {
 	public image: Phaser.GameObjects.Sprite;
 	public detecteur_proche: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
+	public entiteProche: boolean = false;
 
 	/* START-USER-CODE */
 
@@ -92,20 +93,31 @@ export default class Huipat extends BaseEntites {
 	actionToucheEspace(): void {
 		if (!this.body.moves) return;
 
+		this.detecteur_proche.body.enable = true;
+		if (this.entiteProche) {
+			this.entiteProche = false;
+			console.log("ATTAQUE PHYSIQUE POSSIBLE!");
+			return;
+		}
+
+		this.scene.time.delayedCall(17, () => {
+			this.detecteur_proche.body.enable = false;
+		}, undefined, this)
+
 		const { centerX, centerY } = this.image.getBounds();
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
 		this.scene.groupe_projectile_toiles.add(toile);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
-
-		this.scene.time.delayedCall(500, function (toile: ToileHuipatPrefab, groupe_toiles: Phaser.GameObjects.Container) {
-			// groupe_toiles.remove(toile, true);
-		}, [toile, this.scene.groupe_projectile_toiles], this.scene);	
 	}
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')
 	{
 		if (this.detecteur_proche.x != this.image[`get${emplacement}Center`]().x)
 			this.detecteur_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
+	}
+
+	observeSiEntiteProche() {
+		this.entiteProche = true;
 	}
 
 	/* END-USER-CODE */

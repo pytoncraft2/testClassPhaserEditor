@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "52692af4-e603-4549-8016-16fefc991658",
             "label": "container_1",
-            "components": [],
             "y": 1,
             "ArcadeComponent.active": true,
             "collideWorldBounds": true,
@@ -32,19 +31,16 @@
                     "id": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
                     "label": "image",
                     "scope": "NESTED_PREFAB",
-                    "components": [],
                     "texture": {
                         "key": "huipat",
                         "frame": "huipat.png"
-                    },
-                    "list": []
+                    }
                 },
                 {
                     "type": "Rectangle",
                     "id": "dfecd66b-b58e-45f0-a0bf-68324c17fb3a",
                     "label": "detecteur_proche",
                     "scope": "NESTED_PREFAB",
-                    "components": [],
                     "x": 66,
                     "y": -4,
                     "scaleX": 0.6879210867196743,
@@ -59,8 +55,7 @@
                     "body.height": 128,
                     "isFilled": true,
                     "width": 128,
-                    "height": 128,
-                    "list": []
+                    "height": 128
                 }
             ]
         }
@@ -74,13 +69,26 @@
             "object1": "detecteur_proche",
             "object2": "[]",
             "overlapOnly": true,
-            "collideCallback": "() => console.log('proche')"
+            "collideCallback": "this.observeSiEntiteProche as any",
+            "callbackContext": "this"
         }
     ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
-    }
+        "version": 4
+    },
+    "prefabProperties": [
+        {
+            "name": "entiteProche",
+            "label": "entiteProche",
+            "tooltip": "verifie si une entite est présent de le rectangle de detection",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
 }

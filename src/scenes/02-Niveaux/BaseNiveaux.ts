@@ -256,7 +256,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			{
 				adversaire.poussable = false;
 				adversaire.blocages += 1;
-				adversaire.refToileImmobilisante.setScale(adversaire.blocages / 4)
+				adversaire.refToileImmobilisante.setScale(adversaire.blocages / 5)
 			}
 			else if (adversaire.blocages == adversaire.maxBlocages)
 			{
