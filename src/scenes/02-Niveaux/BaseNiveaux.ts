@@ -237,12 +237,20 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// blocage de l'adversaire si il bouge
 		if (adversaire.body.moves) {
+			toile.destroy()
 			const nouvelleImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
-			nouvelleImmobilisation.setScale(1)
+			// nouvelleImmobilisation.setScale(1)
+			// nouvelleImmobilisation.refImmobilise = adversaire;
 			nouvelleImmobilisation.body.moves = false;
+			adversaire.refToileImmobilisante = nouvelleImmobilisation;
 			// nouvelleImmobilisation.refImmobilise = adversaire;
 			adversaire.body.moves = false;
 			console.log("BLOCAGES");
+		} else if (!adversaire.body.moves && adversaire.blocages < adversaire.maxBlocages) {
+			console.log("AUCUN BLOCAGE");
+			adversaire.blocages += 1;
+			adversaire.refToileImmobilisante.setScale(adversaire.blocages / 4)
+			console.log(adversaire);
 		}
 		// this.tempsCumule += dt
 		// if (!toile.refImmobilise) {

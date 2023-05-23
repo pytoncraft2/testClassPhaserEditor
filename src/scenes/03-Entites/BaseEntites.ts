@@ -13,6 +13,7 @@ import ToileImmobilisante from "../04-Projectiles/ToileImmobilisante";
 /* START-USER-IMPORTS */
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
+import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
 /* END-USER-IMPORTS */
 
 export default class BaseEntites extends Phaser.GameObjects.Container {
@@ -46,6 +47,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public maxBlocages: number = 5;
 	public invincible: boolean = false;
 	public activeIA: boolean = false;
+	public refToileImmobilisante!: ToileHuipatPrefab;
 
 	/* START-USER-CODE */
 

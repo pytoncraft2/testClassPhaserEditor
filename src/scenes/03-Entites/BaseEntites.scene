@@ -109,6 +109,17 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "refToileImmobilisante",
+            "label": "refToileImmobilisante",
+            "tooltip": "referance à la toile qui bloque le mouvement de l'entité",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "ToileHuipatPrefab"
+            }
         }
     ]
 }
