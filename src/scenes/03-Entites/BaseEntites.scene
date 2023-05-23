@@ -120,6 +120,16 @@
                 "id": "object-var",
                 "expressionType": "ToileHuipatPrefab"
             }
+        },
+        {
+            "name": "poussable",
+            "label": "poussable",
+            "tooltip": "adversaire apres avoir était immobilisé x fois, il peut être poussable ou ejectable",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

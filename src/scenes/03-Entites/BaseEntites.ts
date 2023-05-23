@@ -48,6 +48,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public invincible: boolean = false;
 	public activeIA: boolean = false;
 	public refToileImmobilisante!: ToileHuipatPrefab;
+	public poussable: boolean = false;
 
 	/* START-USER-CODE */
 
