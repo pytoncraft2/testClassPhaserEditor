@@ -236,11 +236,19 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// const dt = this.scene.loop.delta
 
 		// this.tempsCumule += dt
-		if (!toile.refImmobilise) {
+		// if (!toile.refImmobilise) {
 			toile.refImmobilise = adversaire;
-		} else {
-			toile.setData('degat', 0)
-		}
+			toile.refImmobilise.blocages += 1;
+		// } else {
+			// console.log("TOUCHE");
+		// }
+			
+			// console.log("AJOUT");
+			
+		// } else {
+			// toile.refImmobilise = adversaire;
+			// console.log("DEJA LÀ", toile.refImmobilise);
+		// }
 		
 		// toile.setScale(1)
 
