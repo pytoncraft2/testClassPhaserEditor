@@ -238,6 +238,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// blocage de l'adversaire si il bouge
 		if (adversaire.body.moves) {
 			const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
+			adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
 			// nouvelleImmobilisation.setScale(1)
 			// nouvelleImmobilisation.refImmobilise = adversaire;
 			nouvelleToileImmobilisation.body.moves = false;
