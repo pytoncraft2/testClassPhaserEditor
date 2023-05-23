@@ -96,7 +96,6 @@ export default class Huipat extends BaseEntites {
 		this.detecteur_proche.body.enable = true;
 		if (this.entiteProcheEtPoussable) {
 			this.entiteProcheEtPoussable = false;
-			console.log("ATTAQUE PHYSIQUE POSSIBLE!");
 			return;
 		}
 
@@ -117,11 +116,8 @@ export default class Huipat extends BaseEntites {
 	}
 
 	observeSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
-		if (adversaire.poussable) {
-			this.entiteProcheEtPoussable = true;
-		} else {
-			this.entiteProcheEtPoussable = false;
-		}
+		if (adversaire.poussable) this.entiteProcheEtPoussable = true
+		else this.entiteProcheEtPoussable = false
 	}
 
 	/* END-USER-CODE */
