@@ -26,9 +26,13 @@
             "scaleY": 0.14119420138560307,
             "ArcadeComponent.active": true,
             "body.gravity.y": 400,
+            "body.bounce.x": 1,
+            "body.bounce.y": 0.7,
+            "collideWorldBounds": true,
             "pushable": false,
-            "body.width": 150,
-            "body.height": 150
+            "bodyGeometry": 0,
+            "body.width": 128,
+            "body.height": 128
         }
     ],
     "plainObjects": [],
