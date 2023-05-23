@@ -27,6 +27,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.setSize(150, 150, false);
 
 		/* START-USER-CTR-CODE */
+		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -39,32 +40,32 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	protected preUpdate(time: number, delta: number): void {
 		this.tempsCumule += delta;
 
-		if (this.refImmobilise) {
-			if (this.tempsCumule >= 2000) {
-				this.refImmobilise.blocages = 0;
-				this.refImmobilise.body.moves = true;
-				this.destroy()
-				return;
-			}
+		// if (this.refImmobilise) {
+			// if (this.tempsCumule >= 2000) {
+			// 	this.refImmobilise.blocages = 0;
+			// 	this.refImmobilise.body.moves = true;
+			// 	this.destroy()
+			// 	return;
+			// }
 
-			if (this.refImmobilise.body.moves) {
-				this.refImmobilise.body.moves = false;				
-				this.body.allowGravity = false;
-				this.body.moves = false;
-				this.body.enable = false;
-				this.x = this.refImmobilise.x;
-				this.y = this.refImmobilise.y;
-				console.log("STOP MOUVEMENT");
-			} else if (!this.refImmobilise.body.moves) {
-				this.tempsCumuleImmobilisation += delta;
+			// if (this.refImmobilise.body.moves) {
+			// 	this.refImmobilise.body.moves = false;				
+			// 	this.body.allowGravity = false;
+			// 	this.body.moves = false;
+			// 	this.body.enable = false;
+			// 	this.x = this.refImmobilise.x;
+			// 	this.y = this.refImmobilise.y;
+			// 	console.log("STOP MOUVEMENT");
+			// } else if (!this.refImmobilise.body.moves) {
+			// 	this.tempsCumuleImmobilisation += delta;
 
-				if (this.tempsCumuleImmobilisation >= 1000) {
-					// this.scale -= 0.05;
-					this.tempsCumuleImmobilisation = 0;
-				}
-			}
+			// 	if (this.tempsCumuleImmobilisation >= 1000) {
+			// 		// this.scale -= 0.05;
+			// 		this.tempsCumuleImmobilisation = 0;
+			// 	}
+			// }
 			
-		}
+		// }
 		// console.log(time);
 
 	}
