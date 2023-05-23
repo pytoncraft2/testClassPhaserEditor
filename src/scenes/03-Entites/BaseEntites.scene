@@ -15,21 +15,7 @@
         {
             "type": "Container",
             "id": "35ce0b59-bb1b-4653-80a5-ae325facd00c",
-            "label": "container_1",
-            "list": [
-                {
-                    "prefabId": "c5a74e91-74ce-4ed1-be5e-d22cbedf9673",
-                    "id": "471479d1-a85d-43be-921d-f7783db85387",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "toile_image",
-                    "scope": "PUBLIC",
-                    "x": 0,
-                    "y": 0
-                }
-            ]
+            "label": "container_1"
         }
     ],
     "plainObjects": [],

@@ -9,7 +9,6 @@ export default interface BaseEntites {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import ToileImmobilisante from "../04-Projectiles/ToileImmobilisante";
 /* START-USER-IMPORTS */
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
@@ -21,16 +20,9 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
-		// toile_image
-		const toile_image = new ToileImmobilisante(scene, 0, 0);
-		this.add(toile_image);
-
-		this.toile_image = toile_image;
-
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.scene.time.delayedCall(100, () => {
-			this.bringToTop(this.toile_image);
 			this.image
 				.setInteractive({ cursor: 'pointer' })
 				.on('pointerdown', () => (this.scene.entiteControllable = this))
@@ -39,7 +31,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public toile_image: ToileImmobilisante;
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;

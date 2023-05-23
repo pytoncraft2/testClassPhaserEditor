@@ -27,7 +27,7 @@
             "ArcadeComponent.active": true,
             "body.gravity.y": 400,
             "body.bounce.x": 1,
-            "body.bounce.y": 0.7,
+            "body.bounce.y": 0.6,
             "collideWorldBounds": true,
             "angularVelocity": 290,
             "pushable": false,
