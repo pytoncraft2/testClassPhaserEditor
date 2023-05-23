@@ -81,9 +81,9 @@
     },
     "prefabProperties": [
         {
-            "name": "entiteProche",
-            "label": "entiteProche",
-            "tooltip": "verifie si une entite est présent de le rectangle de detection",
+            "name": "entiteProcheEtPoussable",
+            "label": "entiteProcheEtPoussable",
+            "tooltip": "verifie si une entite est présent de le rectangle de detection et poussable",
             "defValue": false,
             "customDefinition": false,
             "type": {

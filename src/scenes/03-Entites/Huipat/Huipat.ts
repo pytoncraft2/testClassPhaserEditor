@@ -57,7 +57,7 @@ export default class Huipat extends BaseEntites {
 	public image: Phaser.GameObjects.Sprite;
 	public detecteur_proche: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
-	public entiteProche: boolean = false;
+	public entiteProcheEtPoussable: boolean = false;
 
 	/* START-USER-CODE */
 
@@ -94,8 +94,8 @@ export default class Huipat extends BaseEntites {
 		if (!this.body.moves) return;
 
 		this.detecteur_proche.body.enable = true;
-		if (this.entiteProche) {
-			this.entiteProche = false;
+		if (this.entiteProcheEtPoussable) {
+			this.entiteProcheEtPoussable = false;
 			console.log("ATTAQUE PHYSIQUE POSSIBLE!");
 			return;
 		}
@@ -116,8 +116,12 @@ export default class Huipat extends BaseEntites {
 			this.detecteur_proche.setPosition(this.image[`get${emplacement}Center`]().x, this.image[`get${emplacement}Center`]().y);
 	}
 
-	observeSiEntiteProche() {
-		this.entiteProche = true;
+	observeSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
+		if (adversaire.poussable) {
+			this.entiteProcheEtPoussable = true;
+		} else {
+			this.entiteProcheEtPoussable = false;
+		}
 	}
 
 	/* END-USER-CODE */
