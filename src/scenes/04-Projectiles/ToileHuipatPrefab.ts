@@ -13,30 +13,23 @@ export default interface ToileHuipatPrefab {
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-export default class ToileHuipatPrefab extends Phaser.GameObjects.Container {
+export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 0, y ?? 0);
+	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+		super(scene, x ?? 0, y ?? 0, texture || "huipat", frame ?? "toile.png");
 
+		this.name = "toile";
+		this.scaleX = 0.28618752828821;
+		this.scaleY = 0.28618752828821;
 		scene.physics.add.existing(this, false);
 		this.body.bounce.x = 1;
-		this.body.bounce.y = 0.6;
+		this.body.bounce.y = 0.4;
 		this.body.collideWorldBounds = true;
-		this.body.pushable = false;
-		this.body.setOffset(-21.464064621615748, -21.464064621615748);
-		this.body.setSize(42.928129243231496, 42.928129243231496, false);
-
-		// toile
-		const toile = scene.add.sprite(0, 0, "huipat", "toile.png");
-		toile.name = "toile";
-		toile.scaleX = 0.28618752828821;
-		toile.scaleY = 0.28618752828821;
-		this.add(toile);
+		this.body.setSize(150, 150, false);
 
 		// lists
 		const listeRefEntiteImmobilise: Array<any> = [];
 
-		this.toile = toile;
 		this.listeRefEntiteImmobilise = listeRefEntiteImmobilise;
 
 		/* START-USER-CTR-CODE */
@@ -44,7 +37,6 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public toile: Phaser.GameObjects.Sprite;
 	private listeRefEntiteImmobilise: Array<any>;
 	public tempsCumule: number = 0;
 	public tempsCumuleImmobilisation: number = 1000;

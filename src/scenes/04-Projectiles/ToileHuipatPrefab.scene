@@ -13,33 +13,23 @@
     },
     "displayList": [
         {
-            "type": "Container",
-            "id": "814712f9-2d94-422c-9bbc-870ebf7b580f",
-            "label": "container_2",
+            "type": "Sprite",
+            "id": "f4e792a0-849d-4c14-b1f1-f079c9717fd8",
+            "label": "toile",
+            "useGameObjectName": true,
+            "scope": "NESTED_PREFAB",
+            "texture": {
+                "key": "huipat",
+                "frame": "toile.png"
+            },
+            "scaleX": 0.28618752828821,
+            "scaleY": 0.28618752828821,
             "ArcadeComponent.active": true,
             "body.bounce.x": 1,
-            "body.bounce.y": 0.6,
+            "body.bounce.y": 0.4,
             "collideWorldBounds": true,
-            "pushable": false,
-            "body.width": 42.928129243231496,
-            "body.height": 42.928129243231496,
-            "body.offset.x": -21.464064621615748,
-            "body.offset.y": -21.464064621615748,
-            "list": [
-                {
-                    "type": "Sprite",
-                    "id": "f4e792a0-849d-4c14-b1f1-f079c9717fd8",
-                    "label": "toile",
-                    "useGameObjectName": true,
-                    "scope": "NESTED_PREFAB",
-                    "texture": {
-                        "key": "huipat",
-                        "frame": "toile.png"
-                    },
-                    "scaleX": 0.28618752828821,
-                    "scaleY": 0.28618752828821
-                }
-            ]
+            "body.width": 150,
+            "body.height": 150
         }
     ],
     "plainObjects": [],
