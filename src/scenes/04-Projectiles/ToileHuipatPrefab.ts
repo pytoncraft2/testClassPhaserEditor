@@ -77,6 +77,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 				if (entite.body.moves) {
 					entite.x = this.x;
 					entite.y = this.y;
+					entite.angle = this.angle;
 				}
 
 			})
