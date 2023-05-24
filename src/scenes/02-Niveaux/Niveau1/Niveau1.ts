@@ -136,7 +136,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [araigne_2];
+		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne];
 
 		// platformes_vs_entites
 		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
