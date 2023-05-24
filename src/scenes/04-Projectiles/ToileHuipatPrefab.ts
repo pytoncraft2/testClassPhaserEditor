@@ -30,12 +30,17 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.pushable = false;
 		this.body.setCircle(64);
 
+		// lists
+		const listeRefEntiteImmobilise: Array<any> = [];
+
+		this.listeRefEntiteImmobilise = listeRefEntiteImmobilise;
+
 		/* START-USER-CTR-CODE */
 		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
-	public refEntiteImmobilise!: BaseEntites;
+	private listeRefEntiteImmobilise: Array<any>;
 	public tempsCumule: number = 0;
 	public tempsCumuleImmobilisation: number = 1000;
 
@@ -46,7 +51,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 		// if (this.refImmobilise) {
 			if (this.tempsCumule >= 320) {
-				if (!this.refEntiteImmobilise) {
+				if (this.listeRefEntiteImmobilise.length == 0) {
 					console.log("DESTRUCTION");
 					this.destroy()
 				}
@@ -67,11 +72,15 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 			// }
 
-		if (this.refEntiteImmobilise) {
-			if (this.refEntiteImmobilise.body.moves) {
-				this.refEntiteImmobilise.x = this.x;
-				this.refEntiteImmobilise.y = this.y;
-			}
+		if (this.listeRefEntiteImmobilise.length != 0) {
+			this.listeRefEntiteImmobilise.map((entite: BaseEntites) => {
+				if (entite.body.moves) {
+					entite.x = this.x;
+					entite.y = this.y;
+				}
+
+			})
+
 		}
 			// 	console.log("STOP MOUVEMENT");
 			// } else if (!this.refImmobilise.body.moves) {
@@ -90,6 +99,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	augmenteDureeImmobilisation() {
 		this.scale += 0.1;
+	}
+
+	ajoutRefEntiteImmobilise(adversaire: BaseEntites) {
+		this.listeRefEntiteImmobilise.push(adversaire)
 	}
 
 

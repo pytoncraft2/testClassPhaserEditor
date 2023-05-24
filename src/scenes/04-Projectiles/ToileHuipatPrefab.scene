@@ -43,18 +43,13 @@
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
     },
-    "prefabProperties": [
+    "lists": [
         {
-            "name": "refEntiteImmobilise",
-            "label": "refEntiteImmobilise",
-            "tooltip": "référence à l'entité qui est vient d'être immobilisé",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "object-var",
-                "expressionType": "BaseEntites"
-            }
-        },
+            "id": "029373dd-fb3f-4d1a-b888-8f0fed4b79c1",
+            "label": "listeRefEntiteImmobilise"
+        }
+    ],
+    "prefabProperties": [
         {
             "name": "tempsCumule",
             "label": "tempsCumule",
