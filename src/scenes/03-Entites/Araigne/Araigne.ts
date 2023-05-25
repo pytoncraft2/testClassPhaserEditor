@@ -184,13 +184,8 @@ export default class Araigne extends BaseEntites {
 		}
 
 		if (this.estSurUnePlatforme && this.body.touching.down && this.peutChangerDePlatforme) {
-			if (this.platformeEnHaut && this.sautEnHautActivable) {
-				this.actionToucheHaut()
-
-			} else if (this.platformeEnHaut && !this.sautEnHautActivable) {
-				this.actionToucheBas()
-			}
-
+			if (this.platformeEnHaut && this.sautEnHautActivable) this.actionToucheHaut()
+			else if (this.platformeEnHaut && !this.sautEnHautActivable) this.actionToucheBas()
 		}
 		this.estSurUnePlatforme = false;
 		this.platformeEnHaut = false;

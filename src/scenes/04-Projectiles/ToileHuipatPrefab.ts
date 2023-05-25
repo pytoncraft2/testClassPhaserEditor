@@ -83,10 +83,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 					}
 					if (entite.image.flipX)
 					{
-						this.body.setVelocityX(300)
+						this.body.setVelocityX(-900)
 						this.angle += 0.05;
 					} else if (!entite.image.flipX) {
-						this.body.setVelocityX(-300)
+						this.body.setVelocityX(900)
 						this.angle -= 0.05;
 					}
 					entite.x = this.x;
