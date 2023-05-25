@@ -130,10 +130,10 @@ export default class Huipat extends BaseEntites {
 		// 	console.log("POUSSABLE");
 
 		// 	this.entiteProcheEtPoussable = true
-		adversaire.refToileImmobilisante.body.moves = true;
+		// adversaire.refToileImmobilisante.body.moves = true;
 		adversaire.body.moves = true;
 		adversaire.body.enable = false;
-		adversaire.refToileImmobilisante.body.setVelocityX(-500)
+		// adversaire.refToileImmobilisante.body.setVelocityX(-500)
 		// adversaire.refToileImmobilisante.attrape(adversaire)
 		
 		// adversaire.scene.tweens.add({

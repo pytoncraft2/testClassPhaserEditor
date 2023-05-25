@@ -239,6 +239,11 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// blocage de l'adversaire si il bouge
 		if (adversaire.body.moves) {
+			console.log(toile);
+			adversaire.body.moves = false;
+			//@ts-ignore
+			toile.listeRefEntiteImmobilise.push(adversaire)
+			
 			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
 			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
 			// adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
@@ -260,7 +265,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			{
 				adversaire.poussable = false;
 				adversaire.blocages += 1;
-				adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
+				// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
 			}
 			else if (adversaire.blocages == adversaire.maxBlocages)
 			{
