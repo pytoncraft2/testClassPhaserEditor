@@ -244,9 +244,13 @@ export default class BaseNiveaux extends Phaser.Scene {
 			// toile.annuleDestruction = true;
 			//@ts-ignore
 			toile.listeRefEntiteImmobilise.push(adversaire)
-			toile.setScale(adversaire.blocages / 6)
+			console.log(adversaire.blocages);
+			
+			toile.setScale(0.1)
 			toile.setPosition(adversaire.x, adversaire.y)
 			toile.body.moves = false;
+			toile.body.checkCollision.none = true;
+			toile.annuleDestruction = true;
 			
 			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
 			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
@@ -272,6 +276,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 				toile.setScale(adversaire.blocages / 6)
 				toile.setPosition(adversaire.x, adversaire.y)
 				toile.body.moves = false;
+				toile.body.checkCollision.none = true;
 				toile.annuleDestruction = true;
 				// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
 			}
