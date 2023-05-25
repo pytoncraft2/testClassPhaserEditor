@@ -239,22 +239,19 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 		// blocage de l'adversaire si il bouge
 		if (adversaire.body.moves) {
-			const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
-			adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
-			adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
-				t.ajoutRefEntiteImmobilise(a)
-			});
-			adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
-			// nouvelleImmobilisation.setScale(1)
-			// nouvelleImmobilisation.refImmobilise = adversaire;
-			nouvelleToileImmobilisation.body.moves = false;
-			adversaire.refToileImmobilisante = nouvelleToileImmobilisation;
-			// nouvelleImmobilisation.refImmobilise = adversaire;
-			adversaire.blocages += 1;
-			adversaire.body.moves = false;
-			adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
-			nouvelleToileImmobilisation.ajoutRefEntiteImmobilise(adversaire);
-			console.log("BLOCAGES");
+			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
+			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
+			// adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
+			// 	// t.ajoutRefEntiteImmobilise(a)
+			// });
+			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
+			// nouvelleToileImmobilisation.body.moves = false;
+			// adversaire.refToileImmobilisante = nouvelleToileImmobilisation;
+			// adversaire.blocages += 1;
+			// adversaire.body.moves = false;
+			// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
+			// nouvelleToileImmobilisation.ajoutRefEntiteImmobilise(adversaire);
+			// console.log("BLOCAGES");
 		}
 		// actions une fois bloqué
 		else if (!adversaire.body.moves)
@@ -270,7 +267,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 				adversaire.poussable = true;
 			}
 		}
-		toile.destroy()
+		// toile.destroy()
 		// this.tempsCumule += dt
 		// if (!toile.refImmobilise) {
 			// toile.refImmobilise = adversaire;
