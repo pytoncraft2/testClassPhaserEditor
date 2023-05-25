@@ -251,6 +251,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			toile.body.moves = false;
 			toile.body.checkCollision.none = true;
 			toile.annuleDestruction = true;
+			adversaire.scene.time.delayedCall(1000, () => toile.destroy())
 			
 			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
 			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
@@ -278,10 +279,13 @@ export default class BaseNiveaux extends Phaser.Scene {
 				toile.body.moves = false;
 				toile.body.checkCollision.none = true;
 				toile.annuleDestruction = true;
+				adversaire.scene.time.delayedCall(1000, () => toile.destroy())
 				// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
 			}
 			else if (adversaire.blocages == adversaire.maxBlocages)
 			{
+				toile.annuleDestruction = true;
+				adversaire.scene.time.delayedCall(1000, () => (toile.annuleDestruction = false))
 				adversaire.poussable = true;
 			}
 		}
