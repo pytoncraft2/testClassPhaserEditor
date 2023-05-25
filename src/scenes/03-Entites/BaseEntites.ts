@@ -25,7 +25,10 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.scene.time.delayedCall(100, () => {
 			this.image
 				.setInteractive({ cursor: 'pointer' })
-				.on('pointerdown', () => (this.scene.entiteControllable = this))
+				.on('pointerdown', () => {
+					this.scene.entiteControllable = this;
+					this.activeIA = false;
+				})
 		});
 		this.scene.add.existing(this);
 		/* END-USER-CTR-CODE */

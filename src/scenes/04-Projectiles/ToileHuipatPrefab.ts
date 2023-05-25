@@ -89,6 +89,8 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 						this.body.setVelocityX(900)
 						this.angle -= 0.05;
 					}
+					entite.image.alpha -= 0.0001;
+					this.alpha -= 0.0001;
 					entite.x = this.x;
 					entite.y = this.y;
 					entite.angle = this.angle;
