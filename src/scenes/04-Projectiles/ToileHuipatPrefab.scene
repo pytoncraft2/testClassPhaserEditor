@@ -67,8 +67,8 @@
             }
         },
         {
-            "name": "tempsCumuleDestruction",
-            "label": "tempsCumuleDestruction",
+            "name": "tempsCumuleAvantDestruction",
+            "label": "tempsCumuleAvantDestruction",
             "tooltip": "temp avant la destruction de l'objet et de l'entité",
             "defValue": 0,
             "customDefinition": false,

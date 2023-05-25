@@ -40,7 +40,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	private listeRefEntiteImmobilise: Array<any>;
 	public tempsCumule: number = 0;
 	public tempsCumuleImmobilisation: number = 1000;
-	public tempsCumuleDestruction: number = 0;
+	public tempsCumuleAvantDestruction: number = 0;
 
 	/* START-USER-CODE */
 
@@ -71,25 +71,27 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			// }
 
 		if (this.listeRefEntiteImmobilise.length != 0) {
-			this.tempsCumuleDestruction += delta;
+			this.tempsCumuleAvantDestruction += delta;
 			this.listeRefEntiteImmobilise.map((entite: BaseEntites) => {
 				if (!entite.body) return;
 				if (entite.body.moves) {
-					if (this.tempsCumuleDestruction >= 3000) {
-						this.tempsCumuleDestruction = 0;
+					if (this.tempsCumuleAvantDestruction >= 3000) {
+						this.tempsCumuleAvantDestruction = 0;
 						entite.destroy();
 						this.destroy()
 						return;
 					}
 					if (entite.image.flipX)
 					{
-						this.body.setVelocity(300, -300)
+						this.body.setVelocityX(300)
+						this.angle += 0.05;
 					} else if (!entite.image.flipX) {
-						this.body.setVelocity(-300, -300)
+						this.body.setVelocityX(-300)
+						this.angle -= 0.05;
 					}
-					// entite.x = this.x;
-					// entite.y = this.y;
-					// entite.angle = this.angle;
+					entite.x = this.x;
+					entite.y = this.y;
+					entite.angle = this.angle;
 				}
 			})
 
