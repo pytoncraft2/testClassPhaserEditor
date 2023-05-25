@@ -243,7 +243,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			adversaire.body.moves = false;
 			//@ts-ignore
 			toile.listeRefEntiteImmobilise.push(adversaire)
-			// toile.setScale(adversaire.blocages)
+			toile.setScale(adversaire.blocages / 6)
 			toile.setPosition(adversaire.x, adversaire.y)
 			toile.body.moves = false;
 			// toile.annuleDestruction = true;
@@ -269,9 +269,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 			{
 				adversaire.poussable = false;
 				adversaire.blocages += 1;
-				// toile.setScale(adversaire.blocages)
+				toile.setScale(adversaire.blocages / 6)
 				toile.setPosition(adversaire.x, adversaire.y)
 				toile.body.moves = false;
+				toile.annuleDestruction = true;
 				// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
 			}
 			else if (adversaire.blocages == adversaire.maxBlocages)
