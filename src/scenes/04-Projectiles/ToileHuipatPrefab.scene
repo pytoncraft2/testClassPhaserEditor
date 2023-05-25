@@ -75,6 +75,16 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "annuleDestruction",
+            "label": "annuleDestruction",
+            "tooltip": "annule la destruction de l'objet",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }
