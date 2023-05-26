@@ -1,9 +1,10 @@
 {
-    "id": "36cea93f-b544-4081-8498-6705471cdc3b",
+    "id": "8c4fd556-13a3-4fbc-b730-e1572cdd9c60",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "generateAwakeHandler": true,
         "superClassName": "Araigne",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -15,8 +16,20 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "0d4f54e2-0e23-413c-bab4-d4f76c6f96a9",
-            "label": "container_1"
+            "id": "da4aede0-acc9-4f62-a455-23c08c7c457a",
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "52d07354-7cc9-4657-b8f6-4b80677c9e53",
+                    "label": "image",
+                    "scope": "METHOD",
+                    "texture": {
+                        "key": "araigneBoss",
+                        "frame": "araigneBoss.png"
+                    }
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -31,7 +44,7 @@
             "name": "imageTexture",
             "label": "imageTexture",
             "tooltip": "texture par defaut de l'image",
-            "defValue": "{\"key\":\"murale\",\"frame\":\"araigne.png\"}",
+            "defValue": "{\"key\":\"araigneBoss\",\"frame\":\"araigneBoss.png\"}",
             "customDefinition": false,
             "type": {
                 "id": "texture-config"

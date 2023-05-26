@@ -8,6 +8,12 @@
                 "key": "araigne"
             },
             {
+                "atlasURL": "assets/entites/araigneBoss.json",
+                "textureURL": "assets/entites/araigneBoss.png",
+                "type": "atlas",
+                "key": "araigneBoss"
+            },
+            {
                 "atlasURL": "assets/bouton/bouton.json",
                 "textureURL": "assets/bouton/bouton.png",
                 "type": "atlas",

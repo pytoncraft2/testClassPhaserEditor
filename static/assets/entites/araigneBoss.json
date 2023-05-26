@@ -1,0 +1,35 @@
+{
+	"frames": {
+		"araigneBoss.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 501,
+				"h": 177
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 501,
+				"h": 177
+			},
+			"sourceSize": {
+				"w": 501,
+				"h": 177
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 503,
+			"h": 179
+		},
+		"scale": "1"
+	}
+}
