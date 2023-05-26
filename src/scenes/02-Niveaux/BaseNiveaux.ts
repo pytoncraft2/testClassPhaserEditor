@@ -167,6 +167,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false)
 		this.input.addPointer(3);
+		this.cameras.main.setZoom(0.86)
 	}
 
 	update(time: number, delta: number): void {
