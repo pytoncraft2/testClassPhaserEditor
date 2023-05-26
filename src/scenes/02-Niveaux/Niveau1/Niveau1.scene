@@ -158,17 +158,6 @@
                     "label": "container_1",
                     "x": 596,
                     "y": 467
-                },
-                {
-                    "prefabId": "8c4fd556-13a3-4fbc-b730-e1572cdd9c60",
-                    "id": "482c6c21-a1e5-4da4-bb68-70113940aa72",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigneBoss_png",
-                    "x": 1559,
-                    "y": 895
                 }
             ]
         },

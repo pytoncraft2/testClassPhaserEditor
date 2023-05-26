@@ -8,7 +8,6 @@ import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import Murale from "../../03-Entites/Araigne/Murale";
-import araigneBoss from "../../03-Entites/Araigne/araigneBoss";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
@@ -69,10 +68,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// container_1
 		const container_1 = new Murale(this, 596, 467);
 		groupe_adversaires.add(container_1);
-
-		// araigneBoss_png
-		const araigneBoss_png = new araigneBoss(this, 1559, 895);
-		groupe_adversaires.add(araigneBoss_png);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
