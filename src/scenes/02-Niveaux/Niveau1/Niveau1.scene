@@ -318,6 +318,17 @@
             "scope": "PUBLIC"
         },
         {
+            "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+            "id": "dd6e7752-ce87-4852-9c80-0d80c2828ae2",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "container_1",
+            "x": 596,
+            "y": 467
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript"

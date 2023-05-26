@@ -183,7 +183,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (this.toucheJustePresse(this.toucheEspace)) {
-			// touche espace ou touche d'attaque
 			this.entiteControllable.actionToucheEspace()
 		}
 
@@ -195,17 +194,16 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (this.estUnMobile) {
 			if (this.espaceAppuie) {
 				this.entiteControllable.actionToucheEspace()
-				// this.entiteControllable.envoieProjectileToile()
 				this.espaceAppuie = false;
 			}
 		}
 
 
 		if (this.entiteControllable) {
-			if (this.gaucheAppuie) { this.entiteControllable.actionToucheGauche() }
-			else if (this.droiteAppuie) { this.entiteControllable.actionToucheDroite() }
-			else if (this.toucheJustePresse(this.toucheBas)) { this.entiteControllable.actionToucheBas(); }
-			else { this.entiteControllable.aucuneTouche() }
+			if (this.gaucheAppuie) this.entiteControllable.actionToucheGauche()
+			else if (this.droiteAppuie) this.entiteControllable.actionToucheDroite()
+			else if (this.toucheJustePresse(this.toucheBas)) this.entiteControllable.actionToucheBas()
+			else this.entiteControllable.aucuneTouche()
 
 			if (this.toucheJustePresse(this.toucheHaut) || this.hautAppuie) {
 				this.entiteControllable.actionToucheHaut();

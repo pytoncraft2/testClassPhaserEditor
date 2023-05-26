@@ -10,6 +10,7 @@ import Araigne from "../../03-Entites/Araigne/Araigne";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
+import Murale from "../../03-Entites/Araigne/Murale";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -131,6 +132,10 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// groupe_vs_platformes
 		const groupe_vs_platformes = this.add.layer();
+
+		// container_1
+		const container_1 = new Murale(this, 596, 467);
+		this.add.existing(container_1);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
