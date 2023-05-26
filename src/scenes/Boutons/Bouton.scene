@@ -16,12 +16,12 @@
             "type": "Image",
             "id": "b2f90ede-52b1-4802-8afc-61de23f5938b",
             "label": "btn_left",
-            "components": [],
             "texture": {
                 "key": "bouton_1",
                 "frame": "btn-left"
             },
-            "list": []
+            "scaleX": 1.60989565351632,
+            "scaleY": 1.60989565351632
         }
     ],
     "plainObjects": [],
@@ -29,7 +29,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "prefabProperties": [
         {

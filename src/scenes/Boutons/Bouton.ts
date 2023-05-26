@@ -12,6 +12,9 @@ export default class Bouton extends Phaser.GameObjects.Image {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "bouton_1", frame ?? "btn-left");
 
+		this.scaleX = 1.60989565351632;
+		this.scaleY = 1.60989565351632;
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.setInteractive();

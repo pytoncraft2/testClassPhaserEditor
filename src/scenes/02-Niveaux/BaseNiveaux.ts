@@ -38,71 +38,71 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const groupe_vie = this.add.layer();
 
 		// coeur
-		const coeur = this.add.image(32, 32, "coeur");
+		const coeur = this.add.image(32, 48, "coeur");
 		coeur.scaleX = 0.0299137473893349;
 		coeur.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur);
 
 		// coeur_1
-		const coeur_1 = this.add.image(93.06276679359468, 32, "coeur");
+		const coeur_1 = this.add.image(93.06276679359468, 48, "coeur");
 		coeur_1.scaleX = 0.0299137473893349;
 		coeur_1.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_1);
 
 		// coeur_2
-		const coeur_2 = this.add.image(154.12553358718935, 32, "coeur");
+		const coeur_2 = this.add.image(154.12553358718935, 48, "coeur");
 		coeur_2.scaleX = 0.0299137473893349;
 		coeur_2.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_2);
 
 		// coeur_3
-		const coeur_3 = this.add.image(215.18830038078403, 32, "coeur");
+		const coeur_3 = this.add.image(215.18830038078403, 48, "coeur");
 		coeur_3.scaleX = 0.0299137473893349;
 		coeur_3.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_3);
 
 		// coeur_4
-		const coeur_4 = this.add.image(276.2510671743787, 32, "coeur");
+		const coeur_4 = this.add.image(276.2510671743787, 48, "coeur");
 		coeur_4.scaleX = 0.0299137473893349;
 		coeur_4.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_4);
 
 		// coeur_5
-		const coeur_5 = this.add.image(337.3138339679733, 32, "coeur");
+		const coeur_5 = this.add.image(337.3138339679733, 48, "coeur");
 		coeur_5.scaleX = 0.0299137473893349;
 		coeur_5.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_5);
 
 		// coeur_6
-		const coeur_6 = this.add.image(398.376600761568, 32, "coeur");
+		const coeur_6 = this.add.image(398.376600761568, 48, "coeur");
 		coeur_6.scaleX = 0.0299137473893349;
 		coeur_6.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_6);
 
 		// coeur_7
-		const coeur_7 = this.add.image(459.4393675551627, 32, "coeur");
+		const coeur_7 = this.add.image(459.4393675551627, 48, "coeur");
 		coeur_7.scaleX = 0.0299137473893349;
 		coeur_7.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_7);
 
 		// coeur_8
-		const coeur_8 = this.add.image(520.5021343487574, 32, "coeur");
+		const coeur_8 = this.add.image(520.5021343487574, 48, "coeur");
 		coeur_8.scaleX = 0.0299137473893349;
 		coeur_8.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_8);
 
 		// coeur_9
-		const coeur_9 = this.add.image(581.564901142352, 32, "coeur");
+		const coeur_9 = this.add.image(581.564901142352, 48, "coeur");
 		coeur_9.scaleX = 0.0299137473893349;
 		coeur_9.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_9);
 
 		// controles_portable
 		const controles_portable = this.add.layer();
-		controles_portable.alpha = 0;
+		controles_portable.alpha = 0.1;
 
 		// bouton
-		const bouton = new Bouton(this, 1504, 832);
+		const bouton = new Bouton(this, 1648, 832);
 		controles_portable.add(bouton);
 
 		// bouton_1
@@ -110,17 +110,15 @@ export default class BaseNiveaux extends Phaser.Scene {
 		controles_portable.add(bouton_1);
 
 		// bouton_2
-		const bouton_2 = new Bouton(this, 1680, 736, "bouton_1", "btn-up");
+		const bouton_2 = new Bouton(this, 1920, 688, "bouton_1", "btn-up");
 		controles_portable.add(bouton_2);
 
 		// bouton_3
-		const bouton_3 = new Bouton(this, 160, 880);
+		const bouton_3 = new Bouton(this, -16, 880);
 		controles_portable.add(bouton_3);
 
 		// bouton_4
-		const bouton_4 = new Bouton(this, 1680, 928);
-		bouton_4.scaleX = 1;
-		bouton_4.scaleY = 1;
+		const bouton_4 = new Bouton(this, 1920, 928);
 		bouton_4.angle = -90;
 		controles_portable.add(bouton_4);
 
@@ -137,6 +135,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		bouton_4.direction = "bas";
 
 		this.groupe_vie = groupe_vie;
+		this.controles_portable = controles_portable;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -147,6 +146,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	public groupe_vie!: Phaser.GameObjects.Layer;
+	public controles_portable!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
@@ -167,7 +167,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false)
 		this.input.addPointer(3);
-		this.cameras.main.setZoom(0.86)
+		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
+		if (!this.estUnMobile) this.controles_portable.removeAll()
 	}
 
 	update(time: number, delta: number): void {
@@ -232,7 +233,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 		console.log("TOUCHE ENTITE");
-		
+
 
 		// const dt = this.scene.loop.delta
 
@@ -244,14 +245,14 @@ export default class BaseNiveaux extends Phaser.Scene {
 			//@ts-ignore
 			toile.listeRefEntiteImmobilise.push(adversaire)
 			console.log(adversaire.blocages);
-			
+
 			toile.setScale(0.1)
 			toile.setPosition(adversaire.x, adversaire.y)
 			toile.body.moves = false;
 			toile.body.checkCollision.none = true;
 			toile.annuleDestruction = true;
 			adversaire.scene.time.delayedCall(1000, () => toile.destroy())
-			
+
 			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
 			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
 			// adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
@@ -298,14 +299,14 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// } else {
 			// console.log("TOUCHE");
 		// }
-			
+
 			// console.log("AJOUT");
-			
+
 		// } else {
 			// toile.refImmobilise = adversaire;
 			// console.log("DEJA LÀ", toile.refImmobilise);
 		// }
-		
+
 		// toile.setScale(1)
 
 		// if (adversaire.blocages === 0) {
