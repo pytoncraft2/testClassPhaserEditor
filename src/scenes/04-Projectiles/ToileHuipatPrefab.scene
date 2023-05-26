@@ -67,16 +67,6 @@
             }
         },
         {
-            "name": "tempsCumuleAvantDestruction",
-            "label": "tempsCumuleAvantDestruction",
-            "tooltip": "temp avant la destruction de l'objet et de l'entité",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
             "name": "annuleDestruction",
             "label": "annuleDestruction",
             "tooltip": "annule la destruction de l'objet",
@@ -84,6 +74,37 @@
             "customDefinition": false,
             "type": {
                 "id": "boolean"
+            }
+        },
+        {
+            "name": "tempsCumuleAvantDestruction",
+            "label": "tempsCumuleAvantDestruction",
+            "tooltip": "temps avant la destruction de la toile",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "tempsAvantDestruction",
+            "label": "tempsAvantDestruction",
+            "tooltip": "temps avant la destruction de la toile",
+            "defValue": 2000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "refGroupeBlocage",
+            "label": "refGroupeBlocage",
+            "tooltip": "reference au groupe de toitle",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.Physics.Arcade.Group"
             }
         }
     ]

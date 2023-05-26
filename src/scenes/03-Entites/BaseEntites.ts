@@ -46,7 +46,16 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public poussable: boolean = false;
 
 	/* START-USER-CODE */
-	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group();
+	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group({
+		createCallback: function(this: Phaser.Physics.Arcade.Group & {tempsAvantDestruction: number}) {
+			console.log(this.getLength());
+			if (!this.tempsAvantDestruction) {
+				this.tempsAvantDestruction = 0;
+			}
+			this.tempsAvantDestruction += 2000;
+		},
+		removeCallback: (t) => console.log("REMOVE BYE", t)
+	});
 
 	// Write your code here.
 	awake() {

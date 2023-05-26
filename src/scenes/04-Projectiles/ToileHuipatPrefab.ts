@@ -40,14 +40,32 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	private listeRefEntiteImmobilise: Array<any>;
 	public tempsCumule: number = 0;
 	public tempsCumuleImmobilisation: number = 1000;
-	public tempsCumuleAvantDestruction: number = 0;
 	public annuleDestruction: boolean = false;
+	public tempsCumuleAvantDestruction: number = 0;
+	public tempsAvantDestruction: number = 2000;
+	public refGroupeBlocage!: Phaser.Physics.Arcade.Group;
 
 	/* START-USER-CODE */
 
 	protected preUpdate(time: number, delta: number): void {
-		// this.tempsCumule += delta;
+			this.tempsCumule += delta;
 
+		if (this.refGroupeBlocage) {
+			
+			//@ts-ignore
+			console.log(this.refGroupeBlocage.tempsAvantDestruction, this.tempsCumule);
+			
+			//@ts-ignore
+			if (this.refGroupeBlocage.tempsAvantDestruction <= this.tempsCumule) {
+					console.log("DESTRUCTION MATINEDFSKQLMJFKLDJSQLMJMF");
+
+				this.tempsCumule = 0;
+				//@ts-ignore
+				this.refGroupeBlocage.tempsAvantDestruction -= 2000;
+				this.destroy()
+			}
+
+		}
 		// if (this.refImmobilise) {
 			// if (this.tempsCumule >= 320) {
 			// 	if (this.listeRefEntiteImmobilise.length == 0 && !this.annuleDestruction) {
