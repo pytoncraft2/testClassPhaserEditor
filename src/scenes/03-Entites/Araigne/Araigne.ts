@@ -113,7 +113,39 @@ export default class Araigne extends BaseEntites {
 	/** FONCTIONS D'ACTION QUAND ON APPUIE SUR UNE TOUCHE */
 
 	actionToucheEspace(): void {
-		this.body.setVelocityY(-80)
+		if (!this.body.touching.down) return;
+		const sautHauteur = this.image.flipY ? -90 : 90;
+		const sautDuration = 100;
+		const sautEase = 'Exponential.easeOut';
+		const landDuration = 50;
+		const landEase = 'Exponential.easeIn';
+
+		// Créer le tween de saut
+		this.image.setTintFill(0x000000)
+		
+		const sautTween = this.scene.tweens.add({
+			targets: this,
+			y: '-=' + sautHauteur,
+			ease: sautEase,
+			duration: sautDuration,
+			x: this.image.flipX ? this.x - 200 : this.x + 200,
+			// yoyo: true,
+			onComplete: () => {
+				// Créer le tween d'atterrissage une fois que le saut est terminé
+				// this.body.gravity.y += 4900;
+				const landTween = this.scene.tweens.add({
+					targets: this,
+					y: '+=60',
+					x: this.image.flipX ? this.x - 200 : this.x + 200,
+					ease: landEase,
+					duration: landDuration,
+					onComplete: () => {
+						this.image.clearTint()
+						// this.body.gravity.y -= 4900;
+					}
+				});
+			}
+		});
 	}
 
 	actionToucheHaut() {
