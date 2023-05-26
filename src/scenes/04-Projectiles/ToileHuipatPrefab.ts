@@ -44,6 +44,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	public tempsCumuleAvantDestruction: number = 0;
 	public tempsAvantDestruction: number = 2000;
 	public refGroupeBlocage!: Phaser.Physics.Arcade.Group;
+	public refEntite!: BaseEntites;
 
 	/* START-USER-CODE */
 
@@ -51,10 +52,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			this.tempsCumule += delta;
 
 		if (this.refGroupeBlocage) {
-			
+
 			//@ts-ignore
 			console.log(this.refGroupeBlocage.tempsAvantDestruction, this.tempsCumule);
-			
+
 			//@ts-ignore
 			if (this.refGroupeBlocage.tempsAvantDestruction <= this.tempsCumule) {
 					console.log("DESTRUCTION MATINEDFSKQLMJFKLDJSQLMJMF");

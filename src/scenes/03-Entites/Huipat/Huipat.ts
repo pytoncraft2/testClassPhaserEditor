@@ -114,6 +114,7 @@ export default class Huipat extends BaseEntites {
 			toile.setPosition(a.x, a.y)
 			toile.body.moves = false
 			toile.refGroupeBlocage = a.groupeBlocage;
+			toile.refEntite = a;
 			if (a.groupeBlocage.getLength() == 0) {
 				a.groupeBlocage.add(t)
 				a.body.moves = false;

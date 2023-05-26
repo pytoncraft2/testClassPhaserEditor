@@ -54,7 +54,16 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			}
 			this.tempsAvantDestruction += 2000;
 		},
-		removeCallback: (t) => console.log("REMOVE BYE", t)
+		removeCallback: function(this: Phaser.Physics.Arcade.Group, t) {
+			console.log("SUPPRESSION");
+			
+			if (this.getLength() == 0) {
+				console.log(t, this);
+				
+				// this.deblocage = true;
+			}
+			// console.log("REMOVE BYE", t)
+		}
 	});
 
 	// Write your code here.
