@@ -238,59 +238,59 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// const dt = this.scene.loop.delta
 
 		// blocage de l'adversaire si il bouge
-		if (adversaire.body.moves) {
-			console.log(toile);
-			adversaire.body.moves = false;
-			// toile.annuleDestruction = true;
-			//@ts-ignore
-			toile.listeRefEntiteImmobilise.push(adversaire)
-			console.log(adversaire.blocages);
+		// if (adversaire.body.moves) {
+		// 	console.log(toile);
+		// 	adversaire.body.moves = false;
+		// 	// toile.annuleDestruction = true;
+		// 	//@ts-ignore
+		// 	toile.listeRefEntiteImmobilise.push(adversaire)
+		// 	console.log(adversaire.blocages);
 
-			toile.setScale(0.1)
-			toile.setPosition(adversaire.x, adversaire.y)
-			toile.body.moves = false;
-			toile.body.checkCollision.none = true;
-			toile.annuleDestruction = true;
-			adversaire.scene.time.delayedCall(1000, () => toile.destroy())
+		// 	toile.setScale(0.1)
+		// 	toile.setPosition(adversaire.x, adversaire.y)
+		// 	toile.body.moves = false;
+		// 	toile.body.checkCollision.none = true;
+		// 	toile.annuleDestruction = true;
+		// 	adversaire.scene.time.delayedCall(1000, () => toile.destroy())
 
-			// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
-			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
-			// adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
-			// 	// t.ajoutRefEntiteImmobilise(a)
-			// });
-			// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
-			// nouvelleToileImmobilisation.body.moves = false;
-			// adversaire.refToileImmobilisante = nouvelleToileImmobilisation;
-			// adversaire.blocages += 1;
-			// adversaire.body.moves = false;
-			// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
-			// nouvelleToileImmobilisation.ajoutRefEntiteImmobilise(adversaire);
-			// console.log("BLOCAGES");
-		}
+		// 	// const nouvelleToileImmobilisation = new ToileHuipatPrefab(adversaire.scene, adversaire.x, adversaire.y)
+		// 	// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
+		// 	// adversaire.scene.physics.add.collider(nouvelleToileImmobilisation, adversaire.scene.groupe_adversaires.list, (t: any | ToileHuipatPrefab, a) => {
+		// 	// 	// t.ajoutRefEntiteImmobilise(a)
+		// 	// });
+		// 	// adversaire.scene.groupe_vs_platformes.add(nouvelleToileImmobilisation)
+		// 	// nouvelleToileImmobilisation.body.moves = false;
+		// 	// adversaire.refToileImmobilisante = nouvelleToileImmobilisation;
+		// 	// adversaire.blocages += 1;
+		// 	// adversaire.body.moves = false;
+		// 	// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
+		// 	// nouvelleToileImmobilisation.ajoutRefEntiteImmobilise(adversaire);
+		// 	// console.log("BLOCAGES");
+		// }
 		// actions une fois bloqué
-		else if (!adversaire.body.moves)
-		{
-			if (adversaire.blocages < adversaire.maxBlocages)
-			{
-				adversaire.poussable = false;
-				adversaire.blocages += 1;
-				toile.setScale(adversaire.blocages / 6)
-				toile.setPosition(adversaire.x, adversaire.y)
-				//@ts-ignore
-				toile.listeRefEntiteImmobilise.push(adversaire)
-				toile.body.moves = false;
-				toile.body.checkCollision.none = true;
-				toile.annuleDestruction = true;
-				adversaire.scene.time.delayedCall(1000, () => toile.destroy())
-				// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
-			}
-			else if (adversaire.blocages == adversaire.maxBlocages)
-			{
-				// toile.annuleDestruction = true;
-				// adversaire.scene.time.delayedCall(1000, () => (toile.annuleDestruction = false))
-				adversaire.poussable = true;
-			}
-		}
+		// else if (!adversaire.body.moves)
+		// {
+		// 	if (adversaire.blocages < adversaire.maxBlocages)
+		// 	{
+		// 		adversaire.poussable = false;
+		// 		adversaire.blocages += 1;
+		// 		toile.setScale(adversaire.blocages / 6)
+		// 		toile.setPosition(adversaire.x, adversaire.y)
+		// 		//@ts-ignore
+		// 		toile.listeRefEntiteImmobilise.push(adversaire)
+		// 		toile.body.moves = false;
+		// 		toile.body.checkCollision.none = true;
+		// 		toile.annuleDestruction = true;
+		// 		adversaire.scene.time.delayedCall(1000, () => toile.destroy())
+		// 		// adversaire.refToileImmobilisante.setScale(adversaire.blocages / 6)
+		// 	}
+		// 	else if (adversaire.blocages == adversaire.maxBlocages)
+		// 	{
+		// 		// toile.annuleDestruction = true;
+		// 		// adversaire.scene.time.delayedCall(1000, () => (toile.annuleDestruction = false))
+		// 		adversaire.poussable = true;
+		// 	}
+		// }
 		// toile.destroy()
 		// this.tempsCumule += dt
 		// if (!toile.refImmobilise) {

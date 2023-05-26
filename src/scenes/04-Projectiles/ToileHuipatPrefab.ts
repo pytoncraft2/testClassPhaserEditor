@@ -46,21 +46,21 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	/* START-USER-CODE */
 
 	protected preUpdate(time: number, delta: number): void {
-		this.tempsCumule += delta;
+		// this.tempsCumule += delta;
 
 		// if (this.refImmobilise) {
-			if (this.tempsCumule >= 320) {
-				if (this.listeRefEntiteImmobilise.length == 0 && !this.annuleDestruction) {
-					console.log("DESTRUCTION");
-					this.destroy()
-				}
-				this.tempsCumule = 0;
+			// if (this.tempsCumule >= 320) {
+			// 	if (this.listeRefEntiteImmobilise.length == 0 && !this.annuleDestruction) {
+			// 		console.log("DESTRUCTION");
+			// 		this.destroy()
+			// 	}
+			// 	this.tempsCumule = 0;
 
-			// 	this.refImmobilise.blocages = 0;
-			// 	this.refImmobilise.body.moves = true;
-			// 	this.destroy()
-			// 	return;
-			}
+			// // 	this.refImmobilise.blocages = 0;
+			// // 	this.refImmobilise.body.moves = true;
+			// // 	this.destroy()
+			// // 	return;
+			// }
 
 			// if (this.refImmobilise.body.moves) {
 			// 	this.refImmobilise.body.moves = false;				
@@ -71,34 +71,34 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 			// }
 
-		if (this.listeRefEntiteImmobilise.length != 0) {
-			this.tempsCumuleAvantDestruction += delta;
-			this.listeRefEntiteImmobilise.map((entite: BaseEntites) => {
-				if (!entite.body) return;
-				if (entite.body.moves) {
-					// if (this.tempsCumuleAvantDestruction >= 3000 && !this.annuleDestruction) {
-					// 	this.tempsCumuleAvantDestruction = 0;
-					// 	entite.destroy();
-					// 	this.destroy()
-					// 	return;
-					// }
-					if (entite.image.flipX)
-					{
-						this.body.setVelocityX(-900)
-						this.angle += 0.05;
-					} else if (!entite.image.flipX) {
-						this.body.setVelocityX(900)
-						this.angle -= 0.05;
-					}
-					entite.image.alpha -= 0.0001;
-					this.alpha -= 0.0001;
-					entite.x = this.x;
-					entite.y = this.y;
-					entite.angle = this.angle;
-				}
-			})
+		// if (this.listeRefEntiteImmobilise.length != 0) {
+		// 	this.tempsCumuleAvantDestruction += delta;
+		// 	this.listeRefEntiteImmobilise.map((entite: BaseEntites) => {
+		// 		if (!entite.body) return;
+		// 		if (entite.body.moves) {
+		// 			// if (this.tempsCumuleAvantDestruction >= 3000 && !this.annuleDestruction) {
+		// 			// 	this.tempsCumuleAvantDestruction = 0;
+		// 			// 	entite.destroy();
+		// 			// 	this.destroy()
+		// 			// 	return;
+		// 			// }
+		// 			if (entite.image.flipX)
+		// 			{
+		// 				this.body.setVelocityX(-900)
+		// 				this.angle += 0.05;
+		// 			} else if (!entite.image.flipX) {
+		// 				this.body.setVelocityX(900)
+		// 				this.angle -= 0.05;
+		// 			}
+		// 			entite.image.alpha -= 0.0001;
+		// 			this.alpha -= 0.0001;
+		// 			entite.x = this.x;
+		// 			entite.y = this.y;
+		// 			entite.angle = this.angle;
+		// 		}
+		// 	})
 
-		}
+		// }
 			// 	console.log("STOP MOUVEMENT");
 			// } else if (!this.refImmobilise.body.moves) {
 			// 	this.tempsCumuleImmobilisation += delta;
