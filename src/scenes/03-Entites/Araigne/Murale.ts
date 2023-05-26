@@ -17,12 +17,19 @@ export default class Murale extends Araigne {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.image.setTexture(this.imageTexture.key, this.imageTexture.frame)
+		this.activeIA = true;
+		this.actionToucheDroite()
 		/* END-USER-CTR-CODE */
 	}
 
 	public imageTexture: {key:string,frame?:string|number} = {"key":"murale","frame":"araigne.png"};
 
 	/* START-USER-CODE */
+
+	logiqueDescisionIA(): void {
+		console.log("GO LOGIQUE");
+	}
+
 	actionToucheHaut() {
 		if (this.body.touching.down && !this.body.touching.up) {
 			const alendroit = this.image.flipY === false;

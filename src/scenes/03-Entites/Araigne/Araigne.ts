@@ -92,14 +92,18 @@ export default class Araigne extends BaseEntites {
 	awake(): void {
 		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
 		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
+		this.logiqueDescisionSautIA()
+	}
 
+	logiqueDescisionSautIA()
+	{
 		this.scene.time.addEvent({
 			delay: this.nombreEntierAuHasard(700, 800),                // ms
 			callback: () => {
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;
-					this.detecteur_haut.setPosition(this.detecteur_haut.x, 270);
+					this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
 				} else {
 					this.sautEnHautActivable = true;
 					this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
