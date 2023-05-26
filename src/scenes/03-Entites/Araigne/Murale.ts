@@ -14,6 +14,9 @@ export default class Murale extends Araigne {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.image.setTexture(this.imageTexture.key, this.imageTexture.frame)
@@ -25,8 +28,7 @@ export default class Murale extends Araigne {
 	public imageTexture: {key:string,frame?:string|number} = {"key":"murale","frame":"araigne.png"};
 
 	/* START-USER-CODE */
-
-	logiqueDescisionIA(): void {
+	override logiqueDescisionSautIA(): void {
 		console.log("GO LOGIQUE");
 	}
 
