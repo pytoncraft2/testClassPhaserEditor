@@ -59,6 +59,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			
 			if (this.getLength() == 0) {
 				console.log(t, this);
+				//@ts-ignore
+				t.refEntite.body.moves = true;
 				
 				// this.deblocage = true;
 			}
