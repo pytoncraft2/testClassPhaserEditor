@@ -29,7 +29,23 @@ export default class Murale extends Araigne {
 
 	/* START-USER-CODE */
 	override logiqueDescisionSautIA(): void {
-		console.log("GO LOGIQUE");
+		this.scene.time.addEvent({
+			delay: this.nombreEntierAuHasard(900, 2000),                // ms
+			callback: () => {
+				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
+				if (Math.random() < 0.5) {
+					this.actionToucheHaut()
+					// this.sautEnHautActivable = false;
+					// this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
+				} else {
+					this.actionToucheBas()
+					// this.sautEnHautActivable = true;
+					// this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
+				}
+			},
+			callbackScope: this,
+			loop: true
+		});
 	}
 
 	actionToucheHaut() {
