@@ -105,8 +105,22 @@ export default class Huipat extends BaseEntites {
 
 		const { centerX, centerY } = this.image.getBounds();
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
-		this.scene.groupe_projectile_toiles.add(toile);
+		// this.scene.groupe_projectile_toiles.add(toile);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
+		const toiles_vs_entite = this.scene.physics.add.collider(toile, this.scene.groupe_adversaires.list, (t, a: BaseEntites | any) => {
+
+			console.log(a.groupeBlocage.getLength());
+			if (a.groupeBlocage.getLength() == 0) {
+				a.groupeBlocage.add(t)
+			} else {
+				a.groupeBlocage.add(t)
+			}
+			console.log(a.groupeBlocage.getLength());
+			
+			
+			console.log("TOUCHE");
+			
+		}, undefined, this);
 	}
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')

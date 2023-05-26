@@ -46,6 +46,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public poussable: boolean = false;
 
 	/* START-USER-CODE */
+	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group();
 
 	// Write your code here.
 	awake() {
