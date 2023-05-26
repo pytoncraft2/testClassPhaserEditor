@@ -109,11 +109,17 @@ export default class Huipat extends BaseEntites {
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
 		const toiles_vs_entite = this.scene.physics.add.collider(toile, this.scene.groupe_adversaires.list, (t, a: BaseEntites | any) => {
 
+			toile.body.enable = false;
+			toile.body.checkCollision.none = true;
+			toile.setPosition(a.x, a.y)
+			toile.body.moves = false;
 			console.log(a.groupeBlocage.getLength());
 			if (a.groupeBlocage.getLength() == 0) {
 				a.groupeBlocage.add(t)
+				a.body.moves = false;
 			} else {
 				a.groupeBlocage.add(t)
+				toile.setScale(a.groupeBlocage.getLength() / 4);
 			}
 			console.log(a.groupeBlocage.getLength());
 			
