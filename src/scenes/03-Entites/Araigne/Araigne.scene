@@ -18,7 +18,6 @@
             "type": "Container",
             "id": "7390af90-1bef-464d-bee3-73db60ccd653",
             "label": "container_1",
-            "components": [],
             "x": 142,
             "y": 72,
             "ArcadeComponent.active": true,
@@ -35,19 +34,16 @@
                     "label": "image",
                     "useGameObjectName": true,
                     "scope": "NESTED_PREFAB",
-                    "components": [],
                     "texture": {
                         "key": "araigne",
                         "frame": "araigne.png"
-                    },
-                    "list": []
+                    }
                 },
                 {
                     "type": "Rectangle",
                     "id": "f852966b-ac04-40c6-9148-11ef9044000e",
                     "label": "detecteur_bas",
                     "scope": "NESTED_PREFAB",
-                    "components": [],
                     "x": 128,
                     "y": 52,
                     "scaleX": 0.19751986297412794,
@@ -59,15 +55,13 @@
                     "body.height": 128,
                     "isFilled": true,
                     "width": 128,
-                    "height": 128,
-                    "list": []
+                    "height": 128
                 },
                 {
                     "type": "Rectangle",
                     "id": "a664f404-e990-4a15-a158-c85eb482abdf",
                     "label": "detecteur_haut",
                     "scope": "NESTED_PREFAB",
-                    "components": [],
                     "x": 55,
                     "y": -194,
                     "scaleX": 0.19751986297412794,
@@ -84,8 +78,7 @@
                     "body.height": 128,
                     "isFilled": true,
                     "width": 128,
-                    "height": 128,
-                    "list": []
+                    "height": 128
                 }
             ]
         }
@@ -118,7 +111,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "prefabProperties": [
         {
@@ -169,6 +162,16 @@
             "customDefinition": false,
             "type": {
                 "id": "number"
+            }
+        },
+        {
+            "name": "imageTexture",
+            "label": "imageTexture",
+            "tooltip": "texture par defaut",
+            "defValue": "{\"key\":\"araigne\",\"frame\":\"araigne.png\"}",
+            "customDefinition": false,
+            "type": {
+                "id": "texture-config"
             }
         }
     ]

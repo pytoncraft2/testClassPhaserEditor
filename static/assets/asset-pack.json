@@ -51,6 +51,12 @@
                 "textureURL": "assets/entites/moustique.png",
                 "type": "atlas",
                 "key": "moustique"
+            },
+            {
+                "atlasURL": "assets/entites/murale.json",
+                "textureURL": "assets/entites/murale.png",
+                "type": "atlas",
+                "key": "murale"
             }
         ]
     },

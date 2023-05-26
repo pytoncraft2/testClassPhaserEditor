@@ -25,5 +25,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "imageTexture",
+            "label": "imageTexture",
+            "tooltip": "Property 1",
+            "defValue": "{\"key\":\"murale\",\"frame\":\"araigne.png\"}",
+            "customDefinition": false,
+            "type": {
+                "id": "texture-config"
+            }
+        }
+    ]
 }

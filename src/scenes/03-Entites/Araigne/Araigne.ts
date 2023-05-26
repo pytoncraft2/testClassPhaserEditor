@@ -82,6 +82,7 @@ export default class Araigne extends BaseEntites {
 	public peutChangerDePlatforme: boolean = false;
 	public sautEnHautActivable: boolean = false;
 	public velociteX: number = 300;
+	public imageTexture: {key:string,frame?:string|number} = {"key":"araigne","frame":"araigne.png"};
 
 	/* START-USER-CODE */
 	// Write your code here.
