@@ -51,11 +51,36 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group({
 		createCallback: function(this: Phaser.Physics.Arcade.Group) {
 			//@ts-ignore
-			this.tempsAvantDestruction.push(1000)
+			// const months = ["Jan", "Mar", "Mar", "April"];
+			// let febs = ["Feb", "Feb2", "Feb4"];
+			// months.splice(1, 3, ...febs);
+			// console.log(months);
+			console.log(this.getLength());
+			
+// const pad = (arr: number[], x: number) => 
+//   Array.from({ length: arr.length + x }, (_, i) => arr[i] ?? x)
+
+// const arr: number[] = [], x = 1000;
+
+// console.log(pad(arr, x));
+const arr = [];
+for (var i = 0; i < this.getLength(); i++) arr.push(1000);
+			//@ts-ignore
+this.tempsAvantDestruction = arr;
+// this.tempsAvantDestruction = pad(arr, x);
+			// this.tempsAvantDestruction.push(1000)
+			// this.tempsAvantDestruction[0] = 1000;
+			// this.tempsAvantDestruction[1] = 1000;
+			// this.tempsAvantDestruction[2] = 1000;
+			// a = this.tempsAvantDestruction.map(item => item == 3452 ? 1010 : item);
+			// a.forEach((item, i) => { if (item == 3452) a[i] = 1010; });
+
+
 			// if (!this.tempsAvantDestruction) {
 				// this.tempsAvantDestruction = [];
 			// }
-			// this.tempsAvantDestruction.push(1000);
+			//@ts-ignore
+			this.tempsAvantDestruction.push(1000);
 		},
 		removeCallback: function(this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
 			if (this.getLength() == 0) {
