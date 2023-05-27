@@ -64,7 +64,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 // console.log(pad(arr, x));
 const arr = [];
-for (var i = 0; i < this.getLength(); i++) arr.push(1000);
+for (var i = 0; i < this.getLength(); i++) arr.push(2000);
 			//@ts-ignore
 this.tempsAvantDestruction = arr;
 // this.tempsAvantDestruction = pad(arr, x);
@@ -80,13 +80,24 @@ this.tempsAvantDestruction = arr;
 				// this.tempsAvantDestruction = [];
 			// }
 			//@ts-ignore
-			this.tempsAvantDestruction.push(1000);
+			// this.tempsAvantDestruction.push(1000);
 		},
 		removeCallback: function(this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
 			if (this.getLength() == 0) {
 				t.refEntite.body.moves = true;
+			} else {
+			//@ts-ignore
+// const arr = [];
+// for (var i = 0; i < this.getLength(); i++) arr.push(2000);
+// 			if (isNaN(arr as any)) {
+// 			//@ts-ignore
+// this.tempsAvantDestruction = arr;
+			//@ts-ignore
+			// this.tempsAvantDestruction.pop();
+				
+			// }
+
 			}
-			// this.tempsAvantDestruction.shift();
 		}
 	});
 
