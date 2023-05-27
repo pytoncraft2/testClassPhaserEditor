@@ -30,9 +30,10 @@ export default class Murale extends Araigne {
 	/* START-USER-CODE */
 	override logiqueDescisionSautIA(): void {
 		this.scene.time.addEvent({
-			delay: this.nombreEntierAuHasard(900, 2000),                // ms
+			delay: 2000,                // ms
 			callback: () => {
-				if (Math.random() < 0.5) this.actionToucheHaut()
+				if (Math.random() < 0.4 && !this.image.flipY) this.actionToucheEspace()
+				else if (Math.random() > 0.5) this.actionToucheHaut()
 				else this.actionToucheBas()
 			},
 			callbackScope: this,
