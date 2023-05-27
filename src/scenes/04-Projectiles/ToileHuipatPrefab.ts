@@ -49,7 +49,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		if (this.refGroupeBlocage) {
 			// console.log("UPDATE", this.refGroupeBlocage.getLength());
 			//@ts-ignore
-			this.refGroupeBlocage.tempsAvantDestruction -= delta;
+			// this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength()] -= delta;
 			//@ts-ignore
 			// console.log(this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength()], this.refGroupeBlocage.getLength());
 			

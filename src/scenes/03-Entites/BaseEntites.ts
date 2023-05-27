@@ -3,7 +3,7 @@ export default interface BaseEntites {
 
 	body: Phaser.Physics.Arcade.Body;
 	image: Phaser.GameObjects.Sprite;
-	scene: (Niveau1 & Niveau2)
+	scene: (Niveau1 & Niveau2);
 }
 
 /* START OF COMPILED CODE */
@@ -31,6 +31,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 					this.scene.scale.startFullscreen()
 				})
 		});
+			//@ts-ignore
+		this.groupeBlocage.tempsAvantDestruction = []
 		this.scene.add.existing(this);
 		/* END-USER-CTR-CODE */
 	}
@@ -47,14 +49,15 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group({
-		createCallback: function(this: Phaser.Physics.Arcade.Group & {tempsAvantDestruction: number[]}) {
-			// console.log(this.getLength());
+		createCallback: function(this: Phaser.Physics.Arcade.Group) {
+			//@ts-ignore
+			console.log(this.tempsAvantDestruction);
 			// if (!this.tempsAvantDestruction) {
 				// this.tempsAvantDestruction = [];
 			// }
 			// this.tempsAvantDestruction.push(1000);
 		},
-		removeCallback: function(this: Phaser.Physics.Arcade.Group & {tempsAvantDestruction: number[]}, t: ToileHuipatPrefab | any) {
+		removeCallback: function(this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
 			if (this.getLength() == 0) {
 				t.refEntite.body.moves = true;
 			}
@@ -64,6 +67,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	// Write your code here.
 	awake() {
+		//@ts-ignore
 		this.body.gravity.y = this.graviteY;
 	}
 
