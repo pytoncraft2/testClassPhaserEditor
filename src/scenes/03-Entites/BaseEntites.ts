@@ -53,6 +53,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 				this.tempsAvantDestruction = 0;
 			}
 			this.tempsAvantDestruction = 1000 * this.getLength();
+			// this.tempsAvantDestruction = 1000;
 		},
 		removeCallback: function(this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
 			console.log("SUPPRESSION");
