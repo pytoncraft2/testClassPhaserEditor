@@ -39,10 +39,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	private listeRefEntiteImmobilise: Array<any>;
 	public tempsCumule: number = 0;
-	public tempsCumuleImmobilisation: number = 1000;
-	public annuleDestruction: boolean = false;
 	public tempsCumuleAvantDestruction: number = 0;
-	public tempsAvantDestruction: number = 2000;
 	public refGroupeBlocage!: Phaser.Physics.Arcade.Group;
 	public refEntite!: BaseEntites;
 
@@ -55,9 +52,9 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 			//@ts-ignore
 			// console.log(this.refGroupeBlocage.getLength());
-			
+
 			// console.log(1000 / this.refGroupeBlocage.getLength());
-			
+
 			// if (1000 / this.refGroupeBlocage.getLength()) {
 				// this.refGroupeBlocage.getFirst().destroy()
 			// }
@@ -67,10 +64,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 					console.log("DESTRUCTION MATINEDFSKQLMJFKLDJSQLMJMF");
 
 				//@ts-ignore
-				// this.refGroupeBlocage.tempsAvantDestruction -= 2000;
+				// this.refGroupeBlocage.tempsAvantDestruction -= 1000;
 				console.log("DERNIER ?: ", this.refGroupeBlocage.getLength());
-				
-				this.refGroupeBlocage.getChildren()[this.refGroupeBlocage.getLength() -1].destroy()
+
+				// this.refGroupeBlocage.getChildren()[this.refGroupeBlocage.getLength() -1].destroy()
 				this.tempsCumule = 0;
 				// this.destroy()
 			}

@@ -57,40 +57,10 @@
             }
         },
         {
-            "name": "tempsCumuleImmobilisation",
-            "label": "tempsCumuleImmobilisation",
-            "tooltip": "temp entre les immobilisation",
-            "defValue": 1000,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "annuleDestruction",
-            "label": "annuleDestruction",
-            "tooltip": "annule la destruction de l'objet",
-            "defValue": false,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
-        },
-        {
             "name": "tempsCumuleAvantDestruction",
             "label": "tempsCumuleAvantDestruction",
             "tooltip": "temps avant la destruction de la toile",
             "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tempsAvantDestruction",
-            "label": "tempsAvantDestruction",
-            "tooltip": "temps avant la destruction de la toile",
-            "defValue": 2000,
             "customDefinition": false,
             "type": {
                 "id": "number"
