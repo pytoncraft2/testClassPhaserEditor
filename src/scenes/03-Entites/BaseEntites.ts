@@ -51,7 +51,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group({
 		createCallback: function(this: Phaser.Physics.Arcade.Group) {
 			//@ts-ignore
-			console.log(this.tempsAvantDestruction);
+			this.tempsAvantDestruction.push(1000)
 			// if (!this.tempsAvantDestruction) {
 				// this.tempsAvantDestruction = [];
 			// }
