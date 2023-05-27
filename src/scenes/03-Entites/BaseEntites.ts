@@ -59,7 +59,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			if (this.getLength() == 0) {
 				t.refEntite.body.moves = true;
 			}
-			this.tempsAvantDestruction -= 1000;
+			// this.tempsAvantDestruction -= 1000;
 		}
 	});
 

@@ -46,97 +46,24 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	/* START-USER-CODE */
 
 	protected preUpdate(time: number, delta: number): void {
-			this.tempsCumule += delta;
-
 		if (this.refGroupeBlocage) {
-
+			// console.log("UPDATE", this.refGroupeBlocage.getLength());
 			//@ts-ignore
-			// console.log(this.refGroupeBlocage.getLength());
-
-			// console.log(1000 / this.refGroupeBlocage.getLength());
-
-			// if (1000 / this.refGroupeBlocage.getLength()) {
-				// this.refGroupeBlocage.getFirst().destroy()
-			// }
+			this.refGroupeBlocage.tempsAvantDestruction -= delta;
 			//@ts-ignore
-			if (this.refGroupeBlocage.tempsAvantDestruction <= this.tempsCumule) {
+			// console.log(this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength()], this.refGroupeBlocage.getLength());
+			
 
-					console.log("DESTRUCTION MATINEDFSKQLMJFKLDJSQLMJMF");
-
-				//@ts-ignore
-				// this.refGroupeBlocage.tempsAvantDestruction -= 1000;
-				console.log("DERNIER ?: ", this.refGroupeBlocage.getLength());
-
-				// this.refGroupeBlocage.getChildren()[this.refGroupeBlocage.getLength() -1].destroy()
-				this.tempsCumule = 0;
-				// this.destroy()
+			console.log(this.refGroupeBlocage.tempsAvantDestruction);
+			
+			//@ts-ignore
+			if (this.refGroupeBlocage.tempsAvantDestruction <= 0) {
+				console.log("destruction");
+				this.refGroupeBlocage.getChildren()[this.refGroupeBlocage.getLength() - 1].destroy()
 			}
+			
 
 		}
-		// if (this.refImmobilise) {
-			// if (this.tempsCumule >= 320) {
-			// 	if (this.listeRefEntiteImmobilise.length == 0 && !this.annuleDestruction) {
-			// 		console.log("DESTRUCTION");
-			// 		this.destroy()
-			// 	}
-			// 	this.tempsCumule = 0;
-
-			// // 	this.refImmobilise.blocages = 0;
-			// // 	this.refImmobilise.body.moves = true;
-			// // 	this.destroy()
-			// // 	return;
-			// }
-
-			// if (this.refImmobilise.body.moves) {
-			// 	this.refImmobilise.body.moves = false;				
-			// 	this.body.allowGravity = false;
-			// 	this.body.moves = false;
-			// 	this.body.enable = false;
-			// if (this.refEntiteImmobilise) {
-
-			// }
-
-		// if (this.listeRefEntiteImmobilise.length != 0) {
-		// 	this.tempsCumuleAvantDestruction += delta;
-		// 	this.listeRefEntiteImmobilise.map((entite: BaseEntites) => {
-		// 		if (!entite.body) return;
-		// 		if (entite.body.moves) {
-		// 			// if (this.tempsCumuleAvantDestruction >= 3000 && !this.annuleDestruction) {
-		// 			// 	this.tempsCumuleAvantDestruction = 0;
-		// 			// 	entite.destroy();
-		// 			// 	this.destroy()
-		// 			// 	return;
-		// 			// }
-		// 			if (entite.image.flipX)
-		// 			{
-		// 				this.body.setVelocityX(-900)
-		// 				this.angle += 0.05;
-		// 			} else if (!entite.image.flipX) {
-		// 				this.body.setVelocityX(900)
-		// 				this.angle -= 0.05;
-		// 			}
-		// 			entite.image.alpha -= 0.0001;
-		// 			this.alpha -= 0.0001;
-		// 			entite.x = this.x;
-		// 			entite.y = this.y;
-		// 			entite.angle = this.angle;
-		// 		}
-		// 	})
-
-		// }
-			// 	console.log("STOP MOUVEMENT");
-			// } else if (!this.refImmobilise.body.moves) {
-			// 	this.tempsCumuleImmobilisation += delta;
-
-			// 	if (this.tempsCumuleImmobilisation >= 1000) {
-			// 		// this.scale -= 0.05;
-			// 		this.tempsCumuleImmobilisation = 0;
-			// 	}
-			// }
-
-		// }
-		// console.log(time);
-
 	}
 
 	augmenteDureeImmobilisation() {
