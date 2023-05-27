@@ -47,13 +47,16 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	protected preUpdate(time: number, delta: number): void {
 
+		console.log("TOUTE LES 1SEC");
+		
+
 		if (this.refGroupeBlocage) {
 			// console.log("UPDATE", this.refGroupeBlocage.getLength());
 			//@ts-ignore
 			console.log(this.refGroupeBlocage.getLength());
 			
 			//@ts-ignore
-			this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength() - 1] -= 16;
+			this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength() - 1] -= delta;
 			//@ts-ignore
 			// console.log(this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength()], this.refGroupeBlocage.getLength());
 			
@@ -63,9 +66,9 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			//@ts-ignore
 			if (this.refGroupeBlocage.tempsAvantDestruction[this.refGroupeBlocage.getLength() - 1] <= 0) {
 				console.log("destruction");
-				this.refGroupeBlocage.getChildren()[this.refGroupeBlocage.getLength() - 1].destroy()
+				this.refGroupeBlocage.getChildren()[0].destroy()
 			//@ts-ignore
-				this.refGroupeBlocage.tempsAvantDestruction.pop()
+				// this.refGroupeBlocage.tempsAvantDestruction.pop()
 			}
 			
 
