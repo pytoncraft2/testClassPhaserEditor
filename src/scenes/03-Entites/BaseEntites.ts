@@ -52,7 +52,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			if (!this.tempsAvantDestruction) {
 				this.tempsAvantDestruction = 0;
 			}
-			this.tempsAvantDestruction = 1000 * this.getLength();
+			this.tempsAvantDestruction += 1000;
 			// this.tempsAvantDestruction = 1000;
 		},
 		removeCallback: function(this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
@@ -60,6 +60,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			if (this.getLength() == 0) {
 				t.refEntite.body.moves = true;
 			}
+			//@ts-ignore
+			this.tempsAvantDestruction -= 1000;
 		}
 	});
 
