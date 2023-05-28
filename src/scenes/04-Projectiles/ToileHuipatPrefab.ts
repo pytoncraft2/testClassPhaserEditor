@@ -38,27 +38,22 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	private modeBouleActive: boolean = false
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
-			console.log("BOULE ACTIVE");
-			if (this.body.blocked.left) {
-				this.body.setAngularVelocity(220)
-			} else if (this.body.blocked.right)
-			{
-				this.body.setAngularVelocity(-220)
-			}
+			if (this.body.blocked.left) { this.body.setAngularVelocity(450) }
+			else if (this.body.blocked.right) { this.body.setAngularVelocity(-450) }
 		}
 	}
 
-	activePhysiqueBoule(entite: BaseEntites) {
-		this.modeBouleActive = true;
+	activePhysiqueBoule(entite: BaseEntites, flipX: boolean) {
 		this.body.moves = true;
 		this.body.enable = true;
 		this.body.checkCollision.none = false;
 		this.body.collideWorldBounds = true;
-		this.body.setVelocityX(entite.image.flipX ? 500 : -500)
 		this.body.bounce.x = 1;
-		this.scene.physics.add.collider(this, entite.scene.platformes.list);
+		this.body.setVelocityX(flipX ? -700 : 700)
 		this.body.setCircle(64);
-		this.body.setAngularVelocity(220)
+		this.body.setAngularVelocity(450)
+		this.scene.physics.add.collider(this, entite.scene.platformes.list);
+		this.modeBouleActive = true;
 	}
 	/* END-USER-CODE */
 }
