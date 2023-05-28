@@ -121,7 +121,12 @@ export default class Huipat extends BaseEntites {
 
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
 		if (adversaire.poussable) {
-			console.log("POUSSABLE", adversaire.groupeBlocage.remove(adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1]));
+			const toileCible: ToileHuipatPrefab | any = adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1];
+			adversaire.groupeBlocage.remove(toileCible);
+			console.log(toileCible);
+			toileCible.body.moves = true;
+			toileCible.body.setVelocityX(500)
+			
 			// var gameObjects = group.getMatching(property, value);
 		}
 	}
