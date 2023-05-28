@@ -94,10 +94,6 @@ export default class Huipat extends BaseEntites {
 		if (!this.body.moves) return;
 
 		this.detecteur_proche.body.enable = true;
-		if (this.entiteProcheEtPoussable) {
-			this.entiteProcheEtPoussable = false;
-			return;
-		}
 
 		this.scene.time.delayedCall(24, () => {
 			this.detecteur_proche.body.enable = false;
@@ -105,28 +101,8 @@ export default class Huipat extends BaseEntites {
 
 		const { centerX, centerY } = this.image.getBounds();
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
-		// this.scene.groupe_projectile_toiles.add(toile);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
-		const toiles_vs_entite = this.scene.physics.add.collider(toile, this.scene.groupe_adversaires.list, (t, a: BaseEntites | any) => {
-			if (a.groupeBlocage.getLength() == a.maxBlocages) 
-			{
-				toile.destroy()
-				return;
-			}
-			toile.body.enable = false;
-			toile.body.checkCollision.none = true;
-			toile.body.moves = false
-			toile.setPosition(a.x, a.y)
-			toile.refEntite = a;
-			if (a.groupeBlocage.getLength() == 0) {
-				a.body.moves = false;
-				a.groupeBlocage.add(t)
-			} else {
-				a.groupeBlocage.add(t)
-				toile.setScale(a.groupeBlocage.getLength() / 5);
-			}
-
-		}, undefined, this);
+		this.scene.groupe_projectile_toiles.add(toile);
 	}
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')

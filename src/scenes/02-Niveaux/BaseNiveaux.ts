@@ -233,6 +233,23 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 		console.log("TOUCHE ENTITE");
+			if (adversaire.groupeBlocage.getLength() == adversaire.maxBlocages) 
+			{
+				toile.destroy()
+				return;
+			}
+			toile.body.enable = false;
+			toile.body.checkCollision.none = true;
+			toile.body.moves = false
+			toile.setPosition(adversaire.x, adversaire.y)
+			toile.refEntite = adversaire;
+			if (adversaire.groupeBlocage.getLength() == 0) {
+				adversaire.body.moves = false;
+				adversaire.groupeBlocage.add(toile)
+			} else {
+				adversaire.groupeBlocage.add(toile)
+				toile.setScale(adversaire.groupeBlocage.getLength() / 5);
+			}
 
 
 		// const dt = this.scene.loop.delta
