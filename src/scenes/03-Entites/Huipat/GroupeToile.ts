@@ -10,10 +10,17 @@ import Phaser from "phaser";
 export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	constructor(scene: Phaser.Scene) {
-		super(scene.physics.world, scene);
+		super(scene.physics.world, scene, {
+			createCallback: function (this: Phaser.Physics.Arcade.Group) {
+				console.log("ADD");
+			},
+			removeCallback: function (this: Phaser.Physics.Arcade.Group) {
+				console.log("REMOVE");
+			}
+		});
 		/* START-USER-CTR-CODE */
 		// Write your code here.
-		this.scene.add.existing(this)
+		scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -25,13 +32,21 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 	// Write your code here.
 	preUpdate(time: number, delta: number): void {
 		    //  super.preUpdate(time, delta);
+			
 			if (this.getLength() === 1) {
 				this.tempsCumule += delta;
-				console.log("GOGOGO", this.getLength());
 				if (this.tempsCumule >= this.tempsAvantDestruction) {
-					console.log("destruction");
+					this.getFirst(true).refEntite.body.moves = true;
 					this.getFirst(true).destroy()
+					this.tempsCumule = 0;
 				}
+			} else if (this.getLength() === 2) {
+				this.tempsCumule += delta;
+				if (this.tempsCumule >= this.tempsAvantDestruction) {
+					this.getFirst(true).refEntite.body.moves = true;
+					this.getFirst(true).destroy()
+					this.tempsCumule = 0;
+				}				
 			}
 		
 	}
