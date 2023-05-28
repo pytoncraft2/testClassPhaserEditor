@@ -149,6 +149,16 @@ export default class Huipat extends BaseEntites {
 		if (adversaire.poussable) {
 			console.log("POUSSABLE");
 
+		adversaire.scene.tweens.add({
+			targets: [adversaire.image],
+			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
+			angle: -960,
+			alpha: 0,
+			ease: 'Linear',
+			duration: 1000
+		});
+		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
+		adversaire.body.setVelocity(-500, -1800);
 			// 	this.entiteProcheEtPoussable = true
 			// adversaire.refToileImmobilisante.body.moves = true;
 			// adversaire.body.moves = true;
@@ -156,11 +166,6 @@ export default class Huipat extends BaseEntites {
 			// adversaire.refToileImmobilisante.body.setVelocityX(-500)
 			// adversaire.refToileImmobilisante.attrape(adversaire)
 
-			adversaire.scene.tweens.add({
-				targets: adversaire,
-				y: "+=300",
-				duration: 1000
-			})
 		}
 		// else {
 		// 	this.entiteProcheEtPoussable = false
