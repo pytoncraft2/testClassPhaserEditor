@@ -31,8 +31,10 @@ export default class Huipat extends BaseEntites {
 		const detecteur_proche = scene.add.rectangle(66, -4, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detecteur_proche.scaleX = 0.6879210867196743;
 		detecteur_proche.scaleY = 1.1424662876249119;
+		detecteur_proche.visible = false;
 		detecteur_proche.alpha = 0.5;
 		scene.physics.add.existing(detecteur_proche, false);
+		detecteur_proche.body.enable = false;
 		detecteur_proche.body.moves = false;
 		detecteur_proche.body.pushable = false;
 		detecteur_proche.body.setSize(128, 128, false);
@@ -91,17 +93,15 @@ export default class Huipat extends BaseEntites {
 	actionToucheEspace(): void {
 		if (!this.body.moves) return;
 
-		console.log(this.detecteur_proche.body);
-		
-		// this.detecteur_proche.body.enable = true;
-		// if (this.entiteProcheEtPoussable) {
-		// 	this.entiteProcheEtPoussable = false;
-		// 	return;
-		// }
+		this.detecteur_proche.body.enable = true;
+		if (this.entiteProcheEtPoussable) {
+			this.entiteProcheEtPoussable = false;
+			return;
+		}
 
-		// this.scene.time.delayedCall(24, () => {
-		// 	this.detecteur_proche.body.enable = false;
-		// }, undefined, this)
+		this.scene.time.delayedCall(24, () => {
+			this.detecteur_proche.body.enable = false;
+		}, undefined, this)
 
 		const { centerX, centerY } = this.image.getBounds();
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
@@ -111,10 +111,10 @@ export default class Huipat extends BaseEntites {
 			if (a.groupeBlocage.getLength() == a.maxBlocages) 
 			{
 				toile.destroy()
-				a.poussable = true;
+				// a.poussable = true;
 				return;
 			}
-			a.poussable = false;
+			// a.poussable = false;
 			toile.body.enable = false;
 			toile.body.checkCollision.none = true;
 			toile.body.moves = false
@@ -146,8 +146,6 @@ export default class Huipat extends BaseEntites {
 	}
 
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
-		console.log("ACTION SUR L'ENTITE PROCHE");
-
 		if (adversaire.poussable) {
 			console.log("POUSSABLE");
 
