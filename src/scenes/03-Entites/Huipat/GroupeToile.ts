@@ -13,16 +13,12 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 	constructor(scene: Phaser.Scene) {
 		super(scene.physics.world, scene, {
 			createCallback: function (this: GroupeToile) {
-				console.log("ADD");
-				this.tempsAvantDestruction += 2000;
-				this.tempsCumule = 2000;
-				this.stack += 1;
+				this.tempsCumule = 1000;
 			},
 			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
 				if (this.getLength() == 0) {
 					t.refEntite.body.moves = true;
 				}
-				this.stack -= 1;
 			}
 		});
 		/* START-USER-CTR-CODE */
@@ -35,21 +31,18 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	/* START-USER-CODE */
 	public tempsCumule: number = 0;
-	public stack: number = 0;
 
 	// Write your code here.
 	preUpdate(time: number, delta: number): void {			
 		super.preUpdate(time, delta)
-		// console.log(this.stack);
 		if (this.getLength() > 0) {
 			this.tempsCumule -= delta;
 
 			if (this.tempsCumule <= 0) {
 				this.getChildren()[this.getLength() - 1].destroy()
-				this.tempsCumule = 2000;
+				this.tempsCumule = 1000;
 			}
 
-			console.log(this.tempsCumule);
 		}
 	}
 
