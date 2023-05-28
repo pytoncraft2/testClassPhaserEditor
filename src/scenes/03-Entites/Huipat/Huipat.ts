@@ -111,10 +111,8 @@ export default class Huipat extends BaseEntites {
 			if (a.groupeBlocage.getLength() == a.maxBlocages) 
 			{
 				toile.destroy()
-				// a.poussable = true;
 				return;
 			}
-			// a.poussable = false;
 			toile.body.enable = false;
 			toile.body.checkCollision.none = true;
 			toile.body.moves = false
@@ -148,50 +146,7 @@ export default class Huipat extends BaseEntites {
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
 		if (adversaire.poussable) {
 			console.log("POUSSABLE", adversaire.groupeBlocage);
-
-			//@ts-ignore
-			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.moves = true;
-			//@ts-ignore
-			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.checkCollision.none = true;
-			//@ts-ignore
-			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.setVelocity(-500, -1800);
-			// //@ts-ignore
-			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].x = adversaire.image.x
-			// //@ts-ignore
-			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].y = adversaire.image.y
-		adversaire.scene.tweens.add({
-			targets: [adversaire.image, adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1]],
-			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
-			angle: -960,
-			alpha: 0,
-			ease: 'Linear',
-			duration: 1000
-		});
-		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
-		adversaire.body.moves = true;
-		adversaire.body.checkCollision.none = true;
-		adversaire.body.setVelocity(-500, -1800);
-		adversaire.scene.time.delayedCall(800, () => {
-
-			// adversaire.destroy()
-
-			// obj2.active && obj2.destroy(true);
-			// obj1.parentContainer.killedEnnemy += 1;
-			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
-				// score.niveauSuivant();
-				// obj1.parentContainer.killedEnnemy = 0;
-			// }
-		})
-			// 	this.entiteProcheEtPoussable = true
-			// adversaire.refToileImmobilisante.body.moves = true;
-			// adversaire.body.enable = false;
-			// adversaire.refToileImmobilisante.body.setVelocityX(-500)
-			// adversaire.refToileImmobilisante.attrape(adversaire)
-
 		}
-		// else {
-		// 	this.entiteProcheEtPoussable = false
-		// }
 	}
 
 	/* END-USER-CODE */
