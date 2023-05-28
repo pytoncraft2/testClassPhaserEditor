@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import ToileHuipatPrefab from "~/scenes/04-Projectiles/ToileHuipatPrefab";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -11,11 +12,17 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	constructor(scene: Phaser.Scene) {
 		super(scene.physics.world, scene, {
-			createCallback: function (this: Phaser.Physics.Arcade.Group) {
+			createCallback: function (this: GroupeToile) {
 				console.log("ADD");
+				this.tempsAvantDestruction += 2000;
+				this.tempsCumule = 2000;
+				this.stack += 1;
 			},
-			removeCallback: function (this: Phaser.Physics.Arcade.Group) {
-				console.log("REMOVE");
+			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
+				if (this.getLength() == 0) {
+					t.refEntite.body.moves = true;
+				}
+				this.stack -= 1;
 			}
 		});
 		/* START-USER-CTR-CODE */
@@ -28,27 +35,22 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	/* START-USER-CODE */
 	public tempsCumule: number = 0;
+	public stack: number = 0;
 
 	// Write your code here.
-	preUpdate(time: number, delta: number): void {
-		    //  super.preUpdate(time, delta);
-			
-			if (this.getLength() === 1) {
-				this.tempsCumule += delta;
-				if (this.tempsCumule >= this.tempsAvantDestruction) {
-					this.getFirst(true).refEntite.body.moves = true;
-					this.getFirst(true).destroy()
-					this.tempsCumule = 0;
-				}
-			} else if (this.getLength() === 2) {
-				this.tempsCumule += delta;
-				if (this.tempsCumule >= this.tempsAvantDestruction) {
-					this.getFirst(true).refEntite.body.moves = true;
-					this.getFirst(true).destroy()
-					this.tempsCumule = 0;
-				}				
+	preUpdate(time: number, delta: number): void {			
+		super.preUpdate(time, delta)
+		// console.log(this.stack);
+		if (this.getLength() > 0) {
+			this.tempsCumule -= delta;
+
+			if (this.tempsCumule <= 0) {
+				this.getFirst(true).destroy()
+				this.tempsCumule = 2000;
 			}
-		
+
+			console.log(this.tempsCumule);
+		}
 	}
 
 	/* END-USER-CODE */
