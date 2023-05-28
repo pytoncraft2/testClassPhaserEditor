@@ -113,18 +113,15 @@ export default class Huipat extends BaseEntites {
 			toile.body.checkCollision.none = true;
 			toile.setPosition(a.x, a.y)
 			toile.body.moves = false
-			toile.refGroupeBlocage = a.groupeBlocage;
 			toile.refEntite = a;
 			if (a.groupeBlocage.getLength() == 0) {
-				a.groupeBlocage.add(t)
 				a.body.moves = false;
+				a.groupeBlocage.add(t)
 			} else {
 				a.groupeBlocage.add(t)
 				toile.setScale(a.groupeBlocage.getLength() / 4);
 			}
 			console.log(a.groupeBlocage.getLength());
-			
-			
 			console.log("TOUCHE");
 			
 		}, undefined, this);

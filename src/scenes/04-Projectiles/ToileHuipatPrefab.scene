@@ -39,44 +39,7 @@
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
     },
-    "lists": [
-        {
-            "id": "029373dd-fb3f-4d1a-b888-8f0fed4b79c1",
-            "label": "listeRefEntiteImmobilise"
-        }
-    ],
     "prefabProperties": [
-        {
-            "name": "tempsCumule",
-            "label": "tempsCumule",
-            "tooltip": "temp avant la prochaine action",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tempsCumuleAvantDestruction",
-            "label": "tempsCumuleAvantDestruction",
-            "tooltip": "temps avant la destruction de la toile",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "refGroupeBlocage",
-            "label": "refGroupeBlocage",
-            "tooltip": "reference au groupe de toitle",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "object-var",
-                "expressionType": "Phaser.Physics.Arcade.Group"
-            }
-        },
         {
             "name": "refEntite",
             "label": "refEntite",

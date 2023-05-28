@@ -27,37 +27,14 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.collideWorldBounds = true;
 		this.body.setSize(150, 150, false);
 
-		// lists
-		const listeRefEntiteImmobilise: Array<any> = [];
-
-		this.listeRefEntiteImmobilise = listeRefEntiteImmobilise;
-
 		/* START-USER-CTR-CODE */
 		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
-	private listeRefEntiteImmobilise: Array<any>;
-	public tempsCumule: number = 0;
-	public tempsCumuleAvantDestruction: number = 0;
-	public refGroupeBlocage!: Phaser.Physics.Arcade.Group;
 	public refEntite!: BaseEntites;
 
 	/* START-USER-CODE */
-
-	protected preUpdate(time: number, delta: number): void {
-
-	}
-
-	augmenteDureeImmobilisation() {
-		this.scale += 0.1;
-	}
-
-	ajoutRefEntiteImmobilise(adversaire: BaseEntites) {
-		this.listeRefEntiteImmobilise.push(adversaire)
-	}
-
-
 	/* END-USER-CODE */
 }
 
