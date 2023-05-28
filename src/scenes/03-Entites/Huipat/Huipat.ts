@@ -158,10 +158,23 @@ export default class Huipat extends BaseEntites {
 			duration: 1000
 		});
 		// obj2.body.setVelocity(obj1.parentContainer.huipat.flipX ? -500 : 500, -1800);
+		adversaire.body.moves = true;
+		adversaire.body.checkCollision.none = true;
 		adversaire.body.setVelocity(-500, -1800);
+		adversaire.scene.time.delayedCall(800, () => {
+
+			adversaire.destroy()
+			console.log("DESTRUCTION");
+
+			// obj2.active && obj2.destroy(true);
+			// obj1.parentContainer.killedEnnemy += 1;
+			// if (obj1.parentContainer.killedEnnemy == this.liste_fonds_ecran[score.niveau].nombreEnnemieAVaincre) {
+				// score.niveauSuivant();
+				// obj1.parentContainer.killedEnnemy = 0;
+			// }
+		})
 			// 	this.entiteProcheEtPoussable = true
 			// adversaire.refToileImmobilisante.body.moves = true;
-			// adversaire.body.moves = true;
 			// adversaire.body.enable = false;
 			// adversaire.refToileImmobilisante.body.setVelocityX(-500)
 			// adversaire.refToileImmobilisante.attrape(adversaire)

@@ -22,7 +22,10 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 			},
 			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
 				if (this.getLength() == 0) {
-					t.refEntite.body.moves = true;
+					if (t.refEntite.active)
+					{
+						t.refEntite.body.moves = true;
+					}
 				}
 				t.refEntite.poussable = false;
 			}
