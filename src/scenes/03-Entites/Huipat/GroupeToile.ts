@@ -13,6 +13,7 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 		super(scene.physics.world, scene);
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.scene.add.existing(this)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -21,6 +22,11 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	preUpdate(time: number, delta: number): void {
+		    //  super.preUpdate(time, delta);
+		console.log("GOGOGO", this.getLength());
+		
+	}
 
 	/* END-USER-CODE */
 }
