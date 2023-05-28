@@ -150,13 +150,17 @@ export default class Huipat extends BaseEntites {
 			console.log("POUSSABLE", adversaire.groupeBlocage);
 
 			//@ts-ignore
-			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.moves = true;
+			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.moves = true;
 			//@ts-ignore
-			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.checkCollision.none = true;
+			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.checkCollision.none = true;
 			//@ts-ignore
-			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.setVelocity(-500, -1800);
+			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.setVelocity(-500, -1800);
+			// //@ts-ignore
+			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].x = adversaire.image.x
+			// //@ts-ignore
+			// adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].y = adversaire.image.y
 		adversaire.scene.tweens.add({
-			targets: [adversaire.image, adversaire.groupeBlocage],
+			targets: [adversaire.image, adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1]],
 			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
 			angle: -960,
 			alpha: 0,
