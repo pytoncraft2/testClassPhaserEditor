@@ -28,7 +28,8 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 					}
 				}
 				t.refEntite.poussable = false;
-			}
+			},
+			maxSize: 5
 		});
 		/* START-USER-CTR-CODE */
 		// Write your code here.
