@@ -147,10 +147,16 @@ export default class Huipat extends BaseEntites {
 
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
 		if (adversaire.poussable) {
-			console.log("POUSSABLE");
+			console.log("POUSSABLE", adversaire.groupeBlocage);
 
+			//@ts-ignore
+			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.moves = true;
+			//@ts-ignore
+			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.checkCollision.none = true;
+			//@ts-ignore
+			adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() -1].body.setVelocity(-500, -1800);
 		adversaire.scene.tweens.add({
-			targets: [adversaire.image],
+			targets: [adversaire.image, adversaire.groupeBlocage],
 			// angle: obj1.parentContainer.huipat.flipX ? -960 : 960,
 			angle: -960,
 			alpha: 0,
@@ -163,8 +169,7 @@ export default class Huipat extends BaseEntites {
 		adversaire.body.setVelocity(-500, -1800);
 		adversaire.scene.time.delayedCall(800, () => {
 
-			adversaire.destroy()
-			console.log("DESTRUCTION");
+			// adversaire.destroy()
 
 			// obj2.active && obj2.destroy(true);
 			// obj1.parentContainer.killedEnnemy += 1;
