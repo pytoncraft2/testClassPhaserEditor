@@ -146,8 +146,8 @@ export default class Huipat extends BaseEntites {
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
 		console.log("ACTION SUR L'ENTITE PROCHE");
 
-		// if (adversaire.poussable) {
-		// 	console.log("POUSSABLE");
+		if (adversaire.poussable) {
+			console.log("POUSSABLE");
 
 		// 	this.entiteProcheEtPoussable = true
 		// adversaire.refToileImmobilisante.body.moves = true;
@@ -161,7 +161,7 @@ export default class Huipat extends BaseEntites {
 		// 	y: "+=300",
 		// 	duration: 1000
 		// })
-		// }
+		}
 		// else {
 		// 	this.entiteProcheEtPoussable = false
 		// }
