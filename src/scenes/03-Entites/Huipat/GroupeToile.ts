@@ -9,13 +9,14 @@ import Phaser from "phaser";
 
 export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
-	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
+	constructor(scene: Phaser.Scene) {
 		super(scene.physics.world, scene);
-
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
+
+	public tempsAvantDestruction: number = 2000;
 
 	/* START-USER-CODE */
 

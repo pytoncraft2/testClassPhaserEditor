@@ -19,5 +19,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "timeBeforeDestruction",
+            "label": "timeBeforeDestruction",
+            "tooltip": "temp entre la destruction des objets",
+            "defValue": 2000,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }
