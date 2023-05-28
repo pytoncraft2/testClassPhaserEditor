@@ -123,6 +123,7 @@ export default class Huipat extends BaseEntites {
 		if (adversaire.poussable) {
 			const toileCible: ToileHuipatPrefab | any = adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1];
 			adversaire.groupeBlocage.remove(toileCible);
+			adversaire.groupeBlocage.destroy(true)
 			toileCible.activePhysiqueBoule(adversaire, (rectangle.parentContainer as BaseEntites).image.flipX)
 			adversaire.scene.groupe_vs_platformes.add(toileCible, true)
 			adversaire.scene.add.existing(toileCible)
