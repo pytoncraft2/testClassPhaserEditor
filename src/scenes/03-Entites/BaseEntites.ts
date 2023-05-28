@@ -48,22 +48,9 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)
-	// public groupeBlocage: Phaser.Physics.Arcade.Group = this.scene.physics.add.group({
-	// 	createCallback: function (this: Phaser.Physics.Arcade.Group) {
-	// 		const arr = [];
-	// 		for (var i = 0; i < this.getLength(); i++) arr.push(2000);
-	// 		this.tempsAvantDestruction = arr;
-	// 	},
-	// 	removeCallback: function (this: Phaser.Physics.Arcade.Group, t: ToileHuipatPrefab | any) {
-	// 		if (this.getLength() == 0) {
-	// 			t.refEntite.body.moves = true;
-	// 		}
-	// 	}
-	// });
 
 	// Write your code here.
 	awake() {
-		//@ts-ignore
 		this.body.gravity.y = this.graviteY;
 	}
 

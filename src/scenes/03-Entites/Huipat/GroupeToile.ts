@@ -34,7 +34,7 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	// Write your code here.
 	preUpdate(time: number, delta: number): void {			
-		super.preUpdate(time, delta)
+
 		if (this.getLength() > 0) {
 			this.tempsCumule -= delta;
 
@@ -42,8 +42,8 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 				this.getChildren()[this.getLength() - 1].destroy()
 				this.tempsCumule = 1000;
 			}
-
 		}
+
 	}
 
 	/* END-USER-CODE */
