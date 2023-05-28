@@ -20,11 +20,19 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 	public tempsAvantDestruction: number = 2000;
 
 	/* START-USER-CODE */
+	public tempsCumule: number = 0;
 
 	// Write your code here.
 	preUpdate(time: number, delta: number): void {
 		    //  super.preUpdate(time, delta);
-		console.log("GOGOGO", this.getLength());
+			if (this.getLength() === 1) {
+				this.tempsCumule += delta;
+				console.log("GOGOGO", this.getLength());
+				if (this.tempsCumule >= this.tempsAvantDestruction) {
+					console.log("destruction");
+					this.getFirst(true).destroy()
+				}
+			}
 		
 	}
 
