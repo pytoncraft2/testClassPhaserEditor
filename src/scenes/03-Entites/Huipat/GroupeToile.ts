@@ -16,11 +16,8 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 				if (this.getLength() == toile.refEntite.maxBlocages) {
 					this.tempsCumule = 3000;
 					toile.refEntite.poussable = true;
-					
-					// toile.refEntite.poussable = true;
 				} else {
 					this.tempsCumule = 1000;
-					// toile.refEntite.poussable = false;
 				}
 			},
 			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
