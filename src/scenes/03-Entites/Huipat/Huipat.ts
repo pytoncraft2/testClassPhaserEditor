@@ -111,8 +111,10 @@ export default class Huipat extends BaseEntites {
 			if (a.groupeBlocage.getLength() == a.maxBlocages) 
 			{
 				toile.destroy()
+				a.poussable = true;
 				return;
 			}
+			a.poussable = false;
 			toile.body.enable = false;
 			toile.body.checkCollision.none = true;
 			toile.body.moves = false
