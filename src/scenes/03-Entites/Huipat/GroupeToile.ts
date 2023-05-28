@@ -48,20 +48,24 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 			this.tempsCumule -= delta;
 
 			if (this.tempsCumule <= 0) {
-				this.scene.tweens.add({
-					targets: [this.getChildren()[this.getLength() - 1]],
-					angle: -960,
-					alpha: 0,
-					ease: 'Linear',
-					duration: 1000,
-					onComplete: function (tw, targets) {
-						targets[0].destroy()
-					}
-				});
+				this.animationDeblocage()
 				this.tempsCumule = 1000;
 			}
 		}
 
+	}
+
+	animationDeblocage() {
+		this.scene.tweens.add({
+			targets: [this.getChildren()[this.getLength() - 1]],
+			angle: -960,
+			alpha: 0,
+			ease: 'Linear',
+			duration: 1000,
+			onComplete: function (tw, targets) {
+				targets[0].destroy()
+			}
+		});
 	}
 
 	/* END-USER-CODE */
