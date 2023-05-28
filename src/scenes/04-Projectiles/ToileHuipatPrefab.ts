@@ -52,7 +52,6 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.setVelocityX(flipX ? -700 : 700)
 		this.body.setCircle(64);
 		this.body.setAngularVelocity(450)
-		this.scene.physics.add.collider(this, entite.scene.platformes.list);
 		this.modeBouleActive = true;
 	}
 	/* END-USER-CODE */
