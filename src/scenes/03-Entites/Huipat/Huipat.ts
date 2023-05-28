@@ -125,6 +125,7 @@ export default class Huipat extends BaseEntites {
 			adversaire.groupeBlocage.remove(toileCible);
 			adversaire.groupeBlocage.destroy(true)
 			toileCible.activePhysiqueBoule(adversaire, (rectangle.parentContainer as BaseEntites).image.flipX)
+			toileCible.attrape(adversaire)
 			adversaire.scene.groupe_vs_platformes.add(toileCible, true)
 			adversaire.scene.add.existing(toileCible)
 		}

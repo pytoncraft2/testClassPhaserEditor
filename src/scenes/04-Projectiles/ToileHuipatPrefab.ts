@@ -36,10 +36,15 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 	/* START-USER-CODE */
 	private modeBouleActive: boolean = false
+	private suivre: undefined | BaseEntites
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
 			if (this.body.blocked.left) { this.body.setAngularVelocity(450) }
 			else if (this.body.blocked.right) { this.body.setAngularVelocity(-450) }
+
+			if (this.suivre) {
+				this.suivre.setPosition(this.x, this.y)				
+			}
 		}
 	}
 
@@ -53,6 +58,12 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.body.setCircle(64);
 		this.body.setAngularVelocity(450)
 		this.modeBouleActive = true;
+	}
+
+	attrape(entite: BaseEntites) {
+		entite.body.moves = true;
+		entite.activeIA = false;
+		this.suivre = entite;
 	}
 	/* END-USER-CODE */
 }
