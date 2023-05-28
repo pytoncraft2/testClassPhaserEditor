@@ -125,7 +125,17 @@ export default class Huipat extends BaseEntites {
 			adversaire.groupeBlocage.remove(toileCible);
 			console.log(toileCible);
 			toileCible.body.moves = true;
+			toileCible.body.enable = true;
+			toileCible.body.checkCollision.none = false;
+			toileCible.body.collideWorldBounds = true;
 			toileCible.body.setVelocityX(500)
+			toileCible.body.bounce.x = 1;
+			adversaire.scene.physics.add.collider(toileCible, adversaire.scene.platformes.list);
+			toileCible.body.setCircle(64);
+			toileCible.body.setAngularVelocity(220)
+			// adversaire.scene.groupe_vs_platformes.add(toileCible)
+			adversaire.scene.add.existing(toileCible)
+			
 			
 			// var gameObjects = group.getMatching(property, value);
 		}
