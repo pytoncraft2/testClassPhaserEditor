@@ -45,7 +45,7 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 			this.tempsCumule -= delta;
 
 			if (this.tempsCumule <= 0) {
-				this.getFirst(true).destroy()
+				this.getChildren()[this.getLength() - 1].destroy()
 				this.tempsCumule = 2000;
 			}
 
