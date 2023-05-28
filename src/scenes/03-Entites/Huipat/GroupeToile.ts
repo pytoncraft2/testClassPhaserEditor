@@ -12,8 +12,12 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	constructor(scene: Phaser.Scene) {
 		super(scene.physics.world, scene, {
-			createCallback: function (this: GroupeToile) {
-				this.tempsCumule = 1000;
+			createCallback: function (this: GroupeToile, toile: ToileHuipatPrefab | any) {
+				if (this.getLength() == toile.refEntite.maxBlocages) {
+					this.tempsCumule = 3000;
+				} else {
+					this.tempsCumule = 1000;
+				}
 			},
 			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
 				if (this.getLength() == 0) {

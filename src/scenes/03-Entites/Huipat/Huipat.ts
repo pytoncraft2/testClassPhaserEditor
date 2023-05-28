@@ -125,8 +125,6 @@ export default class Huipat extends BaseEntites {
 				a.groupeBlocage.add(t)
 				toile.setScale(a.groupeBlocage.getLength() / 5);
 			}
-			console.log(a.groupeBlocage.getLength());
-			console.log("TOUCHE");
 			
 		}, undefined, this);
 	}
