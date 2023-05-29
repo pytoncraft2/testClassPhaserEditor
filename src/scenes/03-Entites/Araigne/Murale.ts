@@ -14,7 +14,7 @@ export default class Murale extends Araigne {
 		super(scene, x ?? 0, y ?? 0);
 
 		// detection_grand_saut
-		const detection_grand_saut = scene.add.rectangle(490, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
+		const detection_grand_saut = scene.add.rectangle(544, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detection_grand_saut.scaleX = 0.3111116614199342;
 		detection_grand_saut.scaleY = 0.3111116614199342;
 		scene.physics.add.existing(detection_grand_saut, false);
@@ -52,24 +52,21 @@ export default class Murale extends Araigne {
 	}
 
 	override logiqueDescisionSautIA(): void {
-		// this.scene.time.addEvent({
-		// 	delay: 2000,                // ms
-		// 	callback: () => {
-		// 		this.detection_grand_saut.body.enable = true;
-
-		// 		this.scene.time.delayedCall(27, () => {
-		// 			// if (this.attaqueSautAccessible) this.actionToucheEspace()
-		// 			// else if (Math.random() < 0.4) this.actionToucheHaut()
-		// 			// else if (Math.random() < 0.3) this.actionToucheBas()
-
-		// 			this.attaqueSautAccessible = false;
-
-		// 			this.detection_grand_saut.body.enable = false;
-		// 		}, undefined, this)
-		// 	},
-		// 	callbackScope: this,
-		// 	loop: true
-		// });
+		this.scene.time.addEvent({
+			delay: 2000,                // ms
+			callback: () => {
+				if (!this.attaqueSautAccessible) {
+					if (Math.random() < 0.5) {
+						this.actionToucheHaut()
+					} else if (Math.random() < 0.6) 
+					{
+						// this.actionToucheBas()
+					}
+				}
+			},
+			callbackScope: this,
+			loop: true
+		});
 	}
 
 	actionToucheHaut() {
@@ -102,12 +99,12 @@ export default class Murale extends Araigne {
 
 	actionToucheDroite(): void {
 		super.actionToucheDroite()
-		this.detection_grand_saut.x = 490;
+		this.detection_grand_saut.x = Math.abs(this.detection_grand_saut.x);
 	}
 
 	actionToucheGauche(): void {
 		super.actionToucheGauche()
-		this.detection_grand_saut.x = -490;
+		this.detection_grand_saut.x = -Math.abs(this.detection_grand_saut.x);
 	}
 
 	/**
