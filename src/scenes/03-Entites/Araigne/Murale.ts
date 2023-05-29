@@ -17,6 +17,7 @@ export default class Murale extends Araigne {
 		const detection_grand_saut = scene.add.rectangle(544, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 		detection_grand_saut.scaleX = 0.3111116614199342;
 		detection_grand_saut.scaleY = 0.3111116614199342;
+		detection_grand_saut.visible = false;
 		scene.physics.add.existing(detection_grand_saut, false);
 		detection_grand_saut.body.moves = false;
 		detection_grand_saut.body.pushable = false;

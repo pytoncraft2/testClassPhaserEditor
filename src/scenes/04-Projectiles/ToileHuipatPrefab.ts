@@ -39,6 +39,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	private suivre: undefined | BaseEntites
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
+			this.scene.physics.world.wrap(this, 400);
 			if (this.body.blocked.left) { this.body.setAngularVelocity(450) }
 			else if (this.body.blocked.right) { this.body.setAngularVelocity(-450) }
 
