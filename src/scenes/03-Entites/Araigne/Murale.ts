@@ -1,6 +1,5 @@
 
 // You can write more code here
-const bonusVitesseAraigne = 200;
 const graviteVersLeHaut = -2500;
 const graviteVersLeBas = 2500;
 /* START OF COMPILED CODE */
@@ -14,6 +13,16 @@ export default class Murale extends Araigne {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
+		// rectangle_1
+		const rectangle_1 = scene.add.rectangle(490, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
+		rectangle_1.scaleX = 0.3111116614199342;
+		rectangle_1.scaleY = 0.3111116614199342;
+		scene.physics.add.existing(rectangle_1, false);
+		rectangle_1.body.moves = false;
+		rectangle_1.body.pushable = false;
+		rectangle_1.body.setSize(128, 128, false);
+		rectangle_1.isFilled = true;
+		this.add(rectangle_1);
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 

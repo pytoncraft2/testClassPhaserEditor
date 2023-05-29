@@ -17,7 +17,26 @@
         {
             "type": "Container",
             "id": "0d4f54e2-0e23-413c-bab4-d4f76c6f96a9",
-            "label": "container_1"
+            "label": "container_1",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "766f9389-1ce8-4f16-88b8-5386f6b0d881",
+                    "label": "rectangle_1",
+                    "x": 490,
+                    "y": 10,
+                    "scaleX": 0.3111116614199342,
+                    "scaleY": 0.3111116614199342,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "pushable": false,
+                    "body.width": 128,
+                    "body.height": 128,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                }
+            ]
         }
     ],
     "plainObjects": [],
