@@ -22,12 +22,14 @@
                 {
                     "type": "Rectangle",
                     "id": "766f9389-1ce8-4f16-88b8-5386f6b0d881",
-                    "label": "rectangle_1",
+                    "label": "detection_grand_saut",
+                    "scope": "NESTED_PREFAB",
                     "x": 490,
                     "y": 10,
                     "scaleX": 0.3111116614199342,
                     "scaleY": 0.3111116614199342,
                     "ArcadeComponent.active": true,
+                    "enable": false,
                     "moves": false,
                     "pushable": false,
                     "body.width": 128,
@@ -39,7 +41,19 @@
             ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "52829c73-3cb9-41dd-bd37-884a75c3dce8",
+            "type": "Collider",
+            "label": "colision_detecteur_grand_saut",
+            "scope": "PUBLIC",
+            "object1": "detection_grand_saut",
+            "object2": "[]",
+            "overlapOnly": true,
+            "collideCallback": "this.attaqueEntiteSautAccessible as any",
+            "callbackContext": "this"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
@@ -55,6 +69,16 @@
             "customDefinition": false,
             "type": {
                 "id": "texture-config"
+            }
+        },
+        {
+            "name": "attaqueSautAccessible",
+            "label": "attaqueSautAccessible",
+            "tooltip": "détecte si une entité est à porté de pour effectuer le saut",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
             }
         }
     ]

@@ -13,16 +13,23 @@ export default class Murale extends Araigne {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
-		// rectangle_1
-		const rectangle_1 = scene.add.rectangle(490, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
-		rectangle_1.scaleX = 0.3111116614199342;
-		rectangle_1.scaleY = 0.3111116614199342;
-		scene.physics.add.existing(rectangle_1, false);
-		rectangle_1.body.moves = false;
-		rectangle_1.body.pushable = false;
-		rectangle_1.body.setSize(128, 128, false);
-		rectangle_1.isFilled = true;
-		this.add(rectangle_1);
+		// detection_grand_saut
+		const detection_grand_saut = scene.add.rectangle(490, 10, 128, 128) as Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
+		detection_grand_saut.scaleX = 0.3111116614199342;
+		detection_grand_saut.scaleY = 0.3111116614199342;
+		scene.physics.add.existing(detection_grand_saut, false);
+		detection_grand_saut.body.enable = false;
+		detection_grand_saut.body.moves = false;
+		detection_grand_saut.body.pushable = false;
+		detection_grand_saut.body.setSize(128, 128, false);
+		detection_grand_saut.isFilled = true;
+		this.add(detection_grand_saut);
+
+		// colision_detecteur_grand_saut
+		const colision_detecteur_grand_saut = scene.physics.add.overlap(detection_grand_saut, [], this.attaqueEntiteSautAccessible as any, undefined, this);
+
+		this.detection_grand_saut = detection_grand_saut;
+		this.colision_detecteur_grand_saut = colision_detecteur_grand_saut;
 		// awake handler
 		this.scene.events.once("scene-awake", () => this.awake());
 
@@ -34,16 +41,37 @@ export default class Murale extends Araigne {
 		/* END-USER-CTR-CODE */
 	}
 
+	public detection_grand_saut: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
+	public colision_detecteur_grand_saut: Phaser.Physics.Arcade.Collider;
 	public imageTexture: {key:string,frame?:string|number} = {"key":"murale","frame":"araigne.png"};
+	public attaqueSautAccessible: boolean = false;
 
 	/* START-USER-CODE */
+	awake(): void {
+		super.awake()
+		this.colision_detecteur_grand_saut.object2 = this.scene.groupe_allies.list;
+	}
+
 	override logiqueDescisionSautIA(): void {
 		this.scene.time.addEvent({
 			delay: 2000,                // ms
 			callback: () => {
-				if (Math.random() < 0.4 && !this.image.flipY) this.actionToucheEspace()
-				else if (Math.random() > 0.5) this.actionToucheHaut()
-				else this.actionToucheBas()
+				console.log(this.attaqueSautAccessible);
+
+					this.detection_grand_saut.body.enable = true;
+
+				this.scene.time.delayedCall(24, () => {
+					if (this.attaqueSautAccessible) {
+						this.actionToucheEspace()
+					}
+					this.attaqueSautAccessible = false;
+
+					this.detection_grand_saut.body.enable = false;
+				}, undefined, this)				
+				// this.attaqueSautAccessible = false;
+				// if (Math.random() < 0.4 && !this.image.flipY) this.actionToucheEspace()
+				// else if (Math.random() > 0.5) this.actionToucheHaut()
+				// else this.actionToucheBas()
 			},
 			callbackScope: this,
 			loop: true
@@ -95,6 +123,10 @@ export default class Murale extends Araigne {
 			}, undefined, this);
 		}
 	}	
+
+	attaqueEntiteSautAccessible() {
+		this.attaqueSautAccessible = true;
+	}
 	// Write your code here.
 
 	/* END-USER-CODE */

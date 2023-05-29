@@ -126,7 +126,7 @@ export default class Araigne extends BaseEntites {
 
 		// Créer le tween de saut
 		this.image.setTintFill(0x000000)
-		
+
 		const sautTween = this.scene.tweens.add({
 			targets: this,
 			y: '-=' + sautHauteur,
