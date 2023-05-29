@@ -29,7 +29,6 @@
                     "scaleX": 0.3111116614199342,
                     "scaleY": 0.3111116614199342,
                     "ArcadeComponent.active": true,
-                    "enable": false,
                     "moves": false,
                     "pushable": false,
                     "body.width": 128,

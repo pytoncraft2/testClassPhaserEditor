@@ -18,7 +18,6 @@ export default class Murale extends Araigne {
 		detection_grand_saut.scaleX = 0.3111116614199342;
 		detection_grand_saut.scaleY = 0.3111116614199342;
 		scene.physics.add.existing(detection_grand_saut, false);
-		detection_grand_saut.body.enable = false;
 		detection_grand_saut.body.moves = false;
 		detection_grand_saut.body.pushable = false;
 		detection_grand_saut.body.setSize(128, 128, false);
@@ -53,28 +52,24 @@ export default class Murale extends Araigne {
 	}
 
 	override logiqueDescisionSautIA(): void {
-		this.scene.time.addEvent({
-			delay: 2000,                // ms
-			callback: () => {
-				console.log(this.attaqueSautAccessible);
+		// this.scene.time.addEvent({
+		// 	delay: 2000,                // ms
+		// 	callback: () => {
+		// 		this.detection_grand_saut.body.enable = true;
 
-					this.detection_grand_saut.body.enable = true;
+		// 		this.scene.time.delayedCall(27, () => {
+		// 			// if (this.attaqueSautAccessible) this.actionToucheEspace()
+		// 			// else if (Math.random() < 0.4) this.actionToucheHaut()
+		// 			// else if (Math.random() < 0.3) this.actionToucheBas()
 
-				this.scene.time.delayedCall(24, () => {
-					if (this.attaqueSautAccessible) this.actionToucheEspace()
-					else if (Math.random() > 0.5) this.actionToucheHaut()
-					else this.actionToucheBas()
+		// 			this.attaqueSautAccessible = false;
 
-					this.attaqueSautAccessible = false;
-
-					this.detection_grand_saut.body.enable = false;
-				}, undefined, this)				
-				// this.attaqueSautAccessible = false;
-				// if (Math.random() < 0.4 && !this.image.flipY) this.actionToucheEspace()
-			},
-			callbackScope: this,
-			loop: true
-		});
+		// 			this.detection_grand_saut.body.enable = false;
+		// 		}, undefined, this)
+		// 	},
+		// 	callbackScope: this,
+		// 	loop: true
+		// });
 	}
 
 	actionToucheHaut() {
@@ -105,6 +100,16 @@ export default class Murale extends Araigne {
 		}
 	}
 
+	actionToucheDroite(): void {
+		super.actionToucheDroite()
+		this.detection_grand_saut.x = 490;
+	}
+
+	actionToucheGauche(): void {
+		super.actionToucheGauche()
+		this.detection_grand_saut.x = -490;
+	}
+
 	/**
 	 * @description effectue un saut vers le haut ou vers le bas en changeant la gravité et optionnelement traverser la platforme
 	 * @param this
@@ -125,6 +130,16 @@ export default class Murale extends Araigne {
 
 	attaqueEntiteSautAccessible() {
 		this.attaqueSautAccessible = true;
+	}
+
+	deplacementIA(): void {
+		super.deplacementIA()
+
+		if (this.attaqueSautAccessible) {
+			this.actionToucheEspace()
+		}
+		this.attaqueSautAccessible = false;
+
 	}
 	// Write your code here.
 
