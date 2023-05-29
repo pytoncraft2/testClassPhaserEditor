@@ -99,12 +99,14 @@ export default class Murale extends Araigne {
 
 	actionToucheDroite(): void {
 		super.actionToucheDroite()
-		this.detection_grand_saut.x = Math.abs(this.detection_grand_saut.x);
+		if (this.detection_grand_saut.x != Math.abs(this.detection_grand_saut.x))
+			this.detection_grand_saut.x = Math.abs(this.detection_grand_saut.x);
 	}
 
 	actionToucheGauche(): void {
 		super.actionToucheGauche()
-		this.detection_grand_saut.x = -Math.abs(this.detection_grand_saut.x);
+		if (this.detection_grand_saut.x != -Math.abs(this.detection_grand_saut.x))
+			this.detection_grand_saut.x = -Math.abs(this.detection_grand_saut.x);
 	}
 
 	/**
