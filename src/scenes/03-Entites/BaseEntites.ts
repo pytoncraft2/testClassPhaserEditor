@@ -97,6 +97,25 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		})
 	}
 
+	detruire() {
+		this.activeIA = false;
+		this.body.setVelocity(0)
+     this.scene.tweens.add({
+       targets: this.image,
+       y: "-=90",
+       alpha: 0.5,
+       ease: 'Sine.inOut',
+       yoyo: true,
+       duration: 1000,
+       repeat: -1
+     });
+		// this.scene.tweens.add({
+		// 	targets: this,
+		// 	alpha: 0,
+		// 	duration: 1000
+		// })
+	}
+
 	/* END-USER-CODE */
 }
 
