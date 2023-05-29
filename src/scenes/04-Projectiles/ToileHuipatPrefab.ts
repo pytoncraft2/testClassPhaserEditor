@@ -44,6 +44,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 
 			if (this.suivre) {
 				this.suivre.setPosition(this.x, this.y)				
+				this.suivre.angle = this.angle;
 			}
 		}
 	}
@@ -63,6 +64,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	attrape(entite: BaseEntites) {
 		entite.body.moves = true;
 		entite.activeIA = false;
+		entite.body.enable = false;
 		this.suivre = entite;
 	}
 	/* END-USER-CODE */
