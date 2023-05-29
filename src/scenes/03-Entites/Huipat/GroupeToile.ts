@@ -11,29 +11,30 @@ import ToileHuipatPrefab from "~/scenes/04-Projectiles/ToileHuipatPrefab";
 export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 
 	constructor(scene: Phaser.Scene) {
-		super(scene.physics.world, scene, {
-			createCallback: function (this: GroupeToile, toile: ToileHuipatPrefab | any) {
-				if (this.getLength() == toile.refEntite.maxBlocages) {
-					this.tempsCumule = 3000;
-					toile.refEntite.poussable = true;
-				} else {
-					this.tempsCumule = 1000;
-				}
-			},
-			removeCallback: function (this: GroupeToile, t: ToileHuipatPrefab | any) {
-				if (this.getLength() == 0) {
-					if (t.refEntite.active)
-					{
-						t.refEntite.body.moves = true;
-					}
-				}
-				t.refEntite.poussable = false;
-			},
-			maxSize: 5
-		});
+		super(scene.physics.world, scene);
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		scene.add.existing(this)
+		this.maxSize = 5;
+		this.createCallback = function (toile: ToileHuipatPrefab | any) {
+			console.log("CREATE CB");
+			
+			if (this.getLength() == toile.refEntite.maxBlocages) {
+				this.tempsCumule = 3000;
+				toile.refEntite.poussable = true;
+			} else {
+				this.tempsCumule = 1000;
+			}
+		}
+		this.removeCallback = function (t: ToileHuipatPrefab | any) {
+			console.log("remove CB");
+			if (this.getLength() == 0) {
+				if (t.refEntite.active) {
+					t.refEntite.body.moves = true;
+				}
+			}
+			t.refEntite.poussable = false;
+		}
 		/* END-USER-CTR-CODE */
 	}
 
@@ -55,6 +56,7 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 		}
 
 	}
+
 
 	animationDeblocage() {
 		this.scene.tweens.add({
