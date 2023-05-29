@@ -61,17 +61,16 @@ export default class Murale extends Araigne {
 					this.detection_grand_saut.body.enable = true;
 
 				this.scene.time.delayedCall(24, () => {
-					if (this.attaqueSautAccessible) {
-						this.actionToucheEspace()
-					}
+					if (this.attaqueSautAccessible) this.actionToucheEspace()
+					else if (Math.random() > 0.5) this.actionToucheHaut()
+					else this.actionToucheBas()
+
 					this.attaqueSautAccessible = false;
 
 					this.detection_grand_saut.body.enable = false;
 				}, undefined, this)				
 				// this.attaqueSautAccessible = false;
 				// if (Math.random() < 0.4 && !this.image.flipY) this.actionToucheEspace()
-				// else if (Math.random() > 0.5) this.actionToucheHaut()
-				// else this.actionToucheBas()
 			},
 			callbackScope: this,
 			loop: true
