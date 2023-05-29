@@ -56,11 +56,11 @@ export default class Murale extends Araigne {
 			delay: 2000,                // ms
 			callback: () => {
 				if (!this.attaqueSautAccessible) {
-					if (Math.random() < 0.5) {
+					if (Math.random() < 0.6) {
 						this.actionToucheHaut()
-					} else if (Math.random() < 0.6) 
+					} else if (Math.random() < 0.3) 
 					{
-						// this.actionToucheBas()
+						this.actionToucheBas()
 					}
 				}
 			},
