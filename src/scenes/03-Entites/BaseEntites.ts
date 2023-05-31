@@ -113,8 +113,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			targets: c1,
 			scale: 1,
 			alpha: 0,
-			yoyo: false,
-			repeat: -1,
+			repeat: 8,
 			ease: 'Sine.easeInOut'
 
 		});
@@ -124,8 +123,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			delay: 500,
 			scale: 1,
 			alpha: 0,
-			yoyo: false,
-			repeat: -1,
+			repeat: 8,
+			onComplete: () => this.destroy(),
 			ease: 'Sine.easeInOut'
 
 		});
@@ -137,7 +136,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			ease: 'Sine.inOut',
 			yoyo: true,
 			duration: 1000,
-			repeat: -1
+			repeat: 8
 		});
 	}
 
