@@ -33,6 +33,8 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	}
 
 	public refEntite!: BaseEntites;
+	public nombrePercutement: number = 0;
+	public maxNombrePercutement: number = 5;
 
 	/* START-USER-CODE */
 	private modeBouleActive: boolean = false
@@ -40,13 +42,27 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
 			this.scene.physics.world.wrap(this, 400);
-			if (this.body.blocked.left) { this.body.setAngularVelocity(450) }
-			else if (this.body.blocked.right) { this.body.setAngularVelocity(-450) }
+			if (this.body.blocked.left) {
+				this.body.setAngularVelocity(450)
+				this.nombrePercutement += 1;
+			}
+			else if (this.body.blocked.right) {
+				this.body.setAngularVelocity(-450)
+				this.nombrePercutement += 1;
+			}
 
 			if (this.suivre) {
-				this.suivre.setPosition(this.x, this.y)				
+				this.suivre.setPosition(this.x, this.y)
 				this.suivre.angle = this.angle;
 			}
+
+			if (this.nombrePercutement === this.maxNombrePercutement) {
+				this.suivre?.detruire()
+				this.suivre?.setAngle(0)
+				this.destroy(true)
+				return
+			}
+
 		}
 	}
 

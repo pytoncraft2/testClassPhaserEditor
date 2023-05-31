@@ -50,6 +50,26 @@
                 "id": "object-var",
                 "expressionType": "BaseEntites"
             }
+        },
+        {
+            "name": "nombrePercutement",
+            "label": "nombrePercutement",
+            "tooltip": "nombre de fois que la boule percute un mur ou une entité",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "maxNombrePercutement",
+            "label": "maxNombrePercutement",
+            "tooltip": "nombre maximum que la boule peut être percuté avant sa déstruction",
+            "defValue": 5,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }
