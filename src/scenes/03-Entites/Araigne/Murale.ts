@@ -50,7 +50,6 @@ export default class Murale extends Araigne {
 	awake(): void {
 		super.awake()
 		this.colision_detecteur_grand_saut.object2 = this.scene.groupe_allies.list;
-		this.scene.time.delayedCall(3000, () => this.detruire())
 	}
 
 	override logiqueDescisionSautIA(): void {

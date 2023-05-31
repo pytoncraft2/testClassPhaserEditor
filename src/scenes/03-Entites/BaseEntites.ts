@@ -99,10 +99,44 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	detruire() {
 		this.activeIA = false;
+		this.body.moves = false;
 		this.body.setVelocity(0)
+		console.log("DETRUIRE ?");
+		
+
+		console.log("X",this.image.x, "xxx", this.x);
+		
+        const r4 = this.scene.add.circle(this.x, this.y, 80, 0x07d9fc);
+        const r5 = this.scene.add.circle(this.x, this.y, 80, 0xffffff);
+        r4.setAlpha(0.5).setScale(0)
+		r5.setAlpha(0.5).setScale(0)
+		this.image.setScale(0.5)
+
+        this.scene.tweens.add({
+
+            targets: r4,
+            scale: 1,
+            alpha: 0,
+            yoyo: false,
+            repeat: -1,
+            ease: 'Sine.easeInOut'
+
+        });
+        this.scene.tweens.add({
+
+            targets: r5,
+            delay: 500,
+            scale: 1,
+            alpha: 0,
+            yoyo: false,
+            repeat: -1,
+            ease: 'Sine.easeInOut'
+
+        });
+
      this.scene.tweens.add({
        targets: this.image,
-       y: "-=90",
+       y: "-=20",
        alpha: 0.5,
        ease: 'Sine.inOut',
        yoyo: true,

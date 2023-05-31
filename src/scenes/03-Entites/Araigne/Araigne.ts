@@ -93,6 +93,7 @@ export default class Araigne extends BaseEntites {
 		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
 		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
 		this.logiqueDescisionSautIA()
+		this.scene.time.delayedCall(4000, () => this.detruire(), undefined, this.scene)
 	}
 
 	logiqueDescisionSautIA()
