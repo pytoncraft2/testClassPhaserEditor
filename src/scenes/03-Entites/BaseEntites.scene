@@ -116,6 +116,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "fusionnable",
+            "label": "fusionnable",
+            "tooltip": "indique si l'action de fusion avec l'entite adverse est disponible",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

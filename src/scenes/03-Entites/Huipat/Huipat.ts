@@ -112,7 +112,7 @@ export default class Huipat extends BaseEntites {
 	}
 
 	verifSiEntiteProcheEtPoussable(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
-		if (adversaire.poussable) {
+		if (adversaire.poussable || adversaire.fusionnable) {
 			return true;			
 		} else {
 			return false;
@@ -120,7 +120,11 @@ export default class Huipat extends BaseEntites {
 	}
 
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
+		console.log("ssssssssssssss");
+		
 		if (adversaire.poussable) {
+			console.log("POUSSABLE");
+			
 			const toileCible: ToileHuipatPrefab | any = adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1];
 			adversaire.groupeBlocage.remove(toileCible);
 			adversaire.groupeBlocage.destroy(true)
@@ -128,6 +132,13 @@ export default class Huipat extends BaseEntites {
 			toileCible.attrape(adversaire)
 			adversaire.scene.groupe_vs_platformes.add(toileCible, true)
 			adversaire.scene.add.existing(toileCible)
+		}
+
+		if (adversaire.fusionnable) {
+			adversaire.image.setScale(1)
+			adversaire.body.moves = true;
+			adversaire.fusionnable = false;
+			this.scene.entiteControllable = adversaire;
 		}
 	}
 

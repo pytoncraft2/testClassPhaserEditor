@@ -45,6 +45,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public activeIA: boolean = false;
 	public refToileImmobilisante!: ToileHuipatPrefab;
 	public poussable: boolean = false;
+	public fusionnable: boolean = false;
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)
@@ -100,6 +101,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	detruire() {
 		this.activeIA = false;
 		this.body.moves = false;
+		this.fusionnable = true;
+		this.body.enable = true;
 		this.body.setVelocity(0)
 		this.image.setScale(0.5)
 
@@ -124,7 +127,12 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			scale: 1,
 			alpha: 0,
 			repeat: 8,
-			onComplete: () => this.destroy(),
+			onComplete: () => 
+			{
+				if (this.fusionnable) {
+					this.destroy()
+				}
+			},
 			ease: 'Sine.easeInOut'
 
 		});

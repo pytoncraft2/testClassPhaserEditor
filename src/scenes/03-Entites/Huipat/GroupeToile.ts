@@ -17,7 +17,6 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 		scene.add.existing(this)
 		this.maxSize = 5;
 		this.createCallback = function (toile: ToileHuipatPrefab | any) {
-			console.log("CREATE CB");
 			
 			if (this.getLength() == toile.refEntite.maxBlocages) {
 				this.tempsCumule = 3000;
@@ -27,7 +26,6 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 			}
 		}
 		this.removeCallback = function (t: ToileHuipatPrefab | any) {
-			console.log("remove CB");
 			if (this.getLength() == 0) {
 				if (t.refEntite.active) {
 					t.refEntite.body.moves = true;

@@ -237,7 +237,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 			toile.destroy()
 			return;
 		}
-		console.log("TOUCHE ENTITE");
 		toile.body.enable = false;
 		toile.body.checkCollision.none = true;
 		toile.body.moves = false
