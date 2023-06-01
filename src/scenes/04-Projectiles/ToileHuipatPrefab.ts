@@ -23,7 +23,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		this.scaleY = 0.28618752828821;
 		scene.physics.add.existing(this, false);
 		this.body.bounce.x = 1;
-		this.body.bounce.y = 0.4;
+		this.body.bounce.y = 1;
 		this.body.collideWorldBounds = true;
 		this.body.setSize(150, 150, false);
 
@@ -35,10 +35,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	public refEntite!: BaseEntites;
 	public nombrePercutement: number = 0;
 	public maxNombrePercutement: number = 5;
+	public modeBouleActive: boolean = false;
+	public entiteSuivie!: undefined | BaseEntites;
 
 	/* START-USER-CODE */
-	private modeBouleActive: boolean = false
-	private suivre: undefined | BaseEntites
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
 			this.scene.physics.world.wrap(this, 400);
@@ -51,14 +51,14 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 				this.nombrePercutement += 1;
 			}
 
-			if (this.suivre) {
-				this.suivre.setPosition(this.x, this.y)
-				this.suivre.angle = this.angle;
+			if (this.entiteSuivie) {
+				this.entiteSuivie.setPosition(this.x, this.y)
+				this.entiteSuivie.angle = this.angle;
 			}
 
 			if (this.nombrePercutement === this.maxNombrePercutement) {
-				this.suivre?.detruire()
-				this.suivre?.setAngle(0)
+				this.entiteSuivie?.detruire()
+				this.entiteSuivie?.setAngle(0)
 				this.destroy(true)
 				return
 			}
@@ -82,7 +82,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		entite.body.moves = true;
 		entite.activeIA = false;
 		entite.body.enable = false;
-		this.suivre = entite;
+		this.entiteSuivie = entite;
 	}
 	/* END-USER-CODE */
 }

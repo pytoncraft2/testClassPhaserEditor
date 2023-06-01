@@ -26,7 +26,7 @@
             "scaleY": 0.28618752828821,
             "ArcadeComponent.active": true,
             "body.bounce.x": 1,
-            "body.bounce.y": 0.4,
+            "body.bounce.y": 1,
             "collideWorldBounds": true,
             "body.width": 150,
             "body.height": 150
@@ -69,6 +69,27 @@
             "customDefinition": false,
             "type": {
                 "id": "number"
+            }
+        },
+        {
+            "name": "modeBouleActive",
+            "label": "modeBouleActive",
+            "tooltip": "indique si le projectile est devenu une boule mouvante",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "entiteSuivie",
+            "label": "entiteSuivie",
+            "tooltip": "entité qui est immobilisé dans la boule",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "undefined | BaseEntites"
             }
         }
     ]
