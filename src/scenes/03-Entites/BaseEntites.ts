@@ -86,10 +86,14 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	activeIA(active: boolean = true): void {
 		if (active) {
-			this.logiqueDescisionActionsIA.paused = false;
+			if (this.logiqueDescisionActionsIA) {
+				this.logiqueDescisionActionsIA.paused = false;
+			}
 			this.estActiveIA = true;
 		} else {
-			this.logiqueDescisionActionsIA.paused = true;
+			if (this.logiqueDescisionActionsIA) {
+				this.logiqueDescisionActionsIA.paused = true;
+			}
 			this.estActiveIA = false;
 		}
 	}

@@ -90,6 +90,7 @@ export default class Araigne extends BaseEntites {
 			delay: 750,
 			callback: () => {
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
+				
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;
 					this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
@@ -99,7 +100,8 @@ export default class Araigne extends BaseEntites {
 				}
 			},
 			callbackScope: this,
-			loop: true
+			loop: true,
+			paused: true
 		});
 	
 	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
@@ -128,10 +130,7 @@ export default class Araigne extends BaseEntites {
 			ease: sautEase,
 			duration: sautDuration,
 			x: this.image.flipX ? this.x - 200 : this.x + 200,
-			// yoyo: true,
 			onComplete: () => {
-				// Créer le tween d'atterrissage une fois que le saut est terminé
-				// this.body.gravity.y += 4900;
 				const landTween = this.scene.tweens.add({
 					targets: this,
 					y: '+=60',
@@ -140,7 +139,6 @@ export default class Araigne extends BaseEntites {
 					duration: landDuration,
 					onComplete: () => {
 						this.image.clearTint()
-						// this.body.gravity.y -= 4900;
 					}
 				});
 			}

@@ -39,36 +39,21 @@ export default class GroupeToile extends Phaser.Physics.Arcade.Group {
 	public tempsAvantDestruction: number = 2000;
 
 	/* START-USER-CODE */
+	// Write your code here.
 	public tempsCumule: number = 0;
 
-	// Write your code here.
 	preUpdate(time: number, delta: number): void {			
 
 		if (this.getLength() > 0) {
 			this.tempsCumule -= delta;
 
 			if (this.tempsCumule <= 0) {
-				this.animationDeblocage()
+				this.getChildren()[this.getLength() - 1].destroy()
 				this.tempsCumule = 1000;
 			}
 		}
 
 	}
-
-
-	animationDeblocage() {
-		this.scene.tweens.add({
-			targets: [this.getChildren()[this.getLength() - 1]],
-			angle: -960,
-			alpha: 0,
-			ease: 'Linear',
-			duration: 1000,
-			onComplete: function (tw, targets) {
-				targets[0].destroy()
-			}
-		});
-	}
-
 	/* END-USER-CODE */
 }
 

@@ -85,6 +85,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 		entite.activeIA(false);
 		entite.body.enable = false;
 	}
+
 	/* END-USER-CODE */
 }
 
