@@ -36,7 +36,7 @@ export default class Murale extends Araigne {
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		this.image.setTexture(this.imageTexture.key, this.imageTexture.frame)
-		this.activeIA = true;
+		this.activeIA(true)
 		this.actionToucheDroite()
 		/* END-USER-CTR-CODE */
 	}
@@ -47,29 +47,25 @@ export default class Murale extends Araigne {
 	public attaqueSautAccessible: boolean = false;
 
 	/* START-USER-CODE */
+	public logiqueDescisionActionsIA = this.scene.time.addEvent({
+		delay: 2000,
+		callback: function (this: Murale) {
+			if (!this.attaqueSautAccessible) {
+				if (Math.random() < 0.6) {
+					this.actionToucheHaut()
+				} else if (Math.random() < 0.3) {
+					this.actionToucheBas()
+				}
+			}
+		},
+		callbackScope: this,
+		loop: true,
+		paused: true
+	});
+
 	awake(): void {
 		super.awake()
 		this.colision_detecteur_grand_saut.object2 = this.scene.groupe_allies.list;
-	}
-
-	override logiqueDescisionSautIA(): void {
-		const repetitionLogique = this.scene.time.addEvent({
-			delay: 2000,                // ms
-			callback: function(this: Murale) {
-				if (!this.active || !this.activeIA) return repetitionLogique.destroy();
-				
-				if (!this.attaqueSautAccessible) {
-					if (Math.random() < 0.6) {
-						this.actionToucheHaut()
-					} else if (Math.random() < 0.3) 
-					{
-						this.actionToucheBas()
-					}
-				}
-			},
-			callbackScope: this,
-			loop: true
-		});
 	}
 
 	actionToucheHaut() {

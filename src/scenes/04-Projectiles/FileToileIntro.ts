@@ -44,7 +44,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 			ease: 'Exponential',
 			onComplete: () => {
 				this.ref.body.allowGravity = true;
-				this.ref.activeIA = true;
+				this.ref.activeIA(true);
 				this.ref.image.flipX ? this.ref.actionToucheDroite() : this.ref.actionToucheGauche()
 				this.destroy(true);
 			}

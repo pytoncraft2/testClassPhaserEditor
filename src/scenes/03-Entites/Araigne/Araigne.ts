@@ -86,22 +86,9 @@ export default class Araigne extends BaseEntites {
 
 	/* START-USER-CODE */
 	// Write your code here.
-
-	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
-
-	awake(): void {
-		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
-		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
-		this.logiqueDescisionSautIA()
-	}
-
-	logiqueDescisionSautIA()
-	{
-		const boucleLogique = this.scene.time.addEvent({
-			delay: this.nombreEntierAuHasard(700, 800),                // ms
+	public logiqueDescisionActionsIA = this.scene.time.addEvent({
+			delay: 750,
 			callback: () => {
-				if (!this.activeIA) return boucleLogique.destroy()
-				
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;
@@ -114,6 +101,12 @@ export default class Araigne extends BaseEntites {
 			callbackScope: this,
 			loop: true
 		});
+	
+	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
+
+	awake(): void {
+		this.colision_detecteur_haut.object2 = this.scene.platformes.list;
+		this.colision_detecteur_bas.object2 = this.scene.platformes.list;
 	}
 
 	/** FONCTIONS D'ACTION QUAND ON APPUIE SUR UNE TOUCHE */
@@ -213,7 +206,7 @@ export default class Araigne extends BaseEntites {
 
 	preUpdate(...args: any[]): void {
 		this.scene.physics.world.wrap(this, 400);
-		if (this.activeIA) this.deplacementIA()
+		if (this.estActiveIA) this.deplacementIA()
 	}
 
 	deplacementIA() {

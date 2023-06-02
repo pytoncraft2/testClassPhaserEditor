@@ -87,16 +87,6 @@
             }
         },
         {
-            "name": "activeIA",
-            "label": "activeIA",
-            "tooltip": "etat de l'activation du mode automatique de l'entite",
-            "defValue": false,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
-        },
-        {
             "name": "refToileImmobilisante",
             "label": "refToileImmobilisante",
             "tooltip": "referance à la toile qui bloque le mouvement de l'entité",
@@ -132,6 +122,16 @@
             "label": "interactionActive",
             "tooltip": "indique si l'interaction par défaut avec l'adversaire est activé",
             "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "estActiveIA",
+            "label": "estActiveIA",
+            "tooltip": "indique s la boucle auto de descision de l'IA est activé",
+            "defValue": false,
             "customDefinition": false,
             "type": {
                 "id": "boolean"

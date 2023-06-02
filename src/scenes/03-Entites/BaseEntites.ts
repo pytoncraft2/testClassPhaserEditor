@@ -28,7 +28,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 				.setInteractive({ cursor: 'pointer' })
 				.on('pointerdown', () => {
 					this.scene.entiteControllable = this;
-					this.activeIA = false;
+					this.activeIA(false);
 					this.scene.scale.startFullscreen()
 				})
 		});
@@ -42,14 +42,15 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public blocages: number = 0;
 	public maxBlocages: number = 5;
 	public invincible: boolean = false;
-	public activeIA: boolean = false;
 	public refToileImmobilisante!: ToileHuipatPrefab;
 	public poussable: boolean = false;
 	public fusionnable: boolean = false;
 	public interactionActive: boolean = true;
+	public estActiveIA: boolean = false;
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)
+	public logiqueDescisionActionsIA!: Phaser.Time.TimerEvent
 
 	// Write your code here.
 	awake() {
@@ -83,6 +84,16 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.image.setFlipX(ouiNon);
 	}
 
+	activeIA(active: boolean = true): void {
+		if (active) {
+			this.logiqueDescisionActionsIA.paused = false;
+			this.estActiveIA = true;
+		} else {
+			this.logiqueDescisionActionsIA.paused = true;
+			this.estActiveIA = false;
+		}
+	}
+
 	enleveVie() {
 		const vies = this.scene.groupe_vie;
 		const { length } = vies;
@@ -100,7 +111,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	detruire() {
-		this.activeIA = false;
+		this.activeIA(false);
 		this.body.moves = true;
 		this.interactionActive = false;
 		this.fusionnable = true;
