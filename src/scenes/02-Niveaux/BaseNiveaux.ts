@@ -256,7 +256,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	/** FONCTIONS DE VERIFICATION AVANT D'EXECUTER LE CALLBACK ENTRE UN ALLIE ET UN ADVERSAIRE */
 
 	ProcessVerifAllieToucheAdversaireProche(allie: BaseEntites, adversaire: BaseEntites) {
-		if (!allie.invincible && adversaire.body.moves) {
+		if (!allie.invincible && adversaire.body.moves && adversaire.interactionActive) {
 			return true;
 		} else {
 			return false;

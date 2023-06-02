@@ -97,9 +97,11 @@ export default class Araigne extends BaseEntites {
 
 	logiqueDescisionSautIA()
 	{
-		this.scene.time.addEvent({
+		const boucleLogique = this.scene.time.addEvent({
 			delay: this.nombreEntierAuHasard(700, 800),                // ms
 			callback: () => {
+				if (!this.activeIA) return boucleLogique.destroy()
+				
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;

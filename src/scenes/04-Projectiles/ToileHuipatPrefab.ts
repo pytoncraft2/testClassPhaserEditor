@@ -61,7 +61,7 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 				this.entiteSuivie?.detruire()
 				this.entiteSuivie?.setAngle(0)
 				this.destroy(true)
-				return
+				// this.modeBouleActive = false;
 			}
 
 		}
@@ -80,10 +80,10 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	}
 
 	attrape(entite: BaseEntites) {
+		this.entiteSuivie = entite;
 		entite.body.moves = true;
 		entite.activeIA = false;
 		entite.body.enable = false;
-		this.entiteSuivie = entite;
 	}
 	/* END-USER-CODE */
 }

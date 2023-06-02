@@ -46,6 +46,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public refToileImmobilisante!: ToileHuipatPrefab;
 	public poussable: boolean = false;
 	public fusionnable: boolean = false;
+	public interactionActive: boolean = true;
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)
@@ -100,7 +101,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 
 	detruire() {
 		this.activeIA = false;
-		this.body.moves = false;
+		this.body.moves = true;
+		this.interactionActive = false;
 		this.fusionnable = true;
 		this.body.enable = true;
 		this.body.setVelocity(0)
@@ -114,6 +116,13 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		const animationObjetFusionnable = this.scene.add.timeline([
 			{
 				at: 0,
+				run: () => {
+					this.body.setVelocityY(-1900);
+					this.body.checkCollision.up = false;
+				},
+			},
+			{
+				at: 100,
 				tween: {
 					targets: c1,
 					scale: 1,
@@ -123,12 +132,26 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 				}
 			},
 			{
+				at: 400,
+				run: () => {
+					this.body.checkCollision.up = true;
+				},
+			},
+			{
 				at: 500,
 				tween: {
 					targets: c2,
 					scale: 1,
 					alpha: 0,
+					x: this.x,
+					y: this.y,
 					repeat: 8,
+					onUpdate: () => {
+						c1.x = this.x;
+						c1.y = this.y;
+						c2.x = this.x;
+						c2.y = this.y;
+					},
 					onComplete: () => {
 						if (this.fusionnable) {
 							this.destroy()
