@@ -39,6 +39,8 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 	public entiteSuivie!: undefined | BaseEntites;
 
 	/* START-USER-CODE */
+	public modeDestructionInstantane = false;
+	public aToucheQqch = false;
 	protected preUpdate(time: number, delta: number): void {
 		if (this.modeBouleActive) {
 			this.scene.physics.world.wrap(this, 400);
@@ -63,6 +65,9 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 				return
 			}
 
+			if (this.modeDestructionInstantane) {
+
+			}
 		}
 	}
 

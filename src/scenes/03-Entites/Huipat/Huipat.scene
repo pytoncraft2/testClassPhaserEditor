@@ -90,6 +90,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "delaiAvantDestructionToile",
+            "label": "delaiAvantDestructionToile",
+            "tooltip": "delai avant la destruction du projectile (porté d'attaque)",
+            "defValue": 300,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

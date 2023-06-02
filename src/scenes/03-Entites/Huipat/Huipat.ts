@@ -58,6 +58,7 @@ export default class Huipat extends BaseEntites {
 	public detecteur_proche: Phaser.GameObjects.Rectangle & { body: Phaser.Physics.Arcade.Body };
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
 	public entiteProcheEtPoussable: boolean = false;
+	public delaiAvantDestructionToile: number = 300;
 
 	/* START-USER-CODE */
 
@@ -103,6 +104,10 @@ export default class Huipat extends BaseEntites {
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
 		this.scene.groupe_projectile_toiles.add(toile);
+
+		this.scene.time.delayedCall(this.delaiAvantDestructionToile, () => {
+			!toile.aToucheQqch && this.scene.groupe_projectile_toiles.remove(toile, true);
+		}, [toile, this.scene.groupe_projectile_toiles], this.scene);
 	}
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')
@@ -120,24 +125,22 @@ export default class Huipat extends BaseEntites {
 	}
 
 	actionSiEntiteProche(rectangle: Phaser.GameObjects.Rectangle, adversaire: BaseEntites) {
-		console.log("ssssssssssssss");
-		
+
 		if (adversaire.poussable) {
-			console.log("POUSSABLE");
-			
-			const toileCible: ToileHuipatPrefab | any = adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1];
+			adversaire.poussable = false;
+			const toileCible = adversaire.groupeBlocage.getChildren()[adversaire.groupeBlocage.getLength() - 1];
 			adversaire.groupeBlocage.remove(toileCible);
-			adversaire.groupeBlocage.destroy(true)
-			toileCible.activePhysiqueBoule(adversaire, (rectangle.parentContainer as BaseEntites).image.flipX)
-			toileCible.attrape(adversaire)
+			adversaire.groupeBlocage.destroy(true);
+			(toileCible as ToileHuipatPrefab).activePhysiqueBoule(adversaire, (rectangle.parentContainer as BaseEntites).image.flipX);
+			(toileCible as ToileHuipatPrefab).attrape(adversaire);
 			adversaire.scene.groupe_vs_platformes.add(toileCible, true)
 			adversaire.scene.add.existing(toileCible)
 		}
 
 		if (adversaire.fusionnable) {
+			adversaire.fusionnable = false;
 			adversaire.image.setScale(1)
 			adversaire.body.moves = true;
-			adversaire.fusionnable = false;
 			this.scene.entiteControllable = adversaire;
 		}
 	}
