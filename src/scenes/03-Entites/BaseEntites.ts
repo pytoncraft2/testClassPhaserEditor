@@ -111,41 +111,47 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		c1.setAlpha(0.5).setScale(0)
 		c2.setAlpha(0.5).setScale(0)
 
-		this.scene.tweens.add({
-
-			targets: c1,
-			scale: 1,
-			alpha: 0,
-			repeat: 8,
-			ease: 'Sine.easeInOut'
-
-		});
-		this.scene.tweens.add({
-
-			targets: c2,
-			delay: 500,
-			scale: 1,
-			alpha: 0,
-			repeat: 8,
-			onComplete: () => 
+		const animationObjetFusionnable = this.scene.add.timeline([
 			{
-				if (this.fusionnable) {
-					this.destroy()
+				at: 0,
+				tween: {
+					targets: c1,
+					scale: 1,
+					alpha: 0,
+					repeat: 8,
+					ease: 'Sine.easeInOut'
 				}
 			},
-			ease: 'Sine.easeInOut'
+			{
+				at: 500,
+				tween: {
+					targets: c2,
+					scale: 1,
+					alpha: 0,
+					repeat: 8,
+					onComplete: () => {
+						if (this.fusionnable) {
+							this.destroy()
+						}
+					},
+					ease: 'Sine.easeInOut'
+				}
+			},
+			{
+				at: 2500,
+				tween: {
+					targets: this.image,
+					y: "-=20",
+					alpha: 0.5,
+					ease: 'Sine.inOut',
+					yoyo: true,
+					duration: 1000,
+					repeat: 8
+				}
+			}
+		]);
 
-		});
-
-		this.scene.tweens.add({
-			targets: this.image,
-			y: "-=20",
-			alpha: 0.5,
-			ease: 'Sine.inOut',
-			yoyo: true,
-			duration: 1000,
-			repeat: 8
-		});
+		animationObjetFusionnable.play();
 	}
 
 	/* END-USER-CODE */

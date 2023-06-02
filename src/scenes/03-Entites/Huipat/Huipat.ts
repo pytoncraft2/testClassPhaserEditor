@@ -135,13 +135,14 @@ export default class Huipat extends BaseEntites {
 			(toileCible as ToileHuipatPrefab).attrape(adversaire);
 			adversaire.scene.groupe_vs_platformes.add(toileCible, true)
 			adversaire.scene.add.existing(toileCible)
+			return;
 		}
 
 		if (adversaire.fusionnable) {
+			this.scene.entiteControllable = adversaire;
 			adversaire.fusionnable = false;
 			adversaire.image.setScale(1)
 			adversaire.body.moves = true;
-			this.scene.entiteControllable = adversaire;
 		}
 	}
 

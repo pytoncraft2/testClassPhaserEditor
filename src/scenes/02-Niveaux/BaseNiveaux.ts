@@ -291,7 +291,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	toileMouvanteToucheAdversaire(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 		if (!adversaire.fusionnable) {
 			toile.nombrePercutement += 1;
-			adversaire.detruire()
+			adversaire.detruire();
 		}
 	}
 	/* END-USER-CODE */

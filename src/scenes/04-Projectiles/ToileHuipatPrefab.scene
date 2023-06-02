@@ -91,6 +91,16 @@
                 "id": "object-var",
                 "expressionType": "undefined | BaseEntites"
             }
+        },
+        {
+            "name": "aToucheQqch",
+            "label": "aToucheQqch",
+            "tooltip": "indique si la toile a déja touché qqu pour pas le toucher  2 fois",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }
