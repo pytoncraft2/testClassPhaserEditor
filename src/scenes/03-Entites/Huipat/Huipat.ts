@@ -107,7 +107,7 @@ export default class Huipat extends BaseEntites {
 
 		this.scene.time.delayedCall(this.delaiAvantDestructionToile, () => {
 			!toile.aToucheQqch && this.scene.groupe_projectile_toiles.remove(toile, true);
-		}, [toile, this.scene.groupe_projectile_toiles], this.scene);
+		});
 	}
 
 	deplaceDetecteurs(emplacement: 'Left' | 'Right')

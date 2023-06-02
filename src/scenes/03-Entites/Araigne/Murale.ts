@@ -53,9 +53,11 @@ export default class Murale extends Araigne {
 	}
 
 	override logiqueDescisionSautIA(): void {
-		this.scene.time.addEvent({
+		const repetitionLogique = this.scene.time.addEvent({
 			delay: 2000,                // ms
-			callback: () => {
+			callback: function(this: Murale, a: any, b: any, c: any) {
+				if (!this.active) return repetitionLogique.destroy();
+				
 				if (!this.attaqueSautAccessible) {
 					if (Math.random() < 0.6) {
 						this.actionToucheHaut()

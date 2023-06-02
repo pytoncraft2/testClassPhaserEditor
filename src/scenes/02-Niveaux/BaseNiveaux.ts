@@ -287,6 +287,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 			allie.invincible = false;
 		});
 	}
+
+	toileMouvanteToucheAdversaire(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
+		if (!adversaire.fusionnable) {
+			adversaire.detruire()
+		}
+	}
 	/* END-USER-CODE */
 }
 

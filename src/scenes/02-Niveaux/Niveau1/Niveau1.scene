@@ -375,10 +375,11 @@
         {
             "id": "527c72ee-5f2f-43c8-8308-bcf8e5150b4f",
             "type": "Collider",
-            "label": "allies_vs_toilemouvante",
+            "label": "adversaire_vs_toilemouvante",
             "scope": "METHOD",
             "object1": "groupe_vs_platformes.list",
-            "object2": "groupe_allies.list"
+            "object2": "groupe_adversaires.list",
+            "collideCallback": "this.toileMouvanteToucheAdversaire as any"
         }
     ],
     "meta": {
