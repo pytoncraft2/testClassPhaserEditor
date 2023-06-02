@@ -379,6 +379,7 @@
             "scope": "METHOD",
             "object1": "groupe_vs_platformes.list",
             "object2": "groupe_adversaires.list",
+            "overlapOnly": true,
             "collideCallback": "this.toileMouvanteToucheAdversaire as any"
         }
     ],

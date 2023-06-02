@@ -156,7 +156,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const platformes_vs_toilemouvante = this.physics.add.collider(platformes.list, groupe_vs_platformes.list);
 
 		// adversaire_vs_toilemouvante
-		const adversaire_vs_toilemouvante = this.physics.add.collider(groupe_vs_platformes.list, groupe_adversaires.list, this.toileMouvanteToucheAdversaire as any);
+		const adversaire_vs_toilemouvante = this.physics.add.overlap(groupe_vs_platformes.list, groupe_adversaires.list, this.toileMouvanteToucheAdversaire as any);
 
 		// fileToileIntro (prefab fields)
 		fileToileIntro.ref = araigne_3;
