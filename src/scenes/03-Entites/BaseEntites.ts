@@ -39,10 +39,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public velociteY: number = 890;
 	public graviteY: number = 1000;
 	public velociteX: number = 350;
-	public blocages: number = 0;
 	public maxBlocages: number = 5;
 	public invincible: boolean = false;
-	public refToileImmobilisante!: ToileHuipatPrefab;
 	public poussable: boolean = false;
 	public fusionnable: boolean = false;
 	public interactionActive: boolean = true;
