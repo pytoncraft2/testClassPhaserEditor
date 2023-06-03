@@ -87,22 +87,22 @@ export default class Araigne extends BaseEntites {
 	/* START-USER-CODE */
 	// Write your code here.
 	public logiqueDescisionActionsIA = this.scene.time.addEvent({
-			delay: 750,
-			callback: () => {
-				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
+		delay: 750,
+		callback: () => {
+			this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
 
-				if (Math.random() < 0.5) {
-					this.sautEnHautActivable = false;
-					this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
-				} else {
-					this.sautEnHautActivable = true;
-					this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
-				}
-			},
-			callbackScope: this,
-			loop: true,
-			paused: true
-		});
+			if (Math.random() < 0.5) {
+				this.sautEnHautActivable = false;
+				this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
+			} else {
+				this.sautEnHautActivable = true;
+				this.detecteur_haut.setPosition(this.detecteur_haut.x, -132);
+			}
+		},
+		callbackScope: this,
+		loop: true,
+		paused: true
+	});
 	
 	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
 

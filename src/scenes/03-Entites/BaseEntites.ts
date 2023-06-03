@@ -162,10 +162,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 					y: this.y,
 					repeat: 8,
 					onUpdate: () => {
-						c1.x = this.x;
-						c1.y = this.y;
-						c2.x = this.x;
-						c2.y = this.y;
+						c1.setPosition(this.x,this.y)
+						c2.setPosition(this.x, this.y)
 					},
 					onComplete: () => {
 						if (this.fusionnable) {

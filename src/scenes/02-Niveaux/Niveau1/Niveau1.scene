@@ -158,6 +158,20 @@
                     "label": "container_1",
                     "x": 596,
                     "y": 467
+                },
+                {
+                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
+                    "id": "503a2f59-0176-4612-a706-e9daff720a49",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "estActiveIA"
+                    ],
+                    "label": "huipat_1",
+                    "useGameObjectName": true,
+                    "estActiveIA": true,
+                    "x": 172,
+                    "y": 416
                 }
             ]
         },
@@ -396,7 +410,8 @@
             "objectIds": [
                 "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                 "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
-                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a"
+                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a",
+                "503a2f59-0176-4612-a706-e9daff720a49"
             ]
         }
     ]

@@ -59,6 +59,15 @@ export default class Huipat extends BaseEntites {
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
 	public entiteProcheEtPoussable: boolean = false;
 	public delaiAvantDestructionToile: number = 300;
+	public logiqueDescisionActionsIA = this.scene.time.addEvent({
+		delay: 750,
+		callback: () => {
+			this.actionToucheEspace()
+		},
+		callbackScope: this,
+		loop: true,
+		paused: true
+	});
 
 	/* START-USER-CODE */
 
