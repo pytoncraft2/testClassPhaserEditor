@@ -132,7 +132,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			{
 				at: 0,
 				run: () => {
-					this.body.setVelocityY(-1900);
+					this.body.setVelocityY(-Phaser.Math.Between(1000, 1800));
 					this.body.checkCollision.up = false;
 				},
 			},
@@ -173,18 +173,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 						}
 					},
 					ease: 'Sine.easeInOut'
-				}
-			},
-			{
-				at: 2500,
-				tween: {
-					targets: this.image,
-					y: "-=20",
-					alpha: 0.5,
-					ease: 'Sine.inOut',
-					yoyo: true,
-					duration: 1000,
-					repeat: 8
 				}
 			}
 		]);

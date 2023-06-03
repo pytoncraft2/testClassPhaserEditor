@@ -81,7 +81,7 @@ export default class Araigne extends BaseEntites {
 	public platformeEnHaut: boolean = false;
 	public peutChangerDePlatforme: boolean = false;
 	public sautEnHautActivable: boolean = false;
-	public velociteX: number = 300;
+	public velociteX: number = 390;
 	public imageTexture: {key:string,frame?:string|number} = {"key":"araigne","frame":"araigne.png"};
 
 	/* START-USER-CODE */
@@ -90,7 +90,7 @@ export default class Araigne extends BaseEntites {
 			delay: 750,
 			callback: () => {
 				this.peutChangerDePlatforme = !this.peutChangerDePlatforme;
-				
+
 				if (Math.random() < 0.5) {
 					this.sautEnHautActivable = false;
 					this.detecteur_haut.setPosition(this.detecteur_haut.x, this.image.flipY ? 170 : 270);
