@@ -77,6 +77,12 @@
                 "key": "garcon"
             },
             {
+                "atlasURL": "assets/entites/guepe.json",
+                "textureURL": "assets/entites/guepe.png",
+                "type": "atlas",
+                "key": "guepe"
+            },
+            {
                 "atlasURL": "assets/entites/huipat.json",
                 "textureURL": "assets/entites/huipat.png",
                 "type": "atlas",

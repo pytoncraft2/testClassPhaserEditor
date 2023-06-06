@@ -88,7 +88,7 @@
                         "x",
                         "y"
                     ],
-                    "label": "huipat_",
+                    "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "x": 0,
@@ -106,19 +106,6 @@
                             "originY": 0.5
                         }
                     ]
-                },
-                {
-                    "prefabId": "6d0e3b63-b2a2-43fc-b139-c0070fcdc5e7",
-                    "id": "53c9abc4-0e87-4d88-afcc-8df6a9daaee2",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "huipat",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "x": -995,
-                    "y": 295
                 }
             ]
         },
@@ -173,17 +160,15 @@
                     "y": 467
                 },
                 {
-                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
-                    "id": "503a2f59-0176-4612-a706-e9daff720a49",
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "bbabdfa2-9e54-46be-9d35-d2c7f42044c4",
                     "unlock": [
                         "x",
-                        "y",
-                        "estActiveIA"
+                        "y"
                     ],
-                    "label": "huipat_1",
-                    "useGameObjectName": true,
-                    "x": 172,
-                    "y": 416
+                    "label": "guepe",
+                    "x": 717,
+                    "y": 648
                 }
             ]
         },
@@ -422,8 +407,7 @@
             "objectIds": [
                 "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                 "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
-                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a",
-                "503a2f59-0176-4612-a706-e9daff720a49"
+                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a"
             ]
         }
     ]

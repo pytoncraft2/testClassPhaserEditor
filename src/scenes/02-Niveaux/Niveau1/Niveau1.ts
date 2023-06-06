@@ -6,9 +6,9 @@
 import BaseNiveaux from "../BaseNiveaux";
 import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
-import Fille from "../../03-Entites/Fille/Fille";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import Murale from "../../03-Entites/Araigne/Murale";
+import Guepe from "../../03-Entites/Guepe/Guepe";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
@@ -45,16 +45,11 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_allies
 		const groupe_allies = this.add.container(1647, 416);
 
-		// huipat_
-		const huipat_ = new Huipat(this, 0, 0);
-		huipat_.name = "huipat_";
-		groupe_allies.add(huipat_);
-		huipat_.image.setOrigin(0.5, 0.5);
-
 		// huipat
-		const huipat = new Fille(this, -995, 295);
+		const huipat = new Huipat(this, 0, 0);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
+		huipat.image.setOrigin(0.5, 0.5);
 
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(0, 0);
@@ -75,10 +70,9 @@ export default class Niveau1 extends BaseNiveaux {
 		const container_1 = new Murale(this, 596, 467);
 		groupe_adversaires.add(container_1);
 
-		// huipat_1
-		const huipat_1 = new Huipat(this, 172, 416);
-		huipat_1.name = "huipat_1";
-		groupe_adversaires.add(huipat_1);
+		// guepe
+		const guepe = new Guepe(this, 717, 648);
+		groupe_adversaires.add(guepe);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
@@ -152,7 +146,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne, huipat_1];
+		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne];
 
 		// platformes_vs_entites
 		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
@@ -188,7 +182,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
-		this.huipat_ = huipat_;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
@@ -200,14 +193,13 @@ export default class Niveau1 extends BaseNiveaux {
 		this.events.emit("scene-awake");
 	}
 
-	public huipat_!: Huipat;
-	public huipat!: Fille;
+	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
-	private liste_toile_vs_adversaire!: Array<Araigne|Huipat>;
+	private liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */
 

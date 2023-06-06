@@ -1,0 +1,35 @@
+{
+	"frames": {
+		"guepe.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 216,
+				"h": 175
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 216,
+				"h": 175
+			},
+			"sourceSize": {
+				"w": 216,
+				"h": 175
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 218,
+			"h": 177
+		},
+		"scale": "1"
+	}
+}

@@ -1,5 +1,5 @@
 {
-    "id": "3dc2970e-7c78-4176-9ecf-dab31621b6b6",
+    "id": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -15,25 +15,22 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "81ee027f-dced-4110-9f2f-227fd78db728",
+            "id": "6ac9285c-35bb-4c5d-95d4-137aa8dd9780",
             "label": "container_2",
             "ArcadeComponent.active": true,
-            "body.width": 319.06806329427366,
-            "body.height": 293.08532198366504,
-            "body.offset.x": -159.53403164713683,
-            "body.offset.y": -146.54266099183252,
+            "allowGravity": false,
+            "body.width": 64,
+            "body.height": 64,
             "list": [
                 {
                     "type": "Sprite",
-                    "id": "7a650ac5-3760-457c-8fbf-3368b67ef132",
+                    "id": "bc13f446-a642-4507-a0dc-7e4f420a274c",
                     "label": "image",
                     "scope": "NESTED_PREFAB",
                     "texture": {
-                        "key": "garcon",
-                        "frame": "boy_idle1.png"
-                    },
-                    "scaleX": 0.5196548262121721,
-                    "scaleY": 0.5196548262121721
+                        "key": "guepe",
+                        "frame": "guepe.png"
+                    }
                 }
             ]
         }
