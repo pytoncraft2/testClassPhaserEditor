@@ -1,0 +1,248 @@
+{
+    "anims": [
+        {
+            "key": "fille_marche",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "fille",
+                    "frame": "RunRight01.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "fille",
+                    "frame": "RunRight02.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "fille",
+                    "frame": "RunRight03.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "fille",
+                    "frame": "RunRight04.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "showBeforeDelay": false
+        },
+        {
+            "key": "garcon_marche",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "garcon",
+                    "frame": "boy_run1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run11.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run12.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run13.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run14.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run15.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run4.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run5.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run6.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run7.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run8.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_run9.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "showBeforeDelay": false
+        },
+        {
+            "key": "garcon_saute",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump1.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump10.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump11.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump12.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump13.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump14.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump15.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump2.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump3.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump4.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump5.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump6.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump7.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump8.png",
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "garcon",
+                    "frame": "boy_jump9.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1,
+            "showBeforeDelay": false
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
+    }
+}

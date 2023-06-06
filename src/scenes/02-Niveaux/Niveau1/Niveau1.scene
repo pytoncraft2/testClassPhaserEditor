@@ -88,7 +88,7 @@
                         "x",
                         "y"
                     ],
-                    "label": "huipat",
+                    "label": "huipat_",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "x": 0,
@@ -106,6 +106,19 @@
                             "originY": 0.5
                         }
                     ]
+                },
+                {
+                    "prefabId": "6d0e3b63-b2a2-43fc-b139-c0070fcdc5e7",
+                    "id": "53c9abc4-0e87-4d88-afcc-8df6a9daaee2",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": -995,
+                    "y": 295
                 }
             ]
         },
@@ -169,7 +182,6 @@
                     ],
                     "label": "huipat_1",
                     "useGameObjectName": true,
-                    "estActiveIA": true,
                     "x": 172,
                     "y": 416
                 }

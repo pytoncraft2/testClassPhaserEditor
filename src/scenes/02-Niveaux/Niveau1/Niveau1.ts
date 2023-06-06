@@ -6,6 +6,7 @@
 import BaseNiveaux from "../BaseNiveaux";
 import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
+import Fille from "../../03-Entites/Fille/Fille";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import Murale from "../../03-Entites/Araigne/Murale";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
@@ -44,11 +45,16 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_allies
 		const groupe_allies = this.add.container(1647, 416);
 
+		// huipat_
+		const huipat_ = new Huipat(this, 0, 0);
+		huipat_.name = "huipat_";
+		groupe_allies.add(huipat_);
+		huipat_.image.setOrigin(0.5, 0.5);
+
 		// huipat
-		const huipat = new Huipat(this, 0, 0);
+		const huipat = new Fille(this, -995, 295);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
-		huipat.image.setOrigin(0.5, 0.5);
 
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(0, 0);
@@ -179,12 +185,10 @@ export default class Niveau1 extends BaseNiveaux {
 		fileToileIntro_2.longueurFile = 2.8;
 		fileToileIntro_2.delaiAvantActivation = 2000;
 
-		// huipat_1 (prefab fields)
-		huipat_1.estActiveIA = true;
-
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		this.huipat_ = huipat_;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
@@ -196,7 +200,8 @@ export default class Niveau1 extends BaseNiveaux {
 		this.events.emit("scene-awake");
 	}
 
-	public huipat!: Huipat;
+	public huipat_!: Huipat;
+	public huipat!: Fille;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;

@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
                 "atlasURL": "assets/entites/araigne.json",
                 "textureURL": "assets/entites/araigne.png",
                 "type": "atlas",
@@ -26,6 +31,19 @@
                 "key": "bouton_1"
             },
             {
+                "url": "assets/entites/boy_atlas.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 32,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "boy_atlas"
+            },
+            {
                 "atlasURL": "assets/entites/chauve_souris.json",
                 "textureURL": "assets/entites/chauve_souris.png",
                 "type": "atlas",
@@ -42,9 +60,21 @@
                 "key": "coeur"
             },
             {
+                "atlasURL": "assets/entites/fille.json",
+                "textureURL": "assets/entites/fille.png",
+                "type": "atlas",
+                "key": "fille"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
+            },
+            {
+                "atlasURL": "assets/entites/garcon.json",
+                "textureURL": "assets/entites/garcon.png",
+                "type": "atlas",
+                "key": "garcon"
             },
             {
                 "atlasURL": "assets/entites/huipat.json",

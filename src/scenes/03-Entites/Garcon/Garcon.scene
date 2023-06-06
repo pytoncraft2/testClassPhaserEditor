@@ -1,0 +1,48 @@
+{
+    "id": "3dc2970e-7c78-4176-9ecf-dab31621b6b6",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseEntites",
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "81ee027f-dced-4110-9f2f-227fd78db728",
+            "label": "container_2",
+            "ArcadeComponent.active": true,
+            "body.width": 319.06806329427366,
+            "body.height": 293.08532198366504,
+            "body.offset.x": -159.53403164713683,
+            "body.offset.y": -146.54266099183252,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "7a650ac5-3760-457c-8fbf-3368b67ef132",
+                    "label": "image",
+                    "scope": "NESTED_PREFAB",
+                    "texture": {
+                        "key": "garcon",
+                        "frame": "boy_idle1.png"
+                    },
+                    "scaleX": 0.5196548262121721,
+                    "scaleY": 0.5196548262121721
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}

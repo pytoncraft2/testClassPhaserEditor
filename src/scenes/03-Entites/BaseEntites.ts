@@ -12,7 +12,6 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Niveau1 from "../02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "../02-Niveaux/Niveau2/Niveau2";
-import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
 import GroupeToile from "./Huipat/GroupeToile";
 /* END-USER-IMPORTS */
 
@@ -60,17 +59,17 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 	actionToucheGauche() {
 		this.image.setFlipX(true);
-		this.body.setVelocityX(-300);
+		this.body.setVelocityX(-this.velociteX);
 	}
 	actionToucheDroite() {
 		this.image.setFlipX(false);
-		this.body.setVelocityX(300);
+		this.body.setVelocityX(this.velociteX);
 	}
 	actionToucheHaut() {
-		this.body.setVelocityY(-900);
+		this.body.setVelocityY(-this.velociteY);
 	}
 	actionToucheBas() {
-		this.body.setVelocityY(900);
+		this.body.setVelocityY(this.velociteY);
 	}
 	aucuneTouche() {
 		this.body.setVelocityX(0);
