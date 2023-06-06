@@ -28,6 +28,20 @@ export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
 
+		// fleur_rouge_png
+		this.add.image(1358, 937, "fleurs", "fleur_rouge.png");
+
+		// fleur_rose_png
+		const fleur_rose_png = this.add.image(1032, 535, "fleurs", "fleur_rose.png");
+		fleur_rose_png.flipX = true;
+
+		// fleur_orange_png
+		const fleur_orange_png = this.add.image(1224, 136, "fleurs", "fleur_orange.png");
+		fleur_orange_png.flipX = true;
+
+		// fleur_bleu_png
+		this.add.image(376, 537, "fleurs", "fleur_bleu.png");
+
 		// fileToileIntro
 		const fileToileIntro = new FileToileIntro(this, 172, -7);
 		this.add.existing(fileToileIntro);

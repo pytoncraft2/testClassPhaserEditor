@@ -66,6 +66,22 @@
                 "key": "fille"
             },
             {
+                "url": "assets/entites/fleur.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "fleur"
+            },
+            {
+                "atlasURL": "assets/entites/fleurs.json",
+                "textureURL": "assets/entites/fleurs.png",
+                "type": "atlas",
+                "key": "fleurs"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"

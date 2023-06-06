@@ -16,6 +16,52 @@
     },
     "displayList": [
         {
+            "type": "Image",
+            "id": "8105f1d9-238f-4567-b2df-7d392aa2984b",
+            "label": "fleur_rouge_png",
+            "texture": {
+                "key": "fleurs",
+                "frame": "fleur_rouge.png"
+            },
+            "x": 1358,
+            "y": 937
+        },
+        {
+            "type": "Image",
+            "id": "d1d9dc93-e002-4a01-b454-e75e91c1cd61",
+            "label": "fleur_rose_png",
+            "texture": {
+                "key": "fleurs",
+                "frame": "fleur_rose.png"
+            },
+            "x": 1032,
+            "y": 535,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "4357d5ca-1e1a-4146-9a47-06a6b14539e3",
+            "label": "fleur_orange_png",
+            "texture": {
+                "key": "fleurs",
+                "frame": "fleur_orange.png"
+            },
+            "x": 1224,
+            "y": 136,
+            "flipX": true
+        },
+        {
+            "type": "Image",
+            "id": "c8b869da-85aa-4897-b177-37c27a3d045e",
+            "label": "fleur_bleu_png",
+            "texture": {
+                "key": "fleurs",
+                "frame": "fleur_bleu.png"
+            },
+            "x": 376,
+            "y": 537
+        },
+        {
             "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
             "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
             "unlock": [
