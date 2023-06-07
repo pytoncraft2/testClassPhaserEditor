@@ -35,6 +35,8 @@ export default class Guepe extends BaseEntites {
 		this.add(image);
 
 		this.image = image;
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -44,10 +46,16 @@ export default class Guepe extends BaseEntites {
 	public image: Phaser.GameObjects.Sprite;
 	public indexCibleCourante: number = 0;
 	public lignes: Phaser.GameObjects.Graphics = this.scene.add.graphics();
-	public listeCibles: Phaser.GameObjects.Image[] = [this.scene.fleur_bleu,this.scene.fleur_rouge];
+	public listeCibles!: any;
 	public estActiveIA: boolean = true;
 
 	/* START-USER-CODE */
+
+	awake(): void {
+		super.awake()
+		this.listeCibles = this.scene.fleurs.list;
+		console.log("MY AWAKE");
+	}
 	public tempCumuleReajustement: number = 0;
 
 	actionToucheDroite(): void {
@@ -68,6 +76,13 @@ export default class Guepe extends BaseEntites {
 		this.body.setAccelerationY(1900);
 	}
 
+	actionToucheEspace(): void {
+		this.indexCibleCourante++;
+		let index = this.indexCibleCourante % this.listeCibles.length;
+		this.indexCibleCourante = index;
+		this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 500);
+	}
+
 	aucuneTouche(): void {
         this.body.setAcceleration(0, 0);
 	}
@@ -82,25 +97,54 @@ export default class Guepe extends BaseEntites {
             // .lineBetween(furthest.center.x, furthest.center.y, this.cursor.x, this.cursor.y);
 
 			if (this.listeCibles.length > 0) {
-				if (this.listeCibles) {
-					this.tempCumuleReajustement += delta;
+
+				if (this.listeCibles[this.indexCibleCourante]) {
+
+					// const distance = Phaser.Math.Distance.BetweenPoints(this.source.body.center, this.target);
+					const distance = Phaser.Math.Distance.BetweenPoints({ x: this.x, y: this.y }, { x: this.listeCibles[this.indexCibleCourante].x, y: this.listeCibles[this.indexCibleCourante].y });
+					this.body.velocity.x > 0 ? this.image.setFlipX(false) : this.image.setFlipX(true)
+
+					if (this.body.speed > 0) {
+						// Set a maximum velocity
+						this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 200);
+						// Scale down based on distance, starting from 20px away
+						this.body.velocity.scale(
+							Phaser.Math.SmoothStep(distance, 0, 20)
+						);
+
+						if (distance < 8) {
+							// Close enough
+							this.body.reset(this.listeCibles[this.indexCibleCourante].x, this.listeCibles[this.indexCibleCourante].y);
+							this.actionToucheEspace()
+							console.log("ASSER PROCHE");
 
 
-					const distance = Phaser.Math.Distance.BetweenPoints({x: this.x, y: this.y}, {x: this.scene.fleur_bleu.x, y: this.scene.fleur_bleu.y});
-					console.log(distance);
-
-					if (this.tempCumuleReajustement >= 1000) {
-						if (distance > 300) {
-							this.actionToucheGauche()
-						} else if (distance < 300) {
-							this.actionToucheDroite()
+							this.body.debugBodyColor = 0xff0000;
 						}
-						this.tempCumuleReajustement = 0
-
+						else {
+							this.body.debugBodyColor = 0xffff00;
+						}
 					}
-
-					
 				}
+				// if (this.listeCibles) {
+				// 	this.tempCumuleReajustement += delta;
+
+
+				// 	const distance = Phaser.Math.Distance.BetweenPoints({x: this.x, y: this.y}, {x: this.scene.fleur_bleu.x, y: this.scene.fleur_bleu.y});
+				// 	console.log(distance);
+
+				// 	if (this.tempCumuleReajustement >= 1000) {
+				// 		if (distance > 300) {
+				// 			this.actionToucheGauche()
+				// 		} else if (distance < 300) {
+				// 			this.actionToucheDroite()
+				// 		}
+				// 		this.tempCumuleReajustement = 0
+
+				// 	}
+
+
+				// }
 			}
 
 		// if (this.listeCibles.length) {

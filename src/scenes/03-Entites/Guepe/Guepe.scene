@@ -4,6 +4,7 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "generateAwakeHandler": true,
         "superClassName": "BaseEntites",
         "preloadMethodName": "",
         "preloadPackFiles": [],
@@ -78,11 +79,11 @@
             "name": "listeCibles",
             "label": "listeCibles",
             "tooltip": "liste des cibles de la guepe",
-            "defValue": "[this.scene.fleur_bleu,this.scene.fleur_rouge]",
+            "defValue": "",
             "customDefinition": false,
             "type": {
                 "id": "object-var",
-                "expressionType": "Phaser.GameObjects.Image[]"
+                "expressionType": "any"
             }
         },
         {

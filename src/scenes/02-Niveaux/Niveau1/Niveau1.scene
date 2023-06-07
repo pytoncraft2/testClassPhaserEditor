@@ -16,52 +16,58 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "8105f1d9-238f-4567-b2df-7d392aa2984b",
-            "label": "fleur_rouge",
+            "type": "Layer",
+            "id": "d0db71c6-3a0f-4cfa-9bba-eb77175be966",
+            "label": "fleurs",
             "scope": "PUBLIC",
-            "texture": {
-                "key": "fleurs",
-                "frame": "fleur_rouge.png"
-            },
-            "x": 1358,
-            "y": 937
-        },
-        {
-            "type": "Image",
-            "id": "d1d9dc93-e002-4a01-b454-e75e91c1cd61",
-            "label": "fleur_rose_png",
-            "texture": {
-                "key": "fleurs",
-                "frame": "fleur_rose.png"
-            },
-            "x": 1032,
-            "y": 535,
-            "flipX": true
-        },
-        {
-            "type": "Image",
-            "id": "4357d5ca-1e1a-4146-9a47-06a6b14539e3",
-            "label": "fleur_orange_png",
-            "texture": {
-                "key": "fleurs",
-                "frame": "fleur_orange.png"
-            },
-            "x": 1224,
-            "y": 136,
-            "flipX": true
-        },
-        {
-            "type": "Image",
-            "id": "c8b869da-85aa-4897-b177-37c27a3d045e",
-            "label": "fleur_bleu",
-            "scope": "PUBLIC",
-            "texture": {
-                "key": "fleurs",
-                "frame": "fleur_bleu.png"
-            },
-            "x": 376,
-            "y": 537
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "8105f1d9-238f-4567-b2df-7d392aa2984b",
+                    "label": "fleur_rouge",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rouge.png"
+                    },
+                    "x": 1358,
+                    "y": 946
+                },
+                {
+                    "type": "Image",
+                    "id": "d1d9dc93-e002-4a01-b454-e75e91c1cd61",
+                    "label": "fleur_rose_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rose.png"
+                    },
+                    "x": 1094,
+                    "y": 547,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "4357d5ca-1e1a-4146-9a47-06a6b14539e3",
+                    "label": "fleur_orange",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_orange.png"
+                    },
+                    "x": 1224,
+                    "y": 148,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c8b869da-85aa-4897-b177-37c27a3d045e",
+                    "label": "fleur_bleu",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_bleu.png"
+                    },
+                    "x": 376,
+                    "y": 547
+                }
+            ]
         },
         {
             "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
@@ -102,7 +108,7 @@
             "longueurFile": 5.9,
             "delaiAvantActivation": 3000,
             "x": 1767,
-            "y": -7
+            "y": 3
         },
         {
             "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
@@ -119,7 +125,7 @@
             "longueurFile": 2.8,
             "delaiAvantActivation": 2000,
             "x": 954,
-            "y": -11
+            "y": -1
         },
         {
             "type": "Container",
@@ -127,7 +133,7 @@
             "label": "groupe_allies",
             "scope": "PUBLIC",
             "x": 1647,
-            "y": 416,
+            "y": 426,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
@@ -162,6 +168,7 @@
             "id": "e1dcddaf-e967-413a-9b0c-8f47269e902b",
             "label": "groupe_adversaires",
             "scope": "PUBLIC",
+            "y": 10,
             "list": [
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
@@ -225,6 +232,7 @@
             "id": "ace32157-9a3d-4377-bee8-2eed691a6f84",
             "label": "platformes",
             "scope": "PUBLIC",
+            "y": 10,
             "list": [
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -352,14 +360,15 @@
             "type": "Container",
             "id": "584fb704-ce76-4223-8f4a-a72f44035041",
             "label": "groupe_projectile_toiles",
-            "scope": "PUBLIC"
+            "scope": "PUBLIC",
+            "y": 10
         },
         {
             "type": "Text",
             "id": "973a0104-f496-4480-b2e2-58e10e7be6ba",
             "label": "text_1",
             "x": 1631,
-            "y": 70,
+            "y": 80,
             "text": "New text",
             "fontSize": "36px",
             "list": [
