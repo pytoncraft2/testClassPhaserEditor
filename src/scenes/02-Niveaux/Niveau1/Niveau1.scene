@@ -18,7 +18,8 @@
         {
             "type": "Image",
             "id": "8105f1d9-238f-4567-b2df-7d392aa2984b",
-            "label": "fleur_rouge_png",
+            "label": "fleur_rouge",
+            "scope": "PUBLIC",
             "texture": {
                 "key": "fleurs",
                 "frame": "fleur_rouge.png"
@@ -53,7 +54,8 @@
         {
             "type": "Image",
             "id": "c8b869da-85aa-4897-b177-37c27a3d045e",
-            "label": "fleur_bleu_png",
+            "label": "fleur_bleu",
+            "scope": "PUBLIC",
             "texture": {
                 "key": "fleurs",
                 "frame": "fleur_bleu.png"

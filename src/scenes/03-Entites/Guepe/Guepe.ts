@@ -42,8 +42,13 @@ export default class Guepe extends BaseEntites {
 	}
 
 	public image: Phaser.GameObjects.Sprite;
+	public indexCibleCourante: number = 0;
+	public lignes: Phaser.GameObjects.Graphics = this.scene.add.graphics();
+	public listeCibles: Phaser.GameObjects.Image[] = [this.scene.fleur_bleu,this.scene.fleur_rouge];
+	public estActiveIA: boolean = true;
 
 	/* START-USER-CODE */
+	public tempCumuleReajustement: number = 0;
 
 	actionToucheDroite(): void {
 		this.image.setFlipX(false)
@@ -67,6 +72,47 @@ export default class Guepe extends BaseEntites {
         this.body.setAcceleration(0, 0);
 	}
 
+	preUpdate(time: any, delta: any): void {
+		this.scene.physics.world.wrap(this, 400);
+
+        // this.lignes.clear()
+        //     .lineStyle(2, 0xff3300)
+        //     .lineBetween(this.x, this.y, this.scene.fleur_bleu.x, this.scene.fleur_bleu.y)
+        //     .lineStyle(2, 0x0099ff)
+            // .lineBetween(furthest.center.x, furthest.center.y, this.cursor.x, this.cursor.y);
+
+			if (this.listeCibles.length > 0) {
+				if (this.listeCibles) {
+					this.tempCumuleReajustement += delta;
+
+
+					const distance = Phaser.Math.Distance.BetweenPoints({x: this.x, y: this.y}, {x: this.scene.fleur_bleu.x, y: this.scene.fleur_bleu.y});
+					console.log(distance);
+
+					if (this.tempCumuleReajustement >= 1000) {
+						if (distance > 300) {
+							this.actionToucheGauche()
+						} else if (distance < 300) {
+							this.actionToucheDroite()
+						}
+						this.tempCumuleReajustement = 0
+
+					}
+
+					
+				}
+			}
+
+		// if (this.listeCibles.length) {
+		// 	const distance = Phaser.Math.Distance.BetweenPoints(this, this.listeCibles[this.indexCibleCourante]);
+		// 	console.log(distance);
+		// }
+		if (this.estActiveIA) this.deplacementIA()
+	}
+
+	deplacementIA() {
+		// this.actionToucheDroite()
+	}
 	// Write your code here.
 
 	/* END-USER-CODE */

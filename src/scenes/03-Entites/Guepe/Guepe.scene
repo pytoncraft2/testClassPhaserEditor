@@ -51,5 +51,49 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "indexCibleCourante",
+            "label": "indexCibleCourante",
+            "tooltip": "index de l'element à suivre dans le tableau",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "lignes",
+            "label": "lignes graphique",
+            "tooltip": "ligne de test",
+            "defValue": "this.scene.add.graphics()",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.Graphics"
+            }
+        },
+        {
+            "name": "listeCibles",
+            "label": "listeCibles",
+            "tooltip": "liste des cibles de la guepe",
+            "defValue": "[this.scene.fleur_bleu,this.scene.fleur_rouge]",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.Image[]"
+            }
+        },
+        {
+            "name": "estActiveIA",
+            "label": "estActiveIA",
+            "tooltip": "indique si la guepe agit toute seule",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
 }

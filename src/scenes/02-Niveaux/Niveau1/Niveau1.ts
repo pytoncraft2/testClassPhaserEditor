@@ -28,8 +28,8 @@ export default class Niveau1 extends BaseNiveaux {
 
 	editorCreate(): void {
 
-		// fleur_rouge_png
-		this.add.image(1358, 937, "fleurs", "fleur_rouge.png");
+		// fleur_rouge
+		const fleur_rouge = this.add.image(1358, 937, "fleurs", "fleur_rouge.png");
 
 		// fleur_rose_png
 		const fleur_rose_png = this.add.image(1032, 535, "fleurs", "fleur_rose.png");
@@ -39,8 +39,8 @@ export default class Niveau1 extends BaseNiveaux {
 		const fleur_orange_png = this.add.image(1224, 136, "fleurs", "fleur_orange.png");
 		fleur_orange_png.flipX = true;
 
-		// fleur_bleu_png
-		this.add.image(376, 537, "fleurs", "fleur_bleu.png");
+		// fleur_bleu
+		const fleur_bleu = this.add.image(376, 537, "fleurs", "fleur_bleu.png");
 
 		// fileToileIntro
 		const fileToileIntro = new FileToileIntro(this, 172, -7);
@@ -196,6 +196,8 @@ export default class Niveau1 extends BaseNiveaux {
 		// startSceneActionScript (prefab fields)
 		startSceneActionScript.sceneKey = "Niveau2";
 
+		this.fleur_rouge = fleur_rouge;
+		this.fleur_bleu = fleur_bleu;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
@@ -207,6 +209,8 @@ export default class Niveau1 extends BaseNiveaux {
 		this.events.emit("scene-awake");
 	}
 
+	public fleur_rouge!: Phaser.GameObjects.Image;
+	public fleur_bleu!: Phaser.GameObjects.Image;
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;

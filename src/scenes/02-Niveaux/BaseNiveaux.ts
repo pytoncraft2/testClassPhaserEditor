@@ -204,7 +204,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (this.entiteControllable) {
 			if (this.gaucheAppuie) this.entiteControllable.actionToucheGauche()
 			else if (this.droiteAppuie) this.entiteControllable.actionToucheDroite()
-			else if (this.toucheJustePresse(this.toucheBas)) this.entiteControllable.actionToucheBas()
+			else if (this.basAppuie) this.entiteControllable.actionToucheBas()
 			else this.entiteControllable.aucuneTouche()
 
 			if (this.toucheJustePresse(this.toucheHaut) || this.hautAppuie) {
