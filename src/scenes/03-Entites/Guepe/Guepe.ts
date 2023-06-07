@@ -53,8 +53,9 @@ export default class Guepe extends BaseEntites {
 
 	awake(): void {
 		super.awake()
-		this.listeCibles = this.scene.fleurs.list;
-		console.log("MY AWAKE");
+		this.scene.time.delayedCall(1, () => {
+			this.listeCibles = [...this.scene.fleurs.list, this.scene.entiteControllable.body];
+		})
 	}
 	public tempCumuleReajustement: number = 0;
 
@@ -96,11 +97,10 @@ export default class Guepe extends BaseEntites {
         //     .lineStyle(2, 0x0099ff)
             // .lineBetween(furthest.center.x, furthest.center.y, this.cursor.x, this.cursor.y);
 
-			if (this.listeCibles.length > 0) {
+			if (this.listeCibles?.length > 0) {
 
 				if (this.listeCibles[this.indexCibleCourante]) {
 
-					// const distance = Phaser.Math.Distance.BetweenPoints(this.source.body.center, this.target);
 					const distance = Phaser.Math.Distance.BetweenPoints({ x: this.x, y: this.y }, { x: this.listeCibles[this.indexCibleCourante].x, y: this.listeCibles[this.indexCibleCourante].y });
 					this.body.velocity.x > 0 ? this.image.setFlipX(false) : this.image.setFlipX(true)
 
@@ -117,7 +117,6 @@ export default class Guepe extends BaseEntites {
 							this.body.reset(this.listeCibles[this.indexCibleCourante].x, this.listeCibles[this.indexCibleCourante].y);
 							this.actionToucheEspace()
 							console.log("ASSER PROCHE");
-
 
 							this.body.debugBodyColor = 0xff0000;
 						}
