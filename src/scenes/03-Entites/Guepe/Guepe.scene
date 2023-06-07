@@ -23,6 +23,8 @@
             "body.gravity.y": -100,
             "body.drag.x": 1300,
             "body.drag.y": 900,
+            "collideWorldBounds": true,
+            "none": true,
             "body.width": 87.8472416461531,
             "body.height": 71.17253374109625,
             "body.offset.x": -43.92362082307655,

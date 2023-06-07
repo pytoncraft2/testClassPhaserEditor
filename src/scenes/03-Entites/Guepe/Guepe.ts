@@ -23,6 +23,8 @@ export default class Guepe extends BaseEntites {
 		this.body.gravity.y = -100;
 		this.body.drag.x = 1300;
 		this.body.drag.y = 900;
+		this.body.collideWorldBounds = true;
+		this.body.checkCollision.none = true;
 		this.body.setOffset(-43.92362082307655, -35.58626687054812);
 		this.body.setSize(87.8472416461531, 71.17253374109625, false);
 
