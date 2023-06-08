@@ -90,71 +90,39 @@ export default class Guepe extends BaseEntites {
 
 	preUpdate(time: any, delta: any): void {
 		this.scene.physics.world.wrap(this, 400);
-
-        // this.lignes.clear()
-        //     .lineStyle(2, 0xff3300)
-        //     .lineBetween(this.x, this.y, this.scene.fleur_bleu.x, this.scene.fleur_bleu.y)
-        //     .lineStyle(2, 0x0099ff)
-            // .lineBetween(furthest.center.x, furthest.center.y, this.cursor.x, this.cursor.y);
-
-			if (this.listeCibles?.length > 0) {
-
-				if (this.listeCibles[this.indexCibleCourante]) {
-
-					const distance = Phaser.Math.Distance.BetweenPoints({ x: this.x, y: this.y }, { x: this.listeCibles[this.indexCibleCourante].x, y: this.listeCibles[this.indexCibleCourante].y });
-					this.body.velocity.x > 0 ? this.image.setFlipX(false) : this.image.setFlipX(true)
-
-					if (this.body.speed > 0) {
-						// Set a maximum velocity
-						this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 200);
-						// Scale down based on distance, starting from 20px away
-						this.body.velocity.scale(
-							Phaser.Math.SmoothStep(distance, 0, 20)
-						);
-
-						if (distance < 8) {
-							// Close enough
-							this.body.reset(this.listeCibles[this.indexCibleCourante].x, this.listeCibles[this.indexCibleCourante].y);
-							this.actionToucheEspace()
-							console.log("ASSER PROCHE");
-
-							this.body.debugBodyColor = 0xff0000;
-						}
-						else {
-							this.body.debugBodyColor = 0xffff00;
-						}
-					}
-				}
-				// if (this.listeCibles) {
-				// 	this.tempCumuleReajustement += delta;
-
-
-				// 	const distance = Phaser.Math.Distance.BetweenPoints({x: this.x, y: this.y}, {x: this.scene.fleur_bleu.x, y: this.scene.fleur_bleu.y});
-				// 	console.log(distance);
-
-				// 	if (this.tempCumuleReajustement >= 1000) {
-				// 		if (distance > 300) {
-				// 			this.actionToucheGauche()
-				// 		} else if (distance < 300) {
-				// 			this.actionToucheDroite()
-				// 		}
-				// 		this.tempCumuleReajustement = 0
-
-				// 	}
-
-
-				// }
-			}
-
-		// if (this.listeCibles.length) {
-		// 	const distance = Phaser.Math.Distance.BetweenPoints(this, this.listeCibles[this.indexCibleCourante]);
-		// 	console.log(distance);
-		// }
 		if (this.estActiveIA) this.deplacementIA()
 	}
 
 	deplacementIA() {
-		// this.actionToucheDroite()
+		if (this.listeCibles?.length > 0) {
+
+			if (this.listeCibles[this.indexCibleCourante]) {
+
+				const distance = Phaser.Math.Distance.BetweenPoints({ x: this.x, y: this.y }, { x: this.listeCibles[this.indexCibleCourante].x, y: this.listeCibles[this.indexCibleCourante].y });
+				this.body.velocity.x > 0 ? this.image.setFlipX(false) : this.image.setFlipX(true)
+
+				if (this.body.speed > 0) {
+					// Set a maximum velocity
+					this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 200);
+					// Scale down based on distance, starting from 20px away
+					this.body.velocity.scale(
+						Phaser.Math.SmoothStep(distance, -17, 55)
+					);
+
+					if (distance < 8) {
+						// Close enough
+						this.body.reset(this.listeCibles[this.indexCibleCourante].x, this.listeCibles[this.indexCibleCourante].y);
+						this.actionToucheEspace()
+						console.log("ASSER PROCHE");
+
+						this.body.debugBodyColor = 0xff0000;
+					}
+					else {
+						this.body.debugBodyColor = 0xffff00;
+					}
+				}
+			}
+		}
 	}
 	// Write your code here.
 
