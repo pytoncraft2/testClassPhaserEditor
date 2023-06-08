@@ -53,11 +53,9 @@ export default class Guepe extends BaseEntites {
 
 	awake(): void {
 		super.awake()
-		this.scene.time.delayedCall(1, () => {
-			this.listeCibles = [...this.scene.fleurs.list, this.scene.entiteControllable.body];
-		})
+		this.listeCibles = [...this.scene.fleurs.list];
+		this.listeCibles.sort(() => 0.5 - Math.random())
 	}
-	public tempCumuleReajustement: number = 0;
 
 	actionToucheDroite(): void {
 		this.image.setFlipX(false)

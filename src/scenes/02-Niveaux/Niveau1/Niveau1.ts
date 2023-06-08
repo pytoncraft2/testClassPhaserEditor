@@ -95,6 +95,10 @@ export default class Niveau1 extends BaseNiveaux {
 		const guepe = new Guepe(this, 717, 648);
 		groupe_adversaires.add(guepe);
 
+		// guepe_1
+		const guepe_1 = new Guepe(this, 877.9263305664062, 292.827880859375);
+		groupe_adversaires.add(guepe_1);
+
 		// platformes
 		const platformes = this.add.container(0, 10);
 
