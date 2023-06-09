@@ -52,20 +52,15 @@ export default class Guepe extends BaseEntites {
 	/* START-USER-CODE */
 	public modeEnerve: boolean = false;
 	public logiqueDescisionActionsIA = this.scene.time.addEvent({
-		delay: 770,
+		delay: 10000,
 		callback: () => {
 			if (this.modeEnerve == false) {
-				// this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000)
-				this.modeEnerve = true;
-			} else {
-				// this.image.clearTint()
-				this.modeEnerve = false;
+				this.activeModeEnerve(true)
 			}
-			console.log("FINALE: ", this.modeEnerve);
-			
+			console.log("FINALE: okay");
 		},
 		callbackScope: this,
-		loop: true,
+		loop: false,
 		paused: true
 	});
 
@@ -97,7 +92,7 @@ export default class Guepe extends BaseEntites {
 		this.indexCibleCourante++;
 		let index = this.indexCibleCourante % this.listeCibles.length;
 		this.indexCibleCourante = index;
-		this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 500);
+		this.scene.physics.moveToObject(this, this.modeEnerve ? this.scene.entiteControllable : this.listeCibles[this.indexCibleCourante], 500);
 	}
 
 	aucuneTouche(): void {
@@ -111,35 +106,38 @@ export default class Guepe extends BaseEntites {
 
 	deplacementIA() {
 		if (this.listeCibles?.length > 0) {
-			// console.log(this.modeEnerve);
-			
+			const cibleCourante = this.listeCibles[this.indexCibleCourante];
+			const cibleX = this.modeEnerve ? this.scene.entiteControllable.body.center.x : cibleCourante.x;
+			const cibleY = this.modeEnerve ? this.scene.entiteControllable.body.center.y : cibleCourante.y;
 
-			if (this.listeCibles[this.indexCibleCourante]) {
+			const distance = Phaser.Math.Distance.Between(this.x, this.y, cibleX, cibleY);
+			const direction = Math.sign(this.body.velocity.x);
+			this.image.setFlipX(direction < 0);
 
-				const distance = Phaser.Math.Distance.BetweenPoints({ x: this.x, y: this.y }, { x: this.listeCibles[this.indexCibleCourante].x, y: this.listeCibles[this.indexCibleCourante].y });
-				this.body.velocity.x > 0 ? this.image.setFlipX(false) : this.image.setFlipX(true)
+			if (this.body.speed > 0) {
+				const speed = this.modeEnerve ? 400 : 200;
+				this.scene.physics.moveTo(this, cibleX, cibleY, speed);
+				this.body.velocity.scale(
+					Phaser.Math.SmoothStep(distance, -17, 55)
+				);
 
-				if (this.body.speed > 0) {
-					// Set a maximum velocity
-					this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], this.modeEnerve ? 600 : 200);
-					// Scale down based on distance, starting from 20px away
-					this.body.velocity.scale(
-						Phaser.Math.SmoothStep(distance, -17, 55)
-					);
-
-					if (distance < 8) {
-						// Close enough
-						this.body.reset(this.listeCibles[this.indexCibleCourante].x, this.listeCibles[this.indexCibleCourante].y);
-						this.actionToucheEspace()
-						console.log("ASSER PROCHE");
-
-						this.body.debugBodyColor = 0xff0000;
-					}
-					else {
-						this.body.debugBodyColor = 0xffff00;
-					}
+				if (distance < 8) {
+					this.body.reset(cibleX, cibleY);
+					this.activeModeEnerve(false);
+					this.actionToucheEspace();
+					console.log("ASSEZ PROCHE");
 				}
 			}
+		}
+	}
+
+
+	activeModeEnerve(active: boolean = true) {
+		this.modeEnerve = active;
+		if (active) {
+			this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000);
+		} else {
+			this.image.clearTint()
 		}
 	}
 	// Write your code here.
