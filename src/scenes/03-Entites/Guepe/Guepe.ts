@@ -52,7 +52,7 @@ export default class Guepe extends BaseEntites {
 	/* START-USER-CODE */
 	public modeEnerve: boolean = false;
 	public logiqueDescisionActionsIA = this.scene.time.addEvent({
-		delay: 750,
+		delay: 770,
 		callback: () => {
 			if (this.modeEnerve == false) {
 				// this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000)
