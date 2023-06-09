@@ -21,7 +21,6 @@
             "ArcadeComponent.active": true,
             "body.maxVelocity.x": 600,
             "body.maxVelocity.y": 600,
-            "body.gravity.y": -100,
             "body.drag.x": 1300,
             "body.drag.y": 900,
             "collideWorldBounds": true,

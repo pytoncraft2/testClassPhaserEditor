@@ -20,7 +20,6 @@ export default class Guepe extends BaseEntites {
 		scene.physics.add.existing(this, false);
 		this.body.maxVelocity.x = 600;
 		this.body.maxVelocity.y = 600;
-		this.body.gravity.y = -100;
 		this.body.drag.x = 1300;
 		this.body.drag.y = 900;
 		this.body.collideWorldBounds = true;
@@ -40,6 +39,7 @@ export default class Guepe extends BaseEntites {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+		this.activeIA(true)
 		/* END-USER-CTR-CODE */
 	}
 
@@ -50,6 +50,24 @@ export default class Guepe extends BaseEntites {
 	public estActiveIA: boolean = true;
 
 	/* START-USER-CODE */
+	public modeEnerve: boolean = false;
+	public logiqueDescisionActionsIA = this.scene.time.addEvent({
+		delay: 750,
+		callback: () => {
+			if (this.modeEnerve == false) {
+				// this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000)
+				this.modeEnerve = true;
+			} else {
+				// this.image.clearTint()
+				this.modeEnerve = false;
+			}
+			console.log("FINALE: ", this.modeEnerve);
+			
+		},
+		callbackScope: this,
+		loop: true,
+		paused: true
+	});
 
 	awake(): void {
 		super.awake()
@@ -93,6 +111,8 @@ export default class Guepe extends BaseEntites {
 
 	deplacementIA() {
 		if (this.listeCibles?.length > 0) {
+			// console.log(this.modeEnerve);
+			
 
 			if (this.listeCibles[this.indexCibleCourante]) {
 
@@ -101,7 +121,7 @@ export default class Guepe extends BaseEntites {
 
 				if (this.body.speed > 0) {
 					// Set a maximum velocity
-					this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], 200);
+					this.scene.physics.moveToObject(this, this.listeCibles[this.indexCibleCourante], this.modeEnerve ? 600 : 200);
 					// Scale down based on distance, starting from 20px away
 					this.body.velocity.scale(
 						Phaser.Math.SmoothStep(distance, -17, 55)
