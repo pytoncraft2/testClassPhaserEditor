@@ -100,6 +100,11 @@ export default class Guepe extends BaseEntites {
 
 			const distance = Phaser.Math.Distance.Between(this.x, this.y, cibleX, cibleY);
 			const direction = Math.sign(this.body.velocity.x);
+			if (this.modeEnerve) {
+				this.interactionActive = true;
+			} else {
+				this.interactionActive = false;
+			}
 			this.image.setFlipX(direction < 0);
 
 			if (this.body.speed > 0) {
