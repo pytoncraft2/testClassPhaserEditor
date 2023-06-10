@@ -145,8 +145,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 0,
-                    "y": 0,
+                    "x": -922,
+                    "y": 485,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
@@ -486,7 +486,10 @@
             "objectIds": [
                 "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                 "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
-                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a"
+                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a",
+                "912d3d1d-567a-4436-997a-471619c81d71",
+                "8202a730-2f3c-487e-9930-5fcc689a7ff2",
+                "bbabdfa2-9e54-46be-9d35-d2c7f42044c4"
             ]
         }
     ]
