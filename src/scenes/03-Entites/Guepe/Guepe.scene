@@ -24,7 +24,6 @@
             "body.drag.x": 1300,
             "body.drag.y": 900,
             "collideWorldBounds": true,
-            "none": true,
             "body.width": 87.8472416461531,
             "body.height": 71.17253374109625,
             "body.offset.x": -43.92362082307655,
@@ -89,6 +88,16 @@
             "name": "estActiveIA",
             "label": "estActiveIA",
             "tooltip": "indique si la guepe agit toute seule",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "peutTraverserPlatformes",
+            "label": "peutTraverserPlatformes",
+            "tooltip": "indique si l'entité a la capacité de traverser les platformes",
             "defValue": true,
             "customDefinition": false,
             "type": {

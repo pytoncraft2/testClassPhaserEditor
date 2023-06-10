@@ -431,7 +431,9 @@
             "label": "platformes_vs_entites",
             "scope": "METHOD",
             "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
-            "object2": "platformes.list"
+            "object2": "platformes.list",
+            "collideCallback": "this.entiteTouchePlatformes as any",
+            "processCallback": "this.verfifEntiteTouchePlatformes as any"
         },
         {
             "id": "9da5d074-9381-4263-906d-93660479b5f3",

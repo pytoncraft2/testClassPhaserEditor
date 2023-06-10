@@ -115,6 +115,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "peutTraverserPlatformes",
+            "label": "peutTraverserPlatformes",
+            "tooltip": "indique si l'entité à la capacité de traverser ou non les platformes",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

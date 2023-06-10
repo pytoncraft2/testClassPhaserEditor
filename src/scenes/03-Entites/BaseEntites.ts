@@ -44,6 +44,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public fusionnable: boolean = false;
 	public interactionActive: boolean = true;
 	public estActiveIA: boolean = false;
+	public peutTraverserPlatformes: boolean = false;
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)

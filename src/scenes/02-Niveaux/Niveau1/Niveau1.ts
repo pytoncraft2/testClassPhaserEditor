@@ -178,7 +178,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne, guepe_2, guepe_1, guepe];
 
 		// platformes_vs_entites
-		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
+		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list, this.entiteTouchePlatformes as any, this.verfifEntiteTouchePlatformes as any);
 
 		// adversaires_vs_allies
 		const adversaires_vs_allies = this.physics.add.overlap(groupe_allies.list, groupe_adversaires.list, this.allieToucheAdversaireProche as any, this.ProcessVerifAllieToucheAdversaireProche as any);

@@ -13,6 +13,7 @@ import Bouton from "../Boutons/Bouton";
 /* START-USER-IMPORTS */
 import BaseEntites from "../03-Entites/BaseEntites";
 import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
+import PlatformePrefab from "../04-Platformes/PlatformePrefab";
 /* END-USER-IMPORTS */
 
 export default class BaseNiveaux extends Phaser.Scene {
@@ -293,6 +294,17 @@ export default class BaseNiveaux extends Phaser.Scene {
 			toile.nombrePercutement += 1;
 			adversaire.detruire();
 		}
+	}
+
+	verfifEntiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
+		if (entite.peutTraverserPlatformes) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	entiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
 	}
 	/* END-USER-CODE */
 }

@@ -23,7 +23,6 @@ export default class Guepe extends BaseEntites {
 		this.body.drag.x = 1300;
 		this.body.drag.y = 900;
 		this.body.collideWorldBounds = true;
-		this.body.checkCollision.none = true;
 		this.body.setOffset(-43.92362082307655, -35.58626687054812);
 		this.body.setSize(87.8472416461531, 71.17253374109625, false);
 
@@ -48,6 +47,7 @@ export default class Guepe extends BaseEntites {
 	public lignes: Phaser.GameObjects.Graphics = this.scene.add.graphics();
 	public listeCibles!: any;
 	public estActiveIA: boolean = true;
+	public peutTraverserPlatformes: boolean = true;
 
 	/* START-USER-CODE */
 	public modeEnerve: boolean = false;
