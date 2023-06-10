@@ -108,7 +108,7 @@ export default class Guepe extends BaseEntites {
 		if (this.listeCibles?.length > 0) {
 			const cibleCourante = this.listeCibles[this.indexCibleCourante];
 			const cibleX = this.modeEnerve ? this.scene.entiteControllable.body.center.x : cibleCourante.x;
-			const cibleY = this.modeEnerve ? this.scene.entiteControllable.body.center.y : cibleCourante.y;
+			const cibleY = this.modeEnerve ? this.scene.entiteControllable.body.center.y : cibleCourante.y - 50;
 
 			const distance = Phaser.Math.Distance.Between(this.x, this.y, cibleX, cibleY);
 			const direction = Math.sign(this.body.velocity.x);
@@ -118,7 +118,7 @@ export default class Guepe extends BaseEntites {
 				const speed = this.modeEnerve ? 400 : 200;
 				this.scene.physics.moveTo(this, cibleX, cibleY, speed);
 				this.body.velocity.scale(
-					Phaser.Math.SmoothStep(distance, -17, 55)
+					Phaser.Math.SmoothStep(distance, 0, 23)
 				);
 
 				if (distance < 8) {
