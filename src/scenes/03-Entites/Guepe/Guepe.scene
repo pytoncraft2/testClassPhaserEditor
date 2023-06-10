@@ -103,6 +103,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "interactionActive",
+            "label": "interactionActive",
+            "tooltip": "indique si la colision ou le chevauchement avec l'adversaire est activé",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }
