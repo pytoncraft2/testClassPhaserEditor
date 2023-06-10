@@ -49,6 +49,7 @@ export default class Guepe extends BaseEntites {
 	public estActiveIA: boolean = true;
 	public peutTraverserPlatformes: boolean = true;
 	public interactionActive: boolean = false;
+	public maxBlocages: number = 3;
 
 	/* START-USER-CODE */
 	public modeEnerve: boolean = false;

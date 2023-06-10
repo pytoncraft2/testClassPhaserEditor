@@ -433,7 +433,7 @@
             "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
             "object2": "platformes.list",
             "collideCallback": "this.entiteTouchePlatformes as any",
-            "processCallback": "this.verfifEntiteTouchePlatformes as any"
+            "processCallback": "this.verifEntiteTouchePlatformes as any"
         },
         {
             "id": "9da5d074-9381-4263-906d-93660479b5f3",
@@ -444,7 +444,7 @@
             "object2": "groupe_adversaires.list",
             "overlapOnly": true,
             "collideCallback": "this.allieToucheAdversaireProche as any",
-            "processCallback": "this.ProcessVerifAllieToucheAdversaireProche as any"
+            "processCallback": "this.verifAllieToucheAdversaireProche as any"
         },
         {
             "id": "9c5c950c-c312-4dc7-ace0-83bcfb7dade5",

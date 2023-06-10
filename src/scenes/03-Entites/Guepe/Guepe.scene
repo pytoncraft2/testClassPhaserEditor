@@ -113,6 +113,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "maxBlocages",
+            "label": "maxBlocages",
+            "tooltip": "nombre de blocage par la toile maximale",
+            "defValue": 3,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }

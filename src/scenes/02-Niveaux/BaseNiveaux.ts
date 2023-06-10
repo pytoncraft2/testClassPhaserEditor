@@ -232,7 +232,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		return Phaser.Input.Keyboard.JustDown(touche)
 	}
 
-	public toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
+	toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 		if (!adversaire.groupeBlocage.children) return;
 		if (adversaire.groupeBlocage.getLength() >= adversaire.maxBlocages) {
 			toile.destroy()
@@ -256,7 +256,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 	/** FONCTIONS DE VERIFICATION AVANT D'EXECUTER LE CALLBACK ENTRE UN ALLIE ET UN ADVERSAIRE */
 
-	ProcessVerifAllieToucheAdversaireProche(allie: BaseEntites, adversaire: BaseEntites) {
+	verifAllieToucheAdversaireProche(allie: BaseEntites, adversaire: BaseEntites) {
 		if (!allie.invincible && adversaire.body.moves && adversaire.interactionActive) {
 			return true;
 		} else {
@@ -296,7 +296,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 	}
 
-	verfifEntiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
+	verifEntiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
 		if (entite.peutTraverserPlatformes) {
 			return false;
 		} else {
