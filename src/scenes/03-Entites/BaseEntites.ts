@@ -110,7 +110,9 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		})
 	}
 
-	detruire() {
+	detruire() {	
+		this.scene.events.emit('adversaireVaincu');
+
 		this.activeIA(false);
 		this.body.moves = true;
 		this.interactionActive = false;

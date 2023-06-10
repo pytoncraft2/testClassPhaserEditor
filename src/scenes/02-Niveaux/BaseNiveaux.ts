@@ -170,6 +170,24 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.input.addPointer(3);
 		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
 		if (!this.estUnMobile) this.controles_portable.removeAll()
+        var emitter = new Phaser.Events.EventEmitter();
+		let compteurAdversaireVaincu = 0;
+
+        //  Set-up an event handler
+        emitter.on('adversaireVaincu', () => {
+			console.log("OKAY");
+			
+			compteurAdversaireVaincu++;
+			if (compteurAdversaireVaincu == 3) {
+				this.animationFinNiveau()				
+				console.log("FIN");
+				
+			}
+		}, this);
+        // this.events.once('finNiveau', this.animationFinNiveau, this);
+
+        //  We emit the event 3 times, but the handler is only called once
+        this.events.emit('addImage');
 	}
 
 	update(time: number, delta: number): void {
@@ -306,6 +324,13 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	entiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
+	}
+
+	animationFinNiveau() {
+		this.cameras.main.fadeOut(1000, 0, 0, 0)
+		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
+			this.scene.start('Niveau2')
+		})
 	}
 	/* END-USER-CODE */
 }

@@ -91,7 +91,7 @@ export default class Huipat extends BaseEntites {
 		this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), undefined, this);  // delay in ms
 	}
 
-	actionToucheEspace(): void {
+	actionToucheEspace(): void {	
 		if (!this.body.moves) return;
 
 		this.detecteur_proche.body.enable = true;
