@@ -119,6 +119,15 @@ export default class Guepe extends BaseEntites {
 		}
 	}
 
+	activeModeEnerve(active: boolean = true) {
+		this.modeEnerve = active;
+		if (active) {
+			this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000);
+		} else {
+			this.image.clearTint()
+		}
+	}
+
 	// Write your code here.
 
 	/* END-USER-CODE */

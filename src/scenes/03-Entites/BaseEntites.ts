@@ -178,14 +178,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		animationObjetFusionnable.play();
 	}
 
-	activeModeEnerve(active: boolean = true) {
-		this.modeEnerve = active;
-		if (active) {
-			this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000);
-		} else {
-			this.image.clearTint()
-		}
-	}
+	activeModeEnerve(active: boolean = true) { }
 
 	/* END-USER-CODE */
 }
