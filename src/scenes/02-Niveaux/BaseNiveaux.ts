@@ -247,9 +247,10 @@ export default class BaseNiveaux extends Phaser.Scene {
 		
 		if (adversaire.groupeBlocage.getLength() == 0) {
 			adversaire.body.moves = false;
-			adversaire.groupeBlocage.add(toile)
+			adversaire.activeModeEnerve(true);
+			adversaire.groupeBlocage.add(toile);
 		} else {
-			adversaire.groupeBlocage.add(toile)
+			adversaire.groupeBlocage.add(toile);
 			toile.setScale(adversaire.groupeBlocage.getLength() / 5);
 		}
 	}

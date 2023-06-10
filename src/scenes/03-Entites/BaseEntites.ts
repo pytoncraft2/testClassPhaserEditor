@@ -45,6 +45,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public interactionActive: boolean = true;
 	public estActiveIA: boolean = false;
 	public peutTraverserPlatformes: boolean = false;
+	public modeEnerve: boolean = false;
 
 	/* START-USER-CODE */
 	public groupeBlocage = new GroupeToile(this.scene)
@@ -117,6 +118,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		this.body.moves = true;
 		this.interactionActive = false;
 		this.fusionnable = true;
+		this.peutTraverserPlatformes = false;
 		this.body.enable = true;
 		this.body.setVelocity(0)
 		this.image.setScale(0.5)
@@ -174,6 +176,15 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		]);
 
 		animationObjetFusionnable.play();
+	}
+
+	activeModeEnerve(active: boolean = true) {
+		this.modeEnerve = active;
+		if (active) {
+			this.image.setTintFill(0xfc0000, 0xfc0000, 0xfc0000, 0xfc0000);
+		} else {
+			this.image.clearTint()
+		}
 	}
 
 	/* END-USER-CODE */

@@ -55,13 +55,13 @@ export default class ToileHuipatPrefab extends Phaser.GameObjects.Sprite {
 			if (this.entiteSuivie) {
 				this.entiteSuivie.setPosition(this.x, this.y)
 				this.entiteSuivie.angle = this.angle;
+				this.maxNombrePercutement = this.entiteSuivie.maxBlocages;
 			}
 
 			if (this.nombrePercutement === this.maxNombrePercutement) {
 				this.entiteSuivie?.detruire()
 				this.entiteSuivie?.setAngle(0)
 				this.destroy(true)
-				// this.modeBouleActive = false;
 			}
 
 		}

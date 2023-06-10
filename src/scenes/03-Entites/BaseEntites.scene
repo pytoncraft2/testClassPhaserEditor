@@ -125,6 +125,16 @@
             "type": {
                 "id": "boolean"
             }
+        },
+        {
+            "name": "modeEnerve",
+            "label": "modeEnerve",
+            "tooltip": "indique si l'entité est dans un état agressif",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }
