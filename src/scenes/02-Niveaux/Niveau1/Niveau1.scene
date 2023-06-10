@@ -386,33 +386,6 @@
             "y": 10
         },
         {
-            "type": "Text",
-            "id": "973a0104-f496-4480-b2e2-58e10e7be6ba",
-            "label": "text_1",
-            "x": 1631,
-            "y": 80,
-            "text": "New text",
-            "fontSize": "36px",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "b33c024b-e70a-4921-a946-f116ee89dbe3",
-                    "label": "onPointerDownScript",
-                    "list": [
-                        {
-                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
-                            "id": "0eef4639-6a3b-42f5-a21e-49505e2931d5",
-                            "unlock": [
-                                "sceneKey"
-                            ],
-                            "label": "startSceneActionScript",
-                            "sceneKey": "Niveau2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "type": "Layer",
             "id": "8f8a6f65-fcb2-4bc1-96e7-bd1ed48a6db5",
             "label": "groupe_vs_platformes",

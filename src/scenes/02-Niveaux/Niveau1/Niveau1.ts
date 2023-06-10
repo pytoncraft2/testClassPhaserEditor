@@ -10,8 +10,6 @@ import Araigne from "../../03-Entites/Araigne/Araigne";
 import Murale from "../../03-Entites/Araigne/Murale";
 import Guepe from "../../03-Entites/Guepe/Guepe";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
-import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
-import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -157,17 +155,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// groupe_projectile_toiles
 		const groupe_projectile_toiles = this.add.container(0, 10);
 
-		// text_1
-		const text_1 = this.add.text(1631, 80, "", {});
-		text_1.text = "New text";
-		text_1.setStyle({ "fontSize": "36px" });
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(text_1);
-
-		// startSceneActionScript
-		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
-
 		// groupe_vs_platformes
 		const groupe_vs_platformes = this.add.layer();
 
@@ -207,9 +194,6 @@ export default class Niveau1 extends BaseNiveaux {
 		fileToileIntro_2.ref = araigne_2;
 		fileToileIntro_2.longueurFile = 2.8;
 		fileToileIntro_2.delaiAvantActivation = 2000;
-
-		// startSceneActionScript (prefab fields)
-		startSceneActionScript.sceneKey = "Niveau2";
 
 		this.fleurs = fleurs;
 		this.huipat = huipat;
