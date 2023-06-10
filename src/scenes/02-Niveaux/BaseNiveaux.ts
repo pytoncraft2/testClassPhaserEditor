@@ -244,7 +244,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		toile.body.moves = false
 		toile.setPosition(adversaire.x, adversaire.y)
 		toile.refEntite = adversaire;
-		
+
 		if (adversaire.groupeBlocage.getLength() == 0) {
 			adversaire.body.moves = false;
 			adversaire.activeModeEnerve(true);

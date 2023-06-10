@@ -16,60 +16,6 @@
     },
     "displayList": [
         {
-            "type": "Layer",
-            "id": "d0db71c6-3a0f-4cfa-9bba-eb77175be966",
-            "label": "fleurs",
-            "scope": "PUBLIC",
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "8105f1d9-238f-4567-b2df-7d392aa2984b",
-                    "label": "fleur_rouge",
-                    "texture": {
-                        "key": "fleurs",
-                        "frame": "fleur_rouge.png"
-                    },
-                    "x": 1358,
-                    "y": 946
-                },
-                {
-                    "type": "Image",
-                    "id": "d1d9dc93-e002-4a01-b454-e75e91c1cd61",
-                    "label": "fleur_rose_png",
-                    "texture": {
-                        "key": "fleurs",
-                        "frame": "fleur_rose.png"
-                    },
-                    "x": 1094,
-                    "y": 547,
-                    "flipX": true
-                },
-                {
-                    "type": "Image",
-                    "id": "4357d5ca-1e1a-4146-9a47-06a6b14539e3",
-                    "label": "fleur_orange",
-                    "texture": {
-                        "key": "fleurs",
-                        "frame": "fleur_orange.png"
-                    },
-                    "x": 1224,
-                    "y": 148,
-                    "flipX": true
-                },
-                {
-                    "type": "Image",
-                    "id": "c8b869da-85aa-4897-b177-37c27a3d045e",
-                    "label": "fleur_bleu",
-                    "texture": {
-                        "key": "fleurs",
-                        "frame": "fleur_bleu.png"
-                    },
-                    "x": 376,
-                    "y": 547
-                }
-            ]
-        },
-        {
             "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
             "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
             "unlock": [
@@ -202,50 +148,6 @@
                     "label": "araigne",
                     "x": 1765,
                     "y": -144
-                },
-                {
-                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
-                    "id": "dd6e7752-ce87-4852-9c80-0d80c2828ae2",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "container_1",
-                    "x": 596,
-                    "y": 467
-                },
-                {
-                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
-                    "id": "bbabdfa2-9e54-46be-9d35-d2c7f42044c4",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "guepe",
-                    "x": 717,
-                    "y": 648
-                },
-                {
-                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
-                    "id": "8202a730-2f3c-487e-9930-5fcc689a7ff2",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "guepe_1",
-                    "x": 674.999755859375,
-                    "y": 528.0899658203125
-                },
-                {
-                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
-                    "id": "912d3d1d-567a-4436-997a-471619c81d71",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "guepe_2",
-                    "x": 303.5301818847656,
-                    "y": 346.3638916015625
                 }
             ]
         },
@@ -461,10 +363,7 @@
             "objectIds": [
                 "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                 "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
-                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a",
-                "912d3d1d-567a-4436-997a-471619c81d71",
-                "8202a730-2f3c-487e-9930-5fcc689a7ff2",
-                "bbabdfa2-9e54-46be-9d35-d2c7f42044c4"
+                "fe01cedb-44d2-4f10-81ff-2a39fc3a187a"
             ]
         }
     ]

@@ -7,8 +7,6 @@ import BaseNiveaux from "../BaseNiveaux";
 import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
-import Murale from "../../03-Entites/Araigne/Murale";
-import Guepe from "../../03-Entites/Guepe/Guepe";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
@@ -25,27 +23,6 @@ export default class Niveau1 extends BaseNiveaux {
 	}
 
 	editorCreate(): void {
-
-		// fleurs
-		const fleurs = this.add.layer();
-
-		// fleur_rouge
-		const fleur_rouge = this.add.image(1358, 946, "fleurs", "fleur_rouge.png");
-		fleurs.add(fleur_rouge);
-
-		// fleur_rose_png
-		const fleur_rose_png = this.add.image(1094, 547, "fleurs", "fleur_rose.png");
-		fleur_rose_png.flipX = true;
-		fleurs.add(fleur_rose_png);
-
-		// fleur_orange
-		const fleur_orange = this.add.image(1224, 148, "fleurs", "fleur_orange.png");
-		fleur_orange.flipX = true;
-		fleurs.add(fleur_orange);
-
-		// fleur_bleu
-		const fleur_bleu = this.add.image(376, 547, "fleurs", "fleur_bleu.png");
-		fleurs.add(fleur_bleu);
 
 		// fileToileIntro
 		const fileToileIntro = new FileToileIntro(this, 172, -7);
@@ -84,22 +61,6 @@ export default class Niveau1 extends BaseNiveaux {
 		// araigne
 		const araigne = new Araigne(this, 1765, -144);
 		groupe_adversaires.add(araigne);
-
-		// container_1
-		const container_1 = new Murale(this, 596, 467);
-		groupe_adversaires.add(container_1);
-
-		// guepe
-		const guepe = new Guepe(this, 717, 648);
-		groupe_adversaires.add(guepe);
-
-		// guepe_1
-		const guepe_1 = new Guepe(this, 674.999755859375, 528.0899658203125);
-		groupe_adversaires.add(guepe_1);
-
-		// guepe_2
-		const guepe_2 = new Guepe(this, 303.5301818847656, 346.3638916015625);
-		groupe_adversaires.add(guepe_2);
 
 		// platformes
 		const platformes = this.add.container(0, 10);
@@ -162,7 +123,7 @@ export default class Niveau1 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne, guepe_2, guepe_1, guepe];
+		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne];
 
 		// platformes_vs_entites
 		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list, this.entiteTouchePlatformes as any, this.verifEntiteTouchePlatformes as any);
@@ -195,7 +156,6 @@ export default class Niveau1 extends BaseNiveaux {
 		fileToileIntro_2.longueurFile = 2.8;
 		fileToileIntro_2.delaiAvantActivation = 2000;
 
-		this.fleurs = fleurs;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
@@ -207,14 +167,13 @@ export default class Niveau1 extends BaseNiveaux {
 		this.events.emit("scene-awake");
 	}
 
-	public fleurs!: Phaser.GameObjects.Layer;
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
-	private liste_toile_vs_adversaire!: Array<Araigne|Guepe>;
+	private liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */
 

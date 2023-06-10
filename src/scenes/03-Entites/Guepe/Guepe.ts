@@ -55,8 +55,8 @@ export default class Guepe extends BaseEntites {
 
 	/* START-USER-CODE */
 	awake(): void {
-		this.listeCibles = [...this.scene.fleurs.list];
-		this.listeCibles.sort(() => 0.5 - Math.random())
+		// this.listeCibles = [...this.scene.fleurs.list];
+		// this.listeCibles.sort(() => 0.5 - Math.random())
 	}
 
 	actionToucheDroite(): void {
