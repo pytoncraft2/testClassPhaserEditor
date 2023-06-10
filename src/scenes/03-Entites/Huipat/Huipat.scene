@@ -20,6 +20,7 @@
             "label": "container_1",
             "y": 1,
             "ArcadeComponent.active": true,
+            "body.gravity.y": 1000,
             "collideWorldBounds": true,
             "body.width": 148,
             "body.height": 162,

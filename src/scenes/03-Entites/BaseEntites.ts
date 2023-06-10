@@ -52,9 +52,6 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	public logiqueDescisionActionsIA!: Phaser.Time.TimerEvent
 
 	// Write your code here.
-	awake() {
-		this.body.gravity.y = this.graviteY;
-	}
 
 	actionToucheEspace() {
 		console.log("touche espace base entite")

@@ -19,6 +19,7 @@ export default class Huipat extends BaseEntites {
 		super(scene, x ?? 0, y ?? 1);
 
 		scene.physics.add.existing(this, false);
+		this.body.gravity.y = 1000;
 		this.body.collideWorldBounds = true;
 		this.body.setOffset(-74, -81);
 		this.body.setSize(148, 162, false);
@@ -59,21 +60,11 @@ export default class Huipat extends BaseEntites {
 	public colision_detecteur_proche: Phaser.Physics.Arcade.Collider;
 	public entiteProcheEtPoussable: boolean = false;
 	public delaiAvantDestructionToile: number = 300;
-	public logiqueDescisionActionsIA = this.scene.time.addEvent({
-		delay: 750,
-		callback: () => {
-			this.actionToucheEspace()
-		},
-		callbackScope: this,
-		loop: true,
-		paused: true
-	});
 
 	/* START-USER-CODE */
 
 	// Write your code here.
 	awake(): void {
-		super.awake()
 		this.colision_detecteur_proche.object2 = this.scene.groupe_adversaires.list;
 	}
 

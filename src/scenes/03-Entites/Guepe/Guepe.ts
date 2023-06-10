@@ -20,8 +20,10 @@ export default class Guepe extends BaseEntites {
 		scene.physics.add.existing(this, false);
 		this.body.maxVelocity.x = 600;
 		this.body.maxVelocity.y = 600;
+		this.body.gravity.y = 200;
 		this.body.drag.x = 1300;
 		this.body.drag.y = 900;
+		this.body.mass = 0.1;
 		this.body.collideWorldBounds = true;
 		this.body.setOffset(-43.92362082307655, -35.58626687054812);
 		this.body.setSize(87.8472416461531, 71.17253374109625, false);
@@ -53,7 +55,6 @@ export default class Guepe extends BaseEntites {
 
 	/* START-USER-CODE */
 	awake(): void {
-		super.awake()
 		this.listeCibles = [...this.scene.fleurs.list];
 		this.listeCibles.sort(() => 0.5 - Math.random())
 	}
@@ -69,18 +70,20 @@ export default class Guepe extends BaseEntites {
 	}
 
 	actionToucheHaut(): void {
-		this.body.setAccelerationY(-1900);
+		this.body.setAccelerationY(-3900);
 	}
 
 	actionToucheBas(): void {
-		this.body.setAccelerationY(1900);
+		this.body.setAccelerationY(3900);
 	}
 
 	actionToucheEspace(): void {
-		this.indexCibleCourante++;
-		let index = this.indexCibleCourante % this.listeCibles.length;
-		this.indexCibleCourante = index;
-		this.scene.physics.moveToObject(this, this.modeEnerve ? this.scene.entiteControllable : this.listeCibles[this.indexCibleCourante], 500);
+		this.scene.time.delayedCall(300, () => {
+			this.interactionActive = false;
+			this.activeModeEnerve(false)
+		})
+		this.interactionActive = true;
+		this.activeModeEnerve(true)
 	}
 
 	aucuneTouche(): void {
@@ -117,7 +120,7 @@ export default class Guepe extends BaseEntites {
 				if (distance < 8) {
 					this.body.reset(cibleX, cibleY);
 					this.activeModeEnerve(false);
-					this.actionToucheEspace();
+					this.changeDeCible();
 					console.log("ASSEZ PROCHE");
 				}
 			}
@@ -133,6 +136,12 @@ export default class Guepe extends BaseEntites {
 		}
 	}
 
+	changeDeCible(): void {
+		this.indexCibleCourante++;
+		let index = this.indexCibleCourante % this.listeCibles.length;
+		this.indexCibleCourante = index;
+		this.scene.physics.moveToObject(this, this.modeEnerve ? this.scene.entiteControllable : this.listeCibles[this.indexCibleCourante], 500);
+	}
 	// Write your code here.
 
 	/* END-USER-CODE */
