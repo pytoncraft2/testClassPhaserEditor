@@ -294,6 +294,32 @@
             "scope": "PUBLIC"
         },
         {
+            "type": "Text",
+            "id": "4e38d77f-d497-4f77-ab25-67090b6f8c00",
+            "label": "text_1",
+            "x": 1780,
+            "y": 54,
+            "text": "NIVEAU 2",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "d7cfe0a2-071b-471d-8d6e-86d195a67896",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
+                            "id": "6973e746-ed8c-49fa-af1a-1373177b37c0",
+                            "unlock": [
+                                "sceneKey"
+                            ],
+                            "label": "startSceneActionScript",
+                            "sceneKey": "Niveau2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "db74e562-8d19-487e-9af3-6550982c7f23",
             "label": "onSceneAwakeScript"
