@@ -252,9 +252,6 @@
         {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "bb012df8-2b41-4a78-8cac-38ed0a7b48a0",
-            "unlock": [
-                "Objet2"
-            ],
             "label": "onSceneAwakeScript"
         }
     ],

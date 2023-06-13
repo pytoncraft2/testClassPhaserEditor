@@ -30,11 +30,9 @@ export default class CollisionScript extends ScriptNode {
 
 	// Write your code here.
 	execute(args?: any): void {
-		// if (args[0]) {
-			// this.scene.physics.add.collider(args[0], args[1]);
-		// }
-		console.log("EXE");
-		
+		if (this.Objet1) {
+			this.scene.physics.add.collider(this.Objet1, this.Objet2);
+		}
 	}
 
 	get scene(): Niveau1 {

@@ -15,14 +15,7 @@
         {
             "type": "ScriptNode",
             "id": "5e58ffd2-56b9-46e4-bfca-76d96310d138",
-            "label": "scriptnode_1",
-            "list": [
-                {
-                    "prefabId": "817ef477-04c8-4e45-a691-8a4a0b49aa8a",
-                    "id": "4be0d0e5-4b39-4bb2-953c-c7530643084d",
-                    "label": "collisionScript"
-                }
-            ]
+            "label": "scriptnode_1"
         }
     ],
     "plainObjects": [],
@@ -31,5 +24,29 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "Objet1",
+            "label": "Objet1",
+            "tooltip": "Objet1",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
+            }
+        },
+        {
+            "name": "Objet2",
+            "label": "Objet2",
+            "tooltip": "Objet2",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
+            }
+        }
+    ]
 }

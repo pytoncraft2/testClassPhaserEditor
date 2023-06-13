@@ -72,22 +72,22 @@
         {
             "name": "Objet1",
             "label": "Objet1",
-            "tooltip": "premier objet à mettre en colision",
+            "tooltip": "Objet1",
             "defValue": "",
             "customDefinition": false,
             "type": {
-                "id": "expression",
+                "id": "object-var",
                 "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
             }
         },
         {
             "name": "Objet2",
             "label": "Objet2",
-            "tooltip": "deuxieme objet à mettre en colision",
+            "tooltip": "Objet2",
             "defValue": "",
             "customDefinition": false,
             "type": {
-                "id": "expression",
+                "id": "object-var",
                 "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
             }
         }
