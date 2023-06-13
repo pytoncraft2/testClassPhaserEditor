@@ -19,18 +19,22 @@ export default class CollisionScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	public collisionCallback!: Phaser.GameObjects.GameObject;
+	public processCallback!: Phaser.GameObjects.GameObject;
+	public contexte!: Phaser.GameObjects.GameObject;
+	public chevauchementSeulement: boolean = false;
+	public Objet1!: Phaser.Types.Physics.Arcade.ArcadeColliderType;
+	public Objet2!: Phaser.Types.Physics.Arcade.ArcadeColliderType;
+
 	/* START-USER-CODE */
 
 	// Write your code here.
 	execute(args?: any): void {
-		console.log(args);
-		if (args[0]) {
-			this.scene.physics.add.collider(args[0], args[1]);
-		}
-	}
-	awake(): void {
-		console.log(super.gameObject);
-
+		// if (args[0]) {
+			// this.scene.physics.add.collider(args[0], args[1]);
+		// }
+		console.log("EXE");
+		
 	}
 
 	get scene(): Niveau1 {

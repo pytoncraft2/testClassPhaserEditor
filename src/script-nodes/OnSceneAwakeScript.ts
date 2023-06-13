@@ -24,14 +24,11 @@ export default class OnSceneAwakeScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
-	public Objet2!: Phaser.Types.Physics.Arcade.ArcadeColliderType;
-	public Objet1!: Phaser.Types.Physics.Arcade.ArcadeColliderType;
-
 	/* START-USER-CODE */
 
 	protected awake(): void {
 		this.scene.entiteControllable = this.scene.groupe_allies.getByName('huipat') as BaseEntites;
-		this.executeChildren([this.Objet1, this.Objet2])
+		this.executeChildren()
 	}
 
 	get scene(): Niveau1 {

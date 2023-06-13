@@ -24,5 +24,72 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "collisionCallback",
+            "label": "collisionCallback",
+            "tooltip": "callback lors de la colision",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.GameObject"
+            }
+        },
+        {
+            "name": "processCallback",
+            "label": "processCallback",
+            "tooltip": "préverification avant colision",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.GameObject"
+            }
+        },
+        {
+            "name": "contexte",
+            "label": "contexte",
+            "tooltip": "porté de la fonction de callback",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.GameObject"
+            }
+        },
+        {
+            "name": "chevauchementSeulement",
+            "label": "chevauchementSeulement",
+            "tooltip": "colision ou chevauchement",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "Objet1",
+            "label": "Objet1",
+            "tooltip": "premier objet à mettre en colision",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
+            }
+        },
+        {
+            "name": "Objet2",
+            "label": "Objet2",
+            "tooltip": "deuxieme objet à mettre en colision",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "Phaser.Types.Physics.Arcade.ArcadeColliderType"
+            }
+        }
+    ]
 }

@@ -110,11 +110,7 @@ export default class Niveau2 extends BaseNiveaux {
 		groupe_adversaires.add(murale);
 
 		// onSceneAwakeScript
-		const onSceneAwakeScript = new OnSceneAwakeScript(this);
-
-		// onSceneAwakeScript (prefab fields)
-		onSceneAwakeScript.Objet2 = platformes.list;
-		onSceneAwakeScript.Objet1 = [...groupe_allies.list, ...groupe_adversaires.list];
+		new OnSceneAwakeScript(this);
 
 		this.platformes = platformes;
 		this.huipat = huipat;

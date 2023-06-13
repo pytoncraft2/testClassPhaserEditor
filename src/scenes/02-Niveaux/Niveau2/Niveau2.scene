@@ -253,12 +253,9 @@
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "bb012df8-2b41-4a78-8cac-38ed0a7b48a0",
             "unlock": [
-                "Objet1",
                 "Objet2"
             ],
-            "label": "onSceneAwakeScript",
-            "Objet2": "platformes.list",
-            "Objet1": "[...groupe_allies.list, ...groupe_adversaires.list]"
+            "label": "onSceneAwakeScript"
         }
     ],
     "plainObjects": [],
