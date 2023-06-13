@@ -6,6 +6,7 @@
 import ScriptNode from "../script-nodes-basic/ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import Niveau1 from "~/scenes/02-Niveaux/Niveau1/Niveau1";
 /* END-USER-IMPORTS */
 
 export default class CollisionScript extends ScriptNode {
@@ -18,15 +19,23 @@ export default class CollisionScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
-	public Objet1!: Phaser.GameObjects.GameObject;
-	public Objet2!: Phaser.GameObjects.GameObject;
-	public collisionCallback!: Phaser.GameObjects.GameObject;
-	public processCallback!: Phaser.GameObjects.GameObject;
-	public contexte: Phaser.GameObjects.GameObject = this;
-
 	/* START-USER-CODE */
 
 	// Write your code here.
+	execute(args?: any): void {
+		console.log(args);
+		if (args[0]) {
+			this.scene.physics.add.collider(args[0], args[1]);
+		}
+	}
+	awake(): void {
+		console.log(super.gameObject);
+
+	}
+
+	get scene(): Niveau1 {
+        return super.scene as Niveau1;
+	}
 
 	/* END-USER-CODE */
 }
