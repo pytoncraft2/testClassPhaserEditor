@@ -16,8 +16,13 @@
             "type": "ScriptNode",
             "id": "5e58ffd2-56b9-46e4-bfca-76d96310d138",
             "label": "scriptnode_1",
-            "components": [],
-            "list": []
+            "list": [
+                {
+                    "prefabId": "817ef477-04c8-4e45-a691-8a4a0b49aa8a",
+                    "id": "4be0d0e5-4b39-4bb2-953c-c7530643084d",
+                    "label": "collisionScript"
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -25,6 +30,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

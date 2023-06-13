@@ -83,6 +83,7 @@ export default class Araigne extends BaseEntites {
 	public sautEnHautActivable: boolean = false;
 	public velociteX: number = 390;
 	public imageTexture: {key:string,frame?:string|number} = {"key":"araigne","frame":"araigne.png"};
+	public estActiveIA: boolean = true;
 
 	/* START-USER-CODE */
 	// Write your code here.
@@ -103,7 +104,7 @@ export default class Araigne extends BaseEntites {
 		loop: true,
 		paused: true
 	});
-	
+
 	/** MISE EN PLACE DE LA LOGIQUE DE DESCISION DU SAUT */
 
 	awake(): void {

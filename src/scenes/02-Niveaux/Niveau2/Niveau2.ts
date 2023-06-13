@@ -7,6 +7,8 @@ import BaseNiveaux from "../BaseNiveaux";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
+import Murale from "../../03-Entites/Araigne/Murale";
+import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -92,19 +94,26 @@ export default class Niveau2 extends BaseNiveaux {
 		const groupe_adversaires = this.add.container(500, 200);
 
 		// araigne
-		const araigne = new Araigne(this, 580, 647);
+		const araigne = new Araigne(this, 400, 0);
 		groupe_adversaires.add(araigne);
 
 		// araigne_1
-		const araigne_1 = new Araigne(this, 1100, 200);
+		const araigne_1 = new Araigne(this, 1200, 200);
 		groupe_adversaires.add(araigne_1);
 
 		// araigne_2
-		const araigne_2 = new Araigne(this, 500, 0);
+		const araigne_2 = new Araigne(this, 600, 600);
 		groupe_adversaires.add(araigne_2);
 
+		// murale
+		const murale = new Murale(this, -300, -200);
+		groupe_adversaires.add(murale);
+
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
+
 		// platformes_vs_entites
-		this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
+		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list);
 
 		this.platformes = platformes;
 		this.huipat = huipat;

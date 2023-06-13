@@ -21,7 +21,6 @@
             "id": "467dc089-620f-45e8-8c9b-24e15b50c71b",
             "label": "platformes",
             "scope": "PUBLIC",
-            "components": [],
             "list": [
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -33,13 +32,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab",
-                    "components": [],
                     "x": 390,
                     "y": 1000,
                     "scaleX": 5,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -51,13 +47,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_1",
-                    "components": [],
                     "x": 1536,
                     "y": 1000,
                     "scaleX": 6,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -69,13 +62,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_2",
-                    "components": [],
                     "x": 1560,
                     "y": 800,
                     "scaleX": 3,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -87,13 +77,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_3",
-                    "components": [],
                     "x": 260,
                     "y": 600,
                     "scaleX": 3,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -105,13 +92,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_4",
-                    "components": [],
                     "x": 1560,
                     "y": 600,
                     "scaleX": 5,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -123,13 +107,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_5",
-                    "components": [],
                     "x": 910,
                     "y": 400,
                     "scaleX": 8,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -141,13 +122,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_6",
-                    "components": [],
                     "x": 1600,
                     "y": 200,
                     "scaleX": 5,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -159,13 +137,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_7",
-                    "components": [],
                     "x": 576,
                     "y": 800,
                     "scaleX": 5,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -177,13 +152,10 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_8",
-                    "components": [],
                     "x": 260,
                     "y": 200,
                     "scaleX": 4,
-                    "scaleY": 0.20034715589478025,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "scaleY": 0.20034715589478025
                 }
             ]
         },
@@ -192,7 +164,6 @@
             "id": "63f32121-43cc-47a6-a8ea-44332abff289",
             "label": "groupe_allies",
             "scope": "PUBLIC",
-            "components": [],
             "x": 700,
             "y": 600,
             "list": [
@@ -206,7 +177,6 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "components": [],
                     "x": 0,
                     "y": 0,
                     "nestedPrefabs": [
@@ -218,14 +188,10 @@
                                 "originY"
                             ],
                             "label": "image",
-                            "components": [],
                             "originX": 0.5,
-                            "originY": 0.5,
-                            "nestedPrefabs": [],
-                            "list": []
+                            "originY": 0.5
                         }
-                    ],
-                    "list": []
+                    ]
                 }
             ]
         },
@@ -234,53 +200,59 @@
             "id": "faa969ae-91f9-4d3c-83e1-6cbe90b1bb95",
             "label": "groupe_adversaires",
             "scope": "PUBLIC",
-            "components": [],
             "x": 500,
             "y": 200,
             "list": [
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "7156f0f6-4e8d-4dd4-b795-07bad114041e",
+                    "id": "3756c876-87c1-460b-affc-b87e028edeab",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "araigne",
-                    "components": [],
-                    "x": 580,
-                    "y": 647,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 400,
+                    "y": 0
                 },
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "c430b4c7-8e3f-49e2-b55b-4d41ae23f46d",
+                    "id": "e15d4e5a-b639-417e-a2a2-0ce766c1b106",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "araigne_1",
-                    "components": [],
-                    "x": 1100,
-                    "y": 200,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 1200,
+                    "y": 200
                 },
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "c574ae33-5e90-43f2-ac28-ed594161e0d7",
+                    "id": "ae9ebd14-3c87-4508-b00b-a48339e398a2",
                     "unlock": [
                         "x",
                         "y"
                     ],
                     "label": "araigne_2",
-                    "components": [],
-                    "x": 500,
-                    "y": 0,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "x": 600,
+                    "y": 600
+                },
+                {
+                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+                    "id": "b752131c-2483-48f0-952f-661e87563ffd",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "murale",
+                    "x": -300,
+                    "y": -200
                 }
             ]
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "fb4021ac-d126-46d3-95e7-1404b682e7a0",
+            "label": "onSceneAwakeScript"
         }
     ],
     "plainObjects": [
@@ -297,6 +269,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     }
 }

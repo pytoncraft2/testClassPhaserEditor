@@ -329,14 +329,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 	entiteTouchePlatformes(entite: BaseEntites, platforme: PlatformePrefab) {
 	}
 
-	animationFinNiveau() {
-		// this.cameras.main.fadeOut(1000, 0, 0, 0)
-		// this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, () => {
-			this.scene.remove('Niveau1');
-
-			this.scene.start('Niveau2')
-		// })
-	}
 	/* END-USER-CODE */
 }
 

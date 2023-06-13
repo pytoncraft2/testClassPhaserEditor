@@ -173,6 +173,16 @@
             "type": {
                 "id": "texture-config"
             }
+        },
+        {
+            "name": "estActiveIA",
+            "label": "estActiveIA",
+            "tooltip": "indique si l'IA est automatiquement actvié",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
         }
     ]
 }

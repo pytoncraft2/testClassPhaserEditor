@@ -3,8 +3,9 @@
 
 /* START OF COMPILED CODE */
 
-import ScriptNode from "./ScriptNode";
+import ScriptNode from "../script-nodes-basic/ScriptNode";
 import Phaser from "phaser";
+import CollisionScript from "./CollisionScript";
 /* START-USER-IMPORTS */
 import Niveau1 from "~/scenes/02-Niveaux/Niveau1/Niveau1";
 import BaseEntites from "~/scenes/03-Entites/BaseEntites";
@@ -14,6 +15,9 @@ export default class OnSceneAwakeScript extends ScriptNode {
 
 	constructor(parent: ScriptNode | Phaser.GameObjects.GameObject | Phaser.Scene) {
 		super(parent);
+
+		// collisionScript
+		new CollisionScript(this);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
