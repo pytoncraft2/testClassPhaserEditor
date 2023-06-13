@@ -112,10 +112,14 @@ export default class Niveau2 extends BaseNiveaux {
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// groupe_vs_platformes
+		const groupe_vs_platformes = this.add.layer();
+
 		this.platformes = platformes;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
+		this.groupe_vs_platformes = groupe_vs_platformes;
 
 		this.events.emit("scene-awake");
 	}
@@ -124,6 +128,7 @@ export default class Niveau2 extends BaseNiveaux {
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
+	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
 
 	/* START-USER-CODE */
 
