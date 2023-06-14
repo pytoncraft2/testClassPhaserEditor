@@ -79,6 +79,28 @@
                     "isFilled": true,
                     "width": 128,
                     "height": 128
+                },
+                {
+                    "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+                    "id": "26dfd48d-f7df-4fa2-838c-e899723d2c88",
+                    "unlock": [
+                        "ref",
+                        "durée",
+                        "duree",
+                        "scaleX",
+                        "scaleY",
+                        "longueurFile",
+                        "x",
+                        "y"
+                    ],
+                    "label": "fileToileIntro",
+                    "ref": "this",
+                    "duree": 5200,
+                    "longueurFile": 7.45,
+                    "x": -1,
+                    "y": -62,
+                    "scaleX": 0.029609107493260928,
+                    "scaleY": -1
                 }
             ]
         }
@@ -178,7 +200,7 @@
             "name": "estActiveIA",
             "label": "estActiveIA",
             "tooltip": "indique si l'IA est automatiquement actvié",
-            "defValue": true,
+            "defValue": false,
             "customDefinition": false,
             "type": {
                 "id": "boolean"

@@ -65,6 +65,17 @@
                     "label": "murale_2",
                     "x": 752,
                     "y": 671
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "b1d909f2-8db0-40b4-b2c4-ce21673e2126",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_1",
+                    "x": 1661,
+                    "y": 876
                 }
             ]
         },
