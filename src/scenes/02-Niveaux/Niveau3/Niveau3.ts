@@ -4,20 +4,17 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
-import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
-import Huipat from "../../03-Entites/Huipat/Huipat";
-import Araigne from "../../03-Entites/Araigne/Araigne";
 import Murale from "../../03-Entites/Araigne/Murale";
+import Huipat from "../../03-Entites/Huipat/Huipat";
+import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
-import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
-import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default class Niveau2 extends BaseNiveaux {
+export default class Niveau3 extends BaseNiveaux {
 
 	constructor() {
-		super("Niveau2");
+		super("Niveau3");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -26,8 +23,38 @@ export default class Niveau2 extends BaseNiveaux {
 
 	editorCreate(): void {
 
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = this.add.container(0, 0);
+
+		// groupe_vs_platformes
+		const groupe_vs_platformes = this.add.layer();
+
+		// groupe_adversaires
+		const groupe_adversaires = this.add.container(2, 1);
+
+		// murale
+		const murale = new Murale(this, -300, -200);
+		groupe_adversaires.add(murale);
+
+		// murale_1
+		const murale_1 = new Murale(this, 1068, 194);
+		groupe_adversaires.add(murale_1);
+
+		// murale_2
+		const murale_2 = new Murale(this, 752, 671);
+		groupe_adversaires.add(murale_2);
+
+		// groupe_allies
+		const groupe_allies = this.add.container(379.8965337395412, 693.9689068033596);
+
+		// huipat
+		const huipat = new Huipat(this, 0, 0);
+		huipat.name = "huipat";
+		groupe_allies.add(huipat);
+		huipat.image.setOrigin(0.5, 0.5);
+
 		// platformes
-		const platformes = this.add.container(0, 0);
+		const platformes = this.add.container(-4, -2);
 
 		// platformePrefab
 		const platformePrefab = new PlatformePrefab(this, 390, 1000);
@@ -83,77 +110,30 @@ export default class Niveau2 extends BaseNiveaux {
 		platformePrefab_8.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_8);
 
-		// groupe_allies
-		const groupe_allies = this.add.container(700, 600);
-
-		// huipat
-		const huipat = new Huipat(this, 0, 0);
-		huipat.name = "huipat";
-		groupe_allies.add(huipat);
-		huipat.image.setOrigin(0.5, 0.5);
-
-		// groupe_adversaires
-		const groupe_adversaires = this.add.container(1, 1);
-
-		// araigne
-		const araigne = new Araigne(this, 400, 0);
-		groupe_adversaires.add(araigne);
-
-		// araigne_1
-		const araigne_1 = new Araigne(this, 1200, 200);
-		groupe_adversaires.add(araigne_1);
-
-		// araigne_2
-		const araigne_2 = new Araigne(this, 600, 600);
-		groupe_adversaires.add(araigne_2);
-
-		// murale
-		const murale = new Murale(this, -300, -200);
-		groupe_adversaires.add(murale);
-
-		// groupe_vs_platformes
-		const groupe_vs_platformes = this.add.layer();
-
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 0);
-
-		// text_1
-		const text_1 = this.add.text(1639.9023068811155, 83.75820312821175, "", {});
-		text_1.text = "NIVEAU 3";
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(text_1);
-
-		// startSceneActionScript
-		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
-
 		// lists
-		const liste_toile_vs_adversaire = [araigne, murale, araigne_2, araigne_1];
+		const liste_toile_vs_adversaire = [murale_2, murale_1, murale];
 
-		// startSceneActionScript (prefab fields)
-		startSceneActionScript.sceneKey = "Niveau3";
-
-		this.platformes = platformes;
+		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.groupe_vs_platformes = groupe_vs_platformes;
+		this.groupe_adversaires = groupe_adversaires;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
-		this.groupe_adversaires = groupe_adversaires;
-		this.groupe_vs_platformes = groupe_vs_platformes;
-		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.platformes = platformes;
 		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
 		this.events.emit("scene-awake");
 	}
 
-	public platformes!: Phaser.GameObjects.Container;
+	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
+	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
+	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
-	public groupe_adversaires!: Phaser.GameObjects.Container;
-	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
-	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
-	public liste_toile_vs_adversaire!: Array<Araigne|Murale>;
+	public platformes!: Phaser.GameObjects.Container;
+	private liste_toile_vs_adversaire!: Murale[];
 
 	/* START-USER-CODE */
 

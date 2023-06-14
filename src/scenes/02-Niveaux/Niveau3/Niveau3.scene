@@ -1,0 +1,276 @@
+{
+    "id": "ae2bae5b-13b1-4a2e-8ce4-bd08f96433b1",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseNiveaux",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Niveau3",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "5474df87-6c48-41bf-85c9-f1a92e17788a",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC"
+        },
+        {
+            "type": "Layer",
+            "id": "b0f4d19c-1cb2-487a-927f-f2cf874be070",
+            "label": "groupe_vs_platformes",
+            "scope": "PUBLIC"
+        },
+        {
+            "type": "Container",
+            "id": "5d44217b-93ea-4c97-98f5-e86fd36d8159",
+            "label": "groupe_adversaires",
+            "scope": "PUBLIC",
+            "x": 2,
+            "y": 1,
+            "list": [
+                {
+                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+                    "id": "9949595a-25b2-436b-9450-b89ab29c2c56",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "murale",
+                    "x": -300,
+                    "y": -200
+                },
+                {
+                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+                    "id": "6e663337-a711-4c56-8444-85f1c2d56593",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "murale_1",
+                    "x": 1068,
+                    "y": 194
+                },
+                {
+                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+                    "id": "302db86e-829f-4706-9fa4-995f08792f2f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "murale_2",
+                    "x": 752,
+                    "y": 671
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "09399859-b8e8-496c-a884-6727f50dcb77",
+            "label": "groupe_allies",
+            "scope": "PUBLIC",
+            "x": 379.8965337395412,
+            "y": 693.9689068033596,
+            "list": [
+                {
+                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
+                    "id": "1c28913b-5284-4431-b049-e766eb8b07e8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 0,
+                    "y": 0,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
+                            "id": "34d65578-6564-4782-8622-5356649bfd2f",
+                            "unlock": [
+                                "originX",
+                                "originY"
+                            ],
+                            "label": "image",
+                            "originX": 0.5,
+                            "originY": 0.5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "e5b7ab5a-301b-4a99-b61e-7c02aede871d",
+            "label": "platformes",
+            "scope": "PUBLIC",
+            "x": -4,
+            "y": -2,
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "1c6d11c5-5ebd-40b6-ab3f-a4f89ed30b00",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "x": 390,
+                    "y": 1000,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "21414a43-38cb-4264-a005-dabe33cca114",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_1",
+                    "x": 1536,
+                    "y": 1000,
+                    "scaleX": 6,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "4919dc3c-5ee5-475b-be88-9608a78e5bee",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_2",
+                    "x": 1560,
+                    "y": 800,
+                    "scaleX": 3,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "ca688c7f-0e87-4d6a-b479-51d2d1b71838",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_3",
+                    "x": 260,
+                    "y": 600,
+                    "scaleX": 3,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "d80414ea-9a9c-4ee6-a6e5-5d6c38615d61",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_4",
+                    "x": 1560,
+                    "y": 600,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "dd2ceb90-1389-4177-88c9-b21245478efb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_5",
+                    "x": 910,
+                    "y": 400,
+                    "scaleX": 8,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "894daf50-fae7-497c-9335-c6976db6d715",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_6",
+                    "x": 1600,
+                    "y": 200,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "fcc3b966-3736-497d-afe9-5ce938119768",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_7",
+                    "x": 576,
+                    "y": 800,
+                    "scaleX": 5,
+                    "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "daad7875-c846-4b20-8b0b-74242f1e3754",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab_8",
+                    "x": 260,
+                    "y": 200,
+                    "scaleX": 4,
+                    "scaleY": 0.20034715589478025
+                }
+            ]
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "e5249925-91b8-45c9-99e8-d91fcd01b6c5",
+            "label": "onSceneAwakeScript"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    },
+    "lists": [
+        {
+            "id": "2fbaaf3b-012b-4483-95f1-a2ceb9d41b1c",
+            "label": "liste_toile_vs_adversaire",
+            "objectIds": [
+                "302db86e-829f-4706-9fa4-995f08792f2f",
+                "6e663337-a711-4c56-8444-85f1c2d56593",
+                "9949595a-25b2-436b-9450-b89ab29c2c56"
+            ]
+        }
+    ]
+}

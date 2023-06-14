@@ -263,9 +263,33 @@
             "type": "Container",
             "id": "f1b58b6a-a918-437f-b232-6c5b01fedeac",
             "label": "groupe_projectile_toiles",
-            "scope": "PUBLIC",
-            "x": -1,
-            "y": 1
+            "scope": "PUBLIC"
+        },
+        {
+            "type": "Text",
+            "id": "f73b9f42-9934-4ab4-b22d-56c2e708028a",
+            "label": "text_1",
+            "x": 1639.9023068811155,
+            "y": 83.75820312821175,
+            "text": "NIVEAU 3",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "7f1647fa-b1f3-487f-97c4-a7b3f2cd1ba2",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
+                            "id": "2c15b334-7e97-42db-9f19-03f1e726be64",
+                            "unlock": [
+                                "sceneKey"
+                            ],
+                            "label": "startSceneActionScript",
+                            "sceneKey": "Niveau3"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

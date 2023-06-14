@@ -192,6 +192,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	update(time: number, delta: number): void {
+		console.log(this.finDePartie);
+		
 		if (!this.finDePartie) {
 			this.observeToucheDeplacement()
 		}
