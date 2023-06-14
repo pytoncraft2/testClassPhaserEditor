@@ -91,7 +91,7 @@ export default class Niveau2 extends BaseNiveaux {
 		huipat.image.setOrigin(0.5, 0.5);
 
 		// groupe_adversaires
-		const groupe_adversaires = this.add.container(500, 200);
+		const groupe_adversaires = this.add.container(1, 1);
 
 		// araigne
 		const araigne = new Araigne(this, 400, 0);
@@ -109,17 +109,25 @@ export default class Niveau2 extends BaseNiveaux {
 		const murale = new Murale(this, -300, -200);
 		groupe_adversaires.add(murale);
 
+		// groupe_vs_platformes
+		const groupe_vs_platformes = this.add.layer();
+
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
-		// groupe_vs_platformes
-		const groupe_vs_platformes = this.add.layer();
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = this.add.container(-1, 1);
+
+		// lists
+		const liste_toile_vs_adversaire = [araigne, murale, araigne_2, araigne_1];
 
 		this.platformes = platformes;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
 		this.groupe_vs_platformes = groupe_vs_platformes;
+		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
 		this.events.emit("scene-awake");
 	}
@@ -129,6 +137,8 @@ export default class Niveau2 extends BaseNiveaux {
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
+	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
+	public liste_toile_vs_adversaire!: Array<Araigne|Murale>;
 
 	/* START-USER-CODE */
 

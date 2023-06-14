@@ -30,7 +30,7 @@ export default class OnSceneAwakeScript extends ScriptNode {
 		this.scene.physics.add.collider(
 			[...this.scene.groupe_adversaires.list, ...this.scene.groupe_allies.list],
 			this.scene.platformes.list,
-			this.scene.entiteTouchePlatformes as any,
+			this.scene.entiteTouchePlatformes as Phaser.Types.Physics.Arcade.ArcadePhysicsCallback,
 			this.scene.verifEntiteTouchePlatformes as any
 		);
 
@@ -38,18 +38,18 @@ export default class OnSceneAwakeScript extends ScriptNode {
 		const adversaires_vs_allies = this.scene.physics.add.overlap(
 			this.scene.groupe_allies.list,
 			this.scene.groupe_adversaires.list,
-			this.scene.allieToucheAdversaireProche as any,
+			this.scene.allieToucheAdversaireProche as Phaser.Types.Physics.Arcade.ArcadePhysicsCallback,
 			this.scene.verifAllieToucheAdversaireProche as any
 		);
 
 		// toiles_vs_entite
-		// const toiles_vs_entite = this.scene.physics.add.collider(
-		// 	this.scene.groupe_projectile_toiles.list,
-		// 	this.scene.liste_toile_vs_adversaire,
-		// 	this.scene.toileToucheEntite as any,
-		// 	undefined,
-		// 	this
-		// );
+		const toiles_vs_entite = this.scene.physics.add.collider(
+			this.scene.groupe_projectile_toiles.list,
+			this.scene.liste_toile_vs_adversaire,
+			this.scene.toileToucheEntite as Phaser.Types.Physics.Arcade.ArcadePhysicsCallback,
+			undefined,
+			this
+		);
 
 		// platformes_vs_toilemouvante
 		console.log(this.scene);

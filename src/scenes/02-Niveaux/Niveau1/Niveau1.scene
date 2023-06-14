@@ -390,7 +390,8 @@
                 "3ee4d14a-5f6b-44ff-abf1-f79b90c4d95d",
                 "23ccd7f4-eba6-4df1-bd5c-80f8f773821e",
                 "fe01cedb-44d2-4f10-81ff-2a39fc3a187a"
-            ]
+            ],
+            "scope": "PUBLIC"
         }
     ]
 }

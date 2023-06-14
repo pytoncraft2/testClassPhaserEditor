@@ -188,7 +188,7 @@ export default class Niveau1 extends BaseNiveaux {
 	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
 	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
-	private liste_toile_vs_adversaire!: Araigne[];
+	public liste_toile_vs_adversaire!: Araigne[];
 
 	/* START-USER-CODE */
 

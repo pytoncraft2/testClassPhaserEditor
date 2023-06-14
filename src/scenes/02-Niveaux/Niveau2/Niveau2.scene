@@ -2,7 +2,6 @@
     "id": "1b264cbd-aeaa-4aa5-a434-a0f6ffe71ad3",
     "sceneType": "SCENE",
     "settings": {
-        "snapEnabled": true,
         "snapWidth": 100,
         "snapHeight": 200,
         "exportClass": true,
@@ -200,8 +199,8 @@
             "id": "faa969ae-91f9-4d3c-83e1-6cbe90b1bb95",
             "label": "groupe_adversaires",
             "scope": "PUBLIC",
-            "x": 500,
-            "y": 200,
+            "x": 1,
+            "y": 1,
             "list": [
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
@@ -250,15 +249,23 @@
             ]
         },
         {
+            "type": "Layer",
+            "id": "ece1d4de-dfc5-47c1-aaea-48261e605bdc",
+            "label": "groupe_vs_platformes",
+            "scope": "PUBLIC"
+        },
+        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "bb012df8-2b41-4a78-8cac-38ed0a7b48a0",
             "label": "onSceneAwakeScript"
         },
         {
-            "type": "Layer",
-            "id": "ece1d4de-dfc5-47c1-aaea-48261e605bdc",
-            "label": "groupe_vs_platformes",
-            "scope": "PUBLIC"
+            "type": "Container",
+            "id": "f1b58b6a-a918-437f-b232-6c5b01fedeac",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC",
+            "x": -1,
+            "y": 1
         }
     ],
     "plainObjects": [],
@@ -267,5 +274,18 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "lists": [
+        {
+            "id": "39fb8755-88f5-4ef7-be9a-d0d9e964f980",
+            "label": "liste_toile_vs_adversaire",
+            "objectIds": [
+                "3756c876-87c1-460b-affc-b87e028edeab",
+                "b752131c-2483-48f0-952f-661e87563ffd",
+                "ae9ebd14-3c87-4508-b00b-a48339e398a2",
+                "e15d4e5a-b639-417e-a2a2-0ce766c1b106"
+            ],
+            "scope": "PUBLIC"
+        }
+    ]
 }
