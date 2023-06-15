@@ -16,42 +16,6 @@
     },
     "displayList": [
         {
-            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
-            "id": "506a225a-2773-4580-9650-a1d67b091dce",
-            "unlock": [
-                "x",
-                "y",
-                "ref",
-                "duree",
-                "longueurFile",
-                "delaiAvantActivation"
-            ],
-            "label": "fileToileIntro_1",
-            "ref": "araigne",
-            "duree": 4000,
-            "longueurFile": 5.9,
-            "delaiAvantActivation": 3000,
-            "x": 1767,
-            "y": 3
-        },
-        {
-            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
-            "id": "2b125bac-b18e-4fff-b740-f20c0c1bc8d3",
-            "unlock": [
-                "x",
-                "y",
-                "ref",
-                "longueurFile",
-                "delaiAvantActivation"
-            ],
-            "label": "fileToileIntro_2",
-            "ref": "araigne_2",
-            "longueurFile": 2.8,
-            "delaiAvantActivation": 2000,
-            "x": 954,
-            "y": -1
-        },
-        {
             "type": "Container",
             "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
             "label": "groupe_allies",
@@ -103,7 +67,22 @@
                     ],
                     "label": "araigne_2",
                     "x": 955,
-                    "y": -149
+                    "y": -149,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "c7bb0a73-a4fb-46af-8304-1007f947f6ba",
+                            "unlock": [
+                                "dureeAnimation",
+                                "longueurFile",
+                                "delaiAvantActivation"
+                            ],
+                            "label": "animationToileSuspenduScript_1",
+                            "dureeAnimation": 3000,
+                            "longueurFile": 3.8,
+                            "delaiAvantActivation": 700
+                        }
+                    ]
                 },
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
@@ -114,15 +93,18 @@
                     ],
                     "label": "araigne_3",
                     "x": 172,
-                    "y": 79,
+                    "y": -81,
                     "list": [
                         {
                             "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
-                            "id": "caf54da1-9ca3-4885-b3b4-c6c641afbcbb",
+                            "id": "3b610354-4878-4ef0-b8b8-b29135bdf48a",
                             "unlock": [
-                                "ref"
+                                "dureeAnimation",
+                                "longueurFile"
                             ],
-                            "label": "groupScript"
+                            "label": "animationToileSuspenduScript",
+                            "dureeAnimation": 4000,
+                            "longueurFile": 4.8
                         }
                     ]
                 },
@@ -134,8 +116,23 @@
                         "y"
                     ],
                     "label": "araigne",
-                    "x": 1765,
-                    "y": -144
+                    "x": 1372,
+                    "y": -144,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "feaad57c-39ac-49f2-9636-1523cb226c3a",
+                            "unlock": [
+                                "dureeAnimation",
+                                "longueurFile",
+                                "delaiAvantActivation"
+                            ],
+                            "label": "animationToileSuspenduScript_2",
+                            "dureeAnimation": 4300,
+                            "longueurFile": 5.3,
+                            "delaiAvantActivation": 1000
+                        }
+                    ]
                 }
             ]
         },

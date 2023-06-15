@@ -10,7 +10,7 @@ import FileToileIntro from "../scenes/04-Projectiles/FileToileIntro";
 import BaseEntites from "~/scenes/03-Entites/BaseEntites";
 /* END-USER-IMPORTS */
 
-export default class GroupScript extends ScriptNode {
+export default class AnimationToileSuspenduScript extends ScriptNode {
 
 	constructor(parent: ScriptNode | Phaser.GameObjects.GameObject | Phaser.Scene) {
 		super(parent);
@@ -20,27 +20,25 @@ export default class GroupScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	public dureeAnimation: number = 2000;
+	public longueurFile: number = 2.8;
+	public delaiAvantActivation: number = 500;
+	public fileToile: FileToileIntro = new FileToileIntro(this.scene, this.gameObject.x, this.gameObject.y);
+
 	/* START-USER-CODE */
-
-	// Write your code here.
 	protected awake(): void {
-	}
-	protected start(): void {
-		console.log(this);
+		this.fileToile.ref = this.gameObject;
+		this.fileToile.duree = this.dureeAnimation;
+		this.fileToile.longueurFile = this.longueurFile;
+		this.fileToile.delaiAvantActivation = this.delaiAvantActivation;
+		this.scene.add.existing(this.fileToile)
 
-		this.scene.tweens.add({
-			targets: this.gameObject.image,
-			delay: 1000,
-			alpha: 0,
-			duration: 1000
-		})
-		// var group = this.scene.add.group();
-		// group.add(this.file)
 	}
 
 	override get gameObject() {
 		return super.gameObject as BaseEntites;
 	}
+	// Write your code here.
 
 	/* END-USER-CODE */
 }

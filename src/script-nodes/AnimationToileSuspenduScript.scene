@@ -1,10 +1,9 @@
 {
-    "id": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
+    "id": "012a8056-957a-4439-b381-b8b5a58a9000",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
         "autoImport": true,
-        "generateAwakeHandler": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -14,16 +13,9 @@
     },
     "displayList": [
         {
-            "type": "Rectangle",
-            "id": "103735de-9f11-4c78-853f-15abb4dd61fe",
-            "label": "rectangle_1",
-            "scaleX": 0.029,
-            "scaleY": 0,
-            "originY": 0,
-            "alpha": 0.8,
-            "isFilled": true,
-            "width": 128,
-            "height": 128
+            "type": "ScriptNode",
+            "id": "7cb79b3c-7afd-4319-84e7-6a002f92d59a",
+            "label": "scriptnode_1"
         }
     ],
     "plainObjects": [],
@@ -35,21 +27,10 @@
     },
     "prefabProperties": [
         {
-            "name": "ref",
-            "label": "ref",
-            "tooltip": "ref",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "object-var",
-                "expressionType": "BaseEntites"
-            }
-        },
-        {
-            "name": "duree",
-            "label": "duree",
-            "tooltip": "durée de l'animation",
-            "defValue": 1900,
+            "name": "dureeAnimation",
+            "label": "dureeAnimation",
+            "tooltip": "durée avant total de l'animation avant destruction",
+            "defValue": 2000,
             "customDefinition": false,
             "type": {
                 "id": "number"
@@ -58,8 +39,8 @@
         {
             "name": "longueurFile",
             "label": "longueurFile",
-            "tooltip": "longueur final du file",
-            "defValue": 6,
+            "tooltip": "longueur du file suspendu",
+            "defValue": 2.8,
             "customDefinition": false,
             "type": {
                 "id": "number"
@@ -68,11 +49,22 @@
         {
             "name": "delaiAvantActivation",
             "label": "delaiAvantActivation",
-            "tooltip": "specifie le temps qu'il faut avant de démarrer l'animation",
-            "defValue": 0,
+            "tooltip": "delai avant l'activation de l'animation",
+            "defValue": 500,
             "customDefinition": false,
             "type": {
                 "id": "number"
+            }
+        },
+        {
+            "name": "fileToile",
+            "label": "fileToile",
+            "tooltip": "file suspendu",
+            "defValue": "new FileToileIntro(this.scene, this.gameObject.x, this.gameObject.y)",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "FileToileIntro"
             }
         }
     ]

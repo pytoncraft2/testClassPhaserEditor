@@ -14,7 +14,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 		super(scene, x ?? 0, y ?? 0, width ?? 128, height ?? 128);
 
 		this.scaleX = 0.029;
-		this.scaleY = -1;
+		this.scaleY = 0;
 		this.setOrigin(0.5, 0);
 		this.alpha = 0.8;
 		this.isFilled = true;
