@@ -17,28 +17,6 @@
     "displayList": [
         {
             "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
-            "id": "f834bc20-1ea6-49a4-b0be-2ea0cd374726",
-            "unlock": [
-                "ref",
-                "durée",
-                "duree",
-                "scaleX",
-                "scaleY",
-                "longueurFile",
-                "x",
-                "y"
-            ],
-            "label": "fileToileIntro",
-            "ref": "araigne_3",
-            "duree": 5200,
-            "longueurFile": 7.45,
-            "x": 172,
-            "y": -7,
-            "scaleX": 0.029609107493260928,
-            "scaleY": -1
-        },
-        {
-            "prefabId": "b8e8e965-61f4-4eb5-81c2-8a505668e813",
             "id": "506a225a-2773-4580-9650-a1d67b091dce",
             "unlock": [
                 "x",
@@ -136,7 +114,17 @@
                     ],
                     "label": "araigne_3",
                     "x": 172,
-                    "y": -146
+                    "y": 79,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "caf54da1-9ca3-4885-b3b4-c6c641afbcbb",
+                            "unlock": [
+                                "ref"
+                            ],
+                            "label": "groupScript"
+                        }
+                    ]
                 },
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",

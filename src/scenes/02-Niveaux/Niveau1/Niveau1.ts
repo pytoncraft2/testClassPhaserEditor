@@ -7,6 +7,7 @@ import BaseNiveaux from "../BaseNiveaux";
 import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Araigne from "../../03-Entites/Araigne/Araigne";
+import GroupScript from "../../../script-nodes/GroupScript";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
 import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
@@ -25,12 +26,6 @@ export default class Niveau1 extends BaseNiveaux {
 	}
 
 	editorCreate(): void {
-
-		// fileToileIntro
-		const fileToileIntro = new FileToileIntro(this, 172, -7);
-		this.add.existing(fileToileIntro);
-		fileToileIntro.scaleX = 0.029609107493260928;
-		fileToileIntro.scaleY = -1;
 
 		// fileToileIntro_1
 		const fileToileIntro_1 = new FileToileIntro(this, 1767, 3);
@@ -57,8 +52,11 @@ export default class Niveau1 extends BaseNiveaux {
 		groupe_adversaires.add(araigne_2);
 
 		// araigne_3
-		const araigne_3 = new Araigne(this, 172, -146);
+		const araigne_3 = new Araigne(this, 172, 79);
 		groupe_adversaires.add(araigne_3);
+
+		// groupScript
+		new GroupScript(araigne_3);
 
 		// araigne
 		const araigne = new Araigne(this, 1765, -144);
@@ -151,11 +149,6 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// adversaire_vs_toilemouvante
 		const adversaire_vs_toilemouvante = this.physics.add.overlap(groupe_vs_platformes.list, groupe_adversaires.list, this.toileMouvanteToucheAdversaire as any);
-
-		// fileToileIntro (prefab fields)
-		fileToileIntro.ref = araigne_3;
-		fileToileIntro.duree = 5200;
-		fileToileIntro.longueurFile = 7.45;
 
 		// fileToileIntro_1 (prefab fields)
 		fileToileIntro_1.ref = araigne;

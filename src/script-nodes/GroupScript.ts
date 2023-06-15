@@ -6,7 +6,8 @@
 import ScriptNode from "../script-nodes-basic/ScriptNode";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
-import FileToileIntro from "~/scenes/04-Projectiles/FileToileIntro";
+import FileToileIntro from "../scenes/04-Projectiles/FileToileIntro";
+import BaseEntites from "~/scenes/03-Entites/BaseEntites";
 /* END-USER-IMPORTS */
 
 export default class GroupScript extends ScriptNode {
@@ -19,14 +20,26 @@ export default class GroupScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
-	public Objet1: any = FileToileIntro;
-
 	/* START-USER-CODE */
 
 	// Write your code here.
+	protected awake(): void {
+	}
 	protected start(): void {
-		var group = this.scene.add.group();
-		group.add(this.Objet1)
+		console.log(this);
+
+		this.scene.tweens.add({
+			targets: this.gameObject.image,
+			delay: 1000,
+			alpha: 0,
+			duration: 1000
+		})
+		// var group = this.scene.add.group();
+		// group.add(this.file)
+	}
+
+	override get gameObject() {
+		return super.gameObject as BaseEntites;
 	}
 
 	/* END-USER-CODE */
