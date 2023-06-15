@@ -17,15 +17,13 @@
             "type": "Rectangle",
             "id": "103735de-9f11-4c78-853f-15abb4dd61fe",
             "label": "rectangle_1",
-            "components": [],
-            "scaleX": 0.029609107493260928,
+            "scaleX": 0.029,
             "scaleY": -1,
             "originY": 0,
             "alpha": 0.8,
             "isFilled": true,
             "width": 128,
-            "height": 128,
-            "list": []
+            "height": 128
         }
     ],
     "plainObjects": [],
@@ -33,7 +31,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 4
     },
     "prefabProperties": [
         {

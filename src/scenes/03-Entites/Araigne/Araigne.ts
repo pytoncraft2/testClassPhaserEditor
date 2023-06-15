@@ -3,7 +3,6 @@
 /* START OF COMPILED CODE */
 
 import BaseEntites from "../BaseEntites";
-import FileToileIntro from "../../04-Projectiles/FileToileIntro";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -54,17 +53,6 @@ export default class Araigne extends BaseEntites {
 		detecteur_haut.body.setSize(128, 128, false);
 		detecteur_haut.isFilled = true;
 		this.add(detecteur_haut);
-
-		// fileToileIntro
-		const fileToileIntro = new FileToileIntro(scene, -1, -62);
-		fileToileIntro.scaleX = 0.029609107493260928;
-		fileToileIntro.scaleY = -1;
-		this.add(fileToileIntro);
-
-		// fileToileIntro (prefab fields)
-		fileToileIntro.ref = this;
-		fileToileIntro.duree = 5200;
-		fileToileIntro.longueurFile = 7.45;
 
 		// colision_detecteur_haut
 		const colision_detecteur_haut = scene.physics.add.overlap(detecteur_haut, [], this.platformeEnHautAccessible as any, undefined, this);
