@@ -99,8 +99,6 @@
             "id": "09399859-b8e8-496c-a884-6727f50dcb77",
             "label": "groupe_allies",
             "scope": "PUBLIC",
-            "x": 303,
-            "y": 845,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
@@ -112,8 +110,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 0,
-                    "y": 0,
+                    "x": 334,
+                    "y": 893,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",

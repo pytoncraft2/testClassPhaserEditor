@@ -196,6 +196,7 @@ export default class Niveau4 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
+		this.scene.remove('Niveau3')
 	}
 
 	/* END-USER-CODE */

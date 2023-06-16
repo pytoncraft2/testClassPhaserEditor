@@ -254,6 +254,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
+		console.log("TOUCHE");
+		
 		if (!adversaire.groupeBlocage.children) return;
 		if (adversaire.groupeBlocage.getLength() >= adversaire.maxBlocages) {
 			toile.destroy()

@@ -51,9 +51,6 @@ export default class OnSceneAwakeScript extends ScriptNode {
 			this
 		);
 
-		// platformes_vs_toilemouvante
-		console.log(this.scene);
-		
 		const platformes_vs_toilemouvante = this.scene.physics.add.collider(
 			this.scene.platformes.list,
 			this.scene.groupe_vs_platformes.list
