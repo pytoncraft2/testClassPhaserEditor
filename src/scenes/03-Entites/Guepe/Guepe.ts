@@ -35,8 +35,6 @@ export default class Guepe extends BaseEntites {
 		this.add(image);
 
 		this.image = image;
-		// awake handler
-		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -54,10 +52,6 @@ export default class Guepe extends BaseEntites {
 	public maxBlocages: number = 3;
 
 	/* START-USER-CODE */
-	awake(): void {
-		// this.listeCibles = [...this.scene.fleurs.list];
-		// this.listeCibles.sort(() => 0.5 - Math.random())
-	}
 
 	actionToucheDroite(): void {
 		this.image.setFlipX(false)

@@ -16,9 +16,58 @@
     },
     "displayList": [
         {
-            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
-            "id": "38bc0943-826b-4683-828f-c6c6e69ef5d1",
-            "label": "onSceneAwakeScript"
+            "type": "Container",
+            "id": "d72c24dd-798c-4bf0-906a-af8a7ce72681",
+            "label": "fleurs",
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "36a99293-1325-4980-84c1-380c9290b7d9",
+                    "label": "fleur_bleu_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_bleu.png"
+                    },
+                    "x": 376,
+                    "y": 415
+                },
+                {
+                    "type": "Image",
+                    "id": "3828290f-1cbf-45a5-ab36-bb32378a9ce8",
+                    "label": "fleur_orange_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_orange.png"
+                    },
+                    "x": 1544,
+                    "y": 538,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "eac6e7da-9f67-46e7-9234-02a7007b3631",
+                    "label": "fleur_rose_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rose.png"
+                    },
+                    "x": 777,
+                    "y": 937,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "2756fe5d-50c3-4e6b-b7d2-da94f7e1f3b0",
+                    "label": "fleur_rouge_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rouge.png"
+                    },
+                    "x": 1341,
+                    "y": 84
+                }
+            ]
         },
         {
             "type": "Container",
@@ -272,6 +321,42 @@
                             "longueurFile": 4.1
                         }
                     ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "24ab58a3-f097-4b1c-9e9f-16bb80ca4c1a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "guepe",
+                    "x": 376,
+                    "y": 373,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "8e6f614f-f05c-4c63-ab3c-49743c041ab1",
+                            "label": "suivreFleursScript_1"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "5081d8b3-a7ff-4822-9589-dc25373662ab",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "guepe_1",
+                    "x": 666,
+                    "y": 504,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "29fe6182-e916-4ded-a09c-812307d873d6",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
                 }
             ]
         },
@@ -286,6 +371,11 @@
             "id": "7c15b13f-1d43-4c2e-bdb1-e9b16c1889fe",
             "label": "groupe_projectile_toiles",
             "scope": "PUBLIC"
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "38bc0943-826b-4683-828f-c6c6e69ef5d1",
+            "label": "onSceneAwakeScript"
         }
     ],
     "plainObjects": [],

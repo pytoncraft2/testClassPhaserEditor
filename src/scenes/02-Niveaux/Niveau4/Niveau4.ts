@@ -4,12 +4,14 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
-import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Murale from "../../03-Entites/Araigne/Murale";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import AnimationToileSuspenduScript from "../../../script-nodes/AnimationToileSuspenduScript";
+import Guepe from "../../03-Entites/Guepe/Guepe";
+import SuivreFleursScript from "../../../script-nodes/SuivreFleursScript";
+import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -25,8 +27,26 @@ export default class Niveau4 extends BaseNiveaux {
 
 	editorCreate(): void {
 
-		// onSceneAwakeScript
-		new OnSceneAwakeScript(this);
+		// fleurs
+		const fleurs = this.add.container(0, 0);
+
+		// fleur_bleu_png
+		const fleur_bleu_png = this.add.image(376, 415, "fleurs", "fleur_bleu.png");
+		fleurs.add(fleur_bleu_png);
+
+		// fleur_orange_png
+		const fleur_orange_png = this.add.image(1544, 538, "fleurs", "fleur_orange.png");
+		fleur_orange_png.flipX = true;
+		fleurs.add(fleur_orange_png);
+
+		// fleur_rose_png
+		const fleur_rose_png = this.add.image(777, 937, "fleurs", "fleur_rose.png");
+		fleur_rose_png.flipX = true;
+		fleurs.add(fleur_rose_png);
+
+		// fleur_rouge_png
+		const fleur_rouge_png = this.add.image(1341, 84, "fleurs", "fleur_rouge.png");
+		fleurs.add(fleur_rouge_png);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
@@ -119,11 +139,28 @@ export default class Niveau4 extends BaseNiveaux {
 		// animationToileSuspenduScript_1
 		const animationToileSuspenduScript_1 = new AnimationToileSuspenduScript(araigne);
 
+		// guepe
+		const guepe = new Guepe(this, 376, 373);
+		groupe_adversaires.add(guepe);
+
+		// suivreFleursScript_1
+		new SuivreFleursScript(guepe);
+
+		// guepe_1
+		const guepe_1 = new Guepe(this, 666, 504);
+		groupe_adversaires.add(guepe_1);
+
+		// suivreFleursScript
+		new SuivreFleursScript(guepe_1);
+
 		// groupe_vs_platformes
 		const groupe_vs_platformes = this.add.layer();
 
 		// groupe_projectile_toiles
 		const groupe_projectile_toiles = this.add.container(0, 0);
+
+		// onSceneAwakeScript
+		new OnSceneAwakeScript(this);
 
 		// animationToileSuspenduScript (prefab fields)
 		animationToileSuspenduScript.dureeAnimation = 3000;
@@ -133,6 +170,7 @@ export default class Niveau4 extends BaseNiveaux {
 		animationToileSuspenduScript_1.dureeAnimation = 3400;
 		animationToileSuspenduScript_1.longueurFile = 4.1;
 
+		this.fleurs = fleurs;
 		this.platformes = platformes;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
@@ -143,6 +181,7 @@ export default class Niveau4 extends BaseNiveaux {
 		this.events.emit("scene-awake");
 	}
 
+	public fleurs!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
