@@ -170,36 +170,6 @@
                 },
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "ca688c7f-0e87-4d6a-b479-51d2d1b71838",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "platformePrefab_3",
-                    "x": 260,
-                    "y": 600,
-                    "scaleX": 3,
-                    "scaleY": 0.20034715589478025
-                },
-                {
-                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
-                    "id": "d80414ea-9a9c-4ee6-a6e5-5d6c38615d61",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "platformePrefab_4",
-                    "x": 1560,
-                    "y": 600,
-                    "scaleX": 5,
-                    "scaleY": 0.20034715589478025
-                },
-                {
-                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
                     "id": "dd2ceb90-1389-4177-88c9-b21245478efb",
                     "unlock": [
                         "x",
@@ -224,7 +194,7 @@
                     ],
                     "label": "platformePrefab_6",
                     "x": 1600,
-                    "y": 200,
+                    "y": 148,
                     "scaleX": 5,
                     "scaleY": 0.20034715589478025
                 },
@@ -238,9 +208,9 @@
                         "scaleY"
                     ],
                     "label": "platformePrefab_7",
-                    "x": 576,
+                    "x": 926,
                     "y": 800,
-                    "scaleX": 5,
+                    "scaleX": 3,
                     "scaleY": 0.20034715589478025
                 },
                 {
@@ -257,6 +227,28 @@
                     "y": 200,
                     "scaleX": 4,
                     "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "977a53af-6888-4eb8-b145-b62f4e6e183a",
+                    "id": "c49eb00f-3bfb-48ef-81a1-8338680a3185",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformeVerticale",
+                    "x": 1105,
+                    "y": 607
+                },
+                {
+                    "prefabId": "977a53af-6888-4eb8-b145-b62f4e6e183a",
+                    "id": "1b5df80c-e1b0-4a35-b18b-7dec42f20fdc",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformeVerticale_1",
+                    "x": 1410,
+                    "y": 353
                 }
             ]
         },

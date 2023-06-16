@@ -1,5 +1,5 @@
 {
-    "id": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+    "id": "977a53af-6888-4eb8-b145-b62f4e6e183a",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,13 +14,12 @@
     "displayList": [
         {
             "type": "Rectangle",
-            "id": "9611ed52-bbea-47b1-8975-6a299089709f",
+            "id": "3385db65-77cf-4ae2-b753-abaa16e4f5ae",
             "label": "rectangle_1",
-            "x": 541,
-            "y": 150,
-            "scaleX": 3.1810352497675325,
-            "scaleY": 0.20034715589478025,
+            "scaleX": 0.20034715589478025,
+            "scaleY": 3.1810352497675325,
             "ArcadeComponent.active": true,
+            "moves": false,
             "allowGravity": false,
             "pushable": false,
             "immovable": true,

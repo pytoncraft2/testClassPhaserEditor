@@ -22,6 +22,7 @@ export default class FileToileIntro extends Phaser.GameObjects.Rectangle {
 		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
+		this.setDepth(-1)
 
 		/* END-USER-CTR-CODE */
 	}

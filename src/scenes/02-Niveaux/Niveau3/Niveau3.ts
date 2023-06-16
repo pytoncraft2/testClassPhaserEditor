@@ -8,6 +8,7 @@ import Murale from "../../03-Entites/Araigne/Murale";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
+import PlatformeVerticale from "../../04-Platformes/PlatformeVerticale";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -79,18 +80,6 @@ export default class Niveau3 extends BaseNiveaux {
 		platformePrefab_2.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_2);
 
-		// platformePrefab_3
-		const platformePrefab_3 = new PlatformePrefab(this, 260, 600);
-		platformePrefab_3.scaleX = 3;
-		platformePrefab_3.scaleY = 0.20034715589478025;
-		platformes.add(platformePrefab_3);
-
-		// platformePrefab_4
-		const platformePrefab_4 = new PlatformePrefab(this, 1560, 600);
-		platformePrefab_4.scaleX = 5;
-		platformePrefab_4.scaleY = 0.20034715589478025;
-		platformes.add(platformePrefab_4);
-
 		// platformePrefab_5
 		const platformePrefab_5 = new PlatformePrefab(this, 910, 400);
 		platformePrefab_5.scaleX = 8;
@@ -98,14 +87,14 @@ export default class Niveau3 extends BaseNiveaux {
 		platformes.add(platformePrefab_5);
 
 		// platformePrefab_6
-		const platformePrefab_6 = new PlatformePrefab(this, 1600, 200);
+		const platformePrefab_6 = new PlatformePrefab(this, 1600, 148);
 		platformePrefab_6.scaleX = 5;
 		platformePrefab_6.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_6);
 
 		// platformePrefab_7
-		const platformePrefab_7 = new PlatformePrefab(this, 576, 800);
-		platformePrefab_7.scaleX = 5;
+		const platformePrefab_7 = new PlatformePrefab(this, 926, 800);
+		platformePrefab_7.scaleX = 3;
 		platformePrefab_7.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_7);
 
@@ -114,6 +103,14 @@ export default class Niveau3 extends BaseNiveaux {
 		platformePrefab_8.scaleX = 4;
 		platformePrefab_8.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_8);
+
+		// platformeVerticale
+		const platformeVerticale = new PlatformeVerticale(this, 1105, 607);
+		platformes.add(platformeVerticale);
+
+		// platformeVerticale_1
+		const platformeVerticale_1 = new PlatformeVerticale(this, 1410, 353);
+		platformes.add(platformeVerticale_1);
 
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);

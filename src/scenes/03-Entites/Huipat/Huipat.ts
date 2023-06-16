@@ -16,7 +16,7 @@ export default interface Huipat {
 export default class Huipat extends BaseEntites {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
-		super(scene, x ?? 0, y ?? 1);
+		super(scene, x ?? 172, y ?? 1);
 
 		scene.physics.add.existing(this, false);
 		this.body.gravity.y = 1000;
@@ -144,6 +144,10 @@ export default class Huipat extends BaseEntites {
 			adversaire.image.setScale(1)
 			adversaire.body.moves = true;
 		}
+	}
+
+	preUpdate(...args: any[]): void {
+		this.scene.physics.world.wrap(this, 400);
 	}
 
 	/* END-USER-CODE */

@@ -20,8 +20,6 @@
             "id": "629b2743-8d07-4f1e-8b59-69e38ffec7ba",
             "label": "groupe_allies",
             "scope": "PUBLIC",
-            "x": 1647,
-            "y": 426,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
@@ -33,8 +31,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": -922,
-                    "y": 485,
+                    "x": 956,
+                    "y": 912,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
@@ -56,7 +54,6 @@
             "id": "e1dcddaf-e967-413a-9b0c-8f47269e902b",
             "label": "groupe_adversaires",
             "scope": "PUBLIC",
-            "y": 10,
             "list": [
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",

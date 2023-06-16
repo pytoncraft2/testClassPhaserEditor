@@ -18,6 +18,7 @@
             "type": "Container",
             "id": "52692af4-e603-4549-8016-16fefc991658",
             "label": "container_1",
+            "x": 172,
             "y": 1,
             "ArcadeComponent.active": true,
             "body.gravity.y": 1000,

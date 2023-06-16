@@ -163,8 +163,6 @@
             "id": "63f32121-43cc-47a6-a8ea-44332abff289",
             "label": "groupe_allies",
             "scope": "PUBLIC",
-            "x": 700,
-            "y": 600,
             "list": [
                 {
                     "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
@@ -176,8 +174,8 @@
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 0,
-                    "y": 0,
+                    "x": 1548,
+                    "y": 900,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
@@ -211,7 +209,14 @@
                     ],
                     "label": "araigne",
                     "x": 400,
-                    "y": 0
+                    "y": 0,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "de0ba94f-4ed6-4a8e-af2a-61458ec9035b",
+                            "label": "animationToileSuspenduScript_1"
+                        }
+                    ]
                 },
                 {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
@@ -221,19 +226,15 @@
                         "y"
                     ],
                     "label": "araigne_1",
-                    "x": 1200,
-                    "y": 200
-                },
-                {
-                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
-                    "id": "ae9ebd14-3c87-4508-b00b-a48339e398a2",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "araigne_2",
-                    "x": 600,
-                    "y": 600
+                    "x": 1620,
+                    "y": -71,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "57ee45d9-c906-4708-a084-305d662e8d3f",
+                            "label": "animationToileSuspenduScript"
+                        }
+                    ]
                 },
                 {
                     "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
@@ -243,8 +244,19 @@
                         "y"
                     ],
                     "label": "murale",
-                    "x": -300,
-                    "y": -200
+                    "x": 702,
+                    "y": 288
+                },
+                {
+                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
+                    "id": "536f7977-047c-4620-ac40-5f25883fbd3f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "murale_1",
+                    "x": 280,
+                    "y": 920
                 }
             ]
         },
@@ -253,11 +265,6 @@
             "id": "ece1d4de-dfc5-47c1-aaea-48261e605bdc",
             "label": "groupe_vs_platformes",
             "scope": "PUBLIC"
-        },
-        {
-            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
-            "id": "bb012df8-2b41-4a78-8cac-38ed0a7b48a0",
-            "label": "onSceneAwakeScript"
         },
         {
             "type": "Container",
@@ -290,6 +297,11 @@
                     ]
                 }
             ]
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "bb012df8-2b41-4a78-8cac-38ed0a7b48a0",
+            "label": "onSceneAwakeScript"
         }
     ],
     "plainObjects": [],
@@ -306,7 +318,6 @@
             "objectIds": [
                 "3756c876-87c1-460b-affc-b87e028edeab",
                 "b752131c-2483-48f0-952f-661e87563ffd",
-                "ae9ebd14-3c87-4508-b00b-a48339e398a2",
                 "e15d4e5a-b639-417e-a2a2-0ce766c1b106"
             ],
             "scope": "PUBLIC"
