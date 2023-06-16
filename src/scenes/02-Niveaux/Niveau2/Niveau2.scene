@@ -226,8 +226,8 @@
                         "y"
                     ],
                     "label": "araigne_1",
-                    "x": 1620,
-                    "y": -71,
+                    "x": 992,
+                    "y": -76,
                     "list": [
                         {
                             "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
@@ -235,17 +235,6 @@
                             "label": "animationToileSuspenduScript"
                         }
                     ]
-                },
-                {
-                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
-                    "id": "b752131c-2483-48f0-952f-661e87563ffd",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "murale",
-                    "x": 702,
-                    "y": 288
                 },
                 {
                     "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
@@ -257,6 +246,30 @@
                     "label": "murale_1",
                     "x": 280,
                     "y": 920
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "791aa3e7-8e70-4e14-95e0-97f3fcf4984a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne_2",
+                    "x": 1651,
+                    "y": 200,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "253e2d19-78e3-4d10-b52d-ab1b2732f70d",
+                            "unlock": [
+                                "dureeAnimation",
+                                "delaiAvantActivation"
+                            ],
+                            "label": "animationToileSuspenduScript",
+                            "dureeAnimation": 3000,
+                            "delaiAvantActivation": 100
+                        }
+                    ]
                 }
             ]
         },
@@ -317,7 +330,6 @@
             "label": "liste_toile_vs_adversaire",
             "objectIds": [
                 "3756c876-87c1-460b-affc-b87e028edeab",
-                "b752131c-2483-48f0-952f-661e87563ffd",
                 "e15d4e5a-b639-417e-a2a2-0ce766c1b106"
             ],
             "scope": "PUBLIC"

@@ -56,17 +56,6 @@
                     "y": 194
                 },
                 {
-                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
-                    "id": "302db86e-829f-4706-9fa4-995f08792f2f",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "murale_2",
-                    "x": 752,
-                    "y": 671
-                },
-                {
                     "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
                     "id": "b1d909f2-8db0-40b4-b2c4-ce21673e2126",
                     "unlock": [
@@ -74,8 +63,45 @@
                         "y"
                     ],
                     "label": "araigne_1",
-                    "x": 1661,
-                    "y": 876
+                    "x": 1678,
+                    "y": 136,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "23c78c59-0fe3-42b1-84da-99ef47b8dc31",
+                            "unlock": [
+                                "dureeAnimation",
+                                "longueurFile"
+                            ],
+                            "label": "animationToileSuspenduScript",
+                            "dureeAnimation": 3000,
+                            "longueurFile": 4.8
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "dde2d54c-0862-444a-8e91-ddeb991488b7",
+                    "id": "cca8b6c4-22ae-4ab9-af2a-0fc7ada2d2d1",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "araigne",
+                    "x": 1242,
+                    "y": 392,
+                    "list": [
+                        {
+                            "prefabId": "012a8056-957a-4439-b381-b8b5a58a9000",
+                            "id": "67418c3f-61dd-48cf-9699-cf9a0685638f",
+                            "unlock": [
+                                "dureeAnimation",
+                                "longueurFile"
+                            ],
+                            "label": "animationToileSuspenduScript_1",
+                            "dureeAnimation": 3400,
+                            "longueurFile": 4.1
+                        }
+                    ]
                 }
             ]
         },
@@ -270,7 +296,6 @@
             "id": "2fbaaf3b-012b-4483-95f1-a2ceb9d41b1c",
             "label": "liste_toile_vs_adversaire",
             "objectIds": [
-                "302db86e-829f-4706-9fa4-995f08792f2f",
                 "6e663337-a711-4c56-8444-85f1c2d56593",
                 "9949595a-25b2-436b-9450-b89ab29c2c56"
             ]

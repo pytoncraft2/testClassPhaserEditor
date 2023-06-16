@@ -6,6 +6,7 @@
 import BaseNiveaux from "../BaseNiveaux";
 import Murale from "../../03-Entites/Araigne/Murale";
 import Araigne from "../../03-Entites/Araigne/Araigne";
+import AnimationToileSuspenduScript from "../../../script-nodes/AnimationToileSuspenduScript";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import PlatformeVerticale from "../../04-Platformes/PlatformeVerticale";
@@ -42,13 +43,19 @@ export default class Niveau3 extends BaseNiveaux {
 		const murale_1 = new Murale(this, 1068, 194);
 		groupe_adversaires.add(murale_1);
 
-		// murale_2
-		const murale_2 = new Murale(this, 752, 671);
-		groupe_adversaires.add(murale_2);
-
 		// araigne_1
-		const araigne_1 = new Araigne(this, 1661, 876);
+		const araigne_1 = new Araigne(this, 1678, 136);
 		groupe_adversaires.add(araigne_1);
+
+		// animationToileSuspenduScript
+		const animationToileSuspenduScript = new AnimationToileSuspenduScript(araigne_1);
+
+		// araigne
+		const araigne = new Araigne(this, 1242, 392);
+		groupe_adversaires.add(araigne);
+
+		// animationToileSuspenduScript_1
+		const animationToileSuspenduScript_1 = new AnimationToileSuspenduScript(araigne);
 
 		// groupe_allies
 		const groupe_allies = this.add.container(379.8965337395412, 693.9689068033596);
@@ -116,7 +123,15 @@ export default class Niveau3 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [murale_2, murale_1, murale];
+		const liste_toile_vs_adversaire = [murale_1, murale];
+
+		// animationToileSuspenduScript (prefab fields)
+		animationToileSuspenduScript.dureeAnimation = 3000;
+		animationToileSuspenduScript.longueurFile = 4.8;
+
+		// animationToileSuspenduScript_1 (prefab fields)
+		animationToileSuspenduScript_1.dureeAnimation = 3400;
+		animationToileSuspenduScript_1.longueurFile = 4.1;
 
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.groupe_vs_platformes = groupe_vs_platformes;
