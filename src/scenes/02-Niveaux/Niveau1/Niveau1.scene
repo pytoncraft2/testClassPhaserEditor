@@ -32,7 +32,7 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "x": 956,
-                    "y": 912,
+                    "y": 903,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
@@ -138,7 +138,6 @@
             "id": "ace32157-9a3d-4377-bee8-2eed691a6f84",
             "label": "platformes",
             "scope": "PUBLIC",
-            "y": 10,
             "list": [
                 {
                     "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
@@ -266,8 +265,7 @@
             "type": "Container",
             "id": "584fb704-ce76-4223-8f4a-a72f44035041",
             "label": "groupe_projectile_toiles",
-            "scope": "PUBLIC",
-            "y": 10
+            "scope": "PUBLIC"
         },
         {
             "type": "Layer",
@@ -307,57 +305,7 @@
             "label": "onSceneAwakeScript"
         }
     ],
-    "plainObjects": [
-        {
-            "id": "65d398c4-3cb7-441a-920a-44ebb60f3756",
-            "type": "Collider",
-            "label": "platformes_vs_entites",
-            "scope": "METHOD",
-            "object1": "[...groupe_allies.list, ...groupe_adversaires.list]",
-            "object2": "platformes.list",
-            "collideCallback": "this.entiteTouchePlatformes as any",
-            "processCallback": "this.verifEntiteTouchePlatformes as any"
-        },
-        {
-            "id": "9da5d074-9381-4263-906d-93660479b5f3",
-            "type": "Collider",
-            "label": "adversaires_vs_allies",
-            "scope": "METHOD",
-            "object1": "groupe_allies.list",
-            "object2": "groupe_adversaires.list",
-            "overlapOnly": true,
-            "collideCallback": "this.allieToucheAdversaireProche as any",
-            "processCallback": "this.verifAllieToucheAdversaireProche as any"
-        },
-        {
-            "id": "9c5c950c-c312-4dc7-ace0-83bcfb7dade5",
-            "type": "Collider",
-            "label": "toiles_vs_entite",
-            "scope": "METHOD",
-            "object1": "groupe_projectile_toiles.list",
-            "object2": "liste_toile_vs_adversaire",
-            "collideCallback": "this.toileToucheEntite as any",
-            "callbackContext": "this"
-        },
-        {
-            "id": "6a5945d8-17bc-41c2-a752-c2a629370aea",
-            "type": "Collider",
-            "label": "platformes_vs_toilemouvante",
-            "scope": "METHOD",
-            "object1": "platformes.list",
-            "object2": "groupe_vs_platformes.list"
-        },
-        {
-            "id": "527c72ee-5f2f-43c8-8308-bcf8e5150b4f",
-            "type": "Collider",
-            "label": "adversaire_vs_toilemouvante",
-            "scope": "METHOD",
-            "object1": "groupe_vs_platformes.list",
-            "object2": "groupe_adversaires.list",
-            "overlapOnly": true,
-            "collideCallback": "this.toileMouvanteToucheAdversaire as any"
-        }
-    ],
+    "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

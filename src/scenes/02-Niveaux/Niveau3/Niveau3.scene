@@ -35,17 +35,6 @@
             "list": [
                 {
                     "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
-                    "id": "9949595a-25b2-436b-9450-b89ab29c2c56",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "murale",
-                    "x": -300,
-                    "y": -200
-                },
-                {
-                    "prefabId": "36cea93f-b544-4081-8498-6705471cdc3b",
                     "id": "6e663337-a711-4c56-8444-85f1c2d56593",
                     "unlock": [
                         "x",
@@ -282,6 +271,32 @@
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "e5249925-91b8-45c9-99e8-d91fcd01b6c5",
             "label": "onSceneAwakeScript"
+        },
+        {
+            "type": "Text",
+            "id": "b235e100-1e3d-41fe-ae14-83cf74c27708",
+            "label": "text_1",
+            "x": 1771,
+            "y": 57,
+            "text": "NIVEAU 4",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "368702df-94b7-4a0e-a4c7-7d2b523c451e",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
+                            "id": "e8f54529-7991-441a-b355-7504de962519",
+                            "unlock": [
+                                "sceneKey"
+                            ],
+                            "label": "startSceneActionScript",
+                            "sceneKey": "Niveau4"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -296,8 +311,7 @@
             "id": "2fbaaf3b-012b-4483-95f1-a2ceb9d41b1c",
             "label": "liste_toile_vs_adversaire",
             "objectIds": [
-                "6e663337-a711-4c56-8444-85f1c2d56593",
-                "9949595a-25b2-436b-9450-b89ab29c2c56"
+                "6e663337-a711-4c56-8444-85f1c2d56593"
             ]
         }
     ]

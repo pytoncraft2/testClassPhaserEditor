@@ -30,7 +30,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const groupe_allies = this.add.container(0, 0);
 
 		// huipat
-		const huipat = new Huipat(this, 956, 912);
+		const huipat = new Huipat(this, 956, 903);
 		huipat.name = "huipat";
 		groupe_allies.add(huipat);
 		huipat.image.setOrigin(0.5, 0.5);
@@ -60,7 +60,7 @@ export default class Niveau1 extends BaseNiveaux {
 		const animationToileSuspenduScript_2 = new AnimationToileSuspenduScript(araigne);
 
 		// platformes
-		const platformes = this.add.container(0, 10);
+		const platformes = this.add.container(0, 0);
 
 		// platformePrefab
 		const platformePrefab = new PlatformePrefab(this, 960, 1000);
@@ -111,7 +111,7 @@ export default class Niveau1 extends BaseNiveaux {
 		platformes.add(platformePrefab_7);
 
 		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 10);
+		const groupe_projectile_toiles = this.add.container(0, 0);
 
 		// groupe_vs_platformes
 		const groupe_vs_platformes = this.add.layer();
@@ -131,21 +131,6 @@ export default class Niveau1 extends BaseNiveaux {
 
 		// lists
 		const liste_toile_vs_adversaire = [araigne_2, araigne_3, araigne];
-
-		// platformes_vs_entites
-		const platformes_vs_entites = this.physics.add.collider([...groupe_allies.list, ...groupe_adversaires.list], platformes.list, this.entiteTouchePlatformes as any, this.verifEntiteTouchePlatformes as any);
-
-		// adversaires_vs_allies
-		const adversaires_vs_allies = this.physics.add.overlap(groupe_allies.list, groupe_adversaires.list, this.allieToucheAdversaireProche as any, this.verifAllieToucheAdversaireProche as any);
-
-		// toiles_vs_entite
-		const toiles_vs_entite = this.physics.add.collider(groupe_projectile_toiles.list, liste_toile_vs_adversaire, this.toileToucheEntite as any, undefined, this);
-
-		// platformes_vs_toilemouvante
-		const platformes_vs_toilemouvante = this.physics.add.collider(platformes.list, groupe_vs_platformes.list);
-
-		// adversaire_vs_toilemouvante
-		const adversaire_vs_toilemouvante = this.physics.add.overlap(groupe_vs_platformes.list, groupe_adversaires.list, this.toileMouvanteToucheAdversaire as any);
 
 		// animationToileSuspenduScript_1 (prefab fields)
 		animationToileSuspenduScript_1.dureeAnimation = 3000;

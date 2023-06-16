@@ -11,6 +11,8 @@ import Huipat from "../../03-Entites/Huipat/Huipat";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import PlatformeVerticale from "../../04-Platformes/PlatformeVerticale";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -34,10 +36,6 @@ export default class Niveau3 extends BaseNiveaux {
 
 		// groupe_adversaires
 		const groupe_adversaires = this.add.container(2, 1);
-
-		// murale
-		const murale = new Murale(this, -300, -200);
-		groupe_adversaires.add(murale);
 
 		// murale_1
 		const murale_1 = new Murale(this, 1068, 194);
@@ -122,8 +120,18 @@ export default class Niveau3 extends BaseNiveaux {
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// text_1
+		const text_1 = this.add.text(1771, 57, "", {});
+		text_1.text = "NIVEAU 4";
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(text_1);
+
+		// startSceneActionScript
+		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
+
 		// lists
-		const liste_toile_vs_adversaire = [murale_1, murale];
+		const liste_toile_vs_adversaire = [murale_1];
 
 		// animationToileSuspenduScript (prefab fields)
 		animationToileSuspenduScript.dureeAnimation = 3000;
@@ -132,6 +140,9 @@ export default class Niveau3 extends BaseNiveaux {
 		// animationToileSuspenduScript_1 (prefab fields)
 		animationToileSuspenduScript_1.dureeAnimation = 3400;
 		animationToileSuspenduScript_1.longueurFile = 4.1;
+
+		// startSceneActionScript (prefab fields)
+		startSceneActionScript.sceneKey = "Niveau4";
 
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
 		this.groupe_vs_platformes = groupe_vs_platformes;
