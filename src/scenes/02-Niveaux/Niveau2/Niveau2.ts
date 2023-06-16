@@ -141,7 +141,7 @@ export default class Niveau2 extends BaseNiveaux {
 		new OnSceneAwakeScript(this);
 
 		// lists
-		const liste_toile_vs_adversaire = [araigne, araigne_1];
+		const liste_toile_vs_adversaire = [araigne, araigne_1, murale_1, araigne_2];
 
 		// animationToileSuspenduScript (prefab fields)
 		animationToileSuspenduScript.dureeAnimation = 3000;
@@ -167,7 +167,7 @@ export default class Niveau2 extends BaseNiveaux {
 	public groupe_adversaires!: Phaser.GameObjects.Container;
 	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
-	public liste_toile_vs_adversaire!: Araigne[];
+	public liste_toile_vs_adversaire!: Array<Araigne|Murale>;
 
 	/* START-USER-CODE */
 
@@ -176,7 +176,6 @@ export default class Niveau2 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
-		this.scene.remove('Niveau1')
 	}
 
 	/* END-USER-CODE */

@@ -115,7 +115,6 @@ export default class Guepe extends BaseEntites {
 					this.body.reset(cibleX, cibleY);
 					this.activeModeEnerve(false);
 					this.changeDeCible();
-					console.log("ASSEZ PROCHE");
 				}
 			}
 		}

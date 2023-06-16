@@ -330,7 +330,9 @@
             "label": "liste_toile_vs_adversaire",
             "objectIds": [
                 "3756c876-87c1-460b-affc-b87e028edeab",
-                "e15d4e5a-b639-417e-a2a2-0ce766c1b106"
+                "e15d4e5a-b639-417e-a2a2-0ce766c1b106",
+                "536f7977-047c-4620-ac40-5f25883fbd3f",
+                "791aa3e7-8e70-4e14-95e0-97f3fcf4984a"
             ],
             "scope": "PUBLIC"
         }

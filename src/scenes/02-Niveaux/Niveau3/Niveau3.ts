@@ -131,7 +131,7 @@ export default class Niveau3 extends BaseNiveaux {
 		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
 
 		// lists
-		const liste_toile_vs_adversaire = [murale_1];
+		const liste_toile_vs_adversaire = [murale_1, araigne_1, araigne];
 
 		// animationToileSuspenduScript (prefab fields)
 		animationToileSuspenduScript.dureeAnimation = 3000;
@@ -161,7 +161,7 @@ export default class Niveau3 extends BaseNiveaux {
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public platformes!: Phaser.GameObjects.Container;
-	private liste_toile_vs_adversaire!: Murale[];
+	private liste_toile_vs_adversaire!: Array<Murale|Araigne>;
 
 	/* START-USER-CODE */
 
@@ -170,7 +170,6 @@ export default class Niveau3 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
-		this.scene.remove('Niveau2')
 	}
 
 	/* END-USER-CODE */

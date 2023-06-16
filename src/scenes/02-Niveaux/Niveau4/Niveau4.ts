@@ -4,13 +4,13 @@
 /* START OF COMPILED CODE */
 
 import BaseNiveaux from "../BaseNiveaux";
-import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import Huipat from "../../03-Entites/Huipat/Huipat";
 import Murale from "../../03-Entites/Araigne/Murale";
 import Araigne from "../../03-Entites/Araigne/Araigne";
 import AnimationToileSuspenduScript from "../../../script-nodes/AnimationToileSuspenduScript";
 import Guepe from "../../03-Entites/Guepe/Guepe";
 import SuivreFleursScript from "../../../script-nodes/SuivreFleursScript";
+import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -47,6 +47,54 @@ export default class Niveau4 extends BaseNiveaux {
 		// fleur_rouge_png
 		const fleur_rouge_png = this.add.image(1341, 84, "fleurs", "fleur_rouge.png");
 		fleurs.add(fleur_rouge_png);
+
+		// groupe_allies
+		const groupe_allies = this.add.container(0, 0);
+
+		// huipat
+		const huipat = new Huipat(this, 660, 903);
+		huipat.name = "huipat";
+		groupe_allies.add(huipat);
+		huipat.image.setOrigin(0.5, 0.5);
+
+		// groupe_adversaires
+		const groupe_adversaires = this.add.container(0, 0);
+
+		// murale
+		const murale = new Murale(this, -300, -200);
+		groupe_adversaires.add(murale);
+
+		// murale_1
+		const murale_1 = new Murale(this, 1068, 194);
+		groupe_adversaires.add(murale_1);
+
+		// araigne_1
+		const araigne_1 = new Araigne(this, 1678, 136);
+		groupe_adversaires.add(araigne_1);
+
+		// animationToileSuspenduScript
+		const animationToileSuspenduScript = new AnimationToileSuspenduScript(araigne_1);
+
+		// araigne
+		const araigne = new Araigne(this, 1242, 392);
+		groupe_adversaires.add(araigne);
+
+		// animationToileSuspenduScript_1
+		const animationToileSuspenduScript_1 = new AnimationToileSuspenduScript(araigne);
+
+		// guepe
+		const guepe = new Guepe(this, 376, 373);
+		groupe_adversaires.add(guepe);
+
+		// suivreFleursScript_1
+		new SuivreFleursScript(guepe);
+
+		// guepe_1
+		const guepe_1 = new Guepe(this, 666, 504);
+		groupe_adversaires.add(guepe_1);
+
+		// suivreFleursScript
+		new SuivreFleursScript(guepe_1);
 
 		// platformes
 		const platformes = this.add.container(0, 0);
@@ -105,62 +153,17 @@ export default class Niveau4 extends BaseNiveaux {
 		platformePrefab_8.scaleY = 0.20034715589478025;
 		platformes.add(platformePrefab_8);
 
-		// groupe_allies
-		const groupe_allies = this.add.container(0, 0);
-
-		// huipat
-		const huipat = new Huipat(this, 660, 903);
-		huipat.name = "huipat";
-		groupe_allies.add(huipat);
-		huipat.image.setOrigin(0.5, 0.5);
-
-		// groupe_adversaires
-		const groupe_adversaires = this.add.container(0, 0);
-
-		// murale
-		const murale = new Murale(this, -300, -200);
-		groupe_adversaires.add(murale);
-
-		// murale_1
-		const murale_1 = new Murale(this, 1068, 194);
-		groupe_adversaires.add(murale_1);
-
-		// araigne_1
-		const araigne_1 = new Araigne(this, 1678, 136);
-		groupe_adversaires.add(araigne_1);
-
-		// animationToileSuspenduScript
-		const animationToileSuspenduScript = new AnimationToileSuspenduScript(araigne_1);
-
-		// araigne
-		const araigne = new Araigne(this, 1242, 392);
-		groupe_adversaires.add(araigne);
-
-		// animationToileSuspenduScript_1
-		const animationToileSuspenduScript_1 = new AnimationToileSuspenduScript(araigne);
-
-		// guepe
-		const guepe = new Guepe(this, 376, 373);
-		groupe_adversaires.add(guepe);
-
-		// suivreFleursScript_1
-		new SuivreFleursScript(guepe);
-
-		// guepe_1
-		const guepe_1 = new Guepe(this, 666, 504);
-		groupe_adversaires.add(guepe_1);
-
-		// suivreFleursScript
-		new SuivreFleursScript(guepe_1);
+		// groupe_projectile_toiles
+		const groupe_projectile_toiles = this.add.container(0, 0);
 
 		// groupe_vs_platformes
 		const groupe_vs_platformes = this.add.layer();
 
-		// groupe_projectile_toiles
-		const groupe_projectile_toiles = this.add.container(0, 0);
-
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
+
+		// lists
+		const liste_toile_vs_adversaire = [guepe_1, guepe, araigne, araigne_1, murale_1, murale];
 
 		// animationToileSuspenduScript (prefab fields)
 		animationToileSuspenduScript.dureeAnimation = 3000;
@@ -171,23 +174,25 @@ export default class Niveau4 extends BaseNiveaux {
 		animationToileSuspenduScript_1.longueurFile = 4.1;
 
 		this.fleurs = fleurs;
-		this.platformes = platformes;
 		this.huipat = huipat;
 		this.groupe_allies = groupe_allies;
 		this.groupe_adversaires = groupe_adversaires;
-		this.groupe_vs_platformes = groupe_vs_platformes;
+		this.platformes = platformes;
 		this.groupe_projectile_toiles = groupe_projectile_toiles;
+		this.groupe_vs_platformes = groupe_vs_platformes;
+		this.liste_toile_vs_adversaire = liste_toile_vs_adversaire;
 
 		this.events.emit("scene-awake");
 	}
 
 	public fleurs!: Phaser.GameObjects.Container;
-	public platformes!: Phaser.GameObjects.Container;
 	public huipat!: Huipat;
 	public groupe_allies!: Phaser.GameObjects.Container;
 	public groupe_adversaires!: Phaser.GameObjects.Container;
-	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
+	public platformes!: Phaser.GameObjects.Container;
 	public groupe_projectile_toiles!: Phaser.GameObjects.Container;
+	public groupe_vs_platformes!: Phaser.GameObjects.Layer;
+	private liste_toile_vs_adversaire!: Array<Guepe|Araigne|Murale>;
 
 	/* START-USER-CODE */
 
@@ -196,7 +201,6 @@ export default class Niveau4 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
-		this.scene.remove('Niveau3')
 	}
 
 	/* END-USER-CODE */

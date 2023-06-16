@@ -103,6 +103,8 @@ export default class Huipat extends BaseEntites {
 		const { centerX, centerY } = this.image.getBounds();
 		const toile = new ToileHuipatPrefab(this.scene, centerX, centerY);
 		toile.body.setVelocity(this.image.flipX ? -1300 : 1300, -200);
+		console.log(this.scene.groupe_projectile_toiles.length);
+		
 		this.scene.groupe_projectile_toiles.add(toile);
 
 		this.scene.time.delayedCall(this.delaiAvantDestructionToile, () => {

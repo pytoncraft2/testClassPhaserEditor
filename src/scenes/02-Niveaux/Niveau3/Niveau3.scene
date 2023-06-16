@@ -309,7 +309,9 @@
             "id": "2fbaaf3b-012b-4483-95f1-a2ceb9d41b1c",
             "label": "liste_toile_vs_adversaire",
             "objectIds": [
-                "6e663337-a711-4c56-8444-85f1c2d56593"
+                "6e663337-a711-4c56-8444-85f1c2d56593",
+                "b1d909f2-8db0-40b4-b2c4-ce21673e2126",
+                "cca8b6c4-22ae-4ab9-af2a-0fc7ada2d2d1"
             ]
         }
     ]
