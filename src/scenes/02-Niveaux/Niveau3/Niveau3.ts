@@ -58,7 +58,7 @@ export default class Niveau3 extends BaseNiveaux {
 		const animationToileSuspenduScript_1 = new AnimationToileSuspenduScript(araigne);
 
 		// groupe_allies
-		const groupe_allies = this.add.container(379.8965337395412, 693.9689068033596);
+		const groupe_allies = this.add.container(303, 845);
 
 		// huipat
 		const huipat = new Huipat(this, 0, 0);
