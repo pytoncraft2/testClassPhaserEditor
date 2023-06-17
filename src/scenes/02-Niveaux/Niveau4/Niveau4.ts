@@ -12,6 +12,8 @@ import Guepe from "../../03-Entites/Guepe/Guepe";
 import SuivreFleursScript from "../../../script-nodes/SuivreFleursScript";
 import PlatformePrefab from "../../04-Platformes/PlatformePrefab";
 import OnSceneAwakeScript from "../../../script-nodes/OnSceneAwakeScript";
+import OnPointerDownScript from "../../../script-nodes-basic/OnPointerDownScript";
+import StartSceneActionScript from "../../../script-nodes-basic/StartSceneActionScript";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -162,6 +164,16 @@ export default class Niveau4 extends BaseNiveaux {
 		// onSceneAwakeScript
 		new OnSceneAwakeScript(this);
 
+		// text_1
+		const text_1 = this.add.text(1776.5996725183456, 43.036627994908535, "", {});
+		text_1.text = "NIVEAU 5";
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(text_1);
+
+		// startSceneActionScript
+		const startSceneActionScript = new StartSceneActionScript(onPointerDownScript);
+
 		// lists
 		const liste_toile_vs_adversaire = [guepe_1, guepe, araigne, araigne_1, murale_1, murale];
 
@@ -172,6 +184,9 @@ export default class Niveau4 extends BaseNiveaux {
 		// animationToileSuspenduScript_1 (prefab fields)
 		animationToileSuspenduScript_1.dureeAnimation = 3400;
 		animationToileSuspenduScript_1.longueurFile = 4.1;
+
+		// startSceneActionScript (prefab fields)
+		startSceneActionScript.sceneKey = "Niveau5";
 
 		this.fleurs = fleurs;
 		this.huipat = huipat;
@@ -201,6 +216,23 @@ export default class Niveau4 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
+		const emitter = this.add.particles(0, 0, 'guepe', {
+			frame: 'guepe.png',
+			speed: {
+				onEmit: () => this.entiteControllable.body.speed
+			},
+			lifespan: {
+				onEmit: () => Phaser.Math.Percent(this.entiteControllable.body.speed, 0, 300) * 20000
+			},
+			// alpha: {
+			// 	onEmit: () => Phaser.Math.Percent(this.entiteControllable.body.speed, 0, 300) * 1000
+
+			// },
+			scale: { start: 0.4, end: 0 },
+			blendMode: 'ADD'
+		});
+
+		emitter.startFollow(this.entiteControllable);
 	}
 
 	/* END-USER-CODE */

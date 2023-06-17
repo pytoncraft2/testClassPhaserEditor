@@ -6,6 +6,7 @@ import Niveau1 from "./scenes/02-Niveaux/Niveau1/Niveau1";
 import Niveau2 from "./scenes/02-Niveaux/Niveau2/Niveau2";
 import Niveau3 from "./scenes/02-Niveaux/Niveau3/Niveau3";
 import Niveau4 from "./scenes/02-Niveaux/Niveau4/Niveau4";
+import Niveau5 from "./scenes/02-Niveaux/Niveau5/Niveau5";
 
 class Boot extends Phaser.Scene {
 
@@ -40,10 +41,10 @@ window.addEventListener('load', function () {
 				gravity: {
 					y: 900
 				},
-				debug: true
+				debug: false
 			}
 		},
-		scene: [Boot, Preload, Level, Niveau1, Niveau2, Niveau3, Niveau4]
+		scene: [Boot, Preload, Level, Niveau1, Niveau2, Niveau3, Niveau4, Niveau5]
 	});
 
 	game.scene.start("Boot");

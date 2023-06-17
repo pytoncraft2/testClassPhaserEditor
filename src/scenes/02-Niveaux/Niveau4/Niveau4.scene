@@ -376,6 +376,32 @@
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "38bc0943-826b-4683-828f-c6c6e69ef5d1",
             "label": "onSceneAwakeScript"
+        },
+        {
+            "type": "Text",
+            "id": "39d9f024-27a3-479f-bb78-96e950847216",
+            "label": "text_1",
+            "x": 1776.5996725183456,
+            "y": 43.036627994908535,
+            "text": "NIVEAU 5",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "3a0684b1-352c-4eae-a2f8-12877efaac31",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "2d3f9249-6fcd-4c7d-bd2f-77fa616af7e8",
+                            "id": "0b37b5f0-6ae1-4d37-bc3a-f5db38736efa",
+                            "unlock": [
+                                "sceneKey"
+                            ],
+                            "label": "startSceneActionScript",
+                            "sceneKey": "Niveau5"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

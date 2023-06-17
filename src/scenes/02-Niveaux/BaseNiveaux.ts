@@ -181,7 +181,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 			
 			compteurAdversaireVaincu++;
 			if (compteurAdversaireVaincu == 3) {
-				this.finDePartie = true;
+				// this.finDePartie = true;
 				// this.animationFinNiveau()				
 				// console.log("FIN");
 				

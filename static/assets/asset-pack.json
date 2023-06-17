@@ -115,6 +115,12 @@
                 "textureURL": "assets/entites/murale.png",
                 "type": "atlas",
                 "key": "murale"
+            },
+            {
+                "atlasURL": "assets/arriere-plans/particules.json",
+                "textureURL": "assets/arriere-plans/particules.png",
+                "type": "atlas",
+                "key": "particules"
             }
         ]
     },

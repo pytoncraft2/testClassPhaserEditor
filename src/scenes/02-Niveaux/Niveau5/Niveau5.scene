@@ -1,0 +1,177 @@
+{
+    "id": "521592e4-474f-4f78-81bb-1bb2d8fdeac6",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "BaseNiveaux",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Niveau5",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "ee1485e3-ae86-4b80-803a-4318355c1287",
+            "label": "fleurs",
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c4b0568b-e9a8-469b-a4b3-dc23c4a8bae3",
+                    "label": "fleur_rose_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rose.png"
+                    },
+                    "x": 910,
+                    "y": 684,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "05ca4f95-32fa-491d-8d2b-a95c06ee5f87",
+                    "label": "fleur_rouge_png",
+                    "texture": {
+                        "key": "fleurs",
+                        "frame": "fleur_rouge.png"
+                    },
+                    "x": 1778,
+                    "y": 686
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "cc47c5b1-a0ea-45fd-a88e-c596d4528801",
+            "label": "groupe_vs_platformes",
+            "scope": "PUBLIC"
+        },
+        {
+            "type": "Container",
+            "id": "91745ff4-6a38-4cd1-9503-68e20c2dc535",
+            "label": "groupe_projectile_toiles",
+            "scope": "PUBLIC"
+        },
+        {
+            "type": "Container",
+            "id": "5e3236d2-6164-48bc-a131-27c8de9993df",
+            "label": "platformes",
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "prefabId": "2d467c9c-db7a-4f1e-bcaf-8f85b83fc64b",
+                    "id": "8eaaea71-3abe-4bc6-b8e4-7fe15281b4cc",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platformePrefab",
+                    "x": 6735,
+                    "y": 750,
+                    "scaleX": 100,
+                    "scaleY": 0.20034715589478025
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "591bc16e-3bdc-43a2-a38c-3f2522f2ed51",
+            "label": "groupe_adversaires",
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "29020bf5-04c4-44b9-b429-a321575d1cb2",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "guepe_1",
+                    "x": 666,
+                    "y": 504,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "137bdf80-d242-49b3-989a-478bf1407dcf",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4d7a0e3d-d2ab-4981-8f82-6f1f71ef4620",
+                    "id": "0357a176-67bd-4b3b-94f1-cef2b88f5291",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "moustique",
+                    "x": 1249,
+                    "y": 478
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "0def1511-c4c1-4f36-9398-387cd7c94d89",
+            "label": "groupe_allies",
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "prefabId": "7203e071-02a8-4af8-a6a6-84d7fd802ca8",
+                    "id": "6900f26b-4f1a-4c13-a770-48769c9af1d8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "huipat",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 1492,
+                    "y": 639,
+                    "nestedPrefabs": [
+                        {
+                            "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
+                            "id": "dbbb4a4e-83f9-45af-a916-74c9fcc57fbf",
+                            "unlock": [
+                                "originX",
+                                "originY"
+                            ],
+                            "label": "image",
+                            "originX": 0.5,
+                            "originY": 0.5
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "prefabId": "e3f8a1af-6e3a-420e-9c4b-91eae104c1c1",
+            "id": "d0973ae2-5443-45f6-bf22-2da51b3fd233",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "chauve_souris_png",
+            "x": 1012,
+            "y": 274
+        },
+        {
+            "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
+            "id": "49c1ab6e-2c86-4cbf-a264-8c42e7c8de6b",
+            "label": "onSceneAwakeScript"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 4
+    }
+}
