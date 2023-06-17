@@ -173,22 +173,22 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
 		if (!this.estUnMobile) this.controles_portable.removeAll()
         // var emitter = new Phaser.Events.EventEmitter();
-		let compteurAdversaireVaincu = 0;
 
         //  Set-up an event handler
-        this.events.on('adversaireVaincu', () => {
+		// this.events.on('adversaireVaincu', () => {
 			console.log("OKAY");
-			
-			compteurAdversaireVaincu++;
-			if (compteurAdversaireVaincu == 3) {
-				// this.finDePartie = true;
-				// this.animationFinNiveau()				
-				// console.log("FIN");
-				
-			}
-		}, this);
+			// this.time.delayedCall(2000, () => {
+				// this.niveauSuivant()
+			// })
+
 
         //  We emit the event 3 times, but the handler is only called once
+	}
+
+	niveauSuivant() {
+			this.time.delayedCall(4000, function(this: any) {
+				this.scene.start('Level')
+			}, undefined, this);
 	}
 
 	update(time: number, delta: number): void {

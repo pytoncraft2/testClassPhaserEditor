@@ -26,12 +26,13 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 			this.image
 				.setInteractive({ cursor: 'pointer' })
 				.on('pointerdown', () => {
-					this.scene.entiteControllable = this;
-					this.activeIA(false);
-					this.scene.cameras.main.startFollow(this)
-					this.scene.scale.startFullscreen()
-				})
-		});
+					// this.scene.entiteControllable = this;
+					// this.activeIA(false);
+					// this.scene.cameras.main.startFollow(this)
+					// this.scene.scale.startFullscreen()
+					this.scene.scene.start('Niveau2')
+				}, this.scene)
+		}, undefined, this.scene);
 		this.scene.add.existing(this);
 		/* END-USER-CTR-CODE */
 	}
@@ -112,70 +113,80 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	detruire() {	
-		this.scene.events.emit('adversaireVaincu', {ok: true}, this.scene);
+		console.log("LONGEUR", this.scene.groupe_adversaires.list.length);
+		// this.verifSiFinDeNiveau()
 
-		this.activeIA(false);
-		this.body.moves = true;
-		this.interactionActive = false;
-		this.fusionnable = true;
-		this.peutTraverserPlatformes = false;
-		this.body.enable = true;
-		this.body.setVelocity(0)
-		this.image.setScale(0.5)
+		
+		// this.scene.scene.start('Niveau2')
+		this.logiqueDescisionActionsIA.destroy()
+		this.scene.groupe_adversaires.setActive(false)
+		this.scene.niveauSuivant()
+		
+		// this.destroy()
+		// this.scene.events.emit('adversaireVaincu', {ok: true}, this.scene);
 
-		const c1 = this.scene.add.circle(this.x, this.y, 80, 0x07d9fc);
-		const c2 = this.scene.add.circle(this.x, this.y, 80, 0xffffff);
-		c1.setAlpha(0.5).setScale(0)
-		c2.setAlpha(0.5).setScale(0)
+		// this.activeIA(false);
+		// this.body.moves = true;
+		// this.interactionActive = false;
+		// this.fusionnable = true;
+		// this.peutTraverserPlatformes = false;
+		// this.body.enable = true;
+		// this.body.setVelocity(0)
+		// this.image.setScale(0.5)
 
-		const animationObjetFusionnable = this.scene.add.timeline([
-			{
-				at: 0,
-				run: () => {
-					this.body.setVelocityY(-Phaser.Math.Between(1000, 1800));
-					this.body.checkCollision.up = false;
-				},
-			},
-			{
-				at: 100,
-				tween: {
-					targets: c1,
-					scale: 1,
-					alpha: 0,
-					repeat: 8,
-					ease: 'Sine.easeInOut'
-				}
-			},
-			{
-				at: 400,
-				run: () => {
-					this.body.checkCollision.up = true;
-				},
-			},
-			{
-				at: 500,
-				tween: {
-					targets: c2,
-					scale: 1,
-					alpha: 0,
-					x: this.x,
-					y: this.y,
-					repeat: 8,
-					onUpdate: () => {
-						c1.setPosition(this.x,this.y)
-						c2.setPosition(this.x, this.y)
-					},
-					onComplete: () => {
-						if (this.fusionnable) {
-							this.destroy()
-						}
-					},
-					ease: 'Sine.easeInOut'
-				}
-			}
-		]);
+		// const c1 = this.scene.add.circle(this.x, this.y, 80, 0x07d9fc);
+		// const c2 = this.scene.add.circle(this.x, this.y, 80, 0xffffff);
+		// c1.setAlpha(0.5).setScale(0)
+		// c2.setAlpha(0.5).setScale(0)
 
-		animationObjetFusionnable.play();
+		// const animationObjetFusionnable = this.scene.add.timeline([
+		// 	{
+		// 		at: 0,
+		// 		run: () => {
+		// 			this.body.setVelocityY(-Phaser.Math.Between(1000, 1800));
+		// 			this.body.checkCollision.up = false;
+		// 		},
+		// 	},
+		// 	{
+		// 		at: 100,
+		// 		tween: {
+		// 			targets: c1,
+		// 			scale: 1,
+		// 			alpha: 0,
+		// 			repeat: 8,
+		// 			ease: 'Sine.easeInOut'
+		// 		}
+		// 	},
+		// 	{
+		// 		at: 400,
+		// 		run: () => {
+		// 			this.body.checkCollision.up = true;
+		// 		},
+		// 	},
+		// 	{
+		// 		at: 500,
+		// 		tween: {
+		// 			targets: c2,
+		// 			scale: 1,
+		// 			alpha: 0,
+		// 			x: this.x,
+		// 			y: this.y,
+		// 			repeat: 8,
+		// 			onUpdate: () => {
+		// 				c1.setPosition(this.x,this.y)
+		// 				c2.setPosition(this.x, this.y)
+		// 			},
+		// 			onComplete: () => {
+		// 				if (this.fusionnable) {
+		// 					this.destroy()
+		// 				}
+		// 			},
+		// 			ease: 'Sine.easeInOut'
+		// 		}
+		// 	}
+		// ]);
+
+		// animationObjetFusionnable.play();
 	}
 
 	activeModeEnerve(active: boolean = true) { }
