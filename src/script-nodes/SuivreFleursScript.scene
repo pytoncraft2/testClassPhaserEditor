@@ -24,5 +24,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "suivreUniquementEntitePrincipale",
+            "label": "suivreUniquementEntitePrincipale",
+            "tooltip": "Suis le joueur principale seulement",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
 }

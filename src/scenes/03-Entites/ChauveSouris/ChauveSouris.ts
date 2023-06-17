@@ -26,6 +26,8 @@ export default class ChauveSouris extends BaseEntites {
 		this.add(image);
 
 		this.image = image;
+		// awake handler
+		this.scene.events.once("scene-awake", () => this.awake());
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -37,6 +39,16 @@ export default class ChauveSouris extends BaseEntites {
 	/* START-USER-CODE */
 
 	// Write your code here.
+	awake() {
+		this.scene.time.addEvent({
+			delay: 750,
+			callback: () => {
+				this.scene.physics.moveToObject(this, this.scene.entiteControllable, 200)
+			},
+			callbackScope: this,
+			loop: true
+		});
+	}
 
 	/* END-USER-CODE */
 }

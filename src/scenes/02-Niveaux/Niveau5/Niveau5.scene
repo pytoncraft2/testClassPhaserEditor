@@ -76,6 +76,28 @@
                     "y": 750,
                     "scaleX": 100,
                     "scaleY": 0.20034715589478025
+                },
+                {
+                    "prefabId": "977a53af-6888-4eb8-b145-b62f4e6e183a",
+                    "id": "4c040b82-1497-4f9d-9e26-deb06003e52a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformeVerticale",
+                    "x": 3193,
+                    "y": 226
+                },
+                {
+                    "prefabId": "977a53af-6888-4eb8-b145-b62f4e6e183a",
+                    "id": "6063463f-aba9-447e-862c-8c13eadd98c9",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platformeVerticale_1",
+                    "x": 3196,
+                    "y": 730
                 }
             ]
         },
@@ -90,11 +112,13 @@
                     "id": "29020bf5-04c4-44b9-b429-a321575d1cb2",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "collideWorldBounds"
                     ],
                     "label": "guepe_1",
                     "x": 666,
                     "y": 504,
+                    "collideWorldBounds": false,
                     "list": [
                         {
                             "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
@@ -104,15 +128,638 @@
                     ]
                 },
                 {
-                    "prefabId": "4d7a0e3d-d2ab-4981-8f82-6f1f71ef4620",
-                    "id": "0357a176-67bd-4b3b-94f1-cef2b88f5291",
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "97ac8b62-729a-4e70-8909-70e82971abb8",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "collideWorldBounds"
                     ],
-                    "label": "moustique",
-                    "x": 1249,
-                    "y": 478
+                    "label": "guepe",
+                    "x": 132.2831573486328,
+                    "y": 386.24432373046875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "14d4004b-71e8-4009-a19f-25a78f5c9187",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "6c61687c-ac02-4317-ae1f-ab3c44408aed",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_2",
+                    "x": 312.75299072265625,
+                    "y": 389.9653625488281,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "c3621e82-1b15-4162-a488-cf4f46690abd",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "8f375a47-82f7-47ff-b254-7eccf700924c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_3",
+                    "x": 461.5940856933594,
+                    "y": 447.6412658691406,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "53e4ae44-eaa0-4f32-ab5b-25e145e869c1",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "ddb48fcc-da52-449e-8c15-76ff69bc76f0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_4",
+                    "x": 405.7786560058594,
+                    "y": 576.0167236328125,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "b0f6c8a4-4ab0-4dc7-acce-9d8a57e972a3",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "0195ab7a-9147-4a1a-a3ce-1c095a3c5396",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_5",
+                    "x": 482.0597229003906,
+                    "y": 334.1499328613281,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "8e795262-1c49-4ed1-b8ea-d94b7c28a22d",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "23a12853-dabe-4057-ab41-441b22110b01",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_6",
+                    "x": 621.5982666015625,
+                    "y": 282.0555419921875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "f6e2d795-db02-4320-812a-0b7b6561b245",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "f4603fdd-ec05-4a61-b8df-f58295c09b13",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_7",
+                    "x": 725.7870483398438,
+                    "y": 406.7099609375,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "e6ce71ec-a5dc-4f9f-bde9-a6a2ebf77ad6",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "923e9bab-1ab2-4d73-9147-67fa2133ba3a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_8",
+                    "x": 852.3019409179688,
+                    "y": 497.8751525878906,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "af5f25f7-1ac1-482a-bdc2-bcdf70b1ff3d",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "99569547-2474-4ab9-99a7-cc2c61a2f752",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_9",
+                    "x": 632.7613525390625,
+                    "y": 568.5746459960938,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "70126b83-7062-442d-8998-af0dc674bc7a",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "c81de46b-e445-4cc8-ac8f-33278df0e918",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_10",
+                    "x": 571.3643798828125,
+                    "y": 445.78076171875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "a3f188d6-58e6-4f85-8928-02740ce6f931",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "72c3f960-e83f-4315-aebe-b36e27f40ca1",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_11",
+                    "x": 573.2249145507812,
+                    "y": 326.7078857421875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "daf6e15b-a45b-46e8-9bfa-03adc05c0430",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "4ba8e7f1-b0e8-494e-a577-4f2c315d7879",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_12",
+                    "x": 485.78076171875,
+                    "y": 170.4247283935547,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "a74aaaa5-403f-4965-81fd-666b0262d89c",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "5cb5b90c-c8f2-4df7-8533-f640f3442ca4",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_13",
+                    "x": 355.5447998046875,
+                    "y": 189.0298614501953,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "d646a6de-e220-4063-8f84-f8d1590f04cc",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "ef436d47-40da-4d1c-8f1f-5db7a08727ab",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_14",
+                    "x": 333.2186279296875,
+                    "y": 300.66070556640625,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "37495aef-0f4a-4ef4-8e24-0be97f12e1ce",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "25e0076b-17b7-4f6b-bc66-4f36c73edef3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_15",
+                    "x": 288.5663146972656,
+                    "y": 540.6669921875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "a75aa6e4-539d-4a7d-9c00-170b2a6dac6d",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "97e15850-ddc4-49b7-a9f7-1644a6e96ace",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_16",
+                    "x": 515.5489501953125,
+                    "y": 602.0639038085938,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "8e00f6ee-0c97-414d-9fb3-074f2941c495",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "509a5af0-4d26-4b29-8c72-44527becca7a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_17",
+                    "x": 536.0146484375,
+                    "y": 592.7613525390625,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "8cbac80f-4449-4b83-945f-b92b3089c136",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "e100f72e-c74a-40f6-94fb-a0912a0fffa0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_18",
+                    "x": 511.82794189453125,
+                    "y": 509.0382385253906,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "f6fc2b25-5985-4d76-87fc-3ac5fd459f07",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "58765c72-bb71-4a3a-bf10-e80b237d72cb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_19",
+                    "x": 456.0125427246094,
+                    "y": 458.8043518066406,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "d16a0028-55a7-4a26-b854-86ff6475df6a",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "c31b5a87-7f2a-428b-a3db-b50e3527abec",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_20",
+                    "x": 372.2894287109375,
+                    "y": 436.4781799316406,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "26a513f4-4776-424d-8ea3-128b19892e80",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "8883c3be-1f9d-48ef-81bb-70aee90970eb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_21",
+                    "x": 362.9868469238281,
+                    "y": 337.8709716796875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "9321579b-0094-437d-be16-e47be3e78740",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "032f8f53-f255-4df9-82a9-2c838e2a33c6",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_22",
+                    "x": 474.61767578125,
+                    "y": 309.9632568359375,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "bfb3c7ce-035c-4c7f-a84a-f52622bc2008",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "c58bf026-d8c2-4e73-84eb-7cf0bb10ae91",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_23",
+                    "x": 580.6669311523438,
+                    "y": 298.8001708984375,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "7b5ac349-20eb-4aae-9af8-207699def818",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "e461b536-b3e7-4c44-bf48-7985c6cfe39f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_24",
+                    "x": 649.5059814453125,
+                    "y": 412.29150390625,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "d6d148c3-89be-4ea8-a69c-353c98c03c88",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "7f1c046c-5b60-4006-80d6-2c9d19fb6fda",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_25",
+                    "x": 649.5059814453125,
+                    "y": 451.3623046875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "f204affe-ebb7-44b3-a85a-9ce01d6e65ff",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "abd01a27-6269-49b2-9a02-7d1a7fa893af",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_26",
+                    "x": 703.4608764648438,
+                    "y": 471.82794189453125,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "6775d6ac-32e2-499e-b063-1c8ad42baf9d",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "facc5d43-d7a6-4779-84da-5e7f861e1be5",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_27",
+                    "x": 686.7162475585938,
+                    "y": 369.49969482421875,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "d14adb2f-3f48-4d48-9dd4-d9096c6bbb8b",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "255c5a14-ba55-47de-92e6-3a288baffc7c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_28",
+                    "x": 656.947998046875,
+                    "y": 334.1499328613281,
+                    "collideWorldBounds": false,
+                    "list": [
+                        {
+                            "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                            "id": "64cdb924-c16f-4b40-816c-5c061ce2e225",
+                            "label": "suivreFleursScript"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "8fec722a-a499-40ab-b917-45e61063b60f",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_29",
+                    "x": 532.2935791015625,
+                    "y": 388.1048278808594,
+                    "collideWorldBounds": false
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "b8f7e969-ec1a-4155-b7ba-d95d456536af",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_30",
+                    "x": 489.5018005371094,
+                    "y": 380.66278076171875,
+                    "collideWorldBounds": false
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "f0118165-4556-442d-8aed-0db23248daf0",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_31",
+                    "x": 597.4115600585938,
+                    "y": 248.56631469726562,
+                    "collideWorldBounds": false
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "99ed967a-4365-425d-8b7a-b7e4e4568a2a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_32",
+                    "x": 777.8814086914062,
+                    "y": 309.9632568359375,
+                    "collideWorldBounds": false
+                },
+                {
+                    "prefabId": "4826dff4-6065-4ec5-9e1d-557ddca1c530",
+                    "id": "026c294d-bffc-43cc-ad2b-e24d7b0361d2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "collideWorldBounds"
+                    ],
+                    "label": "guepe_33",
+                    "x": 828.1152954101562,
+                    "y": 417.873046875,
+                    "collideWorldBounds": false
+                },
+                {
+                    "prefabId": "9a9137e2-8f46-449f-a598-992f53c449da",
+                    "id": "c1befc44-3210-40f0-b1aa-226e1d588bbf",
+                    "unlock": [
+                        "suivreUniquementEntitePrincipale"
+                    ],
+                    "label": "suivreFleursScript_1",
+                    "suivreUniquementEntitePrincipale": true
                 }
             ]
         },
@@ -127,13 +774,15 @@
                     "id": "6900f26b-4f1a-4c13-a770-48769c9af1d8",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "collideWorldBounds"
                     ],
                     "label": "huipat",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "x": 1492,
                     "y": 639,
+                    "collideWorldBounds": false,
                     "nestedPrefabs": [
                         {
                             "prefabId": "f869ce90-85c9-4203-ae5a-ff2fddce0ab7",
@@ -151,17 +800,6 @@
             ]
         },
         {
-            "prefabId": "e3f8a1af-6e3a-420e-9c4b-91eae104c1c1",
-            "id": "d0973ae2-5443-45f6-bf22-2da51b3fd233",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "chauve_souris_png",
-            "x": 1012,
-            "y": 274
-        },
-        {
             "prefabId": "7dd20499-7667-43e3-a07c-7b8af84a5c4c",
             "id": "49c1ab6e-2c86-4cbf-a264-8c42e7c8de6b",
             "label": "onSceneAwakeScript"
@@ -173,5 +811,55 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 4
-    }
+    },
+    "lists": [
+        {
+            "id": "136df658-03e3-4fbb-aae0-a6b015f61b21",
+            "label": "liste_toile_vs_adversaire",
+            "objectIds": [
+                "29020bf5-04c4-44b9-b429-a321575d1cb2"
+            ]
+        },
+        {
+            "id": "5288dbe1-b0dd-4cd3-9748-284fc6f2c8eb",
+            "label": "liste_suivre_entiteControllable",
+            "objectIds": [
+                "026c294d-bffc-43cc-ad2b-e24d7b0361d2",
+                "99ed967a-4365-425d-8b7a-b7e4e4568a2a",
+                "f0118165-4556-442d-8aed-0db23248daf0",
+                "b8f7e969-ec1a-4155-b7ba-d95d456536af",
+                "8fec722a-a499-40ab-b917-45e61063b60f",
+                "255c5a14-ba55-47de-92e6-3a288baffc7c",
+                "facc5d43-d7a6-4779-84da-5e7f861e1be5",
+                "abd01a27-6269-49b2-9a02-7d1a7fa893af",
+                "7f1c046c-5b60-4006-80d6-2c9d19fb6fda",
+                "e461b536-b3e7-4c44-bf48-7985c6cfe39f",
+                "c58bf026-d8c2-4e73-84eb-7cf0bb10ae91",
+                "032f8f53-f255-4df9-82a9-2c838e2a33c6",
+                "8883c3be-1f9d-48ef-81bb-70aee90970eb",
+                "c31b5a87-7f2a-428b-a3db-b50e3527abec",
+                "58765c72-bb71-4a3a-bf10-e80b237d72cb",
+                "e100f72e-c74a-40f6-94fb-a0912a0fffa0",
+                "509a5af0-4d26-4b29-8c72-44527becca7a",
+                "97e15850-ddc4-49b7-a9f7-1644a6e96ace",
+                "25e0076b-17b7-4f6b-bc66-4f36c73edef3",
+                "ef436d47-40da-4d1c-8f1f-5db7a08727ab",
+                "5cb5b90c-c8f2-4df7-8533-f640f3442ca4",
+                "4ba8e7f1-b0e8-494e-a577-4f2c315d7879",
+                "72c3f960-e83f-4315-aebe-b36e27f40ca1",
+                "c81de46b-e445-4cc8-ac8f-33278df0e918",
+                "99569547-2474-4ab9-99a7-cc2c61a2f752",
+                "923e9bab-1ab2-4d73-9147-67fa2133ba3a",
+                "f4603fdd-ec05-4a61-b8df-f58295c09b13",
+                "23a12853-dabe-4057-ab41-441b22110b01",
+                "0195ab7a-9147-4a1a-a3ce-1c095a3c5396",
+                "ddb48fcc-da52-449e-8c15-76ff69bc76f0",
+                "8f375a47-82f7-47ff-b254-7eccf700924c",
+                "6c61687c-ac02-4317-ae1f-ab3c44408aed",
+                "97ac8b62-729a-4e70-8909-70e82971abb8",
+                "29020bf5-04c4-44b9-b429-a321575d1cb2",
+                "c1befc44-3210-40f0-b1aa-226e1d588bbf"
+            ]
+        }
+    ]
 }

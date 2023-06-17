@@ -20,10 +20,18 @@ export default class SuivreFleursScript extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	public suivreUniquementEntitePrincipale: boolean = false;
+
 	/* START-USER-CODE */
 	protected awake(): void {
-		this.gameObject.listeCibles = [...this.scene.fleurs.list];
-		this.gameObject.listeCibles.sort(() => 0.5 - Math.random())
+		if (this.suivreUniquementEntitePrincipale) {
+			this.scene.time.delayedCall(300, () => {
+				this.gameObject.listeCibles = [this.scene.entiteControllable];
+			});
+		} else {
+			this.gameObject.listeCibles = [...this.scene.fleurs.list];
+			this.gameObject.listeCibles.sort(() => 0.5 - Math.random())
+		}
 	}
 
 	get scene(): Niveau4 {

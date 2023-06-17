@@ -216,23 +216,6 @@ export default class Niveau4 extends BaseNiveaux {
 	create() {
 
 		this.editorCreate();
-		const emitter = this.add.particles(0, 0, 'guepe', {
-			frame: 'guepe.png',
-			speed: {
-				onEmit: () => this.entiteControllable.body.speed
-			},
-			lifespan: {
-				onEmit: () => Phaser.Math.Percent(this.entiteControllable.body.speed, 0, 300) * 20000
-			},
-			// alpha: {
-			// 	onEmit: () => Phaser.Math.Percent(this.entiteControllable.body.speed, 0, 300) * 1000
-
-			// },
-			scale: { start: 0.4, end: 0 },
-			blendMode: 'ADD'
-		});
-
-		emitter.startFollow(this.entiteControllable);
 	}
 
 	/* END-USER-CODE */

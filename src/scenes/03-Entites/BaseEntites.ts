@@ -28,6 +28,7 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 				.on('pointerdown', () => {
 					this.scene.entiteControllable = this;
 					this.activeIA(false);
+					this.scene.cameras.main.startFollow(this)
 					this.scene.scale.startFullscreen()
 				})
 		});
