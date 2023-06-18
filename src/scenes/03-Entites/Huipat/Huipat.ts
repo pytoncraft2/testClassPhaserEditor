@@ -149,7 +149,7 @@ export default class Huipat extends BaseEntites {
 	}
 
 	preUpdate(...args: any[]): void {
-		// this.scene.physics.world.wrap(this, 400);
+		this.scene.physics.world.wrap(this, 400);
 	}
 
 	/* END-USER-CODE */

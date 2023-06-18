@@ -9,7 +9,6 @@ const verifSiMobile = function () {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Bouton from "../Boutons/Bouton";
 /* START-USER-IMPORTS */
 import BaseEntites from "../03-Entites/BaseEntites";
 import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
@@ -98,45 +97,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 		coeur_9.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_9);
 
-		// controles_portable
-		const controles_portable = this.add.layer();
-		controles_portable.alpha = 0.1;
-
-		// bouton
-		const bouton = new Bouton(this, 1648, 832);
-		controles_portable.add(bouton);
-
-		// bouton_1
-		const bouton_1 = new Bouton(this, 352, 880, "bouton_1", "btn-right");
-		controles_portable.add(bouton_1);
-
-		// bouton_2
-		const bouton_2 = new Bouton(this, 1920, 688, "bouton_1", "btn-up");
-		controles_portable.add(bouton_2);
-
-		// bouton_3
-		const bouton_3 = new Bouton(this, -16, 880);
-		controles_portable.add(bouton_3);
-
-		// bouton_4
-		const bouton_4 = new Bouton(this, 1920, 928);
-		bouton_4.angle = -90;
-		controles_portable.add(bouton_4);
-
-		// bouton (prefab fields)
-		bouton.direction = "espace";
-
-		// bouton_1 (prefab fields)
-		bouton_1.direction = "droite";
-
-		// bouton_2 (prefab fields)
-		bouton_2.direction = "haut";
-
-		// bouton_4 (prefab fields)
-		bouton_4.direction = "bas";
-
 		this.groupe_vie = groupe_vie;
-		this.controles_portable = controles_portable;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -147,7 +108,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	public groupe_vie!: Phaser.GameObjects.Layer;
-	public controles_portable!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
@@ -166,14 +126,19 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private estUnMobile = verifSiMobile();
 	private finDePartie = false;
 	private joyStick: any
-	private text: any
+	private cursorKeys: any;
+
+	private leftKeyDown = false;
+	private rightKeyDown = false;
+	private upKeyDown = false;
+	private downKeyDown = false;
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false);
 		this.cameras.main.fadeIn(1000, 0, 0, 0);
 		this.input.addPointer(3);
 		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
-		if (!this.estUnMobile) this.controles_portable.removeAll()
+		// if (!this.estUnMobile) this.controles_portable.removeAll()
 		//@ts-ignore
         this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
                 x: 128,
@@ -181,14 +146,16 @@ export default class BaseNiveaux extends Phaser.Scene {
                 radius: 100,
                 base: this.add.circle(0, 0, 100, 0x888888),
                 thumb: this.add.circle(0, 0, 50, 0xcccccc),
-                // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
+                dir: '4dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
                 // forceMin: 16,
                 // enable: true
-            })
-            .on('update', this.dumpJoyStickState, this);
+            });
+			this.cursorKeys = this.joyStick.createCursorKeys();
 
-        this.text = this.add.text(30, 30, '');
-        this.dumpJoyStickState();
+            // .on('update', this.dumpJoyStickState, this);
+
+        // this.text = this.add.text(30, 30, '');
+        // this.dumpJoyStickState();
         // var emitter = new Phaser.Events.EventEmitter();
 
         //  Set-up an event handler
@@ -204,26 +171,23 @@ export default class BaseNiveaux extends Phaser.Scene {
 
     dumpJoyStickState() {
         var cursorKeys = this.joyStick.createCursorKeys();
-        var s = 'Key down: ';
-        for (var name in cursorKeys) {
-            if (cursorKeys[name].isDown) {
-                s += `${name} `;
-            }
-        }
 
-        s += `
-Force: ${Math.floor(this.joyStick.force * 100) / 100}
-Angle: ${Math.floor(this.joyStick.angle * 100) / 100}
-`;
+		if (cursorKeys.left.isDown) {
+			this.entiteControllable.actionToucheGauche()			
+		}
+		if (cursorKeys.right.isDown) {
+			this.entiteControllable.actionToucheDroite()			
+		}
+		
+        // var s = 'Key down: ';
+        // for (var name in cursorKeys) {
+        //     if (cursorKeys[name].isDown) {
+        //         s += `${name} `;
+        //     }
+        // }
 
-        s += '\nTimestamp:\n';
-        for (var name in cursorKeys) {
-            var key = cursorKeys[name];
-            s += `${name}: duration=${key.duration / 1000}\n`;
-        }
-        this.text.setText(s);
     }
-	
+
 	preload() {
 		console.log("PRELOADING");
 	}
@@ -241,45 +205,27 @@ Angle: ${Math.floor(this.joyStick.angle * 100) / 100}
 	}
 
 	observeToucheDeplacement() {
-		this.gaucheAppuie = this.gaucheAppuie || this.isKeyDown(this.toucheGauche);
-		this.droiteAppuie = this.droiteAppuie || this.isKeyDown(this.toucheDroite);
-		this.hautAppuie = this.hautAppuie || this.isKeyDown(this.toucheHaut);
-		this.basAppuie = this.basAppuie || this.isKeyDown(this.toucheBas);
-		if (this.estUnMobile) {
-			this.espaceAppuie = this.espaceAppuie || this.isKeyDown(this.toucheEspace);
+		if (this.cursorKeys.left.isDown) {
+			this.entiteControllable.actionToucheGauche()			
+		}
+		if (this.cursorKeys.right.isDown) {
+			this.entiteControllable.actionToucheDroite()			
 		}
 
-		if (this.toucheJustePresse(this.toucheEspace)) {
-			this.entiteControllable.actionToucheEspace()
+		if (this.cursorKeys.up.isDown) {
+			this.entiteControllable.actionToucheHaut()			
+		}
+		if (this.cursorKeys.down.isDown) {
+			this.entiteControllable.actionToucheBas()			
 		}
 
-		// if (this.toucheJusteReleve(this.toucheEspace)) {
-		// 	// touche espace ou touche d'attaque
-		// 	this.entiteControllable.actionToucheEspace()
-		// }
-
-		if (this.estUnMobile) {
-			if (this.espaceAppuie) {
-				this.entiteControllable.actionToucheEspace()
-				this.espaceAppuie = false;
-			}
+		if (this.joyStick.noKey) {
+			this.entiteControllable.aucuneTouche()			
 		}
+		return;
 
 
-		if (this.entiteControllable) {
-			if (this.gaucheAppuie) this.entiteControllable.actionToucheGauche()
-			else if (this.droiteAppuie) this.entiteControllable.actionToucheDroite()
-			else if (this.basAppuie) this.entiteControllable.actionToucheBas()
-			else this.entiteControllable.aucuneTouche()
 
-			if (this.toucheJustePresse(this.toucheHaut) || this.hautAppuie) {
-				this.entiteControllable.actionToucheHaut();
-			}
-		}
-
-		if (!this.estUnMobile) {
-			this.gaucheAppuie = this.droiteAppuie = this.hautAppuie = this.basAppuie = this.espaceAppuie = false;
-		}
 	}
 
 	private isKeyDown(key?: Phaser.Input.Keyboard.Key) {
@@ -298,7 +244,7 @@ Angle: ${Math.floor(this.joyStick.angle * 100) / 100}
 
 	toileToucheEntite(toile: ToileHuipatPrefab, adversaire: BaseEntites) {
 		console.log("TOUCHE");
-		
+
 		if (!adversaire.groupeBlocage.children) return;
 		if (adversaire.groupeBlocage.getLength() >= adversaire.maxBlocages) {
 			toile.destroy()
