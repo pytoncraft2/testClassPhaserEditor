@@ -164,7 +164,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private basAppuie = false;
 	private espaceAppuie = false;
 	private estUnMobile = verifSiMobile();
-	private finDePartie = false;
+	public finDePartie = false;
+	private nombreAdversaireVaincu = 0;
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false);
@@ -175,14 +176,22 @@ export default class BaseNiveaux extends Phaser.Scene {
         // var emitter = new Phaser.Events.EventEmitter();
 
         //  Set-up an event handler
+		this.events.once('adversaireVaincu', this.handler, this);
+
 		// this.events.on('adversaireVaincu', () => {
-			console.log("OKAY");
-			// this.time.delayedCall(2000, () => {
-				// this.niveauSuivant()
-			// })
+		// 	console.log("OKAY");
+		// 	this.time.delayedCall(2000, () => {
+		// 		this.niveauSuivant()
+		// 	}, undefined, this)
+		// }, this);
 
 
         //  We emit the event 3 times, but the handler is only called once
+	}
+
+	handler() {
+		console.log("HANDLER");
+		this.nombreAdversaireVaincu += 1;
 	}
 
 	niveauSuivant() {

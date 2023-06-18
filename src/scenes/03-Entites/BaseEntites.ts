@@ -113,30 +113,23 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 	}
 
 	detruire() {	
-		console.log("LONGEUR", this.scene.groupe_adversaires.list.length);
-		// this.verifSiFinDeNiveau()
-
-		
-		// this.scene.scene.start('Niveau2')
 		this.logiqueDescisionActionsIA.destroy()
-		// this.scene.groupe_adversaires.setActive(false)
-
-
-
-
 		this.scene.tweens.add({
 			targets: [this],
 			angle: this.body.velocity.x < 0 ? -960 : 960,
 			scale: 0,
 			alpha: 0,
 			ease: 'Linear',
-			duration: 1000
+			duration: 1000,
+			onComplete: () => {
+				this.destroy()
+			}
 		});
 
 
 		
 		// this.destroy()
-		// this.scene.events.emit('adversaireVaincu', {ok: true}, this.scene);
+		this.scene.events.emit('adversaireVaincu', {ok: true}, this.scene);
 
 		// this.activeIA(false);
 		// this.body.moves = true;

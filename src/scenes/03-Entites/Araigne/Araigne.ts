@@ -150,8 +150,9 @@ export default class Araigne extends BaseEntites {
 		if (!this.body.touching.down) return;
 		this.body.checkCollision.none = true;
 		this.scene.time.delayedCall(600, () => {
-			this.body.checkCollision.none = false
-			this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite()
+			if (!this.body) return;
+				this.body.checkCollision.none = false
+				this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite()
 		})
 
 		this.body.setVelocity(0, -1000)
@@ -159,6 +160,7 @@ export default class Araigne extends BaseEntites {
 	}
 
 	actionToucheBas() {
+		if (!this.body) return;
 		const { touching, checkCollision } = this.body;
 		if (!touching.down) return;
 		checkCollision.none = true;
@@ -171,6 +173,7 @@ export default class Araigne extends BaseEntites {
 	}
 
 	actionToucheDroite() {
+		if (!this.body) return;
 		this.body.setVelocityX(this.velociteX)
 
 		this.FlipX(false)
@@ -178,6 +181,7 @@ export default class Araigne extends BaseEntites {
 	}
 
 	actionToucheGauche() {
+		if (!this.body) return;
 		this.body.setVelocityX(-this.velociteX)
 
 		this.FlipX(true)
@@ -205,7 +209,7 @@ export default class Araigne extends BaseEntites {
 
 	preUpdate(...args: any[]): void {
 		this.scene.physics.world.wrap(this, 400);
-		if (this.estActiveIA) this.deplacementIA()
+		if (this.estActiveIA && !this.scene.finDePartie) this.deplacementIA()
 	}
 
 	deplacementIA() {
