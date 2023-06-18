@@ -9,6 +9,7 @@ const verifSiMobile = function () {
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Bouton from "../Boutons/Bouton";
 /* START-USER-IMPORTS */
 import BaseEntites from "../03-Entites/BaseEntites";
 import ToileHuipatPrefab from "../04-Projectiles/ToileHuipatPrefab";
@@ -97,7 +98,19 @@ export default class BaseNiveaux extends Phaser.Scene {
 		coeur_9.scaleY = 0.0299137473893349;
 		groupe_vie.add(coeur_9);
 
+		// controles_portable
+		const controles_portable = this.add.layer();
+		controles_portable.alpha = 0.1;
+
+		// bouton
+		const bouton = new Bouton(this, 1648, 832);
+		controles_portable.add(bouton);
+
+		// bouton (prefab fields)
+		bouton.direction = "espace";
+
 		this.groupe_vie = groupe_vie;
+		this.controles_portable = controles_portable;
 		this.toucheEspace = toucheEspace;
 		this.toucheGauche = toucheGauche;
 		this.toucheDroite = toucheDroite;
@@ -108,6 +121,7 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	public groupe_vie!: Phaser.GameObjects.Layer;
+	public controles_portable!: Phaser.GameObjects.Layer;
 	private toucheEspace!: Phaser.Input.Keyboard.Key;
 	private toucheGauche!: Phaser.Input.Keyboard.Key;
 	private toucheDroite!: Phaser.Input.Keyboard.Key;
@@ -137,12 +151,12 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.physics.world.setBoundsCollision(true, true, false, false);
 		this.cameras.main.fadeIn(1000, 0, 0, 0);
 		this.input.addPointer(3);
-		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
+		// if (this.estUnMobile) this.cameras.main.setZoom(0.86)
 		// if (!this.estUnMobile) this.controles_portable.removeAll()
 		//@ts-ignore
         this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
-                x: 128,
-                y: 880,
+                x: 228,
+                y: 790,
                 radius: 100,
                 base: this.add.circle(0, 0, 100, 0x888888),
                 thumb: this.add.circle(0, 0, 50, 0xcccccc),
@@ -169,29 +183,6 @@ export default class BaseNiveaux extends Phaser.Scene {
         //  We emit the event 3 times, but the handler is only called once
 	}
 
-    dumpJoyStickState() {
-        var cursorKeys = this.joyStick.createCursorKeys();
-
-		if (cursorKeys.left.isDown) {
-			this.entiteControllable.actionToucheGauche()			
-		}
-		if (cursorKeys.right.isDown) {
-			this.entiteControllable.actionToucheDroite()			
-		}
-		
-        // var s = 'Key down: ';
-        // for (var name in cursorKeys) {
-        //     if (cursorKeys[name].isDown) {
-        //         s += `${name} `;
-        //     }
-        // }
-
-    }
-
-	preload() {
-		console.log("PRELOADING");
-	}
-
 	niveauSuivant() {
 			this.time.delayedCall(4000, function(this: any) {
 				this.scene.start('Level')
@@ -213,19 +204,67 @@ export default class BaseNiveaux extends Phaser.Scene {
 		}
 
 		if (this.cursorKeys.up.isDown) {
-			this.entiteControllable.actionToucheHaut()			
+			// if (this.joyStick.angle > -100 && this.joyStick.angle < -70) {
+				this.entiteControllable.actionToucheHaut()			
+			// }
 		}
 		if (this.cursorKeys.down.isDown) {
 			this.entiteControllable.actionToucheBas()			
 		}
-
 		if (this.joyStick.noKey) {
 			this.entiteControllable.aucuneTouche()			
+		}
+
+		if (this.estUnMobile) {
+			if (this.espaceAppuie) {
+				this.entiteControllable.actionToucheEspace()
+				this.espaceAppuie = false;
+			}
 		}
 		return;
 
 
+/*
+		this.gaucheAppuie = this.gaucheAppuie || this.isKeyDown(this.toucheGauche);
+		this.droiteAppuie = this.droiteAppuie || this.isKeyDown(this.toucheDroite);
+		this.hautAppuie = this.hautAppuie || this.isKeyDown(this.toucheHaut);
+		this.basAppuie = this.basAppuie || this.isKeyDown(this.toucheBas);
+		if (this.estUnMobile) {
+			this.espaceAppuie = this.espaceAppuie || this.isKeyDown(this.toucheEspace);
+		}
 
+		if (this.toucheJustePresse(this.toucheEspace)) {
+			this.entiteControllable.actionToucheEspace()
+		}
+
+		// if (this.toucheJusteReleve(this.toucheEspace)) {
+		// 	// touche espace ou touche d'attaque
+		// 	this.entiteControllable.actionToucheEspace()
+		// }
+
+		if (this.estUnMobile) {
+			if (this.espaceAppuie) {
+				this.entiteControllable.actionToucheEspace()
+				this.espaceAppuie = false;
+			}
+		}
+
+
+		if (this.entiteControllable) {
+			if (this.gaucheAppuie) this.entiteControllable.actionToucheGauche()
+			else if (this.droiteAppuie) this.entiteControllable.actionToucheDroite()
+			else if (this.basAppuie) this.entiteControllable.actionToucheBas()
+			else this.entiteControllable.aucuneTouche()
+
+			if (this.toucheJustePresse(this.toucheHaut) || this.hautAppuie) {
+				this.entiteControllable.actionToucheHaut();
+			}
+		}
+
+		if (!this.estUnMobile) {
+			this.gaucheAppuie = this.droiteAppuie = this.hautAppuie = this.basAppuie = this.espaceAppuie = false;
+		}
+		*/
 	}
 
 	private isKeyDown(key?: Phaser.Input.Keyboard.Key) {

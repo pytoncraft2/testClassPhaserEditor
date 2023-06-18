@@ -139,6 +139,28 @@
                     "scaleY": 0.0299137473893349
                 }
             ]
+        },
+        {
+            "type": "Layer",
+            "id": "77b058fb-efaf-4a61-ae41-1995e4a2c7bb",
+            "label": "controles_portable",
+            "scope": "PUBLIC",
+            "alpha": 0.1,
+            "list": [
+                {
+                    "prefabId": "a9972bfc-8fbd-4f05-860e-13fcb48577ed",
+                    "id": "b31a517d-971d-47ea-a808-24f3dd8435c7",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "direction"
+                    ],
+                    "label": "bouton",
+                    "direction": "espace",
+                    "x": 1648,
+                    "y": 832
+                }
+            ]
         }
     ],
     "plainObjects": [
