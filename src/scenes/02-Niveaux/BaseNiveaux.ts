@@ -106,8 +106,34 @@ export default class BaseNiveaux extends Phaser.Scene {
 		const bouton = new Bouton(this, 1648, 832);
 		controles_portable.add(bouton);
 
+		// bouton_1
+		const bouton_1 = new Bouton(this, 352, 880, "bouton_1", "btn-right");
+		controles_portable.add(bouton_1);
+
+		// bouton_2
+		const bouton_2 = new Bouton(this, 1920, 688, "bouton_1", "btn-up");
+		controles_portable.add(bouton_2);
+
+		// bouton_3
+		const bouton_3 = new Bouton(this, -16, 880);
+		controles_portable.add(bouton_3);
+
+		// bouton_4
+		const bouton_4 = new Bouton(this, 1920, 928);
+		bouton_4.angle = -90;
+		controles_portable.add(bouton_4);
+
 		// bouton (prefab fields)
 		bouton.direction = "espace";
+
+		// bouton_1 (prefab fields)
+		bouton_1.direction = "droite";
+
+		// bouton_2 (prefab fields)
+		bouton_2.direction = "haut";
+
+		// bouton_4 (prefab fields)
+		bouton_4.direction = "bas";
 
 		this.groupe_vie = groupe_vie;
 		this.controles_portable = controles_portable;
@@ -139,37 +165,13 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private espaceAppuie = false;
 	private estUnMobile = verifSiMobile();
 	private finDePartie = false;
-	private joyStick: any
-	private cursorKeys: any;
-
-	private leftKeyDown = false;
-	private rightKeyDown = false;
-	private upKeyDown = false;
-	private downKeyDown = false;
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false);
 		this.cameras.main.fadeIn(1000, 0, 0, 0);
 		this.input.addPointer(3);
-		// if (this.estUnMobile) this.cameras.main.setZoom(0.86)
-		// if (!this.estUnMobile) this.controles_portable.removeAll()
-		//@ts-ignore
-        this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
-                x: 248,
-                y: 790,
-                radius: 130,
-                // base: this.add.circle(0, 0, 100, 0x888888),
-                // thumb: this.add.circle(0, 0, 50, 0xcccccc),
-                dir: '4dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-                forceMin: 86,
-                // enable: true
-            });
-			this.cursorKeys = this.joyStick.createCursorKeys();
-
-            // .on('update', this.dumpJoyStickState, this);
-
-        // this.text = this.add.text(30, 30, '');
-        // this.dumpJoyStickState();
+		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
+		if (!this.estUnMobile) this.controles_portable.removeAll()
         // var emitter = new Phaser.Events.EventEmitter();
 
         //  Set-up an event handler
@@ -196,35 +198,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 	}
 
 	observeToucheDeplacement() {
-		if (this.cursorKeys.left.isDown) {
-			this.entiteControllable.actionToucheGauche()			
-		}
-		if (this.cursorKeys.right.isDown) {
-			this.entiteControllable.actionToucheDroite()			
-		}
-
-		if (this.cursorKeys.up.isDown) {
-			// if (this.joyStick.angle > -100 && this.joyStick.angle < -70) {
-				this.entiteControllable.actionToucheHaut()			
-			// }
-		}
-		if (this.cursorKeys.down.isDown) {
-			this.entiteControllable.actionToucheBas()			
-		}
-		if (this.joyStick.noKey) {
-			this.entiteControllable.aucuneTouche()			
-		}
-
-		if (this.estUnMobile) {
-			if (this.espaceAppuie) {
-				this.entiteControllable.actionToucheEspace()
-				this.espaceAppuie = false;
-			}
-		}
-		return;
-
-
-/*
 		this.gaucheAppuie = this.gaucheAppuie || this.isKeyDown(this.toucheGauche);
 		this.droiteAppuie = this.droiteAppuie || this.isKeyDown(this.toucheDroite);
 		this.hautAppuie = this.hautAppuie || this.isKeyDown(this.toucheHaut);
@@ -264,7 +237,6 @@ export default class BaseNiveaux extends Phaser.Scene {
 		if (!this.estUnMobile) {
 			this.gaucheAppuie = this.droiteAppuie = this.hautAppuie = this.basAppuie = this.espaceAppuie = false;
 		}
-		*/
 	}
 
 	private isKeyDown(key?: Phaser.Input.Keyboard.Key) {
@@ -365,4 +337,3 @@ export default class BaseNiveaux extends Phaser.Scene {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-

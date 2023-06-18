@@ -119,8 +119,21 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 		
 		// this.scene.scene.start('Niveau2')
 		this.logiqueDescisionActionsIA.destroy()
-		this.scene.groupe_adversaires.setActive(false)
-		this.scene.niveauSuivant()
+		// this.scene.groupe_adversaires.setActive(false)
+
+
+
+
+		this.scene.tweens.add({
+			targets: [this],
+			angle: this.body.velocity.x < 0 ? -960 : 960,
+			scale: 0,
+			alpha: 0,
+			ease: 'Linear',
+			duration: 1000
+		});
+
+
 		
 		// this.destroy()
 		// this.scene.events.emit('adversaireVaincu', {ok: true}, this.scene);
