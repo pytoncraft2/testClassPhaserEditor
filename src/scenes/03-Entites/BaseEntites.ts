@@ -29,8 +29,8 @@ export default class BaseEntites extends Phaser.GameObjects.Container {
 					// this.scene.entiteControllable = this;
 					// this.activeIA(false);
 					// this.scene.cameras.main.startFollow(this)
-					// this.scene.scale.startFullscreen()
-					this.scene.scene.start('Niveau2')
+					this.scene.scale.startFullscreen()
+					// this.scene.scene.start('Niveau2')
 				}, this.scene)
 		}, undefined, this.scene);
 		this.scene.add.existing(this);

@@ -58,6 +58,11 @@ export default class Preload extends Phaser.Scene {
 		this.editorCreate();
 
 		this.load.pack("asset-pack", assetPackUrl);
+		var url;
+
+		url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js';
+		this.load.plugin('rexvirtualjoystickplugin', url, true);		
+
 	}
 
 	create() {

@@ -165,6 +165,8 @@ export default class BaseNiveaux extends Phaser.Scene {
 	private espaceAppuie = false;
 	private estUnMobile = verifSiMobile();
 	private finDePartie = false;
+	private joyStick: any
+	private text: any
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false);
@@ -172,6 +174,21 @@ export default class BaseNiveaux extends Phaser.Scene {
 		this.input.addPointer(3);
 		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
 		if (!this.estUnMobile) this.controles_portable.removeAll()
+		//@ts-ignore
+        this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
+                x: 128,
+                y: 880,
+                radius: 100,
+                base: this.add.circle(0, 0, 100, 0x888888),
+                thumb: this.add.circle(0, 0, 50, 0xcccccc),
+                // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
+                // forceMin: 16,
+                // enable: true
+            })
+            .on('update', this.dumpJoyStickState, this);
+
+        this.text = this.add.text(30, 30, '');
+        this.dumpJoyStickState();
         // var emitter = new Phaser.Events.EventEmitter();
 
         //  Set-up an event handler
@@ -183,6 +200,32 @@ export default class BaseNiveaux extends Phaser.Scene {
 
 
         //  We emit the event 3 times, but the handler is only called once
+	}
+
+    dumpJoyStickState() {
+        var cursorKeys = this.joyStick.createCursorKeys();
+        var s = 'Key down: ';
+        for (var name in cursorKeys) {
+            if (cursorKeys[name].isDown) {
+                s += `${name} `;
+            }
+        }
+
+        s += `
+Force: ${Math.floor(this.joyStick.force * 100) / 100}
+Angle: ${Math.floor(this.joyStick.angle * 100) / 100}
+`;
+
+        s += '\nTimestamp:\n';
+        for (var name in cursorKeys) {
+            var key = cursorKeys[name];
+            s += `${name}: duration=${key.duration / 1000}\n`;
+        }
+        this.text.setText(s);
+    }
+	
+	preload() {
+		console.log("PRELOADING");
 	}
 
 	niveauSuivant() {
