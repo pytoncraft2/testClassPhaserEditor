@@ -155,13 +155,13 @@ export default class BaseNiveaux extends Phaser.Scene {
 		// if (!this.estUnMobile) this.controles_portable.removeAll()
 		//@ts-ignore
         this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
-                x: 228,
+                x: 248,
                 y: 790,
-                radius: 100,
-                base: this.add.circle(0, 0, 100, 0x888888),
-                thumb: this.add.circle(0, 0, 50, 0xcccccc),
+                radius: 130,
+                // base: this.add.circle(0, 0, 100, 0x888888),
+                // thumb: this.add.circle(0, 0, 50, 0xcccccc),
                 dir: '4dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-                // forceMin: 16,
+                forceMin: 86,
                 // enable: true
             });
 			this.cursorKeys = this.joyStick.createCursorKeys();
@@ -365,3 +365,4 @@ export default class BaseNiveaux extends Phaser.Scene {
 /* END OF COMPILED CODE */
 
 // You can write more code here
+
