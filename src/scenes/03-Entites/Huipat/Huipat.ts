@@ -96,7 +96,7 @@ export default class Huipat extends BaseEntites {
 
 		this.detecteur_proche.body.enable = true;
 
-		this.scene.time.delayedCall(24, () => {
+		this.scene.time.delayedCall(44, () => {
 			this.detecteur_proche.body.enable = false;
 		}, undefined, this)
 

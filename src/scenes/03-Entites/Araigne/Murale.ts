@@ -69,11 +69,11 @@ export default class Murale extends Araigne {
 	}
 
 	actionToucheHaut() {
-		if (this.body.touching.down && !this.body.touching.up) {
+		if (this.body?.touching.down && !this.body.touching.up) {
 			const alendroit = this.image.flipY === false;
 			if (alendroit) this.saut(true, graviteVersLeHaut);
 		}
-		else if (!this.body.touching.down && this.body.touching.up) {
+		else if (!this.body?.touching.down && this.body?.touching.up) {
 			const alenvers = this.image.flipY === true;
 			if (alenvers) {
 				this.saut(false, graviteVersLeBas, 'up')
@@ -83,14 +83,14 @@ export default class Murale extends Araigne {
 	}
 
 	actionToucheBas() {
-		if (this.body.touching.down && !this.body.touching.up) {
+		if (this.body?.touching.down && !this.body.touching.up) {
 			const alendroit = this.image.flipY === false;
 			if (alendroit) {
 				this.saut(true, graviteVersLeHaut, 'down')
 				this.body.setVelocityY(600);
 			}
 		}
-		else if (!this.body.touching.down && this.body.touching.up) {
+		else if (!this.body?.touching.down && this.body?.touching.up) {
 			const alenvers = this.image.flipY === true;
 			if (alenvers) this.saut(false, graviteVersLeBas);
 		}
