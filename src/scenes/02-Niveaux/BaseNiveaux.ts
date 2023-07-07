@@ -169,19 +169,20 @@ export default class BaseNiveaux extends Phaser.Scene {
 	init() {
 		this.editorCreateBase();
 		this.physics.world.setBoundsCollision(true, true, false, false);
-		this.cameras.main.fadeIn(1000, 0, 0, 0);
+		// this.cameras.main.fadeIn(1000, 0, 0, 0);
 		this.input.addPointer(3);
 		if (this.estUnMobile) this.cameras.main.setZoom(0.86)
 		if (!this.estUnMobile) this.controles_portable.removeAll()
 
 		const sceneSuivante = `${this.constructor.name.slice(0, -1)}${this.scene.getIndex() - 1}`;
-		this.time.delayedCall(10000, function(this: any, a: any) {
+		this.time.delayedCall(5000, function(this: any, a: any) {
 			console.log(this.finDePartie);
 			
 			this.finDePartie = true;
 			this.entiteControllable.destroy()
 			this.groupe_adversaires.destroy()
-            this.scene.start(sceneSuivante);
+            this.scene.launch(sceneSuivante);
+			this.scene.stop('Niveau1')
 		}, [this], this)
 		
 	}

@@ -150,6 +150,7 @@ export default class Araigne extends BaseEntites {
 		if (!this.body?.touching.down) return;
 		this.body.checkCollision.none = true;
 		this.scene.time.delayedCall(600, () => {
+			if (!this.body) return;
 			this.body.checkCollision.none = false
 			this.image.flipX ? this.actionToucheGauche() : this.actionToucheDroite()
 		})

@@ -19,29 +19,10 @@
                 "key": "araigneBoss"
             },
             {
-                "atlasURL": "assets/bouton/bouton.json",
-                "textureURL": "assets/bouton/bouton.png",
-                "type": "atlas",
-                "key": "bouton"
-            },
-            {
                 "atlasURL": "assets/interface/bouton.json",
                 "textureURL": "assets/interface/bouton.png",
                 "type": "atlas",
                 "key": "bouton_1"
-            },
-            {
-                "url": "assets/entites/boy_atlas.png",
-                "frameConfig": {
-                    "frameWidth": 32,
-                    "frameHeight": 32,
-                    "startFrame": 0,
-                    "endFrame": -1,
-                    "spacing": 0,
-                    "margin": 0
-                },
-                "type": "spritesheet",
-                "key": "boy_atlas"
             },
             {
                 "atlasURL": "assets/entites/chauve_souris.json",
